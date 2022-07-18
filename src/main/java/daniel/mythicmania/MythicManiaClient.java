@@ -4,8 +4,10 @@ import daniel.mythicmania.client.render.entity.grub.MagicalGrubEntityRenderer;
 import daniel.mythicmania.client.render.entity.grub.PoisonousGrubEntityRenderer;
 import daniel.mythicmania.client.render.entity.model.GrubEntityModel;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
@@ -16,6 +18,8 @@ public class MythicManiaClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        BlockRenderLayerMap.INSTANCE.putBlock(MythicMania.RINTH_BLOCK, RenderLayer.getCutout());
+
         EntityRendererRegistry.register(MythicMania.POISONOUS_GRUB_ENTITY, PoisonousGrubEntityRenderer::new);
         EntityRendererRegistry.register(MythicMania.MAGICAL_GRUB_ENTITY, MagicalGrubEntityRenderer::new);
 
