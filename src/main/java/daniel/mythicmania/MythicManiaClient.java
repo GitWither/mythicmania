@@ -19,6 +19,7 @@ public class MythicManiaClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(MythicMania.RINTH_BLOCK, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(MythicMania.HARVESTER_BLOCK, RenderLayer.getCutout());
 
         EntityRendererRegistry.register(MythicMania.POISONOUS_GRUB_ENTITY, PoisonousGrubEntityRenderer::new);
         EntityRendererRegistry.register(MythicMania.MAGICAL_GRUB_ENTITY, MagicalGrubEntityRenderer::new);
