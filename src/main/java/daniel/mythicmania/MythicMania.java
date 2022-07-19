@@ -49,8 +49,20 @@ public class MythicMania implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "rinth"), new BlockItem(RINTH_BLOCK, new Item.Settings().group(MYTHICMANIA_ITEM_GROUP)));
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "harvester"), new BlockItem(HARVESTER_BLOCK, new Item.Settings().group(MYTHICMANIA_ITEM_GROUP)));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "rinth"),
+                new BlockItem(RINTH_BLOCK, new Item.Settings().group(MYTHICMANIA_ITEM_GROUP)
+        ));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "harvester"),
+                new BlockItem(HARVESTER_BLOCK, new Item.Settings().group(MYTHICMANIA_ITEM_GROUP)
+        ));
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "magical_grub_spawn_egg"),
+                new SpawnEggItem(MAGICAL_GRUB_ENTITY, 0x7ff8eb, 0x5da1c5, new Item.Settings().group(MYTHICMANIA_ITEM_GROUP)
+        ));
+
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "poisonous_grub_spawn_egg"),
+                new SpawnEggItem(POISONOUS_GRUB_ENTITY, 0x4e9e78, 0x9cf590, new Item.Settings().group(MYTHICMANIA_ITEM_GROUP)
+        ));
 
 
         FabricDefaultAttributeRegistry.register(MAGICAL_GRUB_ENTITY, MagicalGrubEntity.createMagicalGrubAttributes());
