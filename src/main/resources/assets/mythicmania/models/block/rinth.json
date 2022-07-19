@@ -2,6 +2,7 @@
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
 	"texture_size": [64, 64],
+	"parent": "block/block",
 	"textures": {
 		"0": "mythicmania:block/rinth",
 		"particle": "mythicmania:block/rinth"
