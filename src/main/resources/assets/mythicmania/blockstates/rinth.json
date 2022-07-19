@@ -1,5 +1,6 @@
 {
   "variants": {
-    "": {"model": "mythicmania:block/rinth"}
+    "hanging=false": {"model": "mythicmania:block/rinth"},
+    "hanging=true": {"model": "mythicmania:block/rinth", "x":  180}
   }
 }
