@@ -2,7 +2,8 @@ package daniel.mythicmania;
 
 import daniel.mythicmania.client.render.entity.grub.MagicalGrubEntityRenderer;
 import daniel.mythicmania.client.render.entity.grub.PoisonousGrubEntityRenderer;
-import daniel.mythicmania.client.render.entity.model.GrubEntityModel;
+import daniel.mythicmania.client.render.entity.model.MagicalGrubEntityModel;
+import daniel.mythicmania.client.render.entity.model.PoisonousGrubEntityModel;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
@@ -24,7 +25,7 @@ public class MythicManiaClient implements ClientModInitializer {
         EntityRendererRegistry.register(MythicMania.POISONOUS_GRUB_ENTITY, PoisonousGrubEntityRenderer::new);
         EntityRendererRegistry.register(MythicMania.MAGICAL_GRUB_ENTITY, MagicalGrubEntityRenderer::new);
 
-        EntityModelLayerRegistry.registerModelLayer(MAGICAL_GRUB_LAYER, GrubEntityModel::getMagicalGrubTexturedModelData);
-        EntityModelLayerRegistry.registerModelLayer(POISONOUS_GRUB_LAYER, GrubEntityModel::getPoisonousGrubTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(MAGICAL_GRUB_LAYER, MagicalGrubEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(POISONOUS_GRUB_LAYER, PoisonousGrubEntityModel::getTexturedModelData);
     }
 }

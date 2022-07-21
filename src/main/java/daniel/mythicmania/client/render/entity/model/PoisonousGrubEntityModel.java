@@ -1,33 +1,20 @@
 package daniel.mythicmania.client.render.entity.model;
 
-import daniel.mythicmania.entity.AbstractGrubEntity;
+import daniel.mythicmania.entity.PoisonousGrubEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 
-public class GrubEntityModel extends EntityModel<AbstractGrubEntity> {
+public class PoisonousGrubEntityModel extends EntityModel<PoisonousGrubEntity> {
 
     private final ModelPart root;
 
-    public GrubEntityModel(ModelPart part) {
+    public PoisonousGrubEntityModel(ModelPart part) {
         root = part;
     }
 
-    public static TexturedModelData getMagicalGrubTexturedModelData() {
-        ModelData modelData = new ModelData();
-        ModelPartData modelPartData = modelData.getRoot();
-        ModelPartData grub = modelPartData.addChild("grub", ModelPartBuilder.create(), ModelTransform.pivot(0.5707F, 23.75F, -0.55F));
-
-        ModelPartData bone = grub.addChild("bone", ModelPartBuilder.create().uv(0, 0).cuboid(-2.0778F, -2.6352F, -1.8444F, 3.0F, 3.0F, 5.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -0.0574F, 0.0F));
-
-        ModelPartData bone2 = grub.addChild("bone2", ModelPartBuilder.create().uv(0, 8).cuboid(-1.5442F, -1.6776F, -5.0632F, 2.0F, 2.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -0.015F, 0.0F));
-
-        ModelPartData bone3 = grub.addChild("bone3", ModelPartBuilder.create().uv(8, 8).cuboid(-1.5972F, -1.6776F, 3.1632F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -0.015F, 0.0F));
-        return TexturedModelData.of(modelData, 16, 16);
-    }
-
-    public static TexturedModelData getPoisonousGrubTexturedModelData() {
+    public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
         ModelPartData modelPartData = modelData.getRoot();
         ModelPartData grub_poison = modelPartData.addChild("grub_poison", ModelPartBuilder.create(), ModelTransform.pivot(-0.0042F, 24.0F, -0.6275F));
@@ -53,9 +40,8 @@ public class GrubEntityModel extends EntityModel<AbstractGrubEntity> {
         return TexturedModelData.of(modelData, 32, 32);
     }
 
-
     @Override
-    public void setAngles(AbstractGrubEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+    public void setAngles(PoisonousGrubEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 
     }
 
