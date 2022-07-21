@@ -5,6 +5,8 @@ import daniel.mythicmania.block.RinthBlock;
 import daniel.mythicmania.entity.AbstractGrubEntity;
 import daniel.mythicmania.entity.MagicalGrubEntity;
 import daniel.mythicmania.entity.PoisonousGrubEntity;
+import daniel.mythicmania.item.FoodComponents;
+import daniel.mythicmania.item.SweetenedBerryItem;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -23,6 +25,7 @@ public class MythicMania implements ModInitializer {
 
     public static final ItemGroup MYTHICMANIA_ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MOD_ID, MOD_ID), () -> new ItemStack(Items.BEDROCK));
 
+    //=============== ENTITIES ===============
     public static final EntityType<MagicalGrubEntity> MAGICAL_GRUB_ENTITY = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(MOD_ID, "magical_grub"),
@@ -35,6 +38,7 @@ public class MythicMania implements ModInitializer {
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PoisonousGrubEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
     );
 
+    //=============== BLOCKS ===============
     public static final Block RINTH_BLOCK = Registry.register(
             Registry.BLOCK,
             new Identifier(MOD_ID, "rinth"),
@@ -47,13 +51,23 @@ public class MythicMania implements ModInitializer {
             new HarvesterBlock()
     );
 
+    //=============== ITEMS ===============
+    public static final Item POISONOUS_BERRY = Registry.register(
+            Registry.ITEM,
+            new Identifier(MOD_ID, "poisonous_berry"),
+            new AliasedBlockItem(HARVESTER_BLOCK, new Item.Settings().food(FoodComponents.POISONOUS_BERRY).group(MYTHICMANIA_ITEM_GROUP))
+    );
+
+    public static final Item SWEETENED_BERRY = Registry.register(
+            Registry.ITEM,
+            new Identifier(MOD_ID, "sweetened_berry"),
+            new SweetenedBerryItem()
+    );
+
     @Override
     public void onInitialize() {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "rinth"),
                 new BlockItem(RINTH_BLOCK, new Item.Settings().group(MYTHICMANIA_ITEM_GROUP)
-        ));
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "harvester"),
-                new BlockItem(HARVESTER_BLOCK, new Item.Settings().group(MYTHICMANIA_ITEM_GROUP)
         ));
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "magical_grub_spawn_egg"),
