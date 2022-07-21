@@ -1,5 +1,6 @@
 {
   "variants": {
-    "": {"model": "mythicmania:block/harvester"}
+    "berries=true": {"model": "mythicmania:block/harvester_berry"},
+    "berries=false": {"model": "mythicmania:block/harvester_empty"}
   }
 }
