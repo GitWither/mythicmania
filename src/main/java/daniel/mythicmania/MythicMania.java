@@ -6,6 +6,7 @@ import daniel.mythicmania.entity.AbstractGrubEntity;
 import daniel.mythicmania.entity.MagicalGrubEntity;
 import daniel.mythicmania.entity.PoisonousGrubEntity;
 import daniel.mythicmania.item.FoodComponents;
+import daniel.mythicmania.item.OrbItem;
 import daniel.mythicmania.item.SweetenedBerryItem;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -62,6 +63,30 @@ public class MythicMania implements ModInitializer {
             Registry.ITEM,
             new Identifier(MOD_ID, "sweetened_berry"),
             new SweetenedBerryItem()
+    );
+
+    public static final Item EMPTY_ORB = Registry.register(
+            Registry.ITEM,
+            new Identifier(MOD_ID, "empty_orb"),
+            new OrbItem(false)
+    );
+
+    public static final Item CHARGED_INTOXICATED_ORB = Registry.register(
+            Registry.ITEM,
+            new Identifier(MOD_ID, "charged_intoxicated_orb"),
+            new OrbItem(true)
+    );
+
+    public static final Item CHARGED_LOCH_ORB = Registry.register(
+            Registry.ITEM,
+            new Identifier(MOD_ID, "charged_loch_orb"),
+            new OrbItem(true)
+    );
+
+    public static final Item CHARGED_RUINOUS_ORB = Registry.register(
+            Registry.ITEM,
+            new Identifier(MOD_ID, "charged_ruinous_orb"),
+            new OrbItem(true)
     );
 
     @Override
