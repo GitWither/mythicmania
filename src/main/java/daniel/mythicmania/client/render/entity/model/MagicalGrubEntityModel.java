@@ -5,13 +5,21 @@ import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.util.math.MathHelper;
 
 public class MagicalGrubEntityModel extends EntityModel<MagicalGrubEntity> {
 
     private final ModelPart root;
 
+    private final ModelPart segment1;
+    private final ModelPart segment2;
+    private final ModelPart segment3;
+
     public MagicalGrubEntityModel(ModelPart part) {
         root = part;
+        segment1 = root.getChild("grub").getChild("bone");
+        segment2 = root.getChild("grub").getChild("bone2");
+        segment3 = root.getChild("grub").getChild("bone3");
     }
 
     public static TexturedModelData getTexturedModelData() {
@@ -29,7 +37,9 @@ public class MagicalGrubEntityModel extends EntityModel<MagicalGrubEntity> {
 
     @Override
     public void setAngles(MagicalGrubEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-
+        segment1.yaw = MathHelper.cos(animationProgress * 0.8f) * 0.1f;
+        segment2.yaw = MathHelper.sin(animationProgress * 0.8f) * 0.04f;
+        segment3.yaw = MathHelper.sin(animationProgress * 0.8f) * 0.04f;
     }
 
     @Override
