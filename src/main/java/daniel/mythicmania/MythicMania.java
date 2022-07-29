@@ -88,6 +88,12 @@ public class MythicMania implements ModInitializer {
             new Identifier(MOD_ID, "charged_ruinous_orb"),
             new OrbItem(true)
     );
+    
+    public static final Item POISON_SPIKE = Registry.register(
+            Registry.ITEM,
+            new Identifier(MOD_ID, "poison_spike"),
+            new PoisonSpikeItem()
+    );
 
     @Override
     public void onInitialize() {
