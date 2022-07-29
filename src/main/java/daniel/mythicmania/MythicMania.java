@@ -7,6 +7,7 @@ import daniel.mythicmania.entity.MagicalGrubEntity;
 import daniel.mythicmania.entity.PoisonousGrubEntity;
 import daniel.mythicmania.item.FoodComponents;
 import daniel.mythicmania.item.OrbItem;
+import daniel.mythicmania.item.PoisonSpikeItem;
 import daniel.mythicmania.item.SweetenedBerryItem;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
