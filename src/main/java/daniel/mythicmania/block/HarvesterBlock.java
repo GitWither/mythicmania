@@ -1,6 +1,7 @@
 package daniel.mythicmania.block;
 
 import daniel.mythicmania.MythicMania;
+import daniel.mythicmania.item.MythicManiaItems;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -32,7 +33,7 @@ public class HarvesterBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return MythicMania.POISONOUS_BERRY.getDefaultStack();
+        return MythicManiaItems.POISONOUS_BERRY.getDefaultStack();
     }
 
     @Override
@@ -54,7 +55,7 @@ public class HarvesterBlock extends PlantBlock implements Fertilizable {
 
         if (hasBerries) {
             int berryCount = 1 + world.random.nextInt(2);
-            SweetBerryBushBlock.dropStack(world, pos, new ItemStack(MythicMania.POISONOUS_BERRY, berryCount));
+            SweetBerryBushBlock.dropStack(world, pos, new ItemStack(MythicManiaItems.POISONOUS_BERRY, berryCount));
             world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0f, 0.8f + world.random.nextFloat() * 0.4f);
 
             BlockState noBerriesState = state.with(BERRIES, false);
