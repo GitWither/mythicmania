@@ -9,6 +9,10 @@ import daniel.mythicmania.item.FoodComponents;
 import daniel.mythicmania.item.OrbItem;
 import daniel.mythicmania.item.PoisonSpikeItem;
 import daniel.mythicmania.item.SweetenedBerryItem;
+import daniel.mythicmania.item.material.IntoxicatedToolMaterial;
+import daniel.mythicmania.util.wrapper.CustomAxeItem;
+import daniel.mythicmania.util.wrapper.CustomHoeItem;
+import daniel.mythicmania.util.wrapper.CustomPickaxeItem;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -94,6 +98,36 @@ public class MythicMania implements ModInitializer {
             Registry.ITEM,
             new Identifier(MOD_ID, "poison_spike"),
             new PoisonSpikeItem()
+    );
+
+    public static final Item INTOXICATED_SWORD = Registry.register(
+            Registry.ITEM,
+            new Identifier(MOD_ID, "intoxicated_sword"),
+            new SwordItem(IntoxicatedToolMaterial.INSTANCE, 8, -2.4f, new Item.Settings().group(MYTHICMANIA_ITEM_GROUP))
+    );
+
+    public static final Item INTOXICATED_PICKAXE = Registry.register(
+            Registry.ITEM,
+            new Identifier(MOD_ID, "intoxicated_pickaxe"),
+            new CustomPickaxeItem(IntoxicatedToolMaterial.INSTANCE, 5, 2, new Item.Settings().group(MYTHICMANIA_ITEM_GROUP))
+    );
+
+    public static final Item INTOXICATED_AXE = Registry.register(
+            Registry.ITEM,
+            new Identifier(MOD_ID, "intoxicated_axe"),
+            new CustomAxeItem(IntoxicatedToolMaterial.INSTANCE, 5, 2, new Item.Settings().group(MYTHICMANIA_ITEM_GROUP))
+    );
+
+    public static final Item INTOXICATED_HOE = Registry.register(
+            Registry.ITEM,
+            new Identifier(MOD_ID, "intoxicated_hoe"),
+            new CustomHoeItem(IntoxicatedToolMaterial.INSTANCE, 5, 2, new Item.Settings().group(MYTHICMANIA_ITEM_GROUP))
+    );
+
+    public static final Item INTOXICATED_SHOVEL = Registry.register(
+            Registry.ITEM,
+            new Identifier(MOD_ID, "intoxicated_shovel"),
+            new ShovelItem(IntoxicatedToolMaterial.INSTANCE, 5, 2, new Item.Settings().group(MYTHICMANIA_ITEM_GROUP))
     );
 
     @Override
