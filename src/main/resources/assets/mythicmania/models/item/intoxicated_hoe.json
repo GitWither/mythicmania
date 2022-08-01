@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "mythicmania:item/intoxicated_hoe"
+  }
+}
