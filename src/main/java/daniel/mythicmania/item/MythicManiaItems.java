@@ -53,6 +53,12 @@ public final class MythicManiaItems {
             new Identifier(MythicMania.MOD_ID, "poison_spike"),
             new PoisonSpikeItem()
     );
+    
+    public static final Item GRUB_ESSENCE = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "grub_essence"),
+            new GrubEssenceItem()
+    );
 
     public static final Item INTOXICATED_SWORD = Registry.register(
             Registry.ITEM,
