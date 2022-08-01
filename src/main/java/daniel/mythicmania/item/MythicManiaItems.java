@@ -57,7 +57,7 @@ public final class MythicManiaItems {
     public static final Item INTOXICATED_SWORD = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "intoxicated_sword"),
-            new SwordItem(IntoxicatedToolMaterial.INSTANCE, 8, -2.4f, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
+            new IntoxicatedSwordItem(IntoxicatedToolMaterial.INSTANCE, 8, -2.4f, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item INTOXICATED_PICKAXE = Registry.register(
