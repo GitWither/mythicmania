@@ -3,6 +3,10 @@ package daniel.mythicmania.item;
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.block.MythicManiaBlocks;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
+import daniel.mythicmania.item.gear.intoxicated.IntoxicatedBootsItem;
+import daniel.mythicmania.item.gear.intoxicated.IntoxicatedChestplateItem;
+import daniel.mythicmania.item.gear.intoxicated.IntoxicatedHelmetItem;
+import daniel.mythicmania.item.gear.intoxicated.IntoxicatedLeggingsItem;
 import daniel.mythicmania.item.material.IntoxicatedToolMaterial;
 import daniel.mythicmania.util.wrapper.CustomAxeItem;
 import daniel.mythicmania.util.wrapper.CustomHoeItem;
@@ -89,6 +93,34 @@ public final class MythicManiaItems {
             new Identifier(MythicMania.MOD_ID, "intoxicated_shovel"),
             new ShovelItem(IntoxicatedToolMaterial.INSTANCE, 5, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
+
+    // ==== INTOXICATED GEAR ====
+
+    public static final Item INTOXICATED_HELMET = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "intoxicated_gear/intoxicated_helmet"),
+            new IntoxicatedHelmetItem()
+    );
+
+    public static final Item INTOXICATED_CHESTPLATE = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "intoxicated_gear/intoxicated_chestplate"),
+            new IntoxicatedChestplateItem()
+    );
+
+    public static final Item INTOXICATED_LEGGINGS = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "intoxicated_gear/intoxicated_leggings"),
+            new IntoxicatedLeggingsItem()
+    );
+
+    public static final Item INTOXICATED_BOOTS = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "intoxicated_gear/intoxicated_boots"),
+            new IntoxicatedBootsItem()
+    );
+
+    // ==== BLOCKS ====
 
     public static void registerBlockItems() {
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "rinth"),
