@@ -17,10 +17,14 @@
   "item.mythicmania.magical_grub_spawn_egg": "Magical Grub Spawn Egg",
   "item.mythicmania.poisonous_grub_spawn_egg": "Poisonous Grub Spawn Egg",
 
+<<<<<<< HEAD
   "item.mythicmania.intoxicated_gear.intoxicated_helmet": "Intoxicated Helmet",
   "item.mythicmania.intoxicated_gear.intoxicated_chestplate": "Intoxicated Chestplate",
   "item.mythicmania.intoxicated_gear.intoxicated_leggings": "Intoxicated Leggings",
   "item.mythicmania.intoxicated_gear.intoxicated_boots": "Intoxicated Boots",
 
   "block.mythicmania.rinth": "Rinth"
+=======
+  "block.mythicmania.rinth": "Rinth Plant"
+>>>>>>> fa7998bd1821f72ecf7fa05782c9841551950dff
 }
