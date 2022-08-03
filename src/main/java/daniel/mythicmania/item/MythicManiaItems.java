@@ -3,14 +3,12 @@ package daniel.mythicmania.item;
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.block.MythicManiaBlocks;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
-import daniel.mythicmania.item.gear.intoxicated.IntoxicatedBootsItem;
-import daniel.mythicmania.item.gear.intoxicated.IntoxicatedChestplateItem;
-import daniel.mythicmania.item.gear.intoxicated.IntoxicatedHelmetItem;
-import daniel.mythicmania.item.gear.intoxicated.IntoxicatedLeggingsItem;
-import daniel.mythicmania.item.material.IntoxicatedToolMaterial;
+import daniel.mythicmania.item.material.armor.IntoxicatedArmorMaterial;
+import daniel.mythicmania.item.material.tool.IntoxicatedToolMaterial;
 import daniel.mythicmania.util.wrapper.CustomAxeItem;
 import daniel.mythicmania.util.wrapper.CustomHoeItem;
 import daniel.mythicmania.util.wrapper.CustomPickaxeItem;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -98,26 +96,26 @@ public final class MythicManiaItems {
 
     public static final Item INTOXICATED_HELMET = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "intoxicated_gear/intoxicated_helmet"),
-            new IntoxicatedHelmetItem()
+            new Identifier(MythicMania.MOD_ID, "intoxicated_helmet"),
+            new ArmorItem(IntoxicatedArmorMaterial.INSTANCE, EquipmentSlot.HEAD, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item INTOXICATED_CHESTPLATE = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "intoxicated_gear/intoxicated_chestplate"),
-            new IntoxicatedChestplateItem()
+            new Identifier(MythicMania.MOD_ID, "intoxicated_chestplate"),
+            new ArmorItem(IntoxicatedArmorMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item INTOXICATED_LEGGINGS = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "intoxicated_gear/intoxicated_leggings"),
-            new IntoxicatedLeggingsItem()
+            new Identifier(MythicMania.MOD_ID, "intoxicated_leggings"),
+            new ArmorItem(IntoxicatedArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item INTOXICATED_BOOTS = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "intoxicated_gear/intoxicated_boots"),
-            new IntoxicatedBootsItem()
+            new Identifier(MythicMania.MOD_ID, "intoxicated_boots"),
+            new ArmorItem(IntoxicatedArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     // ==== BLOCKS ====

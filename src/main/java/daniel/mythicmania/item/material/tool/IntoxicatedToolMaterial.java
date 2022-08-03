@@ -1,4 +1,4 @@
-package daniel.mythicmania.item.material;
+package daniel.mythicmania.item.material.tool;
 
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
