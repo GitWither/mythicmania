@@ -10,7 +10,7 @@ public class IntoxicatedArmorMaterial implements ArmorMaterial {
     public static final IntoxicatedArmorMaterial INSTANCE = new IntoxicatedArmorMaterial();
 
     private static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};
-    private static final int[] PROTECTION_VALUES = new int[] {1, 2, 3, 1};
+    private static final int[] PROTECTION_VALUES = new int[] {2, 4, 7, 2};
 
     @Override
     public int getDurability(EquipmentSlot slot) {
