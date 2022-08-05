@@ -9,6 +9,8 @@ import daniel.mythicmania.util.wrapper.CustomAxeItem;
 import daniel.mythicmania.util.wrapper.CustomHoeItem;
 import daniel.mythicmania.util.wrapper.CustomPickaxeItem;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -18,6 +20,12 @@ public final class MythicManiaItems {
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "poisonous_berry"),
             new AliasedBlockItem(MythicManiaBlocks.HARVESTER_BLOCK, new Item.Settings().food(FoodComponents.POISONOUS_BERRY).group(MythicMania.MYTHICMANIA_ITEM_GROUP))
+    );
+
+    public static final Item TRIBUS_FRUIT = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "tribus_fruit"),
+            new AliasedBlockItem(MythicManiaBlocks.TRIBUS_BLOCK, new Item.Settings().food(FoodComponents.TRIBUS_FRUIT).group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item SWEETENED_BERRY = Registry.register(

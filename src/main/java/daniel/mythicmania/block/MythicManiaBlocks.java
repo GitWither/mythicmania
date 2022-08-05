@@ -20,8 +20,15 @@ public final class MythicManiaBlocks {
             new HarvesterBlock()
     );
 
+    public static final Block TRIBUS_BLOCK = Registry.register(
+            Registry.BLOCK,
+            new Identifier(MythicMania.MOD_ID, "tribus"),
+            new TribusBlock()
+    );
+
     public static void registerBlockRendering() {
         BlockRenderLayerMap.INSTANCE.putBlock(MythicManiaBlocks.RINTH_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MythicManiaBlocks.HARVESTER_BLOCK, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(MythicManiaBlocks.TRIBUS_BLOCK, RenderLayer.getCutout());
     }
 }
