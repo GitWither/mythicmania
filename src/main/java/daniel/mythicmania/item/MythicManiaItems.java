@@ -142,5 +142,9 @@ public final class MythicManiaItems {
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "poisonous_grub_spawn_egg"),
                 new SpawnEggItem(MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, 0x4e9e78, 0x9cf590, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
                 ));
+
+        Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "zapping_beetle_spawn_egg"),
+                new SpawnEggItem(MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, 0x3991d0, 0xcab641, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
+                ));
     }
 }
