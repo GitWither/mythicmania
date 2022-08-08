@@ -70,6 +70,12 @@ public final class MythicManiaItems {
             new GrubEssenceItem()
     );
 
+    public static final Item ANTENNA_OF_ZAPPING_BEETLE = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "antenna_of_zapping_beetle"),
+            new AntennaOfZappingBeetleItem()
+    );
+
     public static final Item INTOXICATED_SWORD = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "intoxicated_sword"),

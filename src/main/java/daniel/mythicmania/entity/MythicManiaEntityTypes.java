@@ -38,7 +38,7 @@ public final class MythicManiaEntityTypes {
     public static final EntityModelLayer ZAPPING_BEETLE_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "zapping_beetle"), "root");
     public static final EntityType<ZappingBeetleEntity> ZAPPING_BEETLE_ENTITY = Registry.register(
             Registry.ENTITY_TYPE,
-            new Identifier(MythicMania.MOD_ID),
+            new Identifier(MythicMania.MOD_ID, "zapping_beetle"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, ZappingBeetleEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
     );
 
