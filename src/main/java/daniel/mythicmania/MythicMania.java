@@ -4,6 +4,8 @@ import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.item.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;
+import net.minecraft.client.render.DimensionEffects;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 
