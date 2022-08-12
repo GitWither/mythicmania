@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "mythicmania:toxic_pebble"
+    }
+  },
+  "result": {
+    "item": "mythicmania:intoxicated_boots",
+    "count": 1
+  }
+}
