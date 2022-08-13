@@ -82,6 +82,12 @@ public final class MythicManiaItems {
             new BeetleZapperItem()
     );
 
+    public static final Item TOXIC_PEBBLE = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "toxic_pebble"),
+            new ToxicPebbleItem()
+    );
+
     public static final Item INTOXICATED_SWORD = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "intoxicated_sword"),
