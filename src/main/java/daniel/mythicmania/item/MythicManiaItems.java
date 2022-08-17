@@ -61,31 +61,31 @@ public final class MythicManiaItems {
     public static final Item POISON_SPIKE = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "poison_spike"),
-            new PoisonSpikeItem()
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
     
     public static final Item GRUB_ESSENCE = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "grub_essence"),
-            new GrubEssenceItem()
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item ANTENNA_OF_ZAPPING_BEETLE = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "antenna_of_zapping_beetle"),
-            new AntennaOfZappingBeetleItem()
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item BEETLE_ZAPPER = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "beetle_zapper"),
-            new BeetleZapperItem()
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item TOXIC_PEBBLE = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "toxic_pebble"),
-            new ToxicPebbleItem()
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item INTOXICATED_SWORD = Registry.register(
