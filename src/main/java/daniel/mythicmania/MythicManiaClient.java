@@ -1,6 +1,7 @@
 package daniel.mythicmania;
 
 import daniel.mythicmania.block.MythicManiaBlocks;
+import daniel.mythicmania.block.entity.MythicManiaBlockEntities;
 import daniel.mythicmania.client.render.entity.grub.MagicalGrubEntityRenderer;
 import daniel.mythicmania.client.render.entity.grub.PoisonousGrubEntityRenderer;
 import daniel.mythicmania.client.render.entity.model.MagicalGrubEntityModel;
@@ -25,6 +26,7 @@ public class MythicManiaClient implements ClientModInitializer {
         });
 
         MythicManiaBlocks.registerBlockRendering();
+        MythicManiaBlockEntities.registerBlockEntityRendering();
         MythicManiaEntityTypes.registerEntityRendering();
         MythicManiaParticles.registerParticleFactories();
     }

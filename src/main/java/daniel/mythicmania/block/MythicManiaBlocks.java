@@ -26,6 +26,12 @@ public final class MythicManiaBlocks {
             new TribusBlock()
     );
 
+    public static final Block ANCIENT_ALTAR = Registry.register(
+            Registry.BLOCK,
+            new Identifier(MythicMania.MOD_ID, "ancient_altar"),
+            new AncientAltarBlock()
+    );
+
     public static void registerBlockRendering() {
         BlockRenderLayerMap.INSTANCE.putBlock(MythicManiaBlocks.RINTH_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MythicManiaBlocks.HARVESTER_BLOCK, RenderLayer.getCutout());

@@ -150,6 +150,10 @@ public final class MythicManiaItems {
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "rinth"),
                 new BlockItem(MythicManiaBlocks.RINTH_BLOCK, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
                 ));
+
+        Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "ancient_altar"),
+                new BlockItem(MythicManiaBlocks.ANCIENT_ALTAR, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
+                ));
     }
 
     public static void registerSpawnEggs() {
