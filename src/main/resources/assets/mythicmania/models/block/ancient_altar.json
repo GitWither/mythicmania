@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
-	"parent": "block/block",
+	"parent":"block/block",
 	"textures": {
 		"0": "mythicmania:block/ancient_altar",
 		"particle": "mythicmania:block/ancient_altar"
@@ -46,22 +46,22 @@
 			}
 		},
 		{
-			"from": [0.99, 14.99, 2.99],
-			"to": [15.01, 17.01, 15.01],
+			"from": [2.99, 14.99, 2.99],
+			"to": [13.01, 17.01, 15.01],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 16.61522, 9]},
 			"faces": {
-				"north": {"uv": [6.5, 6.25, 10, 6.75], "texture": "#0"},
+				"north": {"uv": [0, 14.25, 2.5, 14.75], "texture": "#0"},
 				"east": {"uv": [7, 5.25, 10, 5.75], "texture": "#0"},
-				"south": {"uv": [6.5, 5.75, 10, 6.25], "texture": "#0"},
+				"south": {"uv": [0, 15, 2.5, 15.5], "texture": "#0"},
 				"west": {"uv": [7, 4.75, 10, 5.25], "texture": "#0"},
-				"up": {"uv": [3.5, 3, 0, 0], "rotation": 180, "texture": "#0"},
-				"down": {"uv": [3.5, 3, 0, 6], "rotation": 180, "texture": "#0"}
+				"up": {"uv": [2.5, 14, 0, 11], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [5.25, 12.5, 2.75, 15.5], "rotation": 180, "texture": "#0"}
 			}
 		},
 		{
-			"from": [15.01, 14.99, 2.99],
-			"to": [17.01, 18.99, 14.99],
-			"rotation": {"angle": 0, "axis": "y", "origin": [9.92473, 13.80349, 8.99]},
+			"from": [13.01, 14.99, 2.99],
+			"to": [15.01, 18.99, 14.99],
+			"rotation": {"angle": 0, "axis": "z", "origin": [9.92473, 13.80349, 8.99]},
 			"faces": {
 				"north": {"uv": [2.5, 8.5, 3, 9.5], "texture": "#0"},
 				"east": {"uv": [5.5, 1, 8.5, 2], "texture": "#0"},
@@ -72,9 +72,9 @@
 			}
 		},
 		{
-			"from": [-1.01, 14.99, 2.99],
-			"to": [0.99, 18.99, 14.99],
-			"rotation": {"angle": 0, "axis": "y", "origin": [7.07527, 19.05349, 8.99]},
+			"from": [0.99, 14.99, 2.99],
+			"to": [2.99, 18.99, 14.99],
+			"rotation": {"angle": 0, "axis": "z", "origin": [7.07527, 19.05349, 8.99]},
 			"faces": {
 				"north": {"uv": [3, 9, 3.5, 10], "texture": "#0"},
 				"east": {"uv": [5.5, 3, 8.5, 4], "texture": "#0"},
@@ -85,11 +85,7 @@
 			}
 		}
 	],
-	"display": {
-		"thirdperson_righthand": {
-			"translation": [0, 0.25, 0]
-		}
-	},
+	"display": {},
 	"groups": [
 		{
 			"name": "group",
