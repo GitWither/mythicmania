@@ -1,5 +1,19 @@
 {
   "variants": {
-    "": {"model": "mythicmania:block/ancient_altar"}
+    "facing=east": {
+      "model": "mythicmania:block/ancient_altar",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mythicmania:block/ancient_altar"
+    },
+    "facing=south": {
+      "model": "mythicmania:block/ancient_altar",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mythicmania:block/ancient_altar",
+      "y": 270
+    }
   }
 }
