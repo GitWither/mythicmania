@@ -3,9 +3,11 @@ package daniel.mythicmania.entity;
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.client.render.entity.grub.MagicalGrubEntityRenderer;
 import daniel.mythicmania.client.render.entity.grub.PoisonousGrubEntityRenderer;
+import daniel.mythicmania.client.render.entity.grub.WastedDemonEntityRenderer;
 import daniel.mythicmania.client.render.entity.grub.ZappingBeetleEntityRenderer;
 import daniel.mythicmania.client.render.entity.model.MagicalGrubEntityModel;
 import daniel.mythicmania.client.render.entity.model.PoisonousGrubEntityModel;
+import daniel.mythicmania.client.render.entity.model.WastedDemonEntityModel;
 import daniel.mythicmania.client.render.entity.model.ZappingBeetleEntityModel;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
@@ -42,10 +44,18 @@ public final class MythicManiaEntityTypes {
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, ZappingBeetleEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
     );
 
+    public static final EntityModelLayer WASTED_DEMON_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "wasted_demon"), "root");
+    public static final EntityType<WastedDemonEntity> WASTED_DEMON_ENTITY = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier(MythicMania.MOD_ID),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, WastedDemonEntity::new).dimensions(EntityDimensions.fixed(1.25f, 1.25f)).build()
+    );
+
     public static void registerEntityAttributes() {
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, MagicalGrubEntity.createMagicalGrubAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, PoisonousGrubEntity.createPoisonousGrubAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, ZappingBeetleEntity.createZappingBeetleAttributes());
+        FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.WASTED_DEMON_ENTITY, WastedDemonEntity.createWastedDemonAttributes());
     }
 
     public static void registerEntityRendering() {
@@ -60,5 +70,9 @@ public final class MythicManiaEntityTypes {
         // zapping beetle
         EntityRendererRegistry.register(MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, ZappingBeetleEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(ZAPPING_BEETLE_LAYER, ZappingBeetleEntityModel::getTexturedModelData);
+
+        // wasted demon
+        EntityRendererRegistry.register(MythicManiaEntityTypes.WASTED_DEMON_ENTITY, WastedDemonEntityRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(WASTED_DEMON_LAYER, WastedDemonEntityModel::getTexturedModelData);
     }
 }
