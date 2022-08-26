@@ -168,5 +168,9 @@ public final class MythicManiaItems {
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "zapping_beetle_spawn_egg"),
                 new SpawnEggItem(MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, 0x3991d0, 0xcab641, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
                 ));
+
+        Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "wasted_demon_spawn_egg"),
+                new SpawnEggItem(MythicManiaEntityTypes.WASTED_DEMON_ENTITY, 0x2a2a2a, 0x951010, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
+                ));
     }
 }
