@@ -20,18 +20,18 @@ public class WastedDemonEntity extends HostileEntity {
 
     @Override
     protected void initGoals() {
-        this.goalSelector.add(8, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
-        this.goalSelector.add(6, new LookAroundGoal(this));
+        this.goalSelector.add(0, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
+        this.goalSelector.add(1, new LookAroundGoal(this));
         this.goalSelector.add(2, new AttackGoal(this));
-        this.targetSelector.add(2, new AttackGoal(this));
+        this.goalSelector.add(3, new WanderAroundGoal(this, 1, 2, false));
+        this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, false));
     }
 
     @Override
     public boolean tryAttack(Entity target) {
-        if (super.tryAttack(target) && target instanceof LivingEntity) {
+        if (super.tryAttack(target) && target instanceof LivingEntity livingEntity) {
 
-            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 5 * 20, 3), this);
-            return true;
+            return livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 5 * 20, 3), this);
         }
         return false;
     }

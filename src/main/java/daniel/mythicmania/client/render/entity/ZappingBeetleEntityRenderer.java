@@ -1,4 +1,4 @@
-package daniel.mythicmania.client.render.entity.grub;
+package daniel.mythicmania.client.render.entity;
 
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.MythicManiaClient;
