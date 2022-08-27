@@ -4,52 +4,72 @@ import daniel.mythicmania.entity.WastedDemonEntity;
 import daniel.mythicmania.entity.ZappingBeetleEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.entity.model.CrossbowPosing;
 import net.minecraft.client.render.entity.model.EntityModel;
+import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.MathHelper;
 
-public class WastedDemonEntityModel extends EntityModel<WastedDemonEntity> {
-    private final ModelPart root;
+public class WastedDemonEntityModel extends PlayerEntityModel<WastedDemonEntity> {
     public WastedDemonEntityModel(ModelPart part) {
-       root = part;
+       super(part, false);
+       this.jacket.visible = false;
     }
 
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
         ModelPartData modelPartData = modelData.getRoot();
-        ModelPartData demon = modelPartData.addChild("demon", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -27.0F, -3.0F, 8.0F, 14.0F, 6.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
+        ModelPartData head = modelPartData.addChild("head", ModelPartBuilder.create().uv(0, 20).cuboid(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -2.75F, 0.0F));
 
-        ModelPartData bone = demon.addChild("bone", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -3.0F, 0.0F));
+        ModelPartData horns = head.addChild("horns", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 26.75F, 0.0F));
 
-        ModelPartData head = demon.addChild("head", ModelPartBuilder.create().uv(0, 20).cuboid(-4.0F, -35.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+        ModelPartData horn1 = horns.addChild("horn1", ModelPartBuilder.create().uv(42, 38).mirrored().cuboid(-2.5F, -10.75F, 0.0F, 5.0F, 11.0F, 0.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.pivot(2.5F, -35.0F, 0.0F));
 
-        ModelPartData head_inflated = head.addChild("head_inflated", ModelPartBuilder.create().uv(63, 0).cuboid(-4.0F, -35.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.5F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+        ModelPartData horn2 = horns.addChild("horn2", ModelPartBuilder.create().uv(42, 38).cuboid(-3.0F, -10.5F, 0.0F, 5.0F, 11.0F, 0.0F, new Dilation(0.0F)), ModelTransform.pivot(-2.0F, -35.25F, 0.0F));
 
-        ModelPartData horns = head.addChild("horns", ModelPartBuilder.create().uv(42, 38).mirrored().cuboid(0.0F, -46.0F, 0.0F, 5.0F, 11.0F, 0.0F, new Dilation(0.0F)).mirrored(false)
-                .uv(42, 38).cuboid(-5.0F, -46.0F, 0.0F, 5.0F, 11.0F, 0.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+        ModelPartData hat = modelPartData.addChild("hat", ModelPartBuilder.create().uv(63, 0).cuboid(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.5F)), ModelTransform.pivot(0.0F, -2.75F, 0.0F));
 
-        ModelPartData arm_r = demon.addChild("arm_r", ModelPartBuilder.create().uv(32, 19).mirrored().cuboid(4.0F, -26.5F, -1.7F, 4.0F, 15.0F, 4.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+        ModelPartData body = modelPartData.addChild("body", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -0.25F, -3.0F, 8.0F, 14.0F, 6.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -2.75F, 0.0F));
 
-        ModelPartData arm_r_inflated = arm_r.addChild("arm_r_inflated", ModelPartBuilder.create().uv(0, 64).mirrored().cuboid(4.0F, -26.5F, -1.7F, 4.0F, 15.0F, 4.0F, new Dilation(0.5F)).mirrored(false), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+        ModelPartData right_arm = modelPartData.addChild("right_arm", ModelPartBuilder.create().uv(32, 19).mirrored().cuboid(-3.0F, -1.5F, -1.7F, 4.0F, 15.0F, 4.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.pivot(7.0F, -1.0F, 0.0F));
 
-        ModelPartData arm_l = demon.addChild("arm_l", ModelPartBuilder.create().uv(32, 19).cuboid(-8.0F, -26.5F, -1.7F, 4.0F, 15.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+        ModelPartData left_arm = modelPartData.addChild("left_arm", ModelPartBuilder.create().uv(32, 19).cuboid(-1.0F, -1.5F, -1.7F, 4.0F, 15.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(-7.0F, -1.0F, 0.0F));
 
-        ModelPartData arm_l_inflated = arm_l.addChild("arm_l_inflated", ModelPartBuilder.create().uv(0, 64).cuboid(-8.0F, -26.5F, -1.7F, 4.0F, 15.0F, 4.0F, new Dilation(0.5F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+        ModelPartData right_leg = modelPartData.addChild("right_leg", ModelPartBuilder.create().uv(16, 36).mirrored().cuboid(-2.0F, 0.0F, -2.0F, 4.0F, 13.0F, 4.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.pivot(2.0F, 11.0F, 0.0F));
 
-        ModelPartData leg_r = demon.addChild("leg_r", ModelPartBuilder.create().uv(16, 36).mirrored().cuboid(0.0F, -13.0F, -2.0F, 4.0F, 13.0F, 4.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+        ModelPartData left_leg = modelPartData.addChild("left_leg", ModelPartBuilder.create().uv(16, 36).cuboid(-2.0F, 0.0F, -2.0F, 4.0F, 13.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(-2.0F, 11.0F, 0.0F));
 
-        ModelPartData leg_l = demon.addChild("leg_l", ModelPartBuilder.create().uv(16, 36).cuboid(-4.0F, -13.0F, -2.0F, 4.0F, 13.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+        ModelPartData ear = modelPartData.addChild("ear", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
+
+        ModelPartData right_sleeve = modelPartData.addChild("right_sleeve", ModelPartBuilder.create().uv(0, 64).mirrored().cuboid(-3.0F, -1.5F, -1.7F, 4.0F, 15.0F, 4.0F, new Dilation(0.5F)).mirrored(false), ModelTransform.pivot(7.0F, -1.0F, 0.0F));
+
+        ModelPartData left_sleeve = modelPartData.addChild("left_sleeve", ModelPartBuilder.create().uv(0, 64).cuboid(-1.0F, -1.5F, -1.7F, 4.0F, 15.0F, 4.0F, new Dilation(0.5F)), ModelTransform.pivot(-7.0F, -1.0F, 0.0F));
+
+        ModelPartData jacket = modelPartData.addChild("jacket", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
+
+        ModelPartData left_pants = modelPartData.addChild("left_pants", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
+
+        ModelPartData right_pants = modelPartData.addChild("right_pants", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
+
+        ModelPartData cloak = modelPartData.addChild("cloak", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -2.0F, 2.0F));
         return TexturedModelData.of(modelData, 128, 128);
     }
-
-    public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
-        matrices.push();
-        root.render(matrices, vertices, light, overlay, red, green, blue, alpha);
-        matrices.pop();
+    @Override
+    public void setAngles(WastedDemonEntity entity, float f, float g, float h, float i, float j) {
+        super.setAngles(entity, f, g, h, i, j);
     }
 
     @Override
-    public void setAngles(WastedDemonEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+    protected void animateArms(WastedDemonEntity entity, float animationProgress) {
+        if (this.handSwingProgress > 0.0f) {
+            CrossbowPosing.meleeAttack(this.rightArm, this.leftArm, entity, this.handSwingProgress, animationProgress);
+            return;
+        }
+        super.animateArms(entity, animationProgress);
+    }
 
+    @Override
+    public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
+        super.render(matrices, vertices, light, overlay, red, green, blue, alpha);
     }
 }
