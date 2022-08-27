@@ -30,5 +30,10 @@
   "item.mythicmania.intoxicated_boots": "Intoxicated Boots",
 
   "block.mythicmania.rinth": "Rinth",
-  "block.mythicmania.ancient_altar": "Ancient Altar"
+  "block.mythicmania.ancient_altar": "Ancient Altar",
+
+  "entity.mythicmania.magical_grub": "Magical Grub",
+  "entity.mythicmania.poisonous_grub": "Poisonous Grub",
+  "entity.mythicmania.zapping_beetle": "Zapping Beetle",
+  "entity.minecraft.mythicmania": "Wasted Demon"
 }
