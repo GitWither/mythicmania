@@ -14,6 +14,13 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 
 public class WastedDemonEntity extends HostileEntity {
+    public double prevCapeX;
+    public double prevCapeY;
+    public double prevCapeZ;
+    public double capeX;
+    public double capeY;
+    public double capeZ;
+
     protected WastedDemonEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -44,5 +51,47 @@ public class WastedDemonEntity extends HostileEntity {
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 7.0D)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 2.0D);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        this.updateCapeAngles();
+    }
+
+    private void updateCapeAngles() {
+        this.prevCapeX = this.capeX;
+        this.prevCapeY = this.capeY;
+        this.prevCapeZ = this.capeZ;
+
+        double deltaX = this.getX() - this.capeX;
+        double deltaY = this.getY() - this.capeY;
+        double deltaZ = this.getZ() - this.capeZ;
+
+        final double threshold = 10.0;
+
+        if (deltaX > threshold) {
+            this.prevCapeX = this.capeX = this.getX();
+        }
+        if (deltaZ > threshold) {
+            this.prevCapeZ = this.capeZ = this.getZ();
+        }
+        if (deltaY > threshold) {
+            this.prevCapeY = this.capeY = this.getY();
+        }
+
+        if (deltaX < -threshold) {
+            this.prevCapeX = this.capeX = this.getX();
+        }
+        if (deltaZ < -threshold) {
+            this.prevCapeZ = this.capeZ = this.getZ();
+        }
+        if (deltaY < -threshold) {
+            this.prevCapeY = this.capeY = this.getY();
+        }
+
+        this.capeX += deltaX * 0.25;
+        this.capeZ += deltaZ * 0.25;
+        this.capeY += deltaY * 0.25;
     }
 }

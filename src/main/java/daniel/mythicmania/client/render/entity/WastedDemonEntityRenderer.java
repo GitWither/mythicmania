@@ -2,6 +2,7 @@ package daniel.mythicmania.client.render.entity;
 
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.MythicManiaClient;
+import daniel.mythicmania.client.render.entity.feature.EntityCapeFeatureRenderer;
 import daniel.mythicmania.client.render.entity.model.PoisonousGrubEntityModel;
 import daniel.mythicmania.client.render.entity.model.WastedDemonEntityModel;
 import daniel.mythicmania.client.render.entity.model.ZappingBeetleEntityModel;
@@ -14,6 +15,7 @@ import net.minecraft.util.Identifier;
 public class WastedDemonEntityRenderer extends BipedEntityRenderer<WastedDemonEntity, WastedDemonEntityModel> {
     public WastedDemonEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new WastedDemonEntityModel(context.getPart(MythicManiaEntityTypes.WASTED_DEMON_LAYER)), 0.5f);
+        this.addFeature(new EntityCapeFeatureRenderer(this));
     }
 
     @Override
