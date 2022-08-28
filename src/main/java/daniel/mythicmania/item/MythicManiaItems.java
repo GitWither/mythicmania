@@ -4,13 +4,12 @@ import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.block.MythicManiaBlocks;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.item.material.armor.IntoxicatedArmorMaterial;
-import daniel.mythicmania.item.material.tool.IntoxicatedToolMaterial;
+import daniel.mythicmania.item.material.tool.CustomToolMaterial;
+import daniel.mythicmania.item.material.tool.MythicManiaToolMaterials;
 import daniel.mythicmania.util.wrapper.CustomAxeItem;
 import daniel.mythicmania.util.wrapper.CustomHoeItem;
 import daniel.mythicmania.util.wrapper.CustomPickaxeItem;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -91,31 +90,31 @@ public final class MythicManiaItems {
     public static final Item INTOXICATED_SWORD = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "intoxicated_sword"),
-            new IntoxicatedSwordItem(IntoxicatedToolMaterial.INSTANCE, 8, -2.4f, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
+            new IntoxicatedSwordItem(MythicManiaToolMaterials.INTOXICATED, 7, 1.2f, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item INTOXICATED_PICKAXE = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "intoxicated_pickaxe"),
-            new CustomPickaxeItem(IntoxicatedToolMaterial.INSTANCE, 5, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
+            new CustomPickaxeItem(MythicManiaToolMaterials.INTOXICATED, 4, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item INTOXICATED_AXE = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "intoxicated_axe"),
-            new CustomAxeItem(IntoxicatedToolMaterial.INSTANCE, 5, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
+            new CustomAxeItem(MythicManiaToolMaterials.INTOXICATED, 5, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item INTOXICATED_HOE = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "intoxicated_hoe"),
-            new CustomHoeItem(IntoxicatedToolMaterial.INSTANCE, 5, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
+            new CustomHoeItem(MythicManiaToolMaterials.INTOXICATED, 1, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item INTOXICATED_SHOVEL = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "intoxicated_shovel"),
-            new ShovelItem(IntoxicatedToolMaterial.INSTANCE, 5, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
+            new ShovelItem(MythicManiaToolMaterials.INTOXICATED, 1, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     // ==== INTOXICATED GEAR ====
