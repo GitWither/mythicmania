@@ -47,7 +47,7 @@ public final class MythicManiaEntityTypes {
     public static final EntityModelLayer WASTED_DEMON_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "wasted_demon"), "root");
     public static final EntityType<WastedDemonEntity> WASTED_DEMON_ENTITY = Registry.register(
             Registry.ENTITY_TYPE,
-            new Identifier(MythicMania.MOD_ID),
+            new Identifier(MythicMania.MOD_ID, "wasted_demon"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, WastedDemonEntity::new).dimensions(EntityDimensions.fixed(1.25f, 1.25f)).build()
     );
 
