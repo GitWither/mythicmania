@@ -20,7 +20,7 @@ public class WastedDemonEntityRenderer extends BipedEntityRenderer<WastedDemonEn
 
     @Override
     public Identifier getTexture(WastedDemonEntity entity) {
-        return new Identifier(MythicMania.MOD_ID, "textures/entity/wasted_demon/wasted_demon.png");
+        return new Identifier(MythicMania.MOD_ID, "textures/entity/wasted_demon/demon.png");
     }
 
     public Identifier getCapeTexture() {
