@@ -15,11 +15,15 @@ import net.minecraft.util.Identifier;
 public class WastedDemonEntityRenderer extends BipedEntityRenderer<WastedDemonEntity, WastedDemonEntityModel> {
     public WastedDemonEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new WastedDemonEntityModel(context.getPart(MythicManiaEntityTypes.WASTED_DEMON_LAYER)), 0.5f);
-        this.addFeature(new EntityCapeFeatureRenderer(this));
+        this.addFeature(new EntityCapeFeatureRenderer(this, this.getCapeTexture()));
     }
 
     @Override
     public Identifier getTexture(WastedDemonEntity entity) {
         return new Identifier(MythicMania.MOD_ID, "textures/entity/wasted_demon/wasted_demon.png");
+    }
+
+    public Identifier getCapeTexture() {
+        return new Identifier(MythicMania.MOD_ID, "textures/entity/wasted_demon/cape.png");
     }
 }

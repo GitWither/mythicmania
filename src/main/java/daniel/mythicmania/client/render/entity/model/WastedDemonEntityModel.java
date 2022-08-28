@@ -52,7 +52,7 @@ public class WastedDemonEntityModel extends PlayerEntityModel<WastedDemonEntity>
 
         ModelPartData right_pants = modelPartData.addChild("right_pants", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
-        ModelPartData cloak = modelPartData.addChild("cloak", ModelPartBuilder.create().cuboid(-5.0f, 0.0f, -1.0f, 10.0f, 16.0f, 1.0f, Dilation.NONE, 1.0f, 0.5f), ModelTransform.pivot(0.0F, -2.0F, 2.0F));
+        ModelPartData cloak = modelPartData.addChild("cloak", ModelPartBuilder.create().cuboid(-5.0f, 0.0f, -1.0f, 10.0f, 16.0f, 1.0f, Dilation.NONE, 0.5f, 0.25f), ModelTransform.pivot(0.0F, -2.0F, 2.0F));
         return TexturedModelData.of(modelData, 128, 128);
     }
     @Override

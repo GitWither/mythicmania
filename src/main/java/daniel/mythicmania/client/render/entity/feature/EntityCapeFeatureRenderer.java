@@ -14,12 +14,16 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3f;
 
 public class EntityCapeFeatureRenderer extends FeatureRenderer<WastedDemonEntity, WastedDemonEntityModel> {
-    public EntityCapeFeatureRenderer(FeatureRendererContext<WastedDemonEntity, WastedDemonEntityModel> context) {
+    private final Identifier capeTexture;
+
+    public EntityCapeFeatureRenderer(FeatureRendererContext<WastedDemonEntity, WastedDemonEntityModel> context, Identifier capeTexture) {
         super(context);
+        this.capeTexture = capeTexture;
     }
 
     @Override
@@ -56,7 +60,7 @@ public class EntityCapeFeatureRenderer extends FeatureRenderer<WastedDemonEntity
         matrices.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(capeZ / 2.0f));
         matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(180.0f - capeZ / 2.0f));
 
-        VertexConsumer vertexConsumer = vertexConsumers.getBuffer(RenderLayer.getEntitySolid(this.getTexture(wastedDemon)));
+        VertexConsumer vertexConsumer = vertexConsumers.getBuffer(RenderLayer.getEntitySolid(capeTexture));
         this.getContextModel().renderCape(matrices, vertexConsumer, light, OverlayTexture.DEFAULT_UV);
 
         matrices.pop();
