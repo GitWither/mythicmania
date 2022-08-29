@@ -8,6 +8,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -19,6 +20,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,6 +33,13 @@ public class AncientAltarBlock extends HorizontalFacingBlock implements BlockEnt
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(HorizontalFacingBlock.FACING);
+    }
+
+    public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
+        double d = (double)pos.getX() + random.nextDouble();
+        double e = (double)pos.getY() + 0.8;
+        double f = (double)pos.getZ() + random.nextDouble();
+        world.addParticle(ParticleTypes.ENCHANT, d, e, f, 0.0, 1.0, 0.0);
     }
 
     @Nullable
