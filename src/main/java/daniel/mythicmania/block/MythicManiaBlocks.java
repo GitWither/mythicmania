@@ -2,9 +2,14 @@ package daniel.mythicmania.block;
 
 import daniel.mythicmania.MythicMania;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Material;
+import net.minecraft.block.OreBlock;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 
 public final class MythicManiaBlocks {
@@ -30,6 +35,12 @@ public final class MythicManiaBlocks {
             Registry.BLOCK,
             new Identifier(MythicMania.MOD_ID, "ancient_altar"),
             new AncientAltarBlock()
+    );
+
+    public static final Block TOXIC_ORE = Registry.register(
+            Registry.BLOCK,
+            new Identifier(MythicMania.MOD_ID, "toxic_ore"),
+            new ToxicOreBlock(OreBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f))
     );
 
     public static void registerBlockRendering() {
