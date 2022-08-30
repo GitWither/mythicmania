@@ -1,6 +1,7 @@
 package daniel.mythicmania.world.gen;
 
 import daniel.mythicmania.MythicMania;
+import daniel.mythicmania.block.MythicManiaBlocks;
 import net.fabricmc.fabric.api.biome.v1.BiomeModification;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -26,7 +27,7 @@ public final class MythicManiaFeatures {
             new Identifier(MythicMania.MOD_ID, "overworld_toxic_ore"),
             new ConfiguredFeature<>(
                     Feature.ORE,
-                    new OreFeatureConfig(OreConfiguredFeatures.STONE_ORE_REPLACEABLES, Blocks.SPONGE.getDefaultState(), 9)
+                    new OreFeatureConfig(OreConfiguredFeatures.STONE_ORE_REPLACEABLES, MythicManiaBlocks.TOXIC_ORE.getDefaultState(), 7)
             )
     );
 
