@@ -48,7 +48,7 @@ public class WastedDemonEntity extends HostileEntity {
                 .createHostileAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 22)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 35.0D)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.35D)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 7.0D)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 2.0D);
     }
