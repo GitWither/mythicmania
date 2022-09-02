@@ -48,7 +48,6 @@ public class WastedDemonEntity extends HostileEntity {
     public double capeX;
     public double capeY;
     public double capeZ;
-    private static final TrackedData<Integer> INVUL_TIMER;
     private final ServerBossBar bossBar;
 
     public WastedDemonEntity(EntityType<? extends WastedDemonEntity> entityType, World world) {
@@ -68,11 +67,6 @@ public class WastedDemonEntity extends HostileEntity {
         }));
     }
 
-    protected void initDataTracker() {
-        super.initDataTracker();
-        this.dataTracker.startTracking(INVUL_TIMER, 0);
-    }
-
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
         if (this.hasCustomName()) {
@@ -85,28 +79,13 @@ public class WastedDemonEntity extends HostileEntity {
         this.bossBar.setName(this.getDisplayName());
     }
 
-    public int getInvulnerableTimer() {
-        return (Integer)this.dataTracker.get(INVUL_TIMER);
-    }
-
-    public void setInvulTimer(int ticks) {
-        this.dataTracker.set(INVUL_TIMER, ticks);
-    }
-
     protected void mobTick() {
-        int i;
-        if (this.getInvulnerableTimer() > 0) {
-            i = this.getInvulnerableTimer() - 1;
-            this.bossBar.setPercent(1.0F - (float)i / 220.0F);
-
-            if (this.age % 10 == 0) {
-                this.heal(10.0F);
-            }
-
-        } else {
-            super.mobTick();
-            this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
+        if (this.age % 100 == 0) {
+            this.heal(4.0F);
         }
+
+        super.mobTick();
+        this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
     }
 
     public void tickMovement() {
@@ -117,7 +96,6 @@ public class WastedDemonEntity extends HostileEntity {
     }
 
     public void onSummoned() {
-        this.setInvulTimer(220);
         this.bossBar.setPercent(0.0F);
         this.setHealth(this.getMaxHealth() / 3.0F);
     }
@@ -155,10 +133,6 @@ public class WastedDemonEntity extends HostileEntity {
     public void tick() {
         super.tick();
         this.updateCapeAngles();
-    }
-
-    static {
-        INVUL_TIMER = DataTracker.registerData(WitherEntity.class, TrackedDataHandlerRegistry.INTEGER);
     }
 
     private void updateCapeAngles() {
