@@ -6,11 +6,11 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
-public class IntoxicatedArmorMaterial implements ArmorMaterial {
-    public static final IntoxicatedArmorMaterial INSTANCE = new IntoxicatedArmorMaterial();
+public class DemonVestMaterial implements ArmorMaterial {
+    public static final DemonVestMaterial INSTANCE = new DemonVestMaterial();
 
-    private static final int[] BASE_DURABILITY = new int[] {230, 255, 260, 211};
-    private static final int[] PROTECTION_VALUES = new int[] {5, 8, 11, 5};
+    private static final int[] BASE_DURABILITY = new int[] {1, 1, 165, 1};
+    private static final int[] PROTECTION_VALUES = new int[] {1, 1, 8, 1};
 
     @Override
     public int getDurability(EquipmentSlot slot) {
@@ -24,7 +24,7 @@ public class IntoxicatedArmorMaterial implements ArmorMaterial {
 
     @Override
     public int getEnchantability() {
-        return 4;
+        return 7;
     }
 
     @Override
@@ -40,12 +40,12 @@ public class IntoxicatedArmorMaterial implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return "intoxicated";
+        return "demon";
     }
 
     @Override
     public float getToughness() {
-        return 0;
+        return 2;
     }
 
     @Override
