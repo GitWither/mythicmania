@@ -9,17 +9,14 @@ import net.minecraft.sound.SoundEvents;
 public class DemonVestMaterial implements ArmorMaterial {
     public static final DemonVestMaterial INSTANCE = new DemonVestMaterial();
 
-    private static final int[] BASE_DURABILITY = new int[] {1, 1, 165, 1};
-    private static final int[] PROTECTION_VALUES = new int[] {1, 1, 8, 1};
-
     @Override
     public int getDurability(EquipmentSlot slot) {
-        return BASE_DURABILITY[slot.getEntitySlotId()];
+        return 165;
     }
 
     @Override
     public int getProtectionAmount(EquipmentSlot slot) {
-        return PROTECTION_VALUES[slot.getEntitySlotId()];
+        return 8;
     }
 
     @Override

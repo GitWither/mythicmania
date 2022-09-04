@@ -3,10 +3,8 @@ package daniel.mythicmania.item;
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.block.MythicManiaBlocks;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
-import daniel.mythicmania.item.material.armor.DemonVestArmor;
 import daniel.mythicmania.item.material.armor.DemonVestMaterial;
 import daniel.mythicmania.item.material.armor.IntoxicatedArmorMaterial;
-import daniel.mythicmania.item.material.tool.CustomToolMaterial;
 import daniel.mythicmania.item.material.tool.MythicManiaToolMaterials;
 import daniel.mythicmania.util.wrapper.CustomAxeItem;
 import daniel.mythicmania.util.wrapper.CustomHoeItem;
@@ -127,7 +125,7 @@ public final class MythicManiaItems {
     public static final Item DEMON_VEST = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "demon_vest"),
-            new DemonVestArmor(DemonVestMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
+            new ArmorItem(DemonVestMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item INTOXICATED_HELMET = Registry.register(
