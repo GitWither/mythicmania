@@ -48,7 +48,7 @@ public final class MythicManiaEntityTypes {
     public static final EntityType<WastedDemonEntity> WASTED_DEMON_ENTITY = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "wasted_demon"),
-            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, WastedDemonEntity::new).dimensions(EntityDimensions.fixed(1.25f, 1.25f)).build()
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, WastedDemonEntity::new).fireImmune().dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
     );
 
     public static void registerEntityAttributes() {

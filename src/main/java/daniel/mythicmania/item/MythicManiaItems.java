@@ -3,8 +3,8 @@ package daniel.mythicmania.item;
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.block.MythicManiaBlocks;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
+import daniel.mythicmania.item.material.armor.DemonVestMaterial;
 import daniel.mythicmania.item.material.armor.IntoxicatedArmorMaterial;
-import daniel.mythicmania.item.material.tool.CustomToolMaterial;
 import daniel.mythicmania.item.material.tool.MythicManiaToolMaterials;
 import daniel.mythicmania.util.wrapper.CustomAxeItem;
 import daniel.mythicmania.util.wrapper.CustomHoeItem;
@@ -15,6 +15,9 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public final class MythicManiaItems {
+
+    // ==== ITEMS ====
+
     public static final Item POISONOUS_BERRY = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "poisonous_berry"),
@@ -117,7 +120,13 @@ public final class MythicManiaItems {
             new ShovelItem(MythicManiaToolMaterials.INTOXICATED, 1, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
-    // ==== INTOXICATED GEAR ====
+    // ==== GEAR ====
+
+    public static final Item DEMON_VEST = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "demon_vest"),
+            new ArmorItem(DemonVestMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
+    );
 
     public static final Item INTOXICATED_HELMET = Registry.register(
             Registry.ITEM,
@@ -158,6 +167,8 @@ public final class MythicManiaItems {
                 new BlockItem(MythicManiaBlocks.TOXIC_ORE, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
                 ));
     }
+
+    // ==== SPAWN EGGS ====
 
     public static void registerSpawnEggs() {
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "magical_grub_spawn_egg"),

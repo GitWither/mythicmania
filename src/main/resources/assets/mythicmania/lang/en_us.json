@@ -24,6 +24,7 @@
   "item.mythicmania.zapping_beetle_spawn_egg": "Zapping Beetle Spawn Egg",
   "item.mythicmania.wasted_demon_spawn_egg": "Wasted Demon Spawn Egg",
 
+  "item.mythicmania.demon_vest": "Demon Vest",
   "item.mythicmania.intoxicated_helmet": "Intoxicated Helmet",
   "item.mythicmania.intoxicated_chestplate": "Intoxicated Chestplate",
   "item.mythicmania.intoxicated_leggings": "Intoxicated Leggings",
@@ -31,6 +32,7 @@
 
   "block.mythicmania.rinth": "Rinth",
   "block.mythicmania.ancient_altar": "Ancient Altar",
+  "block.mythicmania.toxic_ore": "Toxic Ore",
 
   "entity.mythicmania.magical_grub": "Magical Grub",
   "entity.mythicmania.poisonous_grub": "Poisonous Grub",
