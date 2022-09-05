@@ -24,6 +24,7 @@ public class IntoxicatedSwordItem extends SwordItem {
         world.spawnParticles(MythicManiaParticles.POISON_CLOUD, target.getX(), target.getY() + target.getEyeHeight(target.getPose()), target.getZ(), 10, 0.5, 0.2, 0.5, 0.01);
         List<Entity> entities = world.getOtherEntities(target, target.getBoundingBox().expand(2), EntityPredicates.VALID_LIVING_ENTITY);
         for (Entity entity : entities) {
+            if (entity == attacker) continue;
             StatusEffectInstance poison = new StatusEffectInstance(StatusEffects.POISON, 7 * 20, 1);
             ((LivingEntity)entity).addStatusEffect(poison);
         }
