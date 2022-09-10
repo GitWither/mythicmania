@@ -30,6 +30,12 @@ public final class MythicManiaItems {
             new AliasedBlockItem(MythicManiaBlocks.TRIBUS_BLOCK, new Item.Settings().food(FoodComponents.TRIBUS_FRUIT).group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
+    public static final Item ENCHANTED_TRIBUS_FRUIT = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "enchanted_tribus_fruit"),
+            new EnchantedTribusFruitItem(true)
+    );
+
     public static final Item SWEETENED_BERRY = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "sweetened_berry"),

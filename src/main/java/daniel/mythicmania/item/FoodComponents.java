@@ -20,7 +20,17 @@ public class FoodComponents {
 
     public static final FoodComponent TRIBUS_FRUIT = new FoodComponent.Builder()
             .saturationModifier(1.1f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 10, 1), 1)
-            .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 8, 1), 1)
+            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 10*20, 0), 1)
+            .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 8*20, 0), 1)
+            .build();
+
+    public static final FoodComponent ENCHANTED_TRIBUS_FRUIT = (new FoodComponent.Builder())
+            .hunger(4)
+            .saturationModifier(1.2F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 50*20, 2), 1)
+            .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 50*20, 2), 1)
+            .statusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 60*20, 0), 1)
+            .statusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 40*20, 3), 1)
+            .alwaysEdible()
             .build();
 }
