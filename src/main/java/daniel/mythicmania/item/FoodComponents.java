@@ -15,7 +15,7 @@ public class FoodComponents {
 
     public static final FoodComponent POISONOUS_BERRY = new FoodComponent.Builder()
             .saturationModifier(1.1f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 3, 1), 1)
+            .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 20*3, 1), 1)
             .build();
 
     public static final FoodComponent TRIBUS_FRUIT = new FoodComponent.Builder()
