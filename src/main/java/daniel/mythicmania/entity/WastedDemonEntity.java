@@ -68,6 +68,10 @@ public class WastedDemonEntity extends HostileEntity {
         }));
     }
 
+    public boolean hurtByWater() {
+        return true;
+    }
+
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
         if (this.hasCustomName()) {
@@ -123,7 +127,7 @@ public class WastedDemonEntity extends HostileEntity {
     public static DefaultAttributeContainer.Builder createWastedDemonAttributes() {
         return HostileEntity
                 .createHostileAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 70)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 85)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 35.0D)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.35D)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 7.0D)
