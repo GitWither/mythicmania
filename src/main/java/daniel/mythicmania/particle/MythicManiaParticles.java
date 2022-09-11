@@ -11,18 +11,22 @@ import net.minecraft.util.registry.Registry;
 
 public final class MythicManiaParticles {
 
-
     public static final DefaultParticleType POISON_CLOUD =
             Registry.register(Registry.PARTICLE_TYPE, new Identifier(MythicMania.MOD_ID, "poison_cloud"), FabricParticleTypes.simple());
+
+    public static final DefaultParticleType SAC_PARTICLE =
+            Registry.register(Registry.PARTICLE_TYPE, new Identifier(MythicMania.MOD_ID, "luminescent_sac"), FabricParticleTypes.simple());
 
 
     public static void registerParticleSprites(ClientSpriteRegistryCallback.Registry registry) {
         registry.register(new Identifier(MythicMania.MOD_ID, "particle/poison_cloud"));
+        registry.register(new Identifier(MythicMania.MOD_ID, "particle/luminescent_sac"));
     }
 
     public static void registerParticleFactories() {
         ParticleFactoryRegistry factoryRegistry = ParticleFactoryRegistry.getInstance();
 
         factoryRegistry.register(POISON_CLOUD, PoisonCloudParticle.PoisonCloudFactory::new);
+        factoryRegistry.register(SAC_PARTICLE, LuminescentSacParticle.PoisonCloudFactory::new);
     }
 }

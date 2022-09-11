@@ -1,6 +1,7 @@
 package daniel.mythicmania.block;
 
 import daniel.mythicmania.particle.MythicManiaParticles;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.block.*;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -36,7 +37,7 @@ public class ToxicOreBlock extends OreBlock {
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
         if (!world.isClient) {
             if (!entity.bypassesSteppingEffects()) {
-                ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20, 1));
+                ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20*5, 1));
             }
         }
 

@@ -61,10 +61,15 @@ public class WastedDemonEntity extends HostileEntity {
         this.goalSelector.add(2, new LookAroundGoal(this));
         this.goalSelector.add(3, new AttackGoal(this));
         this.goalSelector.add(4, new WanderAroundGoal(this, 1, 2, false));
+        this.goalSelector.add(4, new SwimGoal(this));
         this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, false));
         this.targetSelector.add(3, new ActiveTargetGoal(this, MobEntity.class, 5, false, false, (entity) -> {
             return entity instanceof Entity && !(entity instanceof WastedDemonEntity);
         }));
+    }
+
+    public boolean hurtByWater() {
+        return true;
     }
 
     public void readCustomDataFromNbt(NbtCompound nbt) {
@@ -90,7 +95,7 @@ public class WastedDemonEntity extends HostileEntity {
 
     public void tickMovement() {
         for(int i = 0; i < 2; ++i) {
-            this.world.addParticle(ParticleTypes.LARGE_SMOKE, this.getParticleX(0.2), this.getRandomBodyY(), this.getParticleZ(0.5), 0.0, 0.0, 0.0);
+            this.world.addParticle(ParticleTypes.SMOKE, this.getParticleX(0.2), this.getRandomBodyY(), this.getParticleZ(0.5), 0.0, 0.0, 0.0);
         }
         super.tickMovement();
     }
@@ -122,7 +127,7 @@ public class WastedDemonEntity extends HostileEntity {
     public static DefaultAttributeContainer.Builder createWastedDemonAttributes() {
         return HostileEntity
                 .createHostileAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 70)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 85)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 35.0D)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.35D)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 7.0D)
