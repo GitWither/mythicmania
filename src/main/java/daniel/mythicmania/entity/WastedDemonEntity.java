@@ -95,7 +95,7 @@ public class WastedDemonEntity extends HostileEntity {
 
     public void tickMovement() {
         for(int i = 0; i < 2; ++i) {
-            this.world.addParticle(ParticleTypes.LARGE_SMOKE, this.getParticleX(0.2), this.getRandomBodyY(), this.getParticleZ(0.5), 0.0, 0.0, 0.0);
+            this.world.addParticle(ParticleTypes.SMOKE, this.getParticleX(0.2), this.getRandomBodyY(), this.getParticleZ(0.5), 0.0, 0.0, 0.0);
         }
         super.tickMovement();
     }
