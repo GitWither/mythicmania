@@ -42,6 +42,13 @@ public class LuminescentSacBlock extends Block {
         }
     }
 
+    private static VoxelShape SHAPE = Block.createCuboidShape(0, 11, 0, 16, 16, 16);
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return SHAPE;
+    }
+
     @Override
     public BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
