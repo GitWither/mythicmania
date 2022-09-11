@@ -1,16 +1,14 @@
 {
 	"credit": "Made with Blockbench",
-	"texture_size": [32, 32],
-	"parent": "block/block",
 	"textures": {
-		"0": "mythicmania:block/luminescent_sac",
-		"particle": "mythicmania:block/luminescent_sac"
+		"0": "luminescent_sac",
+		"particle": "luminescent_sac"
 	},
 	"elements": [
 		{
 			"from": [5, 0, 5],
 			"to": [11, 5, 11],
-			"rotation": {"angle": 0, "axis": "y", "origin": [5, 0, 5]},
+			"rotation": {"angle": 0, "axis": "z", "origin": [5, 0, 5]},
 			"faces": {
 				"north": {"uv": [0, 9.5, 3, 12], "texture": "#0"},
 				"east": {"uv": [3, 9.5, 6, 12], "texture": "#0"},
@@ -72,5 +70,31 @@
 				"down": {"uv": [7, 3, 3.5, 6], "rotation": 270, "texture": "#0"}
 			}
 		}
-	]
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 5, 0]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 5, 0]
+		},
+		"firstperson_righthand": {
+			"translation": [0, 6.25, 0]
+		},
+		"firstperson_lefthand": {
+			"translation": [0, 5.5, 0]
+		},
+		"ground": {
+			"translation": [0, 4.75, 0],
+			"scale": [0.9, 0.9, 0.9]
+		},
+		"gui": {
+			"rotation": [-40, 135, 180],
+			"translation": [0.25, -4.5, -55]
+		},
+		"fixed": {
+			"rotation": [-90, 0, 0],
+			"translation": [0, 0, -8]
+		}
+	}
 }
