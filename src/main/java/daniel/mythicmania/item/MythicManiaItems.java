@@ -172,6 +172,10 @@ public final class MythicManiaItems {
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "toxic_ore"),
                 new BlockItem(MythicManiaBlocks.TOXIC_ORE, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
                 ));
+
+        Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "luminescent_sac"),
+                new BlockItem(MythicManiaBlocks.LUMINESCENT_SAC, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
+                ));
     }
 
     // ==== SPAWN EGGS ====

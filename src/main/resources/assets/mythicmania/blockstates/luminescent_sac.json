@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "hanging=true": {"model": "mythicmania:block/luminescent_sac", "x":  180}
+  }
+}
