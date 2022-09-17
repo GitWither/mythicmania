@@ -9,6 +9,8 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,6 +20,13 @@ public class RinthBlock extends Block {
     public RinthBlock() {
         super(FabricBlockSettings.of(Material.PLANT, MapColor.GREEN).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES));
         this.setDefaultState(this.getStateManager().getDefaultState().with(HANGING, false));
+    }
+
+    private static VoxelShape SHAPE = Block.createCuboidShape(1, 0, 1, 15, 4, 15);
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return SHAPE;
     }
 
     @Override
