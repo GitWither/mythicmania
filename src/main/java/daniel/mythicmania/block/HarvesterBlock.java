@@ -19,6 +19,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
@@ -26,6 +27,12 @@ import net.minecraft.world.event.GameEvent;
 public class HarvesterBlock extends PlantBlock implements Fertilizable {
     public static final BooleanProperty BERRIES = Properties.BERRIES;
 
+    private static VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 2, 13);
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return SHAPE;
+    }
 
     public HarvesterBlock() {
         super(FabricBlockSettings.of(Material.PLANT, MapColor.GREEN).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES));
