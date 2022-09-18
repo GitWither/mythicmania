@@ -64,7 +64,7 @@ public class WastedDemonEntity extends HostileEntity {
         this.goalSelector.add(4, new SwimGoal(this));
         this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, false));
         this.targetSelector.add(3, new ActiveTargetGoal(this, MobEntity.class, 5, false, false, (entity) -> {
-            return entity instanceof Entity && !(entity instanceof WastedDemonEntity);
+            return entity instanceof Entity && !(entity instanceof WastedDemonEntity) && !(entity instanceof DemonGuardianEntity);
         }));
     }
 

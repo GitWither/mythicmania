@@ -1,14 +1,12 @@
 package daniel.mythicmania.entity;
 
 import daniel.mythicmania.MythicMania;
+import daniel.mythicmania.client.render.entity.DemonGuardianEntityRenderer;
 import daniel.mythicmania.client.render.entity.grub.MagicalGrubEntityRenderer;
 import daniel.mythicmania.client.render.entity.grub.PoisonousGrubEntityRenderer;
 import daniel.mythicmania.client.render.entity.WastedDemonEntityRenderer;
 import daniel.mythicmania.client.render.entity.ZappingBeetleEntityRenderer;
-import daniel.mythicmania.client.render.entity.model.MagicalGrubEntityModel;
-import daniel.mythicmania.client.render.entity.model.PoisonousGrubEntityModel;
-import daniel.mythicmania.client.render.entity.model.WastedDemonEntityModel;
-import daniel.mythicmania.client.render.entity.model.ZappingBeetleEntityModel;
+import daniel.mythicmania.client.render.entity.model.*;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -51,28 +49,40 @@ public final class MythicManiaEntityTypes {
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, WastedDemonEntity::new).fireImmune().dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
     );
 
+    public static final EntityModelLayer DEMON_GUARDIAN_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "demon_guardian"), "root");
+    public static final EntityType<DemonGuardianEntity> DEMON_GUARDIAN_ENTITY = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier(MythicMania.MOD_ID, "demon_guardian"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, DemonGuardianEntity::new).fireImmune().dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
+    );
+
     public static void registerEntityAttributes() {
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, MagicalGrubEntity.createMagicalGrubAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, PoisonousGrubEntity.createPoisonousGrubAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, ZappingBeetleEntity.createZappingBeetleAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.WASTED_DEMON_ENTITY, WastedDemonEntity.createWastedDemonAttributes());
+        FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, WastedDemonEntity.createWastedDemonAttributes());
     }
 
     public static void registerEntityRendering() {
-        // magical grub
+        // Magical Grub
         EntityRendererRegistry.register(MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, MagicalGrubEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(MAGICAL_GRUB_LAYER, MagicalGrubEntityModel::getTexturedModelData);
 
-        // poison grub
+        // Poison Grub
         EntityRendererRegistry.register(MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, PoisonousGrubEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(POISONOUS_GRUB_LAYER, PoisonousGrubEntityModel::getTexturedModelData);
 
-        // zapping beetle
+        // Zapping Beetle
         EntityRendererRegistry.register(MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, ZappingBeetleEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(ZAPPING_BEETLE_LAYER, ZappingBeetleEntityModel::getTexturedModelData);
 
-        // wasted demon
+        // Wasted Demon
         EntityRendererRegistry.register(MythicManiaEntityTypes.WASTED_DEMON_ENTITY, WastedDemonEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(WASTED_DEMON_LAYER, WastedDemonEntityModel::getTexturedModelData);
+
+        // Demon Guardian
+        EntityRendererRegistry.register(MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, DemonGuardianEntityRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(DEMON_GUARDIAN_LAYER, DemonGuardianEntityModel::getTexturedModelData);
     }
 }
