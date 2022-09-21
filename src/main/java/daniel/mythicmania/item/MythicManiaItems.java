@@ -196,5 +196,9 @@ public final class MythicManiaItems {
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "wasted_demon_spawn_egg"),
                 new SpawnEggItem(MythicManiaEntityTypes.WASTED_DEMON_ENTITY, 0x2a2a2a, 0x951010, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
                 ));
+
+        Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "demon_guardian_spawn_egg"),
+                new SpawnEggItem(MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, 0x2a2a2a, 0x7c7c7c, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
+                ));
     }
 }
