@@ -1,22 +1,19 @@
 package daniel.mythicmania.client.render.entity.model;
 
 import daniel.mythicmania.entity.WastedDemonEntity;
-import daniel.mythicmania.entity.ZappingBeetleEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.CrossbowPosing;
-import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.entity.Entity;
 
-public class WastedDemonEntityModel extends PlayerEntityModel<WastedDemonEntity> {
+public class WastedDemonEntityModel<T extends Entity> extends PlayerEntityModel<WastedDemonEntity> {
 
 
     public WastedDemonEntityModel(ModelPart part) {
        super(part, false);
     }
-
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
         ModelPartData modelPartData = modelData.getRoot();
@@ -42,9 +39,9 @@ public class WastedDemonEntityModel extends PlayerEntityModel<WastedDemonEntity>
 
         ModelPartData ear = modelPartData.addChild("ear", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
-        ModelPartData right_sleeve = modelPartData.addChild("right_sleeve", ModelPartBuilder.create().uv(0, 64).mirrored().cuboid(-3.0F, -1.5F, -1.7F, 4.0F, 15.0F, 4.0F, new Dilation(0.5F)).mirrored(false), ModelTransform.pivot(7.0F, -1.0F, 0.0F));
+        ModelPartData right_sleeve = modelPartData.addChild("right_sleeve", ModelPartBuilder.create().uv(0, 64).cuboid(-3.0F, -1.5F, -1.7F, 4.0F, 15.0F, 4.0F, new Dilation(0.5F)), ModelTransform.pivot(7.0F, -1.0F, 0.0F));
 
-        ModelPartData left_sleeve = modelPartData.addChild("left_sleeve", ModelPartBuilder.create().uv(0, 64).cuboid(-1.0F, -1.5F, -1.7F, 4.0F, 15.0F, 4.0F, new Dilation(0.5F)), ModelTransform.pivot(-7.0F, -1.0F, 0.0F));
+        ModelPartData left_sleeve = modelPartData.addChild("left_sleeve", ModelPartBuilder.create().uv(0, 64).mirrored().cuboid(-1.0F, -1.5F, -1.7F, 4.0F, 15.0F, 4.0F, new Dilation(0.5F)).mirrored(false), ModelTransform.pivot(-7.0F, -1.0F, 0.0F));
 
         ModelPartData jacket = modelPartData.addChild("jacket", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
@@ -52,7 +49,7 @@ public class WastedDemonEntityModel extends PlayerEntityModel<WastedDemonEntity>
 
         ModelPartData right_pants = modelPartData.addChild("right_pants", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
-        ModelPartData cloak = modelPartData.addChild("cloak", ModelPartBuilder.create().cuboid(-5.0f, 0.0f, -1.0f, 10.0f, 16.0f, 1.0f, Dilation.NONE, 0.5f, 0.25f), ModelTransform.pivot(0.0F, -2.0F, 2.0F));
+        ModelPartData cloak = modelPartData.addChild("cloak", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -2.0F, 2.0F));
         return TexturedModelData.of(modelData, 128, 128);
     }
     @Override
