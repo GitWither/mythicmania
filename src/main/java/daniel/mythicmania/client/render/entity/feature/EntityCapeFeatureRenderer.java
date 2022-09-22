@@ -6,22 +6,18 @@ import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.entity.PlayerModelPart;
 import net.minecraft.client.render.entity.feature.FeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
-import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3f;
 
-public class EntityCapeFeatureRenderer extends FeatureRenderer<WastedDemonEntity, WastedDemonEntityModel> {
+public class EntityCapeFeatureRenderer extends FeatureRenderer<WastedDemonEntity, WastedDemonEntityModel<Entity>> {
     private final Identifier capeTexture;
 
-    public EntityCapeFeatureRenderer(FeatureRendererContext<WastedDemonEntity, WastedDemonEntityModel> context, Identifier capeTexture) {
+    public EntityCapeFeatureRenderer(FeatureRendererContext<WastedDemonEntity, WastedDemonEntityModel<Entity>> context, Identifier capeTexture) {
         super(context);
         this.capeTexture = capeTexture;
     }
