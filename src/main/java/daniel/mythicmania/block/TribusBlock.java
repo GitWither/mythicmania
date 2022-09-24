@@ -3,6 +3,7 @@ package daniel.mythicmania.block;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -23,15 +24,15 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 
-public class TribusBlock extends Block {
+public class TribusBlock extends PlantBlock implements Fertilizable {
 
     public static final BooleanProperty BERRIES = Properties.BERRIES;
 
     public TribusBlock() {
-        super(FabricBlockSettings.of(Material.PLANT, MapColor.GREEN).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES));
+        super(FabricBlockSettings.of(Material.PLANT, MapColor.GREEN).noCollision().nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES));
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(1, 0, 1, 15, 17, 15);
+    private static VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 15, 17, 15);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -79,12 +80,12 @@ public class TribusBlock extends Block {
         return !hasBerries(state);
     }
 
-//    @Override
+    @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
         return true;
     }
 
-//    @Override
+    @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         world.setBlockState(pos, state.with(BERRIES, true), Block.NOTIFY_LISTENERS);
     }
