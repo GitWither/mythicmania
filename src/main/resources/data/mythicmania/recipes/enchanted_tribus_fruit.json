@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#i#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "mythicmania:grub_essence"
+    },
+    "i": {
+      "item": "mythicmania:tribus_fruit"
+    }
+  },
+  "result": {
+    "item": "mythicmania:enchanted_tribus_fruit",
+    "count": 1
+  }
+}
