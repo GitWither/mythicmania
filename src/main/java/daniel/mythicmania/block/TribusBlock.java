@@ -31,7 +31,7 @@ public class TribusBlock extends Block {
         super(FabricBlockSettings.of(Material.PLANT, MapColor.GREEN).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES));
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(1, 0, 1, 15, 17, 15);
+    private static VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 15, 17, 15);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
