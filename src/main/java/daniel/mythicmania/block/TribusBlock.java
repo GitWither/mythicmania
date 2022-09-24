@@ -23,7 +23,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 
-public class TribusBlock extends Block {
+public class TribusBlock extends PlantBlock implements Fertilizable {
 
     public static final BooleanProperty BERRIES = Properties.BERRIES;
 
@@ -79,12 +79,12 @@ public class TribusBlock extends Block {
         return !hasBerries(state);
     }
 
-//    @Override
+    @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
         return true;
     }
 
-//    @Override
+    @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         world.setBlockState(pos, state.with(BERRIES, true), Block.NOTIFY_LISTENERS);
     }
