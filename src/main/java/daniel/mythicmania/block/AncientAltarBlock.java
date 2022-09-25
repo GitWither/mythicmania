@@ -1,6 +1,7 @@
 package daniel.mythicmania.block;
 
 import daniel.mythicmania.block.entity.AncientAltarBlockEntity;
+import daniel.mythicmania.item.MythicManiaItems;
 import daniel.mythicmania.item.OrbItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -51,7 +52,7 @@ public class AncientAltarBlock extends HorizontalFacingBlock implements BlockEnt
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack stack = player.getStackInHand(hand);
-        if (stack.getItem() instanceof OrbItem) {
+        if (stack.getItem() == MythicManiaItems.CHARGED_INTOXICATED_ORB || stack.getItem() == MythicManiaItems.CHARGED_LOCH_ORB || stack.getItem() == MythicManiaItems.CHARGED_RUINOUS_ORB) {
             if (!world.isClient) {
                 BlockEntity blockEntity = world.getBlockEntity(pos);
                 if (blockEntity instanceof AncientAltarBlockEntity altarBlockEntity) {
