@@ -29,7 +29,7 @@ public class FoodComponents {
             .alwaysEdible()
             .build();
 
-    public static final FoodComponent SWEETENED_BERRY = new FoodComponent.Builder()
+    public static final FoodComponent ANTI_OXIDANT_BERRY = new FoodComponent.Builder()
             .saturationModifier(1.1f)
             .hunger(4)
             .alwaysEdible()

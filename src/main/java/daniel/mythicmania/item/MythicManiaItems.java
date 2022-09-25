@@ -36,10 +36,10 @@ public final class MythicManiaItems {
             new EnchantedTribusFruitItem(true)
     );
 
-    public static final Item SWEETENED_BERRY = Registry.register(
+    public static final Item ANTI_OXIDANT_BERRY = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "sweetened_berry"),
-            new SweetenedBerryItem()
+            new Identifier(MythicMania.MOD_ID, "anti_oxidant_berry"),
+            new AntiOxidantBerryItem()
     );
 
     public static final Item EMPTY_ORB = Registry.register(

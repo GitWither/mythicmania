@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "mythicmania:poisonous_berry"
   },
-  "result": "mythicmania:sweetened_berry",
+  "result": "mythicmania:anti_oxidant_berry",
   "experience": 0.1,
   "cookingtime": 200
 }
