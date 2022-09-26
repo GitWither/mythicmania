@@ -28,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
 public class AncientAltarBlock extends HorizontalFacingBlock implements BlockEntityProvider {
 
     public AncientAltarBlock() {
-        super(FabricBlockSettings.of(Material.STONE, MapColor.GRAY).nonOpaque().sounds(BlockSoundGroup.LODESTONE));
+        super(FabricBlockSettings.of(Material.STONE, MapColor.GRAY).nonOpaque().requiresTool().strength(3.0f, 3.0f).sounds(BlockSoundGroup.LODESTONE));
     }
 
     @Override
