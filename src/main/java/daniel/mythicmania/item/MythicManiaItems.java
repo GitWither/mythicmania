@@ -24,6 +24,12 @@ public final class MythicManiaItems {
             new AliasedBlockItem(MythicManiaBlocks.HARVESTER_BLOCK, new Item.Settings().food(FoodComponents.POISONOUS_BERRY).group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
+    public static final Item ANTI_OXIDANT_BERRY = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "anti_oxidant_berry"),
+            new AntiOxidantBerryItem()
+    );
+
     public static final Item TRIBUS_FRUIT = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "tribus_fruit"),
@@ -34,12 +40,6 @@ public final class MythicManiaItems {
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "enchanted_tribus_fruit"),
             new EnchantedTribusFruitItem(true)
-    );
-
-    public static final Item ANTI_OXIDANT_BERRY = Registry.register(
-            Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "anti_oxidant_berry"),
-            new AntiOxidantBerryItem()
     );
 
     public static final Item EMPTY_ORB = Registry.register(
