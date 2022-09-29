@@ -3,6 +3,7 @@ package daniel.mythicmania.item;
 import daniel.mythicmania.MythicMania;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -10,9 +11,9 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
 
-public class SweetenedBerryItem extends Item {
-    public SweetenedBerryItem() {
-        super(new Item.Settings().food(FoodComponents.SWEETENED_BERRY).group(MythicMania.MYTHICMANIA_ITEM_GROUP));
+public class HealingBerryItem extends Item {
+    public HealingBerryItem() {
+        super(new Item.Settings().food(FoodComponents.HEALING_BERRY).group(MythicMania.MYTHICMANIA_ITEM_GROUP));
     }
 
     @Override
@@ -27,24 +28,9 @@ public class SweetenedBerryItem extends Item {
         }
 
         if (!world.isClient) {
-            user.clearStatusEffects();
+            user.removeStatusEffect(StatusEffects.POISON);
         }
 
         return stack;
     }
-
-//    @Override
-//    public int getMaxUseTime(ItemStack stack) {
-//        return 22;
-//    }
-//
-//    @Override
-//    public UseAction getUseAction(ItemStack stack) {
-//        return UseAction.EAT;
-//    }
-//
-//    @Override
-//    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-//        return ItemUsage.consumeHeldItem(world, user, hand);
-//    }
 }
