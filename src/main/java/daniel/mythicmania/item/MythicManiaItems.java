@@ -78,18 +78,6 @@ public final class MythicManiaItems {
             new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
-    public static final Item ANTENNA_OF_ZAPPING_BEETLE = Registry.register(
-            Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "antenna_of_zapping_beetle"),
-            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
-    );
-
-    public static final Item BEETLE_ZAPPER = Registry.register(
-            Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "beetle_zapper"),
-            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
-    );
-
     public static final Item TOXIC_PEBBLE = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "toxic_pebble"),
