@@ -26,7 +26,7 @@ public class LuminescentSacBlock extends Block {
     public static final BooleanProperty isHanging = Properties.HANGING;
 
     public LuminescentSacBlock() {
-        super(FabricBlockSettings.of(Material.PLANT, MapColor.BLUE).nonOpaque().sounds(BlockSoundGroup.SLIME));
+        super(FabricBlockSettings.of(Material.PLANT, MapColor.BLUE).nonOpaque().sounds(BlockSoundGroup.SLIME).luminance((state) -> 10));
     }
 
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
