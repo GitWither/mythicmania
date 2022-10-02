@@ -2,11 +2,10 @@ package daniel.mythicmania.block;
 
 import daniel.mythicmania.MythicMania;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Material;
-import net.minecraft.block.OreBlock;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.*;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -47,6 +46,12 @@ public final class MythicManiaBlocks {
             Registry.BLOCK,
             new Identifier(MythicMania.MOD_ID, "luminescent_sac"),
             new LuminescentSacBlock()
+    );
+
+    public static final Block PULSATING_BLACKSTONE = Registry.register(
+            Registry.BLOCK,
+            new Identifier(MythicMania.MOD_ID, "pulsating_blackstone"),
+            new Block(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.GILDED_BLACKSTONE).strength(5f, 5f).resistance(10f))
     );
 
     public static void registerBlockRendering() {
