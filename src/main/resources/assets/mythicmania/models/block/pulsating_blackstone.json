@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "mythicmania:block/pulsating_blackstone_top",
+    "side": "mythicmania:block/pulsating_blackstone_side"
+  }
+}

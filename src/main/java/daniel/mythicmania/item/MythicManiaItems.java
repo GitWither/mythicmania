@@ -161,6 +161,10 @@ public final class MythicManiaItems {
                 new BlockItem(MythicManiaBlocks.TOXIC_ORE, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
                 ));
 
+        Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "pulsating_blackstone"),
+                new BlockItem(MythicManiaBlocks.PULSATING_BLACKSTONE, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
+                ));
+
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "luminescent_sac"),
                 new BlockItem(MythicManiaBlocks.LUMINESCENT_SAC, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP)
                 ));
