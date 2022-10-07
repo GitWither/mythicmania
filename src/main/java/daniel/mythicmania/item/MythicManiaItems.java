@@ -51,7 +51,7 @@ public final class MythicManiaItems {
     public static final Item CHARGED_INTOXICATED_ORB = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "charged_intoxicated_orb"),
-            new OrbItem(true)
+            new OrbItem(false)
     );
 
     public static final Item CHARGED_LOCH_ORB = Registry.register(
