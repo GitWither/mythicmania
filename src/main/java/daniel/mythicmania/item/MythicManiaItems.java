@@ -45,25 +45,25 @@ public final class MythicManiaItems {
     public static final Item EMPTY_ORB = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "empty_orb"),
-            new OrbItem(false)
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item CHARGED_INTOXICATED_ORB = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "charged_intoxicated_orb"),
-            new OrbItem(true)
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item CHARGED_LOCH_ORB = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "charged_loch_orb"),
-            new OrbItem(true)
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item CHARGED_RUINOUS_ORB = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "charged_ruinous_orb"),
-            new OrbItem(true)
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
     public static final Item POISON_SPIKE = Registry.register(
