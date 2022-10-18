@@ -69,7 +69,7 @@ public final class MythicManiaItems {
     public static final Item POISON_SPIKE = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "poison_spike"),
-            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
+            new PoisonSpikeItem(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
     
     public static final Item GRUB_ESSENCE = Registry.register(
