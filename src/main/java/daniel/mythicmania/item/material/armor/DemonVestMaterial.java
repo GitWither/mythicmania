@@ -31,7 +31,6 @@ public class DemonVestMaterial implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        //TODO: Change it to appropriate ingredient
         return Ingredient.EMPTY;
     }
 
