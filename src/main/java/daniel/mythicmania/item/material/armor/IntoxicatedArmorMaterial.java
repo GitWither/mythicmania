@@ -1,5 +1,6 @@
 package daniel.mythicmania.item.material.armor;
 
+import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -34,8 +35,7 @@ public class IntoxicatedArmorMaterial implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        //TODO: Change it to appropriate ingredient
-        return Ingredient.EMPTY;
+        return Ingredient.ofItems(MythicManiaItems.TOXIC_PEBBLE);
     }
 
     @Override
