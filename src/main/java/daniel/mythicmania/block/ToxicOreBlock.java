@@ -34,13 +34,13 @@ public class ToxicOreBlock extends OreBlock {
         super(settings, UniformIntProvider.create(2, 3));
     }
 
-    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-        if (!world.isClient) {
-            if (!entity.bypassesSteppingEffects()) {
-                ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20*5, 1));
-            }
-        }
-
-        super.onSteppedOn(world, pos, state, entity);
-    }
+//    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
+//        if (!world.isClient) {
+//            if (!entity.bypassesSteppingEffects()) {
+//                ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20*5, 1));
+//            }
+//        }
+//
+//        super.onSteppedOn(world, pos, state, entity);
+//    }
 }

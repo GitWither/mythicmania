@@ -84,6 +84,12 @@ public final class MythicManiaItems {
             new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
     );
 
+    public static final Item WASTED_ESSENCE = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "wasted_essence"),
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEM_GROUP))
+    );
+
     public static final Item INTOXICATED_SWORD = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "intoxicated_sword"),
