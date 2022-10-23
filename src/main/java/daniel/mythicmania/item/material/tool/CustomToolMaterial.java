@@ -4,8 +4,6 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
 public class CustomToolMaterial implements ToolMaterial {
-
-
     private final int durability;
     private final float miningSpeedMultiplier;
     private final float attackDamage;
