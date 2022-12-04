@@ -1,4 +1,4 @@
-package daniel.mythicmania.client.render.entity.renderers;
+package daniel.mythicmania.client.render.entity.feature;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

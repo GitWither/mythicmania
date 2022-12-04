@@ -15,16 +15,11 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public final class MythicManiaItems {
-
-    // block item variables
-
     public static Item PULSATING_BLACKSTONE;
     public static Item RINTH;
     public static Item TOXIC_ORE;
     public static Item ANCIENT_ALTAR;
     public static Item LUMINESCENT_SAC;
-
-    // ==== ITEMS ====
 
     public static final Item POISONOUS_BERRY = Registry.register(
             Registry.ITEM,
@@ -47,7 +42,7 @@ public final class MythicManiaItems {
     public static final Item ENCHANTED_TRIBUS_FRUIT = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "enchanted_tribus_fruit"),
-            new EnchantedTribusFruitItem(true)
+            new EnchantedTribusFruitItem()
     );
 
     public static final Item EMPTY_ORB = Registry.register(
@@ -160,8 +155,6 @@ public final class MythicManiaItems {
             new ArmorItem(IntoxicatedArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
     );
 
-    // ==== BLOCKS ====
-
     public static void registerBlockItems() {
         RINTH = Registry.register(
                 Registry.ITEM,
@@ -198,8 +191,6 @@ public final class MythicManiaItems {
                 )
         );
     }
-
-    // ==== SPAWN EGGS ====
 
     public static void registerSpawnEggs() {
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "magical_grub_spawn_egg"),

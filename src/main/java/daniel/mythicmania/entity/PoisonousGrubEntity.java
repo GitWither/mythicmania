@@ -8,10 +8,7 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.PathAwareEntity;
-import net.minecraft.entity.mob.SpiderEntity;
-import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 
@@ -34,10 +31,10 @@ public class PoisonousGrubEntity extends AbstractGrubEntity {
     @Override
     public boolean tryAttack(Entity target) {
         if (super.tryAttack(target) && target instanceof LivingEntity) {
-
             ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 5 * 20, 0), this);
             return true;
         }
+
         return false;
     }
 

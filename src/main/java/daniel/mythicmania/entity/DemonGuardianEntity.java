@@ -1,16 +1,11 @@
 package daniel.mythicmania.entity;
 
-import daniel.mythicmania.client.render.entity.DemonGuardianEntityRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.boss.BossBar;
-import net.minecraft.entity.boss.ServerBossBar;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -37,6 +32,7 @@ public class DemonGuardianEntity extends HostileEntity {
         if (super.tryAttack(entity) && entity instanceof LivingEntity livingEntity) {
             return tryAttack(entity);
         }
+
         return false;
     }
 

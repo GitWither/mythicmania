@@ -75,8 +75,7 @@ public class ZappingBeetleEntityModel extends EntityModel<ZappingBeetleEntity> {
 
     @Override
     public void setAngles(ZappingBeetleEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-//        segment2.roll = MathHelper.cos(animationProgress * 0.8f) * 0.04f;
-//        segment3.roll = MathHelper.sin(animationProgress * 0.9f) * 0.03f;
+        // TODO: Animate
     }
 
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {

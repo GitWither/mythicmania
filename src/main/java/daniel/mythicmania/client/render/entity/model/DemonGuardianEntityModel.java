@@ -1,7 +1,6 @@
 package daniel.mythicmania.client.render.entity.model;
 
 import daniel.mythicmania.entity.DemonGuardianEntity;
-import daniel.mythicmania.entity.WastedDemonEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.CrossbowPosing;

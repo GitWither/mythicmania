@@ -8,7 +8,6 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.MathHelper;
 
 public class MagicalGrubEntityModel extends EntityModel<MagicalGrubEntity> {
-
     private final ModelPart root;
 
     private final ModelPart segment1;

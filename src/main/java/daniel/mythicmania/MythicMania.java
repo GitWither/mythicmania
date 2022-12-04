@@ -9,7 +9,6 @@ import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 
 public class MythicMania implements ModInitializer {
-
     public static final String MOD_ID = "mythicmania";
 
     public static final ItemGroup MYTHICMANIA_BLOCK_ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blocks"), () -> new ItemStack(MythicManiaItems.PULSATING_BLACKSTONE));
@@ -24,7 +23,6 @@ public class MythicMania implements ModInitializer {
         MythicManiaItems.registerSpawnEggs();
 
         MythicManiaFeatures.registerFeatures();
-
         MythicManiaEntityTypes.registerEntityAttributes();
     }
 }

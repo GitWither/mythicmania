@@ -71,6 +71,7 @@ public class HarvesterBlock extends PlantBlock implements Fertilizable {
 
             return ActionResult.success(world.isClient);
         }
+
         return super.onUse(state, world, pos, player, hand, hit);
     }
 

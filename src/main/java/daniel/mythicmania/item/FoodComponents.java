@@ -5,7 +5,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
 
 public class FoodComponents {
-
     public static final FoodComponent POISONOUS_BERRY = new FoodComponent.Builder()
             .saturationModifier(1.1f)
             .hunger(1)
