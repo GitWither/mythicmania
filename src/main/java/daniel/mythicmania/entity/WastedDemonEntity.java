@@ -171,9 +171,9 @@ public class WastedDemonEntity extends HostileEntity {
     }
 
     public static class MoveOutOfWater extends Goal {
-        private final PathAwareEntity mob;
+        private final WastedDemonEntity mob;
 
-        public MoveOutOfWater(PathAwareEntity mob) {
+        public MoveOutOfWater(WastedDemonEntity mob) {
             this.mob = mob;
         }
 
