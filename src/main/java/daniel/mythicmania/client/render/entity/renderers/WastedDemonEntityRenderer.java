@@ -1,9 +1,9 @@
-package daniel.mythicmania.client.render.entity;
+package daniel.mythicmania.client.render.entity.renderers;
 
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.client.render.entity.feature.EntityCapeFeatureRenderer;
 import daniel.mythicmania.client.render.entity.model.WastedDemonEntityModel;
-import daniel.mythicmania.client.render.entity.renderers.DemonEyesRenderer;
+import daniel.mythicmania.client.render.entity.feature.DemonEyesRenderer;
 import daniel.mythicmania.entity.*;
 import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;

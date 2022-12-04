@@ -22,7 +22,6 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class AncientAltarBlock extends HorizontalFacingBlock implements BlockEntityProvider {
-
     public AncientAltarBlock() {
         super(FabricBlockSettings.of(Material.STONE, MapColor.GRAY).nonOpaque().requiresTool().strength(3.0f, 3.0f).sounds(BlockSoundGroup.LODESTONE));
     }
@@ -48,9 +47,11 @@ public class AncientAltarBlock extends HorizontalFacingBlock implements BlockEnt
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack stack = player.getStackInHand(hand);
+
         if (stack.getItem() == MythicManiaItems.CHARGED_INTOXICATED_ORB || stack.getItem() == MythicManiaItems.CHARGED_LOCH_ORB || stack.getItem() == MythicManiaItems.CHARGED_RUINOUS_ORB) {
             if (!world.isClient) {
                 BlockEntity blockEntity = world.getBlockEntity(pos);
+
                 if (blockEntity instanceof AncientAltarBlockEntity altarBlockEntity) {
                     if (!altarBlockEntity.getOrb().isOf(stack.getItem())) {
                         altarBlockEntity.setOrb(player.getStackInHand(hand).copy(), player);
@@ -58,8 +59,10 @@ public class AncientAltarBlock extends HorizontalFacingBlock implements BlockEnt
                     }
                 }
             }
+
             return ActionResult.success(world.isClient);
         }
+
         return super.onUse(state, world, pos, player, hand, hit);
     }
 

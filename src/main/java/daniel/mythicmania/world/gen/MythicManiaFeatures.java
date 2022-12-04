@@ -21,7 +21,6 @@ import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 import java.util.Arrays;
 
 public final class MythicManiaFeatures {
-
     public static ConfiguredFeature<?, ?> OVERWORLD_TOXIC_ORE_CONFIGURED_FEATURE = Registry.register(
             BuiltinRegistries.CONFIGURED_FEATURE,
             new Identifier(MythicMania.MOD_ID, "overworld_toxic_ore"),

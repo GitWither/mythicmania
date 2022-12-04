@@ -21,14 +21,17 @@ public class LuminescentSacParticle extends SpriteBillboardParticle {
         this.prevPosX = this.x;
         this.prevPosY = this.y;
         this.prevPosZ = this.z;
+
         if (this.age++ >= this.maxAge || this.alpha <= 0.0f) {
             this.markDead();
             return;
         }
+
         this.velocityX -= this.random.nextFloat() / 5000.0f * (float)(this.random.nextBoolean() ? 1 : -1);
         this.velocityZ -= this.random.nextFloat() / 5000.0f * (float)(this.random.nextBoolean() ? 1 : -1);
 
         this.move(this.velocityX, this.velocityY, this.velocityZ);
+
         if (this.age >= this.maxAge - 60 && this.alpha > 0.01f) {
             this.alpha -= 0.015f;
         }

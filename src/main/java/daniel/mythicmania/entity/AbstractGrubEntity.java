@@ -20,7 +20,6 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.world.World;
 
 public abstract class AbstractGrubEntity extends PathAwareEntity {
-
     protected AbstractGrubEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
     }

@@ -32,7 +32,7 @@ public class WastedDemonEntity extends HostileEntity {
 
     public WastedDemonEntity(EntityType<? extends WastedDemonEntity> entityType, World world) {
         super(entityType, world);
-        this.bossBar = (ServerBossBar)(new ServerBossBar(this.getDisplayName(), Color.RED, Style.PROGRESS));
+        this.bossBar = new ServerBossBar(this.getDisplayName(), Color.RED, Style.PROGRESS);
     }
 
     @Override
@@ -43,9 +43,7 @@ public class WastedDemonEntity extends HostileEntity {
         this.goalSelector.add(4, new WanderAroundGoal(this, 1, 2, false));
         this.goalSelector.add(4, new SwimGoal(this));
         this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, false));
-        this.targetSelector.add(3, new ActiveTargetGoal(this, MobEntity.class, 5, false, false, (entity) -> {
-            return entity instanceof Entity && !(entity instanceof WastedDemonEntity) && !(entity instanceof DemonGuardianEntity);
-        }));
+        this.targetSelector.add(3, new ActiveTargetGoal<>(this, MobEntity.class, 5, false, false, (entity) -> entity instanceof Entity && !(entity instanceof WastedDemonEntity) && !(entity instanceof DemonGuardianEntity)));
     }
 
     public boolean hurtByWater() {

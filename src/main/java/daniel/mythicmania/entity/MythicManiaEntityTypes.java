@@ -1,11 +1,11 @@
 package daniel.mythicmania.entity;
 
 import daniel.mythicmania.MythicMania;
-import daniel.mythicmania.client.render.entity.DemonGuardianEntityRenderer;
-import daniel.mythicmania.client.render.entity.grub.MagicalGrubEntityRenderer;
-import daniel.mythicmania.client.render.entity.grub.PoisonousGrubEntityRenderer;
-import daniel.mythicmania.client.render.entity.WastedDemonEntityRenderer;
-import daniel.mythicmania.client.render.entity.ZappingBeetleEntityRenderer;
+import daniel.mythicmania.client.render.entity.renderers.DemonGuardianEntityRenderer;
+import daniel.mythicmania.client.render.entity.renderers.MagicalGrubEntityRenderer;
+import daniel.mythicmania.client.render.entity.renderers.PoisonousGrubEntityRenderer;
+import daniel.mythicmania.client.render.entity.renderers.WastedDemonEntityRenderer;
+import daniel.mythicmania.client.render.entity.renderers.ZappingBeetleEntityRenderer;
 import daniel.mythicmania.client.render.entity.model.*;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
@@ -19,9 +19,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public final class MythicManiaEntityTypes {
-
     public static final EntityModelLayer MAGICAL_GRUB_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "magical_grub"), "root");
-
     public static final EntityType<MagicalGrubEntity> MAGICAL_GRUB_ENTITY = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "magical_grub"),

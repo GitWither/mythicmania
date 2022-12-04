@@ -1,9 +1,7 @@
-package daniel.mythicmania.client.render.entity.grub;
+package daniel.mythicmania.client.render.entity.renderers;
 
 import daniel.mythicmania.MythicMania;
-import daniel.mythicmania.MythicManiaClient;
 import daniel.mythicmania.client.render.entity.model.MagicalGrubEntityModel;
-import daniel.mythicmania.entity.AbstractGrubEntity;
 import daniel.mythicmania.entity.MagicalGrubEntity;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import net.minecraft.client.render.entity.EntityRendererFactory;

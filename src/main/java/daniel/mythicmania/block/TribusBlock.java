@@ -25,7 +25,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 
 public class TribusBlock extends PlantBlock implements Fertilizable {
-
     public static final BooleanProperty BERRIES = Properties.BERRIES;
 
     public TribusBlock() {
@@ -72,6 +71,7 @@ public class TribusBlock extends PlantBlock implements Fertilizable {
 
             return ActionResult.success(world.isClient);
         }
+
         return super.onUse(state, world, pos, player, hand, hit);
     }
 

@@ -9,11 +9,10 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 
 public class WastedDemonEntityModel<T extends Entity> extends PlayerEntityModel<WastedDemonEntity> {
-
-
     public WastedDemonEntityModel(ModelPart part) {
        super(part, false);
     }
+
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
         ModelPartData modelPartData = modelData.getRoot();
@@ -50,8 +49,10 @@ public class WastedDemonEntityModel<T extends Entity> extends PlayerEntityModel<
         ModelPartData right_pants = modelPartData.addChild("right_pants", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
         ModelPartData cloak = modelPartData.addChild("cloak", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -2.0F, 2.0F));
+
         return TexturedModelData.of(modelData, 128, 128);
     }
+
     @Override
     public void setAngles(WastedDemonEntity entity, float f, float g, float h, float i, float j) {
         super.setAngles(entity, f, g, h, i, j);
@@ -69,6 +70,5 @@ public class WastedDemonEntityModel<T extends Entity> extends PlayerEntityModel<
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
         super.render(matrices, vertices, light, overlay, red, green, blue, alpha);
-        //this.renderCape(matrices, vertices, light, overlay);
     }
 }

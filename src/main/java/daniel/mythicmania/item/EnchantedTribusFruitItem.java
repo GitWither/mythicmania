@@ -5,8 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class EnchantedTribusFruitItem extends Item {
-
-    public EnchantedTribusFruitItem(boolean hasGlint) {
+    public EnchantedTribusFruitItem() {
         super(new Item.Settings().food(FoodComponents.ENCHANTED_TRIBUS_FRUIT).group(MythicMania.MYTHICMANIA_FOOD_ITEM_GROUP));
     }
 

@@ -11,7 +11,6 @@ public class PoisonCloudParticle extends SpriteBillboardParticle {
         this.setBoundingBoxSpacing(0.25f, 0.25f);
         this.maxAge = this.random.nextInt(40) + 40;
         this.scale(3.0f);
-        //this.gravityStrength = 3.0E-6f;
         this.velocityX = velocityX + (double)(this.random.nextFloat() / 500.0f);
         this.velocityY = 0;
         this.velocityZ = velocityZ + (double)(this.random.nextFloat() / 500.0f);;
@@ -22,14 +21,17 @@ public class PoisonCloudParticle extends SpriteBillboardParticle {
         this.prevPosX = this.x;
         this.prevPosY = this.y;
         this.prevPosZ = this.z;
+
         if (this.age++ >= this.maxAge || this.alpha <= 0.0f) {
             this.markDead();
             return;
         }
+
         this.velocityX -= this.random.nextFloat() / 5000.0f * (float)(this.random.nextBoolean() ? 1 : -1);
         this.velocityZ -= this.random.nextFloat() / 5000.0f * (float)(this.random.nextBoolean() ? 1 : -1);
 
         this.move(this.velocityX, this.velocityY, this.velocityZ);
+
         if (this.age >= this.maxAge - 60 && this.alpha > 0.01f) {
             this.alpha -= 0.015f;
         }

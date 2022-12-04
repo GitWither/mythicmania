@@ -11,7 +11,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public final class MythicManiaBlockEntities {
-
     public static final BlockEntityType<AncientAltarBlockEntity> ANCIENT_ALTAR = Registry.register(
             Registry.BLOCK_ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "ancient_altar"),

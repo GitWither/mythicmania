@@ -1,12 +1,9 @@
-package daniel.mythicmania.client.render.entity;
+package daniel.mythicmania.client.render.entity.renderers;
 
 import daniel.mythicmania.MythicMania;
-import daniel.mythicmania.client.render.entity.feature.EntityCapeFeatureRenderer;
 import daniel.mythicmania.client.render.entity.model.DemonGuardianEntityModel;
-import daniel.mythicmania.client.render.entity.model.WastedDemonEntityModel;
 import daniel.mythicmania.entity.DemonGuardianEntity;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
-import daniel.mythicmania.entity.WastedDemonEntity;
 import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.util.Identifier;
