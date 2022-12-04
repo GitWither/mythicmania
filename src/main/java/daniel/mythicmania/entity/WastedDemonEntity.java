@@ -13,13 +13,19 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.tag.FluidTags;
 import net.minecraft.text.Text;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Iterator;
 
 public class WastedDemonEntity extends HostileEntity {
     public double prevCapeX;
@@ -42,8 +48,14 @@ public class WastedDemonEntity extends HostileEntity {
         this.goalSelector.add(3, new AttackGoal(this));
         this.goalSelector.add(4, new WanderAroundGoal(this, 1, 2, false));
         this.goalSelector.add(4, new SwimGoal(this));
-        this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, false));
-        this.targetSelector.add(3, new ActiveTargetGoal<>(this, MobEntity.class, 5, false, false, (entity) -> entity instanceof Entity && !(entity instanceof WastedDemonEntity) && !(entity instanceof DemonGuardianEntity)));
+        this.goalSelector.add(0, new MoveOutOfWater(this));
+
+        this.initActiveTargetGoals();
+    }
+
+    protected void initActiveTargetGoals() {
+        this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
+        this.targetSelector.add(3, new ActiveTargetGoal<>(this, MobEntity.class, 5, false, false, (entity) -> entity != null && !(entity instanceof WastedDemonEntity) && !(entity instanceof DemonGuardianEntity)));
     }
 
     public boolean hurtByWater() {
@@ -68,7 +80,7 @@ public class WastedDemonEntity extends HostileEntity {
         }
 
         if (this.getHealth() < 31) {
-            this.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 20*120, 2));
+            this.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 20 * 120, 2));
         }
 
         super.mobTick();
@@ -76,7 +88,7 @@ public class WastedDemonEntity extends HostileEntity {
     }
 
     public void tickMovement() {
-        for(int i = 0; i < 2; ++i) {
+        for (int i = 0; i < 2; ++i) {
             this.world.addParticle(ParticleTypes.SMOKE, this.getParticleX(0.2), this.getRandomBodyY(), this.getParticleZ(0.5), 0.0, 0.0, 0.0);
         }
         super.tickMovement();
@@ -100,9 +112,9 @@ public class WastedDemonEntity extends HostileEntity {
     @Override
     public boolean tryAttack(Entity target) {
         if (super.tryAttack(target) && target instanceof LivingEntity livingEntity) {
-
             return livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 5 * 20, 3), this);
         }
+
         return false;
     }
 
@@ -156,5 +168,35 @@ public class WastedDemonEntity extends HostileEntity {
         this.capeX += deltaX * 0.25;
         this.capeZ += deltaZ * 0.25;
         this.capeY += deltaY * 0.25;
+    }
+
+    public static class MoveOutOfWater extends Goal {
+        private final PathAwareEntity mob;
+
+        public MoveOutOfWater(PathAwareEntity mob) {
+            this.mob = mob;
+        }
+
+        public boolean canStart() {
+            return this.mob.isOnGround() && this.mob.world.getFluidState(this.mob.getBlockPos()).isIn(FluidTags.WATER);
+        }
+
+        public void start() {
+            BlockPos blockPos = null;
+            Iterable<BlockPos> iterable = BlockPos.iterate(MathHelper.floor(this.mob.getX() - 2.0), MathHelper.floor(this.mob.getY() - 2.0), MathHelper.floor(this.mob.getZ() - 2.0), MathHelper.floor(this.mob.getX() + 2.0), this.mob.getBlockY(), MathHelper.floor(this.mob.getZ() + 2.0));
+            Iterator<BlockPos> var3 = iterable.iterator();
+
+            while (var3.hasNext()) {
+                BlockPos blockPos2 = var3.next();
+                if (!this.mob.world.getFluidState(blockPos2).isIn(FluidTags.WATER)) {
+                    blockPos = blockPos2;
+                    break;
+                }
+            }
+
+            if (blockPos != null) {
+                this.mob.getMoveControl().moveTo(blockPos.getX(), blockPos.getY(), blockPos.getZ(), 1.4);
+            }
+        }
     }
 }

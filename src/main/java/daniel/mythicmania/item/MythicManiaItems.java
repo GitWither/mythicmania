@@ -93,6 +93,12 @@ public final class MythicManiaItems {
             new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP))
     );
 
+    public static final Item WATER_PARCEL = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "water_parcel"),
+            new WaterParcelItem(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP).maxCount(32))
+    );
+
     public static final Item INTOXICATED_SWORD = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "intoxicated_sword"),
