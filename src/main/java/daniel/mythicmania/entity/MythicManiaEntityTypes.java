@@ -59,7 +59,7 @@ public final class MythicManiaEntityTypes {
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, PoisonousGrubEntity.createPoisonousGrubAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, ZappingBeetleEntity.createZappingBeetleAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.WASTED_DEMON_ENTITY, WastedDemonEntity.createWastedDemonAttributes());
-        FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, WastedDemonEntity.createWastedDemonAttributes());
+        FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, DemonGuardianEntity.createDemonGuardianAttributes());
     }
 
     public static void registerEntityRendering() {
