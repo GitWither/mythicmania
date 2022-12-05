@@ -36,7 +36,7 @@ public class DemonGuardianEntity extends HostileEntity {
         return false;
     }
 
-    public static DefaultAttributeContainer.Builder createWastedDemonAttributes() {
+    public static DefaultAttributeContainer.Builder createDemonGuardianAttributes() {
         return HostileEntity
                 .createHostileAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 15)
