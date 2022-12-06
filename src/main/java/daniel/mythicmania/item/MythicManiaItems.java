@@ -63,9 +63,9 @@ public final class MythicManiaItems {
             new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP))
     );
 
-    public static final Item CHARGED_RUINOUS_ORB = Registry.register(
+    public static final Item CHARGED_RUINED_ORB = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "charged_ruinous_orb"),
+            new Identifier(MythicMania.MOD_ID, "charged_ruined_orb"),
             new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP))
     );
 
