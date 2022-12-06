@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "AEA",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "mythicmania:wasted_essence"
+    },
+    "A": {
+      "item": "minecraft:magma_cream"
+    },
+    "E": {
+      "item": "mythicmania:empty_orb"
+    }
+  },
+  "result": {
+    "item": "mythicmania:charged_ruinous_orb",
+    "count": 1
+  }
+}
