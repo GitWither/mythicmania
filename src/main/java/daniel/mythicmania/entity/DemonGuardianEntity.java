@@ -31,12 +31,7 @@ public class DemonGuardianEntity extends HostileEntity {
         this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
         this.targetSelector.add(1, new ActiveTargetGoal<>(this, IronGolemEntity.class, true));
     }
-
-    @Override
-    protected void initEquipment(Random random, LocalDifficulty localDifficulty) {
-        this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SWORD));
-    }
-
+    
     @Override
     public boolean tryAttack(Entity entity) {
         if (super.tryAttack(entity) && entity instanceof LivingEntity livingEntity) {
