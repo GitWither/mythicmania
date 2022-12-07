@@ -10,6 +10,29 @@
           "functions": [
             {
               "function": "minecraft:set_count",
+              "count": {
+                "min": 3,
+                "max": 5
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:killed_by_player"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "mythicmania:demon_vest",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
               "count": 1
             }
           ],
