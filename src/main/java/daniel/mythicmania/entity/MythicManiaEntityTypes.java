@@ -11,6 +11,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -54,6 +55,15 @@ public final class MythicManiaEntityTypes {
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, DemonGuardianEntity::new).fireImmune().dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
     );
 
+    public static final EntityType<WaterParcelEntity> WATER_PARCEL_ENTITY = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier(MythicMania.MOD_ID, "water_parcel"),
+            FabricEntityTypeBuilder.<WaterParcelEntity>create(SpawnGroup.MISC, WaterParcelEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
+                    .trackRangeBlocks(8).trackedUpdateRate(10)
+                    .build()
+    );
+
     public static void registerEntityAttributes() {
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, MagicalGrubEntity.createMagicalGrubAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, PoisonousGrubEntity.createPoisonousGrubAttributes());
@@ -82,5 +92,8 @@ public final class MythicManiaEntityTypes {
         // Demon Guardian
         EntityRendererRegistry.register(MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, DemonGuardianEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(DEMON_GUARDIAN_LAYER, DemonGuardianEntityModel::getTexturedModelData);
+
+        // Water Parcel
+        EntityRendererRegistry.register(MythicManiaEntityTypes.WATER_PARCEL_ENTITY, FlyingItemEntityRenderer::new);
     }
 }
