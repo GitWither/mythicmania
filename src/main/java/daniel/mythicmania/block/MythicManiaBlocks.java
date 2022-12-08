@@ -51,7 +51,7 @@ public final class MythicManiaBlocks {
     public static final Block PULSATING_BLACKSTONE = Registry.register(
             Registry.BLOCK,
             new Identifier(MythicMania.MOD_ID, "pulsating_blackstone"),
-            new Block(FabricBlockSettings.of(Material.STONE).luminance((state) -> 5).sounds(BlockSoundGroup.GILDED_BLACKSTONE).strength(5f, 5f).resistance(10f))
+            new Block(FabricBlockSettings.of(Material.STONE).requiresTool().luminance((state) -> 5).strength(2, 6).sounds(BlockSoundGroup.GILDED_BLACKSTONE))
     );
 
     public static void registerBlockRendering() {
