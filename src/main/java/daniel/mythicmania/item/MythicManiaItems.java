@@ -12,6 +12,7 @@ import daniel.mythicmania.util.wrapper.CustomPickaxeItem;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
 public final class MythicManiaItems {
@@ -54,19 +55,19 @@ public final class MythicManiaItems {
     public static final Item CHARGED_INTOXICATED_ORB = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "charged_intoxicated_orb"),
-            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP))
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP).rarity(Rarity.UNCOMMON))
     );
 
     public static final Item CHARGED_LOCH_ORB = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "charged_loch_orb"),
-            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP))
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP).rarity(Rarity.UNCOMMON))
     );
 
-    public static final Item CHARGED_RUINOUS_ORB = Registry.register(
+    public static final Item CHARGED_RUINED_ORB = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "charged_ruinous_orb"),
-            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP))
+            new Identifier(MythicMania.MOD_ID, "charged_ruined_orb"),
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP).rarity(Rarity.UNCOMMON))
     );
 
     public static final Item POISON_SPIKE = Registry.register(

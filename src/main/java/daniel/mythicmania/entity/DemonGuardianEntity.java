@@ -34,7 +34,7 @@ public class DemonGuardianEntity extends HostileEntity {
         this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
         this.targetSelector.add(1, new ActiveTargetGoal<>(this, IronGolemEntity.class, true));
     }
-
+    
     @Override
     protected void initEquipment(Random random, LocalDifficulty localDifficulty) {
         // Generates a random number which determines whether the Demon Guardian has a sword, a shield, or nothing.
