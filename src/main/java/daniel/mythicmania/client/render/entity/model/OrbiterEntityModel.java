@@ -54,9 +54,9 @@ public class OrbiterEntityModel<T extends Entity> extends EntityModel<OrbiterEnt
 
     @Override
     public void setAngles(OrbiterEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-//        big_ring.yaw = MathHelper.cos(animationProgress * 0.2f) * 2;
-//        med_ring.yaw = -MathHelper.sin(animationProgress * 0.2f) * 2;
-//        small_ring.yaw = MathHelper.cos(animationProgress * 0.2f) * 2;
+        big_ring.yaw = animationProgress * 5;
+        med_ring.yaw = -(animationProgress * 5);
+        small_ring.yaw = animationProgress * 5;
     }
 
     @Override
