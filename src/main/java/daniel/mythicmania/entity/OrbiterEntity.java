@@ -10,14 +10,13 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.world.World;
-/*
-- Make core emissive
-- Animate it
-- Add translations
- */
+
 public class OrbiterEntity extends HostileEntity {
+    short xp = 210;
+
     protected OrbiterEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
+        this.experiencePoints = xp;
     }
 
     @Override
