@@ -14,6 +14,7 @@ import net.minecraft.world.World;
 public class MagicalGrubEntity extends AbstractGrubEntity {
     public MagicalGrubEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
+        this.experiencePoints = 25;
     }
 
     @Override
