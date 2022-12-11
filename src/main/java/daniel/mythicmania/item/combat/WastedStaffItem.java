@@ -1,13 +1,12 @@
-package daniel.mythicmania.item;
+package daniel.mythicmania.item.combat;
 
+import daniel.mythicmania.MythicMania;
+import daniel.mythicmania.client.sound.MythicManiaSoundEvents;
 import daniel.mythicmania.entity.WastedStaffChargeEntity;
-import daniel.mythicmania.entity.WaterParcelEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
+import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
@@ -37,7 +36,7 @@ public class WastedStaffItem extends SwordItem {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient) {
-            world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_WITHER_SHOOT, SoundCategory.NEUTRAL, 0.5F, 1F);
+            world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.WASTED_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 1F);
 
             user.getItemCooldownManager().set(this, 6);
 

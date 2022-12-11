@@ -1,4 +1,4 @@
-package daniel.mythicmania.util.wrapper;
+package daniel.mythicmania.item.combat;
 
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ToolMaterial;

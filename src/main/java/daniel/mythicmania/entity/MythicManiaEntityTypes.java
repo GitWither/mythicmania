@@ -82,28 +82,20 @@ public final class MythicManiaEntityTypes {
     }
 
     public static void registerEntityRendering() {
-        // Magical Grub
+        // Register entity type rendering
         EntityRendererRegistry.register(MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, MagicalGrubEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(MAGICAL_GRUB_LAYER, MagicalGrubEntityModel::getTexturedModelData);
-
-        // Poison Grub
         EntityRendererRegistry.register(MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, PoisonousGrubEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(POISONOUS_GRUB_LAYER, PoisonousGrubEntityModel::getTexturedModelData);
-
-        // Zapping Beetle
         EntityRendererRegistry.register(MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, ZappingBeetleEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(ZAPPING_BEETLE_LAYER, ZappingBeetleEntityModel::getTexturedModelData);
-
-        // Wasted Demon
         EntityRendererRegistry.register(MythicManiaEntityTypes.WASTED_DEMON_ENTITY, WastedDemonEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(WASTED_DEMON_LAYER, WastedDemonEntityModel::getTexturedModelData);
-
-        // Demon Guardian
         EntityRendererRegistry.register(MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, DemonGuardianEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(DEMON_GUARDIAN_LAYER, DemonGuardianEntityModel::getTexturedModelData);
-
-        // Projectiles
         EntityRendererRegistry.register(MythicManiaEntityTypes.WATER_PARCEL_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.WASTED_STAFF_CHARGE_ENTITY, FlyingItemEntityRenderer::new);
+
+        // Register layers
+        EntityModelLayerRegistry.registerModelLayer(MAGICAL_GRUB_LAYER, MagicalGrubEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(POISONOUS_GRUB_LAYER, PoisonousGrubEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ZAPPING_BEETLE_LAYER, ZappingBeetleEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(WASTED_DEMON_LAYER, WastedDemonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(DEMON_GUARDIAN_LAYER, DemonGuardianEntityModel::getTexturedModelData);
     }
 }

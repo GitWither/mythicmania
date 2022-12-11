@@ -1,5 +1,6 @@
 package daniel.mythicmania;
 
+import daniel.mythicmania.client.sound.MythicManiaSoundEvents;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.item.*;
 import daniel.mythicmania.world.gen.MythicManiaFeatures;
@@ -24,5 +25,6 @@ public class MythicMania implements ModInitializer {
 
         MythicManiaFeatures.registerFeatures();
         MythicManiaEntityTypes.registerEntityAttributes();
+        MythicManiaSoundEvents.registerSoundEvents();
     }
 }
