@@ -103,7 +103,7 @@ public final class MythicManiaItems {
     public static final Item WASTED_STAFF = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "wasted_staff"),
-            new WastedStaffItem(MythicManiaToolMaterials.WASTED_STAFF,3,0.8f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).maxCount(1))
+            new WastedStaffItem(MythicManiaToolMaterials.WASTED_STAFF,2,0.8f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).maxCount(1))
     );
 
     public static final Item INTOXICATED_SWORD = Registry.register(

@@ -1,7 +1,6 @@
 package daniel.mythicmania.item;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
@@ -15,8 +14,10 @@ public class WastedStaffItem extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        final StatusEffectInstance instantHealing = new StatusEffectInstance(StatusEffects.ABSORPTION, 5, 0);
-        attacker.addStatusEffect(instantHealing);
+        int duration = 20 * 5;
+        final StatusEffectInstance absorption = new StatusEffectInstance(StatusEffects.ABSORPTION, duration, 0);
+
+        attacker.addStatusEffect(absorption);
         target.setOnFireFor(6);
 
         return super.postHit(stack, target, attacker);
