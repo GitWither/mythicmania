@@ -100,6 +100,12 @@ public final class MythicManiaItems {
             new WaterParcelItem(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP).maxCount(32))
     );
 
+    public static final Item WASTED_STAFF_CHARGE = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "wasted_staff_charge"),
+            new WastedStaffChargeItem(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP))
+    );
+
     public static final Item WASTED_STAFF = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "wasted_staff"),

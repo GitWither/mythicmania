@@ -64,6 +64,15 @@ public final class MythicManiaEntityTypes {
                     .build()
     );
 
+    public static final EntityType<WastedStaffChargeEntity> WASTED_STAFF_CHARGE_ENTITY = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier(MythicMania.MOD_ID, "wasted_staff_charge"),
+            FabricEntityTypeBuilder.<WastedStaffChargeEntity>create(SpawnGroup.MISC, WastedStaffChargeEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
+                    .trackRangeBlocks(30).trackedUpdateRate(30)
+                    .build()
+    );
+
     public static void registerEntityAttributes() {
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, MagicalGrubEntity.createMagicalGrubAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, PoisonousGrubEntity.createPoisonousGrubAttributes());
@@ -93,7 +102,8 @@ public final class MythicManiaEntityTypes {
         EntityRendererRegistry.register(MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, DemonGuardianEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(DEMON_GUARDIAN_LAYER, DemonGuardianEntityModel::getTexturedModelData);
 
-        // Water Parcel
+        // Projectiles
         EntityRendererRegistry.register(MythicManiaEntityTypes.WATER_PARCEL_ENTITY, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(MythicManiaEntityTypes.WASTED_STAFF_CHARGE_ENTITY, FlyingItemEntityRenderer::new);
     }
 }
