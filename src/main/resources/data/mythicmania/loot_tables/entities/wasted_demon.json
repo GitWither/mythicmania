@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "mythicmania:demon_vest",
+          "name": "mythicmania:wasted_essence",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -30,6 +30,26 @@
         {
           "type": "minecraft:item",
           "name": "mythicmania:demon_vest",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 1
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:killed_by_player"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "mythicmania:wasted_staff",
           "functions": [
             {
               "function": "minecraft:set_count",

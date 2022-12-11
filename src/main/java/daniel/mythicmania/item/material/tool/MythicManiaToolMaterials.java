@@ -14,7 +14,7 @@ public final class MythicManiaToolMaterials {
     );
 
     public static final ToolMaterial WASTED_STAFF = new CustomToolMaterial(
-            488, 6.0f, 0.0f, 0, 6,
+            800, 6.0f, 0.0f, 0, 6,
             Ingredient.ofItems((ItemConvertible) null)
     );
 }
