@@ -103,7 +103,7 @@ public final class MythicManiaItems {
     public static final Item WASTED_STAFF_CHARGE = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "wasted_staff_charge"),
-            new WastedStaffChargeItem(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP))
+            new WastedStaffChargeItem(new Item.Settings())
     );
 
     public static final Item WASTED_STAFF = Registry.register(
