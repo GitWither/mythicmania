@@ -1,8 +1,7 @@
 package daniel.mythicmania.entity;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
+import daniel.mythicmania.item.MythicManiaItems;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -15,6 +14,8 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -22,6 +23,9 @@ import net.minecraft.tag.FluidTags;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.LocalDifficulty;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -56,6 +60,21 @@ public class WastedDemonEntity extends HostileEntity {
     protected void initActiveTargetGoals() {
         this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
         this.targetSelector.add(3, new ActiveTargetGoal<>(this, MobEntity.class, 5, false, false, (entity) -> entity != null && !(entity instanceof WastedDemonEntity) && !(entity instanceof DemonGuardianEntity)));
+    }
+
+    @Override
+    protected void initEquipment(Random random, LocalDifficulty localDifficulty) {
+        this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(MythicManiaItems.WASTED_STAFF));
+        super.initEquipment(random, localDifficulty);
+    }
+
+    @Nullable
+    @Override
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
+        Random random = world.getRandom();
+        this.initEquipment(random, difficulty);
+
+        return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
 
     public boolean hurtByWater() {
