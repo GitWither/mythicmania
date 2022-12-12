@@ -32,7 +32,7 @@ public class WastedStaffChargeEntity extends ThrownItemEntity {
 
     @Override
     protected Item getDefaultItem() {
-        return MythicManiaItems.WATER_PARCEL;
+        return MythicManiaItems.WASTED_STAFF_CHARGE;
     }
 
     @Override
