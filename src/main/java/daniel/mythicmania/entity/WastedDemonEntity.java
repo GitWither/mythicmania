@@ -112,11 +112,6 @@ public class WastedDemonEntity extends HostileEntity {
         super.tickMovement();
     }
 
-    public void onSummoned() {
-        this.bossBar.setPercent(0.0F);
-        this.setHealth(this.getMaxHealth() / 3.0F);
-    }
-
     public void onStartedTrackingBy(ServerPlayerEntity player) {
         super.onStartedTrackingBy(player);
         this.bossBar.addPlayer(player);
