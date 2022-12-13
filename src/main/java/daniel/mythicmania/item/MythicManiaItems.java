@@ -21,6 +21,7 @@ public final class MythicManiaItems {
     public static Item TOXIC_ORE;
     public static Item ANCIENT_ALTAR;
     public static Item LUMINESCENT_SAC;
+    public static Item HARVESTER;
 
     public static final Item POISONOUS_BERRY = Registry.register(
             Registry.ITEM,
@@ -167,6 +168,13 @@ public final class MythicManiaItems {
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "rinth"),
                 new BlockItem(MythicManiaBlocks.RINTH_BLOCK, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP)
+                )
+        );
+
+        HARVESTER = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "harvester"),
+                new BlockItem(MythicManiaBlocks.HARVESTER_BLOCK, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP)
                 )
         );
 
