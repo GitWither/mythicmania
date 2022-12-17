@@ -31,6 +31,7 @@
   "item.mythicmania.zapping_beetle_spawn_egg": "Zapping Beetle Spawn Egg",
   "item.mythicmania.wasted_demon_spawn_egg": "Wasted Demon Spawn Egg",
   "item.mythicmania.demon_guardian_spawn_egg": "Demon Guardian Spawn Egg",
+  "item.mythicmania.orbiter_spawn_egg": "Orbiter Spawn Egg",
 
   "item.mythicmania.demon_vest": "Demon Vest",
   "item.mythicmania.intoxicated_helmet": "Intoxicated Helmet",
@@ -49,6 +50,7 @@
   "entity.mythicmania.zapping_beetle": "Zapping Beetle",
   "entity.mythicmania.wasted_demon": "Wasted Demon",
   "entity.mythicmania.demon_guardian": "Demon Guardian",
-
-  "subtitles.mythicmania.wasted_staff_fire": "Fired Wasted Staff"
+  "subtitles.mythicmania.wasted_staff_fire": "Fired Wasted Staff",
+  "entity.mythicmania.water_parcel": "Water Parcel",
+  "entity.mythicmania.orbiter": "Orbiter"
 }

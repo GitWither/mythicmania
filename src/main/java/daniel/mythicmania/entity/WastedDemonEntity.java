@@ -41,6 +41,7 @@ public class WastedDemonEntity extends HostileEntity {
     public WastedDemonEntity(EntityType<? extends WastedDemonEntity> entityType, World world) {
         super(entityType, world);
         this.bossBar = new ServerBossBar(this.getDisplayName(), Color.RED, Style.PROGRESS);
+        this.experiencePoints = 2100;
     }
 
     @Override

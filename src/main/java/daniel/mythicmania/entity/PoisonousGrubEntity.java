@@ -15,6 +15,7 @@ import net.minecraft.world.World;
 public class PoisonousGrubEntity extends AbstractGrubEntity {
     public PoisonousGrubEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
+        this.experiencePoints = 50;
     }
 
     @Override
