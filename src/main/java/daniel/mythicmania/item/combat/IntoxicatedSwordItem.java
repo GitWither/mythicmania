@@ -1,4 +1,4 @@
-package daniel.mythicmania.item;
+package daniel.mythicmania.item.combat;
 
 import daniel.mythicmania.particle.MythicManiaParticles;
 import net.minecraft.entity.Entity;

@@ -3,12 +3,10 @@ package daniel.mythicmania.item;
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.block.MythicManiaBlocks;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
+import daniel.mythicmania.item.combat.*;
 import daniel.mythicmania.item.material.armor.DemonVestMaterial;
 import daniel.mythicmania.item.material.armor.IntoxicatedArmorMaterial;
 import daniel.mythicmania.item.material.tool.MythicManiaToolMaterials;
-import daniel.mythicmania.util.wrapper.CustomAxeItem;
-import daniel.mythicmania.util.wrapper.CustomHoeItem;
-import daniel.mythicmania.util.wrapper.CustomPickaxeItem;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
@@ -98,6 +96,18 @@ public final class MythicManiaItems {
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "water_parcel"),
             new WaterParcelItem(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP).maxCount(32))
+    );
+
+    public static final Item WASTED_STAFF_CHARGE = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "wasted_staff_charge"),
+            new WastedStaffChargeItem(new Item.Settings())
+    );
+
+    public static final Item WASTED_STAFF = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "wasted_staff"),
+            new WastedStaffItem(MythicManiaToolMaterials.WASTED_STAFF,2,0.8f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).maxCount(1))
     );
 
     public static final Item INTOXICATED_SWORD = Registry.register(

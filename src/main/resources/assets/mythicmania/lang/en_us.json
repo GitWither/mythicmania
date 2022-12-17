@@ -23,6 +23,8 @@
   "item.mythicmania.intoxicated_axe": "Intoxicated Axe",
   "item.mythicmania.intoxicated_hoe": "Intoxicated Hoe",
   "item.mythicmania.intoxicated_shovel": "Intoxicated Shovel",
+  "item.mythicmania.wasted_staff": "Wasted Staff",
+  "item.mythicmania.wasted_staff_charge": "Wasted Staff Charge",
 
   "item.mythicmania.magical_grub_spawn_egg": "Magical Grub Spawn Egg",
   "item.mythicmania.poisonous_grub_spawn_egg": "Poisonous Grub Spawn Egg",
@@ -48,6 +50,7 @@
   "entity.mythicmania.zapping_beetle": "Zapping Beetle",
   "entity.mythicmania.wasted_demon": "Wasted Demon",
   "entity.mythicmania.demon_guardian": "Demon Guardian",
+  "subtitles.mythicmania.wasted_staff_fire": "Fired Wasted Staff",
   "entity.mythicmania.water_parcel": "Water Parcel",
   "entity.mythicmania.orbiter": "Orbiter"
 }
