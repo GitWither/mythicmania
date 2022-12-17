@@ -15,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 public class ZappingBeetleEntity extends AbstractBeetleEntity {
     protected ZappingBeetleEntity(EntityType<? extends AbstractBeetleEntity> entityType, World world) {
         super(entityType, world);
+        this.experiencePoints = 75;
     }
 
     @Override
