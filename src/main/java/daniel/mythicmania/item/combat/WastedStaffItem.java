@@ -1,6 +1,5 @@
 package daniel.mythicmania.item.combat;
 
-import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.client.sound.MythicManiaSoundEvents;
 import daniel.mythicmania.entity.WastedStaffChargeEntity;
 import daniel.mythicmania.item.MythicManiaItems;
@@ -12,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
