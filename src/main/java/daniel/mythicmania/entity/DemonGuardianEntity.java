@@ -22,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
 public class DemonGuardianEntity extends HostileEntity {
     public DemonGuardianEntity(EntityType<? extends DemonGuardianEntity> entityType, World world) {
         super(entityType, world);
+        this.experiencePoints = 150;
     }
 
     @Override
