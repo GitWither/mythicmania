@@ -201,23 +201,45 @@ public final class MythicManiaItems {
 
     public static void registerSpawnEggs() {
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "magical_grub_spawn_egg"),
-                new SpawnEggItem(MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, 0x7ff8eb, 0x5da1c5, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
-                ));
+                new SpawnEggItem(
+                        MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, 0x7ff8eb, 0x5da1c5,
+                        new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
+                )
+        );
 
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "poisonous_grub_spawn_egg"),
-                new SpawnEggItem(MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, 0x4e9e78, 0x9cf590, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
-                ));
+                new SpawnEggItem(
+                        MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, 0x4e9e78, 0x9cf590,
+                        new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
+                )
+        );
 
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "zapping_beetle_spawn_egg"),
-                new SpawnEggItem(MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, 0x3991d0, 0xcab641, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
-                ));
+                new SpawnEggItem(
+                        MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, 0x3991d0, 0xcab641,
+                        new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
+                )
+        );
 
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "wasted_demon_spawn_egg"),
-                new SpawnEggItem(MythicManiaEntityTypes.WASTED_DEMON_ENTITY, 0x2a2a2a, 0x951010, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
-                ));
+                new SpawnEggItem(
+                        MythicManiaEntityTypes.WASTED_DEMON_ENTITY, 0x2a2a2a, 0x951010,
+                        new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
+                )
+        );
 
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "demon_guardian_spawn_egg"),
-                new SpawnEggItem(MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, 0x2a2a2a, 0x7c7c7c, new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
-                ));
+                new SpawnEggItem(
+                        MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, 0x2a2a2a, 0x7c7c7c,
+                        new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
+                )
+        );
+
+        Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "orbiter_spawn_egg"),
+                new SpawnEggItem(
+                        MythicManiaEntityTypes.ORBITER_ENTITY, 0x494343, 0xdd693d,
+                        new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
+                )
+        );
     }
 }
