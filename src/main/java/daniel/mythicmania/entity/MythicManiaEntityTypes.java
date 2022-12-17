@@ -94,6 +94,7 @@ public final class MythicManiaEntityTypes {
         EntityRendererRegistry.register(MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, DemonGuardianEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.WATER_PARCEL_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.WASTED_STAFF_CHARGE_ENTITY, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(MythicManiaEntityTypes.ORBITER_ENTITY, OrbiterEntityRenderer::new);
 
         // Register layers
         EntityModelLayerRegistry.registerModelLayer(MAGICAL_GRUB_LAYER, MagicalGrubEntityModel::getTexturedModelData);
@@ -101,9 +102,6 @@ public final class MythicManiaEntityTypes {
         EntityModelLayerRegistry.registerModelLayer(ZAPPING_BEETLE_LAYER, ZappingBeetleEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(WASTED_DEMON_LAYER, WastedDemonEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(DEMON_GUARDIAN_LAYER, DemonGuardianEntityModel::getTexturedModelData);
-
-        // Orbiter
-        EntityRendererRegistry.register(MythicManiaEntityTypes.ORBITER_ENTITY, OrbiterEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(ORBITER_LAYER, OrbiterEntityModel::getTexturedModelData);
     }
 }
