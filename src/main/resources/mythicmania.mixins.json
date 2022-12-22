@@ -4,8 +4,7 @@
   "package": "daniel.mythicmania.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "MixinPlayerEntity",
-    "MixinLivingEntity"
+    "MixinPlayerEntity"
   ],
   "client": [
     "MixinClientPlayNetworkHandler",
