@@ -25,11 +25,29 @@ public abstract class MixinPlayerEntity extends LivingEntity {
 
     @Inject(method = "tick", at = @At(value = "INVOKE", target = "net/minecraft/entity/player/PlayerEntity.updateTurtleHelmet()V"))
     private void mythicmania$injectDemonVestEffects(CallbackInfo ci) {
+        ItemStack headSlotItem = this.getEquippedStack(EquipmentSlot.HEAD);
         ItemStack chestSlotItem = this.getEquippedStack(EquipmentSlot.CHEST);
+        ItemStack legsSlotItem = this.getEquippedStack(EquipmentSlot.LEGS);
+        ItemStack bootSlotItem = this.getEquippedStack(EquipmentSlot.FEET);
 
+        final StatusEffectInstance speed = new StatusEffectInstance(StatusEffects.SPEED, 40, 0, false, false, true);
+        final StatusEffectInstance fireResistance = new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 40, 0, false, false, true);
+        final StatusEffectInstance regeneration = new StatusEffectInstance(StatusEffects.REGENERATION, 40, 0, false, false, true);
+
+        // Gives player speed and fire resistance if demon vest is worn.
         if (chestSlotItem.isOf(MythicManiaItems.DEMON_VEST)) {
-            this.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 40, 0, false, false, true));
-            this.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 40, 0, false, false, true));
+            this.addStatusEffect(speed);
+            this.addStatusEffect(fireResistance);
+        }
+
+        // Gives player regeneration if full intoxicated set is worn.
+        if (
+            headSlotItem.isOf(MythicManiaItems.INTOXICATED_HELMET) &&
+            chestSlotItem.isOf(MythicManiaItems.INTOXICATED_CHESTPLATE) &&
+            legsSlotItem.isOf(MythicManiaItems.INTOXICATED_LEGGINGS) &&
+            bootSlotItem.isOf(MythicManiaItems.INTOXICATED_BOOTS)
+        ) {
+            this.addStatusEffect(regeneration);
         }
     }
 }
