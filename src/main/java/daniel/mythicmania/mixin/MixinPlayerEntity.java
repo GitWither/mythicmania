@@ -42,10 +42,10 @@ public abstract class MixinPlayerEntity extends LivingEntity {
 
         // Gives player regeneration if full intoxicated set is worn.
         if (
-            headSlotItem.isOf(MythicManiaItems.INTOXICATED_HELMET) &&
-            chestSlotItem.isOf(MythicManiaItems.INTOXICATED_CHESTPLATE) &&
-            legsSlotItem.isOf(MythicManiaItems.INTOXICATED_LEGGINGS) &&
-            bootSlotItem.isOf(MythicManiaItems.INTOXICATED_BOOTS)
+            headSlotItem.isOf(MythicManiaItems.NUCLEAR_HELMET) &&
+            chestSlotItem.isOf(MythicManiaItems.NUCLEAR_CHESTPLATE) &&
+            legsSlotItem.isOf(MythicManiaItems.NUCLEAR_LEGGINGS) &&
+            bootSlotItem.isOf(MythicManiaItems.NUCLEAR_BOOTS)
         ) {
             this.addStatusEffect(regeneration);
         }

@@ -1,16 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "###",
-    "# #"
+    "#",
+    "i",
+    "i"
   ],
   "key": {
     "#": {
       "item": "mythicmania:toxic_pebble"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
     }
   },
   "result": {
-    "item": "mythicmania:intoxicated_helmet",
+    "item": "mythicmania:nuclear_shovel",
     "count": 1
   }
 }

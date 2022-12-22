@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "mythicmania:item/intoxicated_sword"
+    "layer0": "mythicmania:item/nuclear_sword"
   }
 }

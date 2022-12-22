@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mythicmania:item/intoxicated_boots"
+    "layer0": "mythicmania:item/nuclear_boots"
   }
 }

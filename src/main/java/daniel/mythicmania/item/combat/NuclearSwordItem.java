@@ -5,7 +5,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -16,8 +15,8 @@ import net.minecraft.server.world.ServerWorld;
 
 import java.util.List;
 
-public class IntoxicatedSwordItem extends SwordItem {
-    public IntoxicatedSwordItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
+public class NuclearSwordItem extends SwordItem {
+    public NuclearSwordItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
 

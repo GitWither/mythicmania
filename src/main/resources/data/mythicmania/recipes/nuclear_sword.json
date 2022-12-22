@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "#",
-    "i",
+    "#",
     "i"
   ],
   "key": {
@@ -14,7 +14,7 @@
     }
   },
   "result": {
-    "item": "mythicmania:intoxicated_shovel",
+    "item": "mythicmania:nuclear_sword",
     "count": 1
   }
 }

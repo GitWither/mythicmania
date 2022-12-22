@@ -7,8 +7,8 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
-public class IntoxicatedArmorMaterial implements ArmorMaterial {
-    public static final IntoxicatedArmorMaterial INSTANCE = new IntoxicatedArmorMaterial();
+public class NuclearArmorMaterial implements ArmorMaterial {
+    public static final NuclearArmorMaterial INSTANCE = new NuclearArmorMaterial();
 
     private static final int[] BASE_DURABILITY = new int[] {230, 255, 260, 211};
     private static final int[] PROTECTION_VALUES = new int[] {5, 8, 11, 5};
@@ -40,7 +40,7 @@ public class IntoxicatedArmorMaterial implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return "intoxicated";
+        return "nuclear";
     }
 
     @Override

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "##",
-    " i",
+    "#i",
     " i"
   ],
   "key": {
@@ -14,7 +14,7 @@
     }
   },
   "result": {
-    "item": "mythicmania:intoxicated_hoe",
+    "item": "mythicmania:nuclear_axe",
     "count": 1
   }
 }

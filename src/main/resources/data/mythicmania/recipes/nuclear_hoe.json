@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#",
-    "#",
-    "i"
+    "##",
+    " i",
+    " i"
   ],
   "key": {
     "#": {
@@ -14,7 +14,7 @@
     }
   },
   "result": {
-    "item": "mythicmania:intoxicated_sword",
+    "item": "mythicmania:nuclear_hoe",
     "count": 1
   }
 }

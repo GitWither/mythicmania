@@ -5,7 +5,7 @@ import daniel.mythicmania.block.MythicManiaBlocks;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.item.combat.*;
 import daniel.mythicmania.item.material.armor.DemonVestMaterial;
-import daniel.mythicmania.item.material.armor.IntoxicatedArmorMaterial;
+import daniel.mythicmania.item.material.armor.NuclearArmorMaterial;
 import daniel.mythicmania.item.material.tool.MythicManiaToolMaterials;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
@@ -50,9 +50,9 @@ public final class MythicManiaItems {
             new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP))
     );
 
-    public static final Item CHARGED_INTOXICATED_ORB = Registry.register(
+    public static final Item CHARGED_NUCLEAR_ORB = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "charged_intoxicated_orb"),
+            new Identifier(MythicMania.MOD_ID, "charged_nuclear_orb"),
             new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP).rarity(Rarity.UNCOMMON))
     );
 
@@ -110,34 +110,34 @@ public final class MythicManiaItems {
             new WastedStaffItem(MythicManiaToolMaterials.WASTED_STAFF,2,0.8f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).maxCount(1))
     );
 
-    public static final Item INTOXICATED_SWORD = Registry.register(
+    public static final Item NUCLEAR_SWORD = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "intoxicated_sword"),
-            new IntoxicatedSwordItem(MythicManiaToolMaterials.INTOXICATED, 7, 1.2f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+            new Identifier(MythicMania.MOD_ID, "nuclear_sword"),
+            new NuclearSwordItem(MythicManiaToolMaterials.NUCLEAR, 7, 1.2f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
     );
 
-    public static final Item INTOXICATED_PICKAXE = Registry.register(
+    public static final Item NUCLEAR_PICKAXE = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "intoxicated_pickaxe"),
-            new CustomPickaxeItem(MythicManiaToolMaterials.INTOXICATED, 4, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
+            new Identifier(MythicMania.MOD_ID, "nuclear_pickaxe"),
+            new CustomPickaxeItem(MythicManiaToolMaterials.NUCLEAR, 4, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
     );
 
-    public static final Item INTOXICATED_AXE = Registry.register(
+    public static final Item NUCLEAR_AXE = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "intoxicated_axe"),
-            new CustomAxeItem(MythicManiaToolMaterials.INTOXICATED, 5, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
+            new Identifier(MythicMania.MOD_ID, "nuclear_axe"),
+            new CustomAxeItem(MythicManiaToolMaterials.NUCLEAR, 5, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
     );
 
-    public static final Item INTOXICATED_HOE = Registry.register(
+    public static final Item NUCLEAR_HOE = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "intoxicated_hoe"),
-            new CustomHoeItem(MythicManiaToolMaterials.INTOXICATED, 1, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
+            new Identifier(MythicMania.MOD_ID, "nuclear_hoe"),
+            new CustomHoeItem(MythicManiaToolMaterials.NUCLEAR, 1, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
     );
 
-    public static final Item INTOXICATED_SHOVEL = Registry.register(
+    public static final Item NUCLEAR_SHOVEL = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "intoxicated_shovel"),
-            new ShovelItem(MythicManiaToolMaterials.INTOXICATED, 1, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
+            new Identifier(MythicMania.MOD_ID, "nuclear_shovel"),
+            new ShovelItem(MythicManiaToolMaterials.NUCLEAR, 1, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
     );
 
     // ==== GEAR ====
@@ -148,28 +148,28 @@ public final class MythicManiaItems {
             new ArmorItem(DemonVestMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
     );
 
-    public static final Item INTOXICATED_HELMET = Registry.register(
+    public static final Item NUCLEAR_HELMET = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "intoxicated_helmet"),
-            new ArmorItem(IntoxicatedArmorMaterial.INSTANCE, EquipmentSlot.HEAD, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+            new Identifier(MythicMania.MOD_ID, "nuclear_helmet"),
+            new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.HEAD, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
     );
 
-    public static final Item INTOXICATED_CHESTPLATE = Registry.register(
+    public static final Item NUCLEAR_CHESTPLATE = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "intoxicated_chestplate"),
-            new ArmorItem(IntoxicatedArmorMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+            new Identifier(MythicMania.MOD_ID, "nuclear_chestplate"),
+            new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
     );
 
-    public static final Item INTOXICATED_LEGGINGS = Registry.register(
+    public static final Item NUCLEAR_LEGGINGS = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "intoxicated_leggings"),
-            new ArmorItem(IntoxicatedArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+            new Identifier(MythicMania.MOD_ID, "nuclear_leggings"),
+            new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
     );
 
-    public static final Item INTOXICATED_BOOTS = Registry.register(
+    public static final Item NUCLEAR_BOOTS = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "intoxicated_boots"),
-            new ArmorItem(IntoxicatedArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+            new Identifier(MythicMania.MOD_ID, "nuclear_boots"),
+            new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
     );
 
     public static void registerBlockItems() {
