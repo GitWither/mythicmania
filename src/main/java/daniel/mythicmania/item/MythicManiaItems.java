@@ -104,18 +104,6 @@ public final class MythicManiaItems {
             new WastedStaffChargeItem(new Item.Settings())
     );
 
-    public static final Item WASTED_STAFF = Registry.register(
-            Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "wasted_staff"),
-            new WastedStaffItem(MythicManiaToolMaterials.WASTED_STAFF,2,0.8f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).maxCount(1))
-    );
-
-    public static final Item NUCLEAR_SWORD = Registry.register(
-            Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "nuclear_sword"),
-            new NuclearSwordItem(MythicManiaToolMaterials.NUCLEAR, 7, 1.2f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
-    );
-
     public static final Item NUCLEAR_PICKAXE = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "nuclear_pickaxe"),
@@ -140,12 +128,12 @@ public final class MythicManiaItems {
             new ShovelItem(MythicManiaToolMaterials.NUCLEAR, 1, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
     );
 
-    // ==== GEAR ====
+    // ==== COMBAT TAB ====
 
-    public static final Item DEMON_VEST = Registry.register(
+    public static final Item NUCLEAR_SWORD = Registry.register(
             Registry.ITEM,
-            new Identifier(MythicMania.MOD_ID, "demon_vest"),
-            new ArmorItem(DemonVestMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+            new Identifier(MythicMania.MOD_ID, "nuclear_sword"),
+            new NuclearSwordItem(MythicManiaToolMaterials.NUCLEAR, 7, 1.2f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
     );
 
     public static final Item NUCLEAR_HELMET = Registry.register(
@@ -170,6 +158,18 @@ public final class MythicManiaItems {
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "nuclear_boots"),
             new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+    );
+
+    public static final Item WASTED_STAFF = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "wasted_staff"),
+            new WastedStaffItem(MythicManiaToolMaterials.WASTED_STAFF,2,0.8f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).maxCount(1))
+    );
+
+    public static final Item DEMON_VEST = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "demon_vest"),
+            new ArmorItem(DemonVestMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
     );
 
     public static void registerBlockItems() {
