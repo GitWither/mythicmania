@@ -50,7 +50,8 @@
   "entity.mythicmania.zapping_beetle": "Zapping Beetle",
   "entity.mythicmania.wasted_demon": "Wasted Demon",
   "entity.mythicmania.demon_guardian": "Demon Guardian",
-  "subtitles.mythicmania.wasted_staff_fire": "Fired Wasted Staff",
   "entity.mythicmania.water_parcel": "Water Parcel",
-  "entity.mythicmania.orbiter": "Orbiter"
+  "entity.mythicmania.orbiter": "Orbiter",
+
+  "subtitles.mythicmania.wasted_staff_fire": "Fired Wasted Staff"
 }
