@@ -1,11 +1,15 @@
 package daniel.mythicmania.entity;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.ActiveTargetGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -24,6 +28,16 @@ public class ZappingBeetleEntity extends AbstractBeetleEntity {
         this.goalSelector.add(1, new MeleeAttackGoal(this, 1f, false));
         this.goalSelector.add(2, new BeetleWanderAroundGoal());
         this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
+    }
+
+    @Override
+    public boolean tryAttack(Entity target) {
+        final StatusEffectInstance stun = new StatusEffectInstance(StatusEffects.SLOWNESS, 6*20, 4, false, false, false);
+        if (target instanceof LivingEntity entity) {
+            entity.addStatusEffect(stun);
+        }
+        
+        return true;
     }
 
     public static DefaultAttributeContainer.Builder createZappingBeetleAttributes() {
