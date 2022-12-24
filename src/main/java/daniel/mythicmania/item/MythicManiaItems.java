@@ -226,7 +226,7 @@ public final class MythicManiaItems {
 
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "zapping_beetle_spawn_egg"),
                 new SpawnEggItem(
-                        MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, 0x3991d0, 0xcab641,
+                        MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, 0x3991d0, 0xF0D538,
                         new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
                 )
         );
