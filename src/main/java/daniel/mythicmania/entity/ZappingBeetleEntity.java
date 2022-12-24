@@ -32,7 +32,7 @@ public class ZappingBeetleEntity extends AbstractBeetleEntity {
 
     @Override
     public boolean tryAttack(Entity target) {
-        final StatusEffectInstance stun = new StatusEffectInstance(StatusEffects.SLOWNESS, 6*20, 4, false, false, false);
+        final StatusEffectInstance stun = new StatusEffectInstance(StatusEffects.SLOWNESS, 6*20, 4, false, false, true);
         if (target instanceof LivingEntity entity) {
             entity.addStatusEffect(stun);
         }
