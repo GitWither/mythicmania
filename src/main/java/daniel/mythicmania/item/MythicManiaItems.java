@@ -212,7 +212,7 @@ public final class MythicManiaItems {
     public static void registerSpawnEggs() {
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "magical_grub_spawn_egg"),
                 new SpawnEggItem(
-                        MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, 0x7ff8eb, 0x5da1c5,
+                        MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, 0x7ff8eb, 0x7EBADA,
                         new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
                 )
         );
