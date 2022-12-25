@@ -130,6 +130,18 @@ public final class MythicManiaItems {
 
     // ==== COMBAT TAB ====
 
+    public static final Item NUCLEAR_DAGGER = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "nuclear_dagger"),
+            new NuclearDaggerItem(MythicManiaToolMaterials.NUCLEAR, 5, 1.2f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+    );
+
+    public static final Item NUCLEAR_BLADE = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "nuclear_blade"),
+            new NuclearBladeItem(MythicManiaToolMaterials.NUCLEAR, 6, 1.2f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+    );
+
     public static final Item NUCLEAR_SWORD = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "nuclear_sword"),
