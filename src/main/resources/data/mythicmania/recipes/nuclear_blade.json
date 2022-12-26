@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "mythicmania:nuclear_blade"
+      "item": "mythicmania:nuclear_dagger"
     },
     {
       "item": "mythicmania:irradiated_crystal"
     }
   ],
   "result": {
-    "item": "mythicmania:nuclear_sword",
+    "item": "mythicmania:nuclear_blade",
     "count": 1
   }
 }

@@ -92,6 +92,12 @@ public final class MythicManiaItems {
             new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP))
     );
 
+    public static final Item IRRADIATED_CRYSTAL = Registry.register(
+            Registry.ITEM,
+            new Identifier(MythicMania.MOD_ID, "irradiated_crystal"),
+            new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP))
+    );
+
     public static final Item WATER_PARCEL = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "water_parcel"),
