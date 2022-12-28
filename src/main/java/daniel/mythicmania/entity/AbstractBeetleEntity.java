@@ -56,8 +56,8 @@ public abstract class AbstractBeetleEntity extends AnimalEntity {
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 8)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 50.0D)
                 .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.6f)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.61D)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4.0D);
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2);
     }
 
     class BeetleWanderAroundGoal extends Goal {

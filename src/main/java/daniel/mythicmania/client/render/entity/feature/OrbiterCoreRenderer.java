@@ -18,7 +18,6 @@ public class OrbiterCoreRenderer<T extends Entity, M extends EntityModel<T>> ext
     }
 
     public RenderLayer getEyesTexture() {
-        System.out.println("the eyes method has been received");
         return eyes;
     }
 }
