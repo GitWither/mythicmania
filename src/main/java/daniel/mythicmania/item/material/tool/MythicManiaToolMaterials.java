@@ -8,7 +8,7 @@ import net.minecraft.recipe.Ingredient;
 import javax.annotation.Nullable;
 
 public final class MythicManiaToolMaterials {
-    public static final ToolMaterial INTOXICATED = new CustomToolMaterial(
+    public static final ToolMaterial NUCLEAR = new CustomToolMaterial(
             673, 6.0f, 0.0f, 2, 14,
             Ingredient.ofItems(MythicManiaItems.TOXIC_PEBBLE)
     );

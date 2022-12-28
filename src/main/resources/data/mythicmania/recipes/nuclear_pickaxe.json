@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    " i ",
+    " i "
+  ],
+  "key": {
+    "#": {
+      "item": "mythicmania:toxic_pebble"
+    },
+    "i": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "mythicmania:nuclear_pickaxe",
+    "count": 1
+  }
+}

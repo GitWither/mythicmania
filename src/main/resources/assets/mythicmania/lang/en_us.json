@@ -11,18 +11,21 @@
   "item.mythicmania.enchanted_tribus_fruit": "Enchanted Tribus Fruit",
   "item.mythicmania.empty_orb": "Empty Orb",
   "item.mythicmania.wasted_essence": "Wasted Essence",
-  "item.mythicmania.charged_intoxicated_orb": "Charged Intoxicated Orb",
+  "item.mythicmania.charged_nuclear_orb": "Charged Nuclear Orb",
   "item.mythicmania.charged_loch_orb": "Charged Loch Orb",
   "item.mythicmania.charged_ruined_orb": "Charged Ruined Orb",
   "item.mythicmania.poison_spike": "Poison Spike",
   "item.mythicmania.grub_essence": "Grub Essence",
   "item.mythicmania.toxic_pebble": "Toxic Pebble",
+  "item.mythicmania.irradiated_crystal": "Irradiated Crystal",
   "item.mythicmania.water_parcel": "Water Parcel",
-  "item.mythicmania.intoxicated_sword": "Intoxicated Sword",
-  "item.mythicmania.intoxicated_pickaxe": "Intoxicated Pickaxe",
-  "item.mythicmania.intoxicated_axe": "Intoxicated Axe",
-  "item.mythicmania.intoxicated_hoe": "Intoxicated Hoe",
-  "item.mythicmania.intoxicated_shovel": "Intoxicated Shovel",
+  "item.mythicmania.nuclear_sword": "Nuclear Sword",
+  "item.mythicmania.nuclear_blade": "Nuclear Blade",
+  "item.mythicmania.nuclear_dagger": "Nuclear Dagger",
+  "item.mythicmania.nuclear_pickaxe": "Nuclear Pickaxe",
+  "item.mythicmania.nuclear_axe": "Nuclear Axe",
+  "item.mythicmania.nuclear_hoe": "Nuclear Hoe",
+  "item.mythicmania.nuclear_shovel": "Nuclear Shovel",
   "item.mythicmania.wasted_staff": "Wasted Staff",
   "item.mythicmania.wasted_staff_charge": "Wasted Staff Charge",
 
@@ -34,10 +37,10 @@
   "item.mythicmania.orbiter_spawn_egg": "Orbiter Spawn Egg",
 
   "item.mythicmania.demon_vest": "Demon Vest",
-  "item.mythicmania.intoxicated_helmet": "Intoxicated Helmet",
-  "item.mythicmania.intoxicated_chestplate": "Intoxicated Chestplate",
-  "item.mythicmania.intoxicated_leggings": "Intoxicated Leggings",
-  "item.mythicmania.intoxicated_boots": "Intoxicated Boots",
+  "item.mythicmania.nuclear_helmet": "Nuclear Helmet",
+  "item.mythicmania.nuclear_chestplate": "Nuclear Chestplate",
+  "item.mythicmania.nuclear_leggings": "Nuclear Leggings",
+  "item.mythicmania.nuclear_boots": "Nuclear Boots",
 
   "block.mythicmania.rinth": "Rinth",
   "block.mythicmania.ancient_altar": "Ancient Altar",
@@ -50,7 +53,8 @@
   "entity.mythicmania.zapping_beetle": "Zapping Beetle",
   "entity.mythicmania.wasted_demon": "Wasted Demon",
   "entity.mythicmania.demon_guardian": "Demon Guardian",
-  "subtitles.mythicmania.wasted_staff_fire": "Fired Wasted Staff",
   "entity.mythicmania.water_parcel": "Water Parcel",
-  "entity.mythicmania.orbiter": "Orbiter"
+  "entity.mythicmania.orbiter": "Orbiter",
+
+  "subtitles.mythicmania.wasted_staff_fire": "Fired Wasted Staff"
 }
