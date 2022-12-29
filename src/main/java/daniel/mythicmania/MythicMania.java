@@ -20,8 +20,8 @@ public class MythicMania implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        MythicManiaItems.registerItems();
         MythicManiaItems.registerBlockItems();
-        MythicManiaItems.registerSpawnEggs();
 
         MythicManiaFeatures.registerFeatures();
         MythicManiaEntityTypes.registerEntityAttributes();
