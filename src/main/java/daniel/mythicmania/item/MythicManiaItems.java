@@ -41,7 +41,7 @@ public final class MythicManiaItems {
     public static final Item ENCHANTED_TRIBUS_FRUIT = Registry.register(
             Registry.ITEM,
             new Identifier(MythicMania.MOD_ID, "enchanted_tribus_fruit"),
-            new Item(new Item.Settings().food(FoodComponents.ENCHANTED_TRIBUS_FRUIT).group(MythicMania.MYTHICMANIA_FOOD_ITEM_GROUP).rarity(Rarity.EPIC))
+            new Item(new Item.Settings().food(FoodComponents.ENCHANTED_TRIBUS_FRUIT).group(MythicMania.MYTHICMANIA_FOOD_ITEM_GROUP).rarity(Rarity.RARE))
     );
 
     public static final Item EMPTY_ORB = Registry.register(
