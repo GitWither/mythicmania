@@ -50,6 +50,7 @@ public final class MythicManiaItems {
     public static Item NUCLEAR_BOOTS;
     public static Item WASTED_STAFF;
     public static Item DEMON_VEST;
+    public static Item SHOCK_BOLT_STAFF;
 
     // Tool items
     public static Item NUCLEAR_PICKAXE;
@@ -204,6 +205,12 @@ public final class MythicManiaItems {
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "demon_vest"),
                 new ArmorItem(DemonVestMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+        );
+
+        SHOCK_BOLT_STAFF = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "shock_bolt_staff"),
+                new ShockBoltStaffItem(MythicManiaToolMaterials.SHOCK_BOLT_STAFF,1,0.8f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).maxCount(1))
         );
     }
 

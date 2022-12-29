@@ -17,4 +17,9 @@ public final class MythicManiaToolMaterials {
             800, 6.0f, 0.0f, 0, 6,
             Ingredient.ofItems((ItemConvertible) null)
     );
+
+    public static final ToolMaterial SHOCK_BOLT_STAFF = new CustomToolMaterial(
+            640, 6.0f, 0.0f, 0, 6,
+            Ingredient.ofItems((ItemConvertible) null)
+    );
 }
