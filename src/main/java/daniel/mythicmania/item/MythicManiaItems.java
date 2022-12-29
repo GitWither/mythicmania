@@ -60,6 +60,7 @@ public final class MythicManiaItems {
 
     // Non-tab items
     public static Item WASTED_STAFF_CHARGE;
+    public static Item SHOCK_BOLT;
 
     public static void registerFoodTab() {
         POISONOUS_BERRY = Registry.register(
@@ -245,6 +246,12 @@ public final class MythicManiaItems {
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "wasted_staff_charge"),
                 new WastedStaffChargeItem(new Item.Settings())
+        );
+
+        SHOCK_BOLT = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "shock_bolt"),
+                new ShockBoltItem(new Item.Settings())
         );
     }
 
