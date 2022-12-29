@@ -18,7 +18,7 @@ public class ShockBoltStaffItem extends SwordItem {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient) {
-            world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.WASTED_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 2.5F);
+            world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.SHOCK_BOLT_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 2.5F);
             user.getItemCooldownManager().set(this, 8);
 
             for (int x = 1; x < 2; x++) {
