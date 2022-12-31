@@ -23,8 +23,6 @@ public class ShockBoltStaffItem extends SwordItem {
         if (!world.isClient) {
             user.getItemCooldownManager().set(this, 8);
 
-            PlayerEntity playerEntity;
-
             ItemStack shockBoltItem = new ItemStack(MythicManiaItems.SHOCK_BOLT);
             ShockBoltEntity projectile = new ShockBoltEntity(world, user);
             ShockBoltEntity projectile2 = new ShockBoltEntity(world, user);
@@ -37,18 +35,17 @@ public class ShockBoltStaffItem extends SwordItem {
             projectile3.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1, world.random.nextInt(4));
 
             if (user.getInventory().contains(shockBoltItem) && !user.getAbilities().creativeMode) {
-                world.spawnEntity(projectile);
-                world.spawnEntity(projectile2);
-                world.spawnEntity(projectile3);
-
-                world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.SHOCK_BOLT_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 2.5F);
-
                 ItemStack wand = user.getStackInHand(Hand.MAIN_HAND);
                 wand.damage(1, user, (p) -> p.sendToolBreakStatus(user.getActiveHand()));
 
                 user.getInventory().removeOne(shockBoltItem);
                 user.playerScreenHandler.sendContentUpdates();
             }
+            world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.SHOCK_BOLT_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 2.5F);
+
+            world.spawnEntity(projectile);
+            world.spawnEntity(projectile2);
+            world.spawnEntity(projectile3);
         }
 
         return super.use(world, user, hand);
