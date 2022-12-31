@@ -21,10 +21,6 @@ public class ShockBoltStaffItem extends SwordItem {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient) {
-
-            // Cooldown manager
-            user.getItemCooldownManager().set(this, 8);
-
             ItemStack shockBoltItem = new ItemStack(MythicManiaItems.SHOCK_BOLT);
 
             // Stores the projectiles in variables
@@ -39,23 +35,29 @@ public class ShockBoltStaffItem extends SwordItem {
             projectile2.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1, world.random.nextInt(4));
             projectile3.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1, world.random.nextInt(4));
 
-            // Checks if the user has the shock bolt item and is not in creative mode
-            if (user.getInventory().contains(shockBoltItem) && !user.getAbilities().creativeMode) {
-                ItemStack wand = user.getStackInHand(Hand.MAIN_HAND);
+            int slotWithShockBolt = user.getInventory().getSlotWithStack(shockBoltItem);
+            ItemStack projectileSlot = user.getInventory().getStack(slotWithShockBolt);
 
-                // Damage wand by 1
-                wand.damage(1, user, (p) -> p.sendToolBreakStatus(user.getActiveHand()));
+            if (!user.getAbilities().creativeMode) {
+                if (user.getInventory().contains(shockBoltItem)) {
+                    projectileSlot.decrement(1);
 
-                user.getInventory().removeOne(shockBoltItem);
-                user.playerScreenHandler.sendContentUpdates();
+                    ItemStack wand = user.getStackInHand(Hand.MAIN_HAND);
+                    wand.damage(1, user, (p) -> p.sendToolBreakStatus(user.getActiveHand()));
+
+                    world.spawnEntity(projectile);
+                    world.spawnEntity(projectile2);
+                    world.spawnEntity(projectile3);
+                    user.getItemCooldownManager().set(this, 8);
+                    world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.SHOCK_BOLT_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 2.5F);
+                }
+            } else {
+                world.spawnEntity(projectile);
+                world.spawnEntity(projectile2);
+                world.spawnEntity(projectile3);
+                user.getItemCooldownManager().set(this, 8);
+                world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.SHOCK_BOLT_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 2.5F);
             }
-
-            world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.SHOCK_BOLT_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 2.5F);
-
-            // Summon projectiles
-            world.spawnEntity(projectile);
-            world.spawnEntity(projectile2);
-            world.spawnEntity(projectile3);
         }
 
         return super.use(world, user, hand);
