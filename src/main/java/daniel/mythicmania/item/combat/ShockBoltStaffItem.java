@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
@@ -20,45 +21,38 @@ public class ShockBoltStaffItem extends SwordItem {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if (!world.isClient) {
-            ItemStack shockBoltItem = new ItemStack(MythicManiaItems.SHOCK_BOLT);
+//        if (world.isClient) return super.use(world, user, hand);
 
-            // Stores the projectiles in variables
-            ShockBoltEntity projectile = new ShockBoltEntity(world, user);
-            ShockBoltEntity projectile2 = new ShockBoltEntity(world, user);
-            ShockBoltEntity projectile3 = new ShockBoltEntity(world, user);
+        final ItemStack shockBoltItem = new ItemStack(MythicManiaItems.SHOCK_BOLT);
 
-            projectile.setItem(shockBoltItem);
-
-            // Sets the velocity of projectiles
-            projectile.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1, world.random.nextInt(4));
-            projectile2.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1, world.random.nextInt(4));
-            projectile3.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1, world.random.nextInt(4));
-
+        if (!user.getAbilities().creativeMode) {
+            //User is not in creative, consume item
             int slotWithShockBolt = user.getInventory().getSlotWithStack(shockBoltItem);
-            ItemStack projectileSlot = user.getInventory().getStack(slotWithShockBolt);
+            if (slotWithShockBolt < 0) return TypedActionResult.pass(user.getStackInHand(hand)); //return a pass, no ammunition is available, should try to use offhand item instead
+            //(don't return super for SwordItem, those might get blocking again in the future, which will result in unexpect behavior)
 
-            if (!user.getAbilities().creativeMode) {
-                if (user.getInventory().contains(shockBoltItem)) {
-                    projectileSlot.decrement(1);
-
-                    ItemStack wand = user.getStackInHand(Hand.MAIN_HAND);
-                    wand.damage(1, user, (p) -> p.sendToolBreakStatus(user.getActiveHand()));
-
-                    world.spawnEntity(projectile);
-                    world.spawnEntity(projectile2);
-                    world.spawnEntity(projectile3);
-                    user.getItemCooldownManager().set(this, 8);
-                    world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.SHOCK_BOLT_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 2.5F);
-                }
-            } else {
-                world.spawnEntity(projectile);
-                world.spawnEntity(projectile2);
-                world.spawnEntity(projectile3);
-                user.getItemCooldownManager().set(this, 8);
-                world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.SHOCK_BOLT_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 2.5F);
-            }
+            //You can store the ItemStacks in fields here, but it's not necessary, the compiler will optimize it anyways, so choose what's easier for you to read
+            user.getInventory().getStack(slotWithShockBolt).decrement(1);
+            user.getStackInHand(hand).damage(1, user, (p) -> p.sendToolBreakStatus(user.getActiveHand())); //use hand passed into method, or you may damage the wrong item
         }
+
+        //If this code runs, all checks have been made, the user can shoot
+
+        //Create new Projectiles and store in array
+        ShockBoltEntity[] projectiles = {
+                new ShockBoltEntity(world, user),
+                new ShockBoltEntity(world, user),
+                new ShockBoltEntity(world, user)
+        };
+
+        for (ShockBoltEntity projectile : projectiles) {
+            projectile.setItem(shockBoltItem);
+            projectile.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1, world.random.nextInt(4));
+            world.spawnEntity(projectile);
+        }
+
+        if (!user.getAbilities().creativeMode) user.getItemCooldownManager().set(this, 8); //people don't like cooldowns in creative, just a suggestion
+        world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.SHOCK_BOLT_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 2.5F);
 
         return super.use(world, user, hand);
     }
