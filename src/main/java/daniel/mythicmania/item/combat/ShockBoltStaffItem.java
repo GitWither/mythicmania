@@ -21,24 +21,18 @@ public class ShockBoltStaffItem extends SwordItem {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-//        if (world.isClient) return super.use(world, user, hand);
-
         final ItemStack shockBoltItem = new ItemStack(MythicManiaItems.SHOCK_BOLT);
 
+        // Do specifically if the user is in survival mode.
         if (!user.getAbilities().creativeMode) {
-            //User is not in creative, consume item
             int slotWithShockBolt = user.getInventory().getSlotWithStack(shockBoltItem);
-            if (slotWithShockBolt < 0) return TypedActionResult.pass(user.getStackInHand(hand)); //return a pass, no ammunition is available, should try to use offhand item instead
-            //(don't return super for SwordItem, those might get blocking again in the future, which will result in unexpect behavior)
+            if (slotWithShockBolt < 0) return TypedActionResult.pass(user.getStackInHand(hand));
 
-            //You can store the ItemStacks in fields here, but it's not necessary, the compiler will optimize it anyways, so choose what's easier for you to read
             user.getInventory().getStack(slotWithShockBolt).decrement(1);
-            user.getStackInHand(hand).damage(1, user, (p) -> p.sendToolBreakStatus(user.getActiveHand())); //use hand passed into method, or you may damage the wrong item
+            user.getStackInHand(hand).damage(1, user, (p) -> p.sendToolBreakStatus(user.getActiveHand()));
         }
 
-        //If this code runs, all checks have been made, the user can shoot
-
-        //Create new Projectiles and store in array
+        // Store projectiles in an array and then iterate through each one (saves repetitive code).
         ShockBoltEntity[] projectiles = {
                 new ShockBoltEntity(world, user),
                 new ShockBoltEntity(world, user),
@@ -51,7 +45,7 @@ public class ShockBoltStaffItem extends SwordItem {
             world.spawnEntity(projectile);
         }
 
-        if (!user.getAbilities().creativeMode) user.getItemCooldownManager().set(this, 8); //people don't like cooldowns in creative, just a suggestion
+        if (!user.getAbilities().creativeMode) user.getItemCooldownManager().set(this, 8);
         world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.SHOCK_BOLT_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 2.5F);
 
         return super.use(world, user, hand);
