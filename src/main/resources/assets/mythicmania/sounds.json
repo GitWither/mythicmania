@@ -2,7 +2,13 @@
   "wasted_staff_fire": {
     "subtitle": "subtitles.mythicmania.wasted_staff_fire",
     "sounds": [
-      "mythicmania:wasted_staff_fire"
+      "mythicmania:staff_fire"
+    ]
+  },
+  "shock_bolt_staff_fire": {
+    "subtitle": "subtitles.mythicmania.shock_bolt_staff_fire",
+    "sounds": [
+      "mythicmania:staff_fire"
     ]
   }
 }

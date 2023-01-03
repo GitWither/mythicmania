@@ -27,6 +27,7 @@
   "item.mythicmania.nuclear_hoe": "Nuclear Hoe",
   "item.mythicmania.nuclear_shovel": "Nuclear Shovel",
   "item.mythicmania.wasted_staff": "Wasted Staff",
+  "item.mythicmania.shock_bolt_staff": "Shock Bolt Staff",
   "item.mythicmania.wasted_staff_charge": "Wasted Staff Charge",
 
   "item.mythicmania.magical_grub_spawn_egg": "Magical Grub Spawn Egg",
@@ -57,5 +58,6 @@
   "entity.mythicmania.orbiter": "Orbiter",
   "entity.mythicmania.wasted_staff_charge": "Wasted Staff Charge",
 
-  "subtitles.mythicmania.wasted_staff_fire": "Fired Wasted Staff"
+  "subtitles.mythicmania.wasted_staff_fire": "Fired Wasted Staff",
+  "subtitles.mythicmania.shock_bolt_staff_fire": "Fired Shock Bolt Staff"
 }
