@@ -1,5 +1,6 @@
 package daniel.mythicmania.item;
 
+import daniel.mythicmania.entity.WastedStaffChargeEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,11 +18,16 @@ public class WastedStaffChargeItem extends Item {
         ItemStack itemStack = user.getStackInHand(hand);
 
         if (!world.isClient) {
-            user.getItemCooldownManager().set(this, 4);
+            ItemStack charge = new ItemStack(MythicManiaItems.WASTED_STAFF_CHARGE);
+            WastedStaffChargeEntity projectile = new WastedStaffChargeEntity(world, user);
+            projectile.setItem(charge);
+            projectile.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 0.6F, 0F);
+            world.spawnEntity(projectile);
 
             user.incrementStat(Stats.USED.getOrCreateStat(this));
             if (!user.getAbilities().creativeMode) {
                 itemStack.decrement(1);
+                user.getItemCooldownManager().set(this, 4);
             }
         }
 

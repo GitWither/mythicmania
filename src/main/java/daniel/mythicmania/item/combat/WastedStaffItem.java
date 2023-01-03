@@ -36,7 +36,7 @@ public class WastedStaffItem extends SwordItem {
         if (!world.isClient) {
             world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.WASTED_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 1F);
 
-            user.getItemCooldownManager().set(this, 6);
+            if (!user.getAbilities().creativeMode) user.getItemCooldownManager().set(this, 6);
 
             ItemStack itemStack = new ItemStack(MythicManiaItems.WASTED_STAFF_CHARGE);
             WastedStaffChargeEntity projectile = new WastedStaffChargeEntity(world, user);
