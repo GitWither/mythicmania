@@ -7,6 +7,7 @@ import daniel.mythicmania.client.render.entity.feature.DemonEyesRenderer;
 import daniel.mythicmania.entity.*;
 import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
 
@@ -24,5 +25,10 @@ public class WastedDemonEntityRenderer extends BipedEntityRenderer<WastedDemonEn
 
     public Identifier getCapeTexture() {
         return new Identifier(MythicMania.MOD_ID, "textures/entity/wasted_demon/cape.png");
+    }
+
+    @Override
+    protected void scale(WastedDemonEntity entity, MatrixStack matrices, float amount) {
+        matrices.scale(1.3f, 1.3f, 1.3f);
     }
 }
