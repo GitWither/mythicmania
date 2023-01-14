@@ -99,7 +99,7 @@ public class WastedDemonEntity extends HostileEntity {
         }
 
         if (this.getHealth() < 31) {
-            this.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 20 * 120, 2));
+            this.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 20 * 120, 2, false, false, false));
         }
 
         super.mobTick();
