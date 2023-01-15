@@ -310,7 +310,7 @@ public final class MythicManiaItems {
 
         Registry.register(Registry.ITEM, new Identifier(MythicMania.MOD_ID, "poisonous_grub_spawn_egg"),
                 new SpawnEggItem(
-                        MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, 0x4e9e78, 0x9cf590,
+                        MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, 0x48906D, 0x99FF9E,
                         new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP)
                 )
         );
