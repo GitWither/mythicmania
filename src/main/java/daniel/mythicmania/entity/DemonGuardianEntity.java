@@ -38,6 +38,7 @@ public class DemonGuardianEntity extends HostileEntity {
     
     @Override
     protected void initEquipment(Random random, LocalDifficulty localDifficulty) {
+
         // Generates a random number which determines whether the Demon Guardian has a sword, a shield, or nothing.
         int randomLootInt = world.random.nextInt(3);
 
