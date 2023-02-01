@@ -48,6 +48,10 @@ public final class MythicManiaItems {
     public static Item NUCLEAR_CHESTPLATE;
     public static Item NUCLEAR_LEGGINGS;
     public static Item NUCLEAR_BOOTS;
+    public static Item RUINOUS_HELMET;
+    public static Item RUINOUS_CHESTPLATE;
+    public static Item RUINOUS_LEGGINGS;
+    public static Item RUINOUS_BOOTS;
     public static Item WASTED_STAFF;
     public static Item DEMON_VEST;
     public static Item SHOCK_BOLT_STAFF;
@@ -197,6 +201,30 @@ public final class MythicManiaItems {
         );
 
         NUCLEAR_BOOTS = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "nuclear_boots"),
+                new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+        );
+
+        RUINOUS_HELMET = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "nuclear_helmet"),
+                new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.HEAD, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+        );
+
+        RUINOUS_CHESTPLATE = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "nuclear_chestplate"),
+                new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+        );
+
+        RUINOUS_LEGGINGS = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "nuclear_leggings"),
+                new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+        );
+
+        RUINOUS_BOOTS = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "nuclear_boots"),
                 new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
