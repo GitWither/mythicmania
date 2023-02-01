@@ -6,6 +6,7 @@ import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.item.combat.*;
 import daniel.mythicmania.item.material.armor.DemonVestMaterial;
 import daniel.mythicmania.item.material.armor.NuclearArmorMaterial;
+import daniel.mythicmania.item.material.armor.RuinousSetMaterial;
 import daniel.mythicmania.item.material.tool.MythicManiaToolMaterials;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
@@ -208,26 +209,26 @@ public final class MythicManiaItems {
 
         RUINOUS_HELMET = Registry.register(
                 Registry.ITEM,
-                new Identifier(MythicMania.MOD_ID, "nuclear_helmet"),
-                new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.HEAD, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+                new Identifier(MythicMania.MOD_ID, "ruinous_helmet"),
+                new ArmorItem(RuinousSetMaterial.INSTANCE, EquipmentSlot.HEAD, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
         );
 
         RUINOUS_CHESTPLATE = Registry.register(
                 Registry.ITEM,
-                new Identifier(MythicMania.MOD_ID, "nuclear_chestplate"),
-                new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+                new Identifier(MythicMania.MOD_ID, "ruinous_chestplate"),
+                new ArmorItem(RuinousSetMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
         );
 
         RUINOUS_LEGGINGS = Registry.register(
                 Registry.ITEM,
-                new Identifier(MythicMania.MOD_ID, "nuclear_leggings"),
-                new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+                new Identifier(MythicMania.MOD_ID, "ruinous_pants"),
+                new ArmorItem(RuinousSetMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
         );
 
         RUINOUS_BOOTS = Registry.register(
                 Registry.ITEM,
-                new Identifier(MythicMania.MOD_ID, "nuclear_boots"),
-                new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+                new Identifier(MythicMania.MOD_ID, "ruinous_boots"),
+                new ArmorItem(RuinousSetMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
         );
 
         WASTED_STAFF = Registry.register(
