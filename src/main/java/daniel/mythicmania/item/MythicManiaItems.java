@@ -231,16 +231,16 @@ public final class MythicManiaItems {
                 new ArmorItem(RuinousSetMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
         );
 
-        WASTED_STAFF = Registry.register(
-                Registry.ITEM,
-                new Identifier(MythicMania.MOD_ID, "wasted_staff"),
-                new WastedStaffItem(MythicManiaToolMaterials.WASTED_STAFF,2,0.8f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).maxCount(1))
-        );
-
         DEMON_VEST = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "demon_vest"),
                 new ArmorItem(DemonVestMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+        );
+
+        WASTED_STAFF = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "wasted_staff"),
+                new WastedStaffItem(MythicManiaToolMaterials.WASTED_STAFF,2,0.8f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).maxCount(1))
         );
 
         SHOCK_BOLT_STAFF = Registry.register(
