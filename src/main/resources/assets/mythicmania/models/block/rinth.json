@@ -3,7 +3,8 @@
 	"texture_size": [128, 128],
 	"parent": "block/block",
 	"textures": {
-		"2": "mythicmania:block/rinth"
+		"2": "mythicmania:block/rinth",
+		"particle": "mythicmania:block/rinth"
 	},
 	"elements": [
 		{
