@@ -157,7 +157,13 @@ public final class MythicManiaItems {
         WASTED_STAFF_CHARGE = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "wasted_staff_charge"),
-                new WastedStaffChargeItem(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP))
+                new WastedStaffChargeItem(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP).maxCount(32))
+        );
+
+        SHOCK_BOLT = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "shock_bolt"),
+                new ShockBoltItem(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP).maxCount(32))
         );
 
         // Register spawn eggs
@@ -276,14 +282,6 @@ public final class MythicManiaItems {
         );
     }
 
-    public static void registerNonTabItems() {
-        SHOCK_BOLT = Registry.register(
-                Registry.ITEM,
-                new Identifier(MythicMania.MOD_ID, "shock_bolt"),
-                new ShockBoltItem(new Item.Settings())
-        );
-    }
-
     public static void registerBlockItems() {
         RINTH = Registry.register(
                 Registry.ITEM,
@@ -326,7 +324,6 @@ public final class MythicManiaItems {
         registerItemTab();
         registerCombatTab();
         registerToolTab();
-        registerNonTabItems();
     }
 
     public static void registerSpawnEggs() {
