@@ -48,7 +48,7 @@ public class AncientAltarBlock extends HorizontalFacingBlock implements BlockEnt
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack stack = player.getStackInHand(hand);
 
-        if (stack.getItem() == MythicManiaItems.CHARGED_NUCLEAR_ORB || stack.getItem() == MythicManiaItems.CHARGED_LOCH_ORB || stack.getItem() == MythicManiaItems.CHARGED_RUINED_ORB) {
+        if (stack.getItem() == MythicManiaItems.CHARGED_NUCLEAR_ORB || stack.getItem() == MythicManiaItems.CHARGED_RUINED_ORB) {
             if (!world.isClient) {
                 BlockEntity blockEntity = world.getBlockEntity(pos);
 
