@@ -31,7 +31,6 @@ public final class MythicManiaItems {
     // Misc Items
     public static Item EMPTY_ORB;
     public static Item CHARGED_NUCLEAR_ORB;
-    public static Item CHARGED_LOCH_ORB;
     public static Item CHARGED_RUINED_ORB;
     public static Item POISON_SPIKE;
     public static Item GRUB_ESSENCE;
@@ -98,12 +97,6 @@ public final class MythicManiaItems {
         CHARGED_NUCLEAR_ORB = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "charged_nuclear_orb"),
-                new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP).rarity(Rarity.UNCOMMON))
-        );
-
-        CHARGED_LOCH_ORB = Registry.register(
-                Registry.ITEM,
-                new Identifier(MythicMania.MOD_ID, "charged_loch_orb"),
                 new Item(new Item.Settings().group(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP).rarity(Rarity.UNCOMMON))
         );
 
