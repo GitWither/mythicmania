@@ -53,6 +53,7 @@ public final class MythicManiaItems {
     public static Item RUINOUS_CHESTPLATE;
     public static Item RUINOUS_LEGGINGS;
     public static Item RUINOUS_BOOTS;
+    public static Item RUINOUS_SWORD;
     public static Item WASTED_STAFF;
     public static Item DEMON_VEST;
     public static Item SHOCK_BOLT_STAFF;
@@ -187,6 +188,12 @@ public final class MythicManiaItems {
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "nuclear_sword"),
                 new NuclearSwordItem(MythicManiaToolMaterials.NUCLEAR, 7, 1.2f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+        );
+
+        RUINOUS_SWORD = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruinous_sword"),
+                new RuinousSwordItem(MythicManiaToolMaterials.RUINOUS, 8, 1.2f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
         );
 
         NUCLEAR_HELMET = Registry.register(
