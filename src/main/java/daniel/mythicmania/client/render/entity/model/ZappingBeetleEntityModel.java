@@ -62,7 +62,6 @@ public class ZappingBeetleEntityModel extends EntityModel<ZappingBeetleEntity> {
     @Override
     public void setAngles(ZappingBeetleEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
         float angle = MathHelper.clamp(MathHelper.sin(animationProgress * 1.6f) * 0.8f, 0, 45);
-        float angle2 = MathHelper.clamp(-MathHelper.sin(animationProgress * 1.6f) * 0.5f, 0, 45);
 
         wing3.pitch = angle;
         wing2.pitch = angle;
