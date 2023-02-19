@@ -41,7 +41,7 @@ public class OrbiterEntity extends HostileEntity {
 
     public void tickMovement() {
         for(int i = 0; i < 2; ++i) {
-            this.world.addParticle(ParticleTypes.FLAME, this.getParticleX(0.2), this.getRandomBodyY(), this.getParticleZ(0.2), 0.0, 0.0, 0.0);
+            this.world.addParticle(ParticleTypes.FLAME, this.getParticleX(1), this.getRandomBodyY(), this.getParticleZ(0.2), 0.0, 0.2, 0.0);
         }
 
         super.tickMovement();
@@ -61,6 +61,7 @@ public class OrbiterEntity extends HostileEntity {
         return HostileEntity
                 .createHostileAttributes()
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.23f)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2f);
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2f)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 8f);
     }
 }

@@ -10,6 +10,7 @@ import daniel.mythicmania.entity.*;
 import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
 
@@ -22,5 +23,10 @@ public class OrbiterEntityRenderer extends MobEntityRenderer<OrbiterEntity, Orbi
     @Override
     public Identifier getTexture(OrbiterEntity entity) {
         return new Identifier(MythicMania.MOD_ID, "textures/entity/orbiter/orbiter.png");
+    }
+
+    @Override
+    protected void scale(OrbiterEntity entity, MatrixStack matrices, float amount) {
+        matrices.scale(1.2f, 1.2f, 1.2f);
     }
 }
