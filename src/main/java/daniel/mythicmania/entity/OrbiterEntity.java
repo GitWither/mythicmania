@@ -112,8 +112,6 @@ public class OrbiterEntity extends HostileEntity {
             } else if (this.cooldown > 0) {
                 --this.cooldown;
             }
-
-            System.out.println(this.cooldown);
         }
     }
 }
