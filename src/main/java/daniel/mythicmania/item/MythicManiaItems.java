@@ -21,6 +21,7 @@ public final class MythicManiaItems {
     public static Item TOXIC_ORE;
     public static Item ANCIENT_ALTAR;
     public static Item LUMINESCENT_SAC;
+    public static Item ORBITER_PROJECTILE;
 
     // Food Tab Items
     public static Item POISONOUS_BERRY;
@@ -250,36 +251,37 @@ public final class MythicManiaItems {
         RINTH = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "rinth"),
-                new BlockItem(MythicManiaBlocks.RINTH_BLOCK, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP)
-                )
+                new BlockItem(MythicManiaBlocks.RINTH_BLOCK, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP))
         );
 
         ANCIENT_ALTAR = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "ancient_altar"),
-                new BlockItem(MythicManiaBlocks.ANCIENT_ALTAR, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP)
-                )
+                new BlockItem(MythicManiaBlocks.ANCIENT_ALTAR, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP))
         );
 
         TOXIC_ORE = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "toxic_ore"),
-                new BlockItem(MythicManiaBlocks.TOXIC_ORE, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP)
-                )
+                new BlockItem(MythicManiaBlocks.TOXIC_ORE, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP))
         );
 
         PULSATING_BLACKSTONE = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "pulsating_blackstone"),
-                new BlockItem(MythicManiaBlocks.PULSATING_BLACKSTONE, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP)
-                )
+                new BlockItem(MythicManiaBlocks.PULSATING_BLACKSTONE, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP))
         );
 
         LUMINESCENT_SAC = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "luminescent_sac"),
-                new BlockItem(MythicManiaBlocks.LUMINESCENT_SAC, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP)
-                )
+                new BlockItem(MythicManiaBlocks.LUMINESCENT_SAC, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP))
+        );
+
+        ORBITER_PROJECTILE = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "orbiter_projectile"),
+                new BlockItem(MythicManiaBlocks.ORBITER_PROJECTILE, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP))
         );
     }
 

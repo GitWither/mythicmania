@@ -54,10 +54,17 @@ public final class MythicManiaBlocks {
             new Block(FabricBlockSettings.of(Material.STONE).requiresTool().luminance((state) -> 5).strength(2, 6).sounds(BlockSoundGroup.GILDED_BLACKSTONE))
     );
 
+    public static final Block ORBITER_PROJECTILE = Registry.register(
+            Registry.BLOCK,
+            new Identifier(MythicMania.MOD_ID, "orbiter_projectile"),
+            new Block(FabricBlockSettings.of(Material.STONE).luminance((state) -> 5))
+    );
+
     public static void registerBlockRendering() {
         BlockRenderLayerMap.INSTANCE.putBlock(MythicManiaBlocks.RINTH_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MythicManiaBlocks.HARVESTER_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MythicManiaBlocks.TRIBUS_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MythicManiaBlocks.LUMINESCENT_SAC, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(MythicManiaBlocks.ORBITER_PROJECTILE, RenderLayer.getCutout());
     }
 }

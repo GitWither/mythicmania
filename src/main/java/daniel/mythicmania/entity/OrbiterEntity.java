@@ -1,5 +1,6 @@
 package daniel.mythicmania.entity;
 
+import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -9,6 +10,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FireballEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -95,18 +97,16 @@ public class OrbiterEntity extends HostileEntity {
         public void tick() {
             LivingEntity livingEntity = this.orbiter.getTarget();
             assert livingEntity != null;
-            Vec3d vec3d = this.orbiter.getRotationVec(1.0F);
-            double f = livingEntity.getX() - (this.orbiter.getX() + vec3d.x * 4.0);
-            double g = livingEntity.getBodyY(0.5) - (0.5 + this.orbiter.getBodyY(0.5));
-            double h = livingEntity.getZ() - (this.orbiter.getZ() + vec3d.z * 4.0);
-            FireballEntity fireballEntity = new FireballEntity(world, this.orbiter, f, g, h, 1);
-            fireballEntity.setPosition(this.orbiter.getX() + vec3d.x * 4, this.orbiter.getBodyY(0.5) + 0.5, fireballEntity.getZ() + vec3d.z * 4.0);
+            ItemStack charge = new ItemStack(MythicManiaItems.ORBITER_PROJECTILE);
+            OrbiterProjectileEntity projectile = new OrbiterProjectileEntity(world, this.orbiter);
+            projectile.setItem(charge);
+            projectile.setVelocity(this.orbiter, this.orbiter.getPitch(), this.orbiter.getYaw(), 0.0F, 0.6F, 0F);
 
             if (livingEntity.squaredDistanceTo(this.orbiter) < 49 && this.orbiter.canSee(livingEntity)) {
                 ++this.cooldown;
 
                 if (this.cooldown % 15 == 0) {
-                    world.spawnEntity(fireballEntity);
+                    world.spawnEntity(projectile);
                 }
             } else if (this.cooldown > 0) {
                 --this.cooldown;
