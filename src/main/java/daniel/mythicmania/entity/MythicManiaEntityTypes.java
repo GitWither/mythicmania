@@ -77,6 +77,15 @@ public final class MythicManiaEntityTypes {
                     .trackRangeBlocks(30).trackedUpdateRate(30)
                     .build()
     );
+
+    public static final EntityType<OrbiterProjectileEntity> ORBITER_PROJECTILE_ENTITY = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier(MythicMania.MOD_ID, "orbiter_orojectile"),
+            FabricEntityTypeBuilder.<OrbiterProjectileEntity>create(SpawnGroup.MISC, OrbiterProjectileEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
+                    .trackRangeBlocks(30).trackedUpdateRate(30)
+                    .build()
+    );
                     
                  
     public static final EntityModelLayer ORBITER_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "orbiter"), "root");
@@ -105,6 +114,7 @@ public final class MythicManiaEntityTypes {
         EntityRendererRegistry.register(MythicManiaEntityTypes.WATER_PARCEL_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.WASTED_STAFF_CHARGE_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.SHOCK_BOLT_ENTITY, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(MythicManiaEntityTypes.ORBITER_PROJECTILE_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.ORBITER_ENTITY, OrbiterEntityRenderer::new);
 
         // Register layers
