@@ -66,6 +66,7 @@ public final class MythicManiaItems {
     public static Item RUINOUS_AXE;
     public static Item RUINOUS_SHOVEL;
     public static Item RUINOUS_PICKAXE;
+    public static Item RUINOUS_HOE;
 
     // Non-tab items
     public static Item WASTED_STAFF_CHARGE;
@@ -302,6 +303,12 @@ public final class MythicManiaItems {
                 new Identifier(MythicMania.MOD_ID, "ruinous_pickaxe"),
                 new CustomPickaxeItem(MythicManiaToolMaterials.RUINOUS, 2, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
         );
+
+        RUINOUS_HOE = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruinous_hoe"),
+                new CustomHoeItem(MythicManiaToolMaterials.RUINOUS, 1, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
+        );
     }
 
     public static void registerBlockItems() {
@@ -338,7 +345,7 @@ public final class MythicManiaItems {
         ORBITER_PROJECTILE = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "orbiter_projectile"),
-                new BlockItem(MythicManiaBlocks.ORBITER_PROJECTILE, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP))
+                new BlockItem(MythicManiaBlocks.ORBITER_PROJECTILE, new Item.Settings())
         );
     }
 
