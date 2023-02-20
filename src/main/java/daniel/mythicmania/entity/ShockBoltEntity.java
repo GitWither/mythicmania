@@ -61,4 +61,13 @@ public class ShockBoltEntity extends ThrownItemEntity {
     protected float getGravity() {
         return 0;
     }
+
+    @Override
+    public void tick() {
+        if (this.age > 1000) {
+            this.kill();
+        }
+
+        super.tick();
+    }
 }
