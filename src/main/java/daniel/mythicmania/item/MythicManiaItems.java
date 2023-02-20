@@ -64,6 +64,7 @@ public final class MythicManiaItems {
     public static Item NUCLEAR_HOE;
     public static Item NUCLEAR_SHOVEL;
     public static Item RUINOUS_AXE;
+    public static Item RUINOUS_SHOVEL;
 
     // Non-tab items
     public static Item WASTED_STAFF_CHARGE;
@@ -286,7 +287,13 @@ public final class MythicManiaItems {
         RUINOUS_AXE = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "ruinous_axe"),
-                new CustomAxeItem(MythicManiaToolMaterials.RUINOUS, 1, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
+                new CustomAxeItem(MythicManiaToolMaterials.RUINOUS, 5, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
+        );
+
+        RUINOUS_SHOVEL = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruinous_shovel"),
+                new CustomAxeItem(MythicManiaToolMaterials.RUINOUS, 3, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
         );
     }
 
