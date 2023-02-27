@@ -7,8 +7,8 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
-public class RuinousSetMaterial implements ArmorMaterial {
-    public static final RuinousSetMaterial INSTANCE = new RuinousSetMaterial();
+public class RuinousArmorMaterial implements ArmorMaterial {
+    public static final RuinousArmorMaterial INSTANCE = new RuinousArmorMaterial();
 
     private static final int[] BASE_DURABILITY = new int[] {230, 255, 260, 211};
     private static final int[] PROTECTION_VALUES = new int[] {6, 9, 11, 6};
