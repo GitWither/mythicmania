@@ -6,6 +6,7 @@ import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.item.combat.*;
 import daniel.mythicmania.item.material.armor.DemonVestMaterial;
 import daniel.mythicmania.item.material.armor.NuclearArmorMaterial;
+import daniel.mythicmania.item.material.armor.RuinousArmorMaterial;
 import daniel.mythicmania.item.material.tool.MythicManiaToolMaterials;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
@@ -48,6 +49,11 @@ public final class MythicManiaItems {
     public static Item NUCLEAR_CHESTPLATE;
     public static Item NUCLEAR_LEGGINGS;
     public static Item NUCLEAR_BOOTS;
+    public static Item RUINOUS_HELMET;
+    public static Item RUINOUS_CHESTPLATE;
+    public static Item RUINOUS_LEGGINGS;
+    public static Item RUINOUS_BOOTS;
+    public static Item RUINOUS_SWORD;
     public static Item WASTED_STAFF;
     public static Item DEMON_VEST;
     public static Item SHOCK_BOLT_STAFF;
@@ -57,6 +63,10 @@ public final class MythicManiaItems {
     public static Item NUCLEAR_AXE;
     public static Item NUCLEAR_HOE;
     public static Item NUCLEAR_SHOVEL;
+    public static Item RUINOUS_AXE;
+    public static Item RUINOUS_SHOVEL;
+    public static Item RUINOUS_PICKAXE;
+    public static Item RUINOUS_HOE;
 
     // Non-tab items
     public static Item WASTED_STAFF_CHARGE;
@@ -178,6 +188,12 @@ public final class MythicManiaItems {
                 new NuclearSwordItem(MythicManiaToolMaterials.NUCLEAR, 7, 1.2f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
         );
 
+        RUINOUS_SWORD = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruinous_sword"),
+                new RuinousSwordItem(MythicManiaToolMaterials.RUINOUS, 8, 1.2f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+        );
+
         NUCLEAR_HELMET = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "nuclear_helmet"),
@@ -202,16 +218,40 @@ public final class MythicManiaItems {
                 new ArmorItem(NuclearArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
         );
 
-        WASTED_STAFF = Registry.register(
+        RUINOUS_HELMET = Registry.register(
                 Registry.ITEM,
-                new Identifier(MythicMania.MOD_ID, "wasted_staff"),
-                new WastedStaffItem(MythicManiaToolMaterials.WASTED_STAFF,2,0.8f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).maxCount(1))
+                new Identifier(MythicMania.MOD_ID, "ruinous_helmet"),
+                new ArmorItem(RuinousArmorMaterial.INSTANCE, EquipmentSlot.HEAD, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+        );
+
+        RUINOUS_CHESTPLATE = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruinous_chestplate"),
+                new ArmorItem(RuinousArmorMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+        );
+
+        RUINOUS_LEGGINGS = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruinous_pants"),
+                new ArmorItem(RuinousArmorMaterial.INSTANCE, EquipmentSlot.LEGS, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+        );
+
+        RUINOUS_BOOTS = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruinous_boots"),
+                new ArmorItem(RuinousArmorMaterial.INSTANCE, EquipmentSlot.FEET, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
         );
 
         DEMON_VEST = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "demon_vest"),
                 new ArmorItem(DemonVestMaterial.INSTANCE, EquipmentSlot.CHEST, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP))
+        );
+
+        WASTED_STAFF = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "wasted_staff"),
+                new WastedStaffItem(MythicManiaToolMaterials.WASTED_STAFF,2,0.8f, new Item.Settings().group(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).maxCount(1))
         );
 
         SHOCK_BOLT_STAFF = Registry.register(
@@ -244,6 +284,30 @@ public final class MythicManiaItems {
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "nuclear_shovel"),
                 new ShovelItem(MythicManiaToolMaterials.NUCLEAR, 1, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
+        );
+
+        RUINOUS_AXE = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruinous_axe"),
+                new CustomAxeItem(MythicManiaToolMaterials.RUINOUS, 5, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
+        );
+
+        RUINOUS_SHOVEL = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruinous_shovel"),
+                new ShovelItem(MythicManiaToolMaterials.RUINOUS, 3, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
+        );
+
+        RUINOUS_PICKAXE = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruinous_pickaxe"),
+                new CustomPickaxeItem(MythicManiaToolMaterials.RUINOUS, 2, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
+        );
+
+        RUINOUS_HOE = Registry.register(
+                Registry.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruinous_hoe"),
+                new CustomHoeItem(MythicManiaToolMaterials.RUINOUS, 1, 2, new Item.Settings().group(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP))
         );
     }
 
@@ -281,7 +345,7 @@ public final class MythicManiaItems {
         ORBITER_PROJECTILE = Registry.register(
                 Registry.ITEM,
                 new Identifier(MythicMania.MOD_ID, "orbiter_projectile"),
-                new BlockItem(MythicManiaBlocks.ORBITER_PROJECTILE, new Item.Settings().group(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP))
+                new BlockItem(MythicManiaBlocks.ORBITER_PROJECTILE, new Item.Settings())
         );
     }
 

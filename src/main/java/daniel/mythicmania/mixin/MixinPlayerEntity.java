@@ -1,5 +1,6 @@
 package daniel.mythicmania.mixin;
 
+import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -48,6 +49,15 @@ public abstract class MixinPlayerEntity extends LivingEntity {
             bootSlotItem.isOf(MythicManiaItems.NUCLEAR_BOOTS)
         ) {
             this.addStatusEffect(regeneration);
+        }
+
+        if (
+            headSlotItem.isOf(MythicManiaItems.RUINOUS_HELMET) ||
+            chestSlotItem.isOf(MythicManiaItems.RUINOUS_CHESTPLATE) ||
+            legsSlotItem.isOf(MythicManiaItems.RUINOUS_LEGGINGS) ||
+            bootSlotItem.isOf(MythicManiaItems.RUINOUS_BOOTS)
+        ) {
+            this.addStatusEffect(fireResistance);
         }
     }
 }

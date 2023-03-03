@@ -13,6 +13,11 @@ public final class MythicManiaToolMaterials {
             Ingredient.ofItems(MythicManiaItems.TOXIC_PEBBLE)
     );
 
+    public static final ToolMaterial RUINOUS = new CustomToolMaterial(
+            721, 6.0f, 0.0f, 2, 10,
+            Ingredient.ofItems(MythicManiaItems.WASTED_ESSENCE)
+    );
+
     public static final ToolMaterial WASTED_STAFF = new CustomToolMaterial(
             800, 6.0f, 0.0f, 0, 6,
             Ingredient.ofItems((ItemConvertible) null)
