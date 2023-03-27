@@ -12,7 +12,8 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3f;
+import net.minecraft.util.math.RotationAxis;
+import org.joml.Vector3f;
 
 public class EntityCapeFeatureRenderer extends FeatureRenderer<WastedDemonEntity, WastedDemonEntityModel<Entity>> {
     private final Identifier capeTexture;
@@ -52,9 +53,9 @@ public class EntityCapeFeatureRenderer extends FeatureRenderer<WastedDemonEntity
         //float t = MathHelper.lerp(tickDelta, wastedDemon.prevStrideDistance, abstractClientPlayerEntity.strideDistance);
         capeTilt += MathHelper.sin(MathHelper.lerp(tickDelta, wastedDemon.prevHorizontalSpeed, wastedDemon.horizontalSpeed) * 6.0f) * 32.0f * 0.9f;
 
-        matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(6.0f + capeX / 2.0f + capeTilt));
-        matrices.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(capeZ / 2.0f));
-        matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(180.0f - capeZ / 2.0f));
+        matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(6.0f + capeX / 2.0f + capeTilt));
+        matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(capeZ / 2.0f));
+        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180.0f - capeZ / 2.0f));
 
         VertexConsumer vertexConsumer = vertexConsumers.getBuffer(RenderLayer.getEntitySolid(capeTexture));
         this.getContextModel().renderCape(matrices, vertexConsumer, light, OverlayTexture.DEFAULT_UV);

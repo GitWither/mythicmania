@@ -12,47 +12,48 @@ import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public final class MythicManiaEntityTypes {
     public static final EntityModelLayer MAGICAL_GRUB_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "magical_grub"), "root");
     public static final EntityType<MagicalGrubEntity> MAGICAL_GRUB_ENTITY = Registry.register(
-            Registry.ENTITY_TYPE,
+            Registries.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "magical_grub"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, MagicalGrubEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
     );
 
     public static final EntityModelLayer POISONOUS_GRUB_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "poisonous_grub"), "root");
     public static final EntityType<PoisonousGrubEntity> POISONOUS_GRUB_ENTITY = Registry.register(
-            Registry.ENTITY_TYPE,
+            Registries.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "poisonous_grub"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PoisonousGrubEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
     );
 
     public static final EntityModelLayer ZAPPING_BEETLE_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "zapping_beetle"), "root");
     public static final EntityType<ZappingBeetleEntity> ZAPPING_BEETLE_ENTITY = Registry.register(
-            Registry.ENTITY_TYPE,
+            Registries.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "zapping_beetle"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, ZappingBeetleEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
     );
 
     public static final EntityModelLayer WASTED_DEMON_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "wasted_demon"), "root");
     public static final EntityType<WastedDemonEntity> WASTED_DEMON_ENTITY = Registry.register(
-            Registry.ENTITY_TYPE,
+            Registries.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "wasted_demon"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, WastedDemonEntity::new).fireImmune().dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
     );
 
     public static final EntityModelLayer DEMON_GUARDIAN_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "demon_guardian"), "root");
     public static final EntityType<DemonGuardianEntity> DEMON_GUARDIAN_ENTITY = Registry.register(
-            Registry.ENTITY_TYPE,
+            Registries.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "demon_guardian"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, DemonGuardianEntity::new).fireImmune().dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
     );
 
     public static final EntityType<WaterParcelEntity> WATER_PARCEL_ENTITY = Registry.register(
-            Registry.ENTITY_TYPE,
+            Registries.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "water_parcel"),
             FabricEntityTypeBuilder.<WaterParcelEntity>create(SpawnGroup.MISC, WaterParcelEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
@@ -61,7 +62,7 @@ public final class MythicManiaEntityTypes {
     );
 
     public static final EntityType<WastedStaffChargeEntity> WASTED_STAFF_CHARGE_ENTITY = Registry.register(
-            Registry.ENTITY_TYPE,
+            Registries.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "wasted_staff_charge"),
             FabricEntityTypeBuilder.<WastedStaffChargeEntity>create(SpawnGroup.MISC, WastedStaffChargeEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
@@ -70,7 +71,7 @@ public final class MythicManiaEntityTypes {
     );
 
     public static final EntityType<ShockBoltEntity> SHOCK_BOLT_ENTITY = Registry.register(
-            Registry.ENTITY_TYPE,
+            Registries.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "shock_bolt"),
             FabricEntityTypeBuilder.<ShockBoltEntity>create(SpawnGroup.MISC, ShockBoltEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
@@ -79,7 +80,7 @@ public final class MythicManiaEntityTypes {
     );
 
     public static final EntityType<OrbiterProjectileEntity> ORBITER_PROJECTILE_ENTITY = Registry.register(
-            Registry.ENTITY_TYPE,
+            Registries.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "orbiter_orojectile"),
             FabricEntityTypeBuilder.<OrbiterProjectileEntity>create(SpawnGroup.MISC, OrbiterProjectileEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
@@ -90,7 +91,7 @@ public final class MythicManiaEntityTypes {
                  
     public static final EntityModelLayer ORBITER_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "orbiter"), "root");
     public static final EntityType<OrbiterEntity> ORBITER_ENTITY = Registry.register(
-            Registry.ENTITY_TYPE,
+            Registries.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "orbiter"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, OrbiterEntity::new).fireImmune().dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
     );

@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 public class HealingBerryItem extends Item {
     public HealingBerryItem() {
-        super(new Item.Settings().food(FoodComponents.HEALING_BERRY).group(MythicMania.MYTHICMANIA_FOOD_ITEM_GROUP));
+        super(new Item.Settings().food(FoodComponents.HEALING_BERRY));
     }
 
     @Override

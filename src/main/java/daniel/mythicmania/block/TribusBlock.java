@@ -22,6 +22,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 import net.minecraft.world.event.GameEvent;
 
 public class TribusBlock extends PlantBlock implements Fertilizable {
@@ -75,8 +76,8 @@ public class TribusBlock extends PlantBlock implements Fertilizable {
         return super.onUse(state, world, pos, player, hand, hit);
     }
 
-//    @Override
-    public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
+    @Override
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
         return !hasBerries(state);
     }
 

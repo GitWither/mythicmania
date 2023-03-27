@@ -22,7 +22,7 @@ public class WastedStaffChargeEntity extends ThrownItemEntity {
 
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
-        Explosion.DestructionType destructionType = this.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING) ? Explosion.DestructionType.DESTROY : Explosion.DestructionType.NONE;
+        World.ExplosionSourceType destructionType = this.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING) ? World.ExplosionSourceType.MOB : World.ExplosionSourceType.NONE;
 
         if (!world.isClient) {
             this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 1, destructionType);

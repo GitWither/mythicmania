@@ -6,12 +6,9 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.Packet;
-import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.util.Clearable;
 import net.minecraft.util.math.BlockPos;
-import org.jetbrains.annotations.Nullable;
 
 public class AncientAltarBlockEntity extends BlockEntity implements Clearable {
     ItemStack currentOrb = ItemStack.EMPTY;
@@ -35,9 +32,8 @@ public class AncientAltarBlockEntity extends BlockEntity implements Clearable {
         this.setOrb(ItemStack.EMPTY, null);
     }
 
-    @Nullable
     @Override
-    public Packet<ClientPlayPacketListener> toUpdatePacket() {
+    public BlockEntityUpdateS2CPacket toUpdatePacket() {
         return BlockEntityUpdateS2CPacket.create(this);
     }
 

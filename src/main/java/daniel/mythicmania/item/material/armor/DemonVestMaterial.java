@@ -1,6 +1,7 @@
 package daniel.mythicmania.item.material.armor;
 
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
@@ -10,12 +11,12 @@ public class DemonVestMaterial implements ArmorMaterial {
     public static final DemonVestMaterial INSTANCE = new DemonVestMaterial();
 
     @Override
-    public int getDurability(EquipmentSlot slot) {
+    public int getDurability(ArmorItem.Type type) {
         return 165;
     }
 
     @Override
-    public int getProtectionAmount(EquipmentSlot slot) {
+    public int getProtection(ArmorItem.Type type) {
         return 8;
     }
 

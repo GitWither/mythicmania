@@ -80,8 +80,9 @@ public abstract class AbstractBeetleEntity extends AnimalEntity {
         @Override
         public void start() {
             Vec3d vec3d = this.getRandomLocation();
+            // TODO: Change this
             if (vec3d != null) {
-                AbstractBeetleEntity.this.navigation.startMovingAlong(AbstractBeetleEntity.this.navigation.findPathTo(new BlockPos(vec3d), 1), 1.0);
+                AbstractBeetleEntity.this.navigation.startMovingAlong(AbstractBeetleEntity.this.navigation.findPathTo(new BlockPos((int) vec3d.x, (int) vec3d.y, (int) vec3d.z), 1), 1.0);
             }
         }
 

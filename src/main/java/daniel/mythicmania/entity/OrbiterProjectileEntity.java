@@ -5,9 +5,12 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageEffects;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.damage.DamageSources;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
+import net.minecraft.server.command.DamageCommand;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.GameRules;
@@ -26,7 +29,7 @@ public class OrbiterProjectileEntity extends ThrownItemEntity {
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
         Entity entity = entityHitResult.getEntity();
-        entity.damage(DamageSource.MAGIC, 2);
+        entity.damage(this.getDamageSources().magic(), 2);
         entity.setOnFireFor(2);
         super.onEntityHit(entityHitResult);
     }
