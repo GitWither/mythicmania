@@ -34,6 +34,7 @@ public class WastedStaffItem extends SwordItem {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient) {
+            // TODO: Formatting
             world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.WASTED_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 1F);
 
             if (!user.getAbilities().creativeMode) user.getItemCooldownManager().set(this, 6);

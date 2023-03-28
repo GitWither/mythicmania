@@ -20,7 +20,7 @@ public class ToxicOreBlock extends ExperienceDroppingBlock {
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
         if (!entity.bypassesSteppingEffects()) {
-            StatusEffectInstance steppedPoison = new StatusEffectInstance(StatusEffects.POISON, 20*2, 0);
+            StatusEffectInstance steppedPoison = new StatusEffectInstance(StatusEffects.POISON, 20 * 2, 0);
             ((LivingEntity) entity).addStatusEffect(steppedPoison);
         }
 

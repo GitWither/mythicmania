@@ -11,13 +11,13 @@ import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
 public class OrbiterCoreRenderer<T extends Entity, M extends EntityModel<T>> extends EyesFeatureRenderer<T, M> {
-    private static final RenderLayer eyes = RenderLayer.getEyes(new Identifier("mythicmania:textures/entity/orbiter/orbiter_e.png"));
+    private static final RenderLayer EYES = RenderLayer.getEyes(new Identifier("mythicmania:textures/entity/orbiter/orbiter_e.png"));
 
     public OrbiterCoreRenderer(FeatureRendererContext<T, M> featureRendererContext) {
         super(featureRendererContext);
     }
 
     public RenderLayer getEyesTexture() {
-        return eyes;
+        return EYES;
     }
 }

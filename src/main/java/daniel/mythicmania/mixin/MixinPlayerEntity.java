@@ -26,6 +26,7 @@ public abstract class MixinPlayerEntity extends LivingEntity {
 
     @Inject(method = "tick", at = @At(value = "INVOKE", target = "net/minecraft/entity/player/PlayerEntity.updateTurtleHelmet()V"))
     private void mythicmania$injectDemonVestEffects(CallbackInfo ci) {
+        // TODO: Write more flexible system to avoid polluting this inject
         ItemStack headSlotItem = this.getEquippedStack(EquipmentSlot.HEAD);
         ItemStack chestSlotItem = this.getEquippedStack(EquipmentSlot.CHEST);
         ItemStack legsSlotItem = this.getEquippedStack(EquipmentSlot.LEGS);

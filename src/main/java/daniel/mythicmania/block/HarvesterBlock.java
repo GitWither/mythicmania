@@ -27,8 +27,7 @@ import net.minecraft.world.event.GameEvent;
 
 public class HarvesterBlock extends PlantBlock implements Fertilizable {
     public static final BooleanProperty BERRIES = Properties.BERRIES;
-
-    private static VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 2, 13);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 2, 13);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

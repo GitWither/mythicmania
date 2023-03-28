@@ -33,6 +33,7 @@ public class ShockBoltEntity extends ThrownItemEntity {
         LightningEntity lightningEntity = EntityType.LIGHTNING_BOLT.create(world);
         BlockPos blockPos = entity.getBlockPos();
 
+        // TODO: No asserts!
         assert lightningEntity != null;
         lightningEntity.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(blockPos.up()));
         lightningEntity.setChanneler(entity instanceof ServerPlayerEntity ? (ServerPlayerEntity)entity : null);

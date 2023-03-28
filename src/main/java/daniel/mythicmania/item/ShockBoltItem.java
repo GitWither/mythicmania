@@ -19,6 +19,7 @@ public class ShockBoltItem extends Item {
 
         if (!world.isClient) {
             user.incrementStat(Stats.USED.getOrCreateStat(this));
+            // TODO: This looks wrong
             if (!user.getAbilities().creativeMode) {
                 itemStack.decrement(1);
             }

@@ -25,6 +25,7 @@ public class OrbiterEntity extends HostileEntity {
 
     @Override
     protected void initGoals() {
+        // TODO: Weird priorities
         this.goalSelector.add(1, new LookAtEntityGoal(this, PlayerEntity.class, 6));
         this.goalSelector.add(1, new LookAroundGoal(this));
         this.goalSelector.add(2, new AttackGoal(this));
@@ -45,6 +46,7 @@ public class OrbiterEntity extends HostileEntity {
     }
 
     public void tickMovement() {
+        // TODO: Don't do this in movement
         for(int i = 0; i < 2; ++i) {
             this.world.addParticle(ParticleTypes.FLAME, this.getParticleX(1), this.getRandomBodyY(), this.getParticleZ(0.2), 0.0, 0.2, 0.0);
         }
@@ -75,6 +77,7 @@ public class OrbiterEntity extends HostileEntity {
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 8f);
     }
 
+    // TODO: Move into own class
     class ShootCoreGoal extends Goal {
         private final OrbiterEntity orbiter;
         public int cooldown;
@@ -96,12 +99,14 @@ public class OrbiterEntity extends HostileEntity {
         @Override
         public void tick() {
             LivingEntity livingEntity = this.orbiter.getTarget();
+            // TODO: No asserts!
             assert livingEntity != null;
             ItemStack charge = new ItemStack(MythicManiaItems.ORBITER_PROJECTILE);
             OrbiterProjectileEntity projectile = new OrbiterProjectileEntity(world, this.orbiter);
             projectile.setItem(charge);
             projectile.setVelocity(this.orbiter, this.orbiter.getPitch(), this.orbiter.getYaw(), 0.0F, 0.72F, 0F);
 
+            // TODO: This logic is awkward to read. Rewrite
             if (livingEntity.squaredDistanceTo(this.orbiter) < 81 && this.orbiter.canSee(livingEntity)) {
                 ++this.cooldown;
 

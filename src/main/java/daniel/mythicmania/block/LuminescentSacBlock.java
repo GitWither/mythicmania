@@ -19,13 +19,13 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 public class LuminescentSacBlock extends Block {
-    public static final BooleanProperty isHanging = Properties.HANGING;
-
+    private static final VoxelShape SHAPE = Block.createCuboidShape(0, 11, 0, 16, 16, 16);
     public LuminescentSacBlock() {
         super(FabricBlockSettings.of(Material.PLANT, MapColor.BLUE).nonOpaque().sounds(BlockSoundGroup.SLIME).strength(0.5f, 0.5f).luminance((state) -> 10));
     }
 
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
+        // TODO: Refactor this
         VoxelShape voxelShape = this.getOutlineShape(state, world, pos, ShapeContext.absent());
         Vec3d vec3d = voxelShape.getBoundingBox().getCenter();
         double d = (double)pos.getX() + vec3d.x;
@@ -37,8 +37,6 @@ public class LuminescentSacBlock extends Block {
             }
         }
     }
-
-    private static VoxelShape SHAPE = Block.createCuboidShape(0, 11, 0, 16, 16, 16);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -53,8 +51,8 @@ public class LuminescentSacBlock extends Block {
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        if (ctx.getSide() == Direction.DOWN) return this.getDefaultState().with(isHanging, true);
-        return this.getDefaultState().with(isHanging, true);
+        // TODO: Change logic here
+        return this.getDefaultState().with(Properties.HANGING, true);
     }
 
     @Override
@@ -64,6 +62,6 @@ public class LuminescentSacBlock extends Block {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(isHanging);
+        builder.add(Properties.HANGING);
     }
 }

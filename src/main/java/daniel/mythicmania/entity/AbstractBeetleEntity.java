@@ -60,7 +60,9 @@ public abstract class AbstractBeetleEntity extends AnimalEntity {
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2);
     }
 
+    // TODO: Move this into own class
     class BeetleWanderAroundGoal extends Goal {
+        // TODO: Unused constant?
         private static final int MAX_DISTANCE = 22;
 
         BeetleWanderAroundGoal() {

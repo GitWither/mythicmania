@@ -7,8 +7,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class PoisonSpikeItem extends Item {
-    private static final int duration = 20*2;
-    private static final int amplifier = 2;
+    private static final int DURATION = 20*2;
+    private static final int AMPLIFIER = 2;
 
     public PoisonSpikeItem(Settings settings) {
         super(settings);
@@ -16,7 +16,7 @@ public class PoisonSpikeItem extends Item {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, duration, amplifier));
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, DURATION, AMPLIFIER));
         return super.postHit(stack, target, attacker);
     }
 }

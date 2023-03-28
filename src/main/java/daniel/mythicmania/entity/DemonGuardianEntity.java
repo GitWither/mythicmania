@@ -27,6 +27,7 @@ public class DemonGuardianEntity extends HostileEntity {
 
     @Override
     protected void initGoals() {
+        // TODO: Weird priorities here. Also add attack
         this.goalSelector.add(2, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
         this.goalSelector.add(3, new LookAroundGoal(this));
         this.goalSelector.add(4, new AttackGoal(this));
@@ -38,13 +39,11 @@ public class DemonGuardianEntity extends HostileEntity {
     
     @Override
     protected void initEquipment(Random random, LocalDifficulty localDifficulty) {
+        boolean offhand = world.random.nextInt(3) == 0;
 
-        // Generates a random number which determines whether the Demon Guardian has a sword, a shield, or nothing.
-        int randomLootInt = world.random.nextInt(3);
-
-        if (randomLootInt == 1) {
+        if (offhand) {
             this.equipStack(EquipmentSlot.OFFHAND, new ItemStack(Items.SHIELD));
-        } else if (randomLootInt == 2) {
+        } else  {
             this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SWORD));
         }
 
@@ -63,7 +62,7 @@ public class DemonGuardianEntity extends HostileEntity {
     @Override
     public boolean tryAttack(Entity entity) {
         if (super.tryAttack(entity) && entity instanceof LivingEntity livingEntity) {
-            return tryAttack(entity);
+            return tryAttack(entity); // TODO: This is gonna cause a stack overflow...
         }
 
         return false;

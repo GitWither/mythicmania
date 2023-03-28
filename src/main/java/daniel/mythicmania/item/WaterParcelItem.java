@@ -33,6 +33,7 @@ public class WaterParcelItem extends Item {
             world.spawnEntity(projectile);
 
             user.incrementStat(Stats.USED.getOrCreateStat(this));
+            // TODO: This looks wrong
             if (!user.getAbilities().creativeMode) {
                 itemStack.decrement(1);
             }

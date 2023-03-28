@@ -28,6 +28,7 @@ public class OrbiterProjectileEntity extends ThrownItemEntity {
 
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
+        // TODO: This is a bit weird
         Entity entity = entityHitResult.getEntity();
         entity.damage(this.getDamageSources().magic(), 2);
         entity.setOnFireFor(2);

@@ -2,6 +2,7 @@ package daniel.mythicmania.entity;
 
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
@@ -11,7 +12,6 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class WaterParcelEntity extends ThrownItemEntity {
-    public static final BlockState fluid = Fluids.WATER.getDefaultState().getBlockState();
 
     public WaterParcelEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
@@ -24,7 +24,7 @@ public class WaterParcelEntity extends ThrownItemEntity {
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
         if (!world.isClient) {
-            world.setBlockState(getBlockPos(), fluid, 11);
+            world.setBlockState(getBlockPos(), Blocks.WATER.getDefaultState(), 11); // TODO: What does this flag do? Never use magic numbers
             this.kill();
         }
     }

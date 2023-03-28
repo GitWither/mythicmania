@@ -25,6 +25,7 @@ public class WastedStaffChargeItem extends Item {
             world.spawnEntity(projectile);
 
             user.incrementStat(Stats.USED.getOrCreateStat(this));
+            // TODO: This looks wrong
             if (!user.getAbilities().creativeMode) {
                 itemStack.decrement(1);
                 user.getItemCooldownManager().set(this, 4);

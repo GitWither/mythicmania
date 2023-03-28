@@ -46,6 +46,7 @@ public class WastedDemonEntity extends HostileEntity {
 
     @Override
     protected void initGoals() {
+        // TODO: Weird priorities
         this.goalSelector.add(1, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
         this.goalSelector.add(2, new LookAroundGoal(this));
         this.goalSelector.add(3, new AttackGoal(this));
@@ -72,7 +73,7 @@ public class WastedDemonEntity extends HostileEntity {
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
         Random random = world.getRandom();
         this.initEquipment(random, difficulty);
-        this.handDropChances[EquipmentSlot.MAINHAND.getEntitySlotId()] = 0.0F;
+        this.handDropChances[EquipmentSlot.MAINHAND.getEntitySlotId()] = 0.0F; // TODO: Looks weird..
 
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
@@ -184,6 +185,7 @@ public class WastedDemonEntity extends HostileEntity {
         this.capeY += deltaY * 0.25;
     }
 
+    // TODO: Move into own class
     public static class MoveOutOfWater extends Goal {
         private final WastedDemonEntity mob;
 
@@ -200,6 +202,7 @@ public class WastedDemonEntity extends HostileEntity {
             Iterable<BlockPos> iterable = BlockPos.iterate(MathHelper.floor(this.mob.getX() - 2.0), MathHelper.floor(this.mob.getY() - 2.0), MathHelper.floor(this.mob.getZ() - 2.0), MathHelper.floor(this.mob.getX() + 2.0), this.mob.getBlockY(), MathHelper.floor(this.mob.getZ() + 2.0));
             Iterator<BlockPos> var3 = iterable.iterator();
 
+            // TODO: Replace with enhanced for loop - decompiler artifacts make this unreadable
             while (var3.hasNext()) {
                 BlockPos blockPos2 = var3.next();
                 if (!this.mob.world.getFluidState(blockPos2).isIn(FluidTags.WATER)) {

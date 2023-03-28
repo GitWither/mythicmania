@@ -20,6 +20,7 @@ public class PoisonousGrubEntity extends AbstractGrubEntity {
 
     @Override
     protected void initGoals() {
+        // TODO: Weird priorities
         this.goalSelector.add(1, new SwimGoal(this));
         this.goalSelector.add(3, new PounceAtTargetGoal(this, 0.4f));
         this.goalSelector.add(4, new AttackGoal(this));
@@ -31,6 +32,7 @@ public class PoisonousGrubEntity extends AbstractGrubEntity {
 
     @Override
     public boolean tryAttack(Entity target) {
+        // TODO: Rewrite
         if (super.tryAttack(target) && target instanceof LivingEntity) {
             ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 5 * 20, 0), this);
             return true;
