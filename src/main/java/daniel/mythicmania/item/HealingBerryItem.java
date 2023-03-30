@@ -1,6 +1,5 @@
 package daniel.mythicmania.item;
 
-import daniel.mythicmania.MythicMania;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffects;
@@ -13,7 +12,7 @@ import net.minecraft.world.World;
 
 public class HealingBerryItem extends Item {
     public HealingBerryItem() {
-        super(new Item.Settings().food(FoodComponents.HEALING_BERRY));
+        super(new Item.Settings().food(MythicManiaFoodComponents.HEALING_BERRY));
     }
 
     @Override

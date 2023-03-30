@@ -85,7 +85,7 @@ public final class MythicManiaItems {
         POISONOUS_BERRY = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "poisonous_berry"),
-                new AliasedBlockItem(MythicManiaBlocks.HARVESTER_BLOCK, new Item.Settings().food(FoodComponents.POISONOUS_BERRY))
+                new AliasedBlockItem(MythicManiaBlocks.HARVESTER_BLOCK, new Item.Settings().food(MythicManiaFoodComponents.POISONOUS_BERRY))
         );
 
         HEALING_BERRY = Registry.register(
@@ -97,13 +97,13 @@ public final class MythicManiaItems {
         TRIBUS_FRUIT = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "tribus_fruit"),
-                new AliasedBlockItem(MythicManiaBlocks.TRIBUS_BLOCK, new Item.Settings().food(FoodComponents.TRIBUS_FRUIT))
+                new AliasedBlockItem(MythicManiaBlocks.TRIBUS_BLOCK, new Item.Settings().food(MythicManiaFoodComponents.TRIBUS_FRUIT))
         );
 
         ENCHANTED_TRIBUS_FRUIT = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "enchanted_tribus_fruit"),
-                new Item(new Item.Settings().food(FoodComponents.ENCHANTED_TRIBUS_FRUIT).rarity(Rarity.RARE))
+                new Item(new Item.Settings().food(MythicManiaFoodComponents.ENCHANTED_TRIBUS_FRUIT).rarity(Rarity.RARE))
         );
     }
 

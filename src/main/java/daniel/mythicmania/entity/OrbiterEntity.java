@@ -99,23 +99,23 @@ public class OrbiterEntity extends HostileEntity {
         @Override
         public void tick() {
             LivingEntity livingEntity = this.orbiter.getTarget();
-            // TODO: No asserts!
-            assert livingEntity != null;
             ItemStack charge = new ItemStack(MythicManiaItems.ORBITER_PROJECTILE);
             OrbiterProjectileEntity projectile = new OrbiterProjectileEntity(world, this.orbiter);
             projectile.setItem(charge);
             projectile.setVelocity(this.orbiter, this.orbiter.getPitch(), this.orbiter.getYaw(), 0.0F, 0.72F, 0F);
 
-            // TODO: This logic is awkward to read. Rewrite
-            if (livingEntity.squaredDistanceTo(this.orbiter) < 81 && this.orbiter.canSee(livingEntity)) {
-                ++this.cooldown;
+            if (livingEntity != null) {
+                // TODO: This logic is awkward to read. Rewrite
+                if (livingEntity.squaredDistanceTo(this.orbiter) < 81 && this.orbiter.canSee(livingEntity)) {
+                    ++this.cooldown;
 
-                if (this.cooldown == 15) {
-                    world.spawnEntity(projectile);
-                    this.cooldown = 0;
+                    if (this.cooldown == 15) {
+                        world.spawnEntity(projectile);
+                        this.cooldown = 0;
+                    }
+                } else if (this.cooldown > 0) {
+                    --this.cooldown;
                 }
-            } else if (this.cooldown > 0) {
-                --this.cooldown;
             }
         }
     }

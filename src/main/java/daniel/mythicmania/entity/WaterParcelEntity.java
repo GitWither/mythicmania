@@ -24,7 +24,8 @@ public class WaterParcelEntity extends ThrownItemEntity {
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
         if (!world.isClient) {
-            world.setBlockState(getBlockPos(), Blocks.WATER.getDefaultState(), 11); // TODO: What does this flag do? Never use magic numbers
+            // TODO: Check the number for flags
+            world.setBlockState(getBlockPos(), Blocks.WATER.getDefaultState(), 11);
             this.kill();
         }
     }

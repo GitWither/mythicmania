@@ -32,7 +32,7 @@ public class PoisonousGrubEntity extends AbstractGrubEntity {
 
     @Override
     public boolean tryAttack(Entity target) {
-        // TODO: Rewrite
+        // FIXME: Rewrite
         if (super.tryAttack(target) && target instanceof LivingEntity) {
             ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 5 * 20, 0), this);
             return true;

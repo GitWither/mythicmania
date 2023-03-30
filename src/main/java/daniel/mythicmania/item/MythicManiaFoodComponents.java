@@ -4,8 +4,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
 
-// TODO: Namespace this class
-public class FoodComponents {
+public class MythicManiaFoodComponents {
     public static final FoodComponent POISONOUS_BERRY = new FoodComponent.Builder()
             .saturationModifier(1.1f)
             .hunger(1)
