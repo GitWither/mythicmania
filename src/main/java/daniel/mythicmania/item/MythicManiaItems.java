@@ -9,7 +9,6 @@ import daniel.mythicmania.item.material.armor.NuclearArmorMaterial;
 import daniel.mythicmania.item.material.armor.RuinousArmorMaterial;
 import daniel.mythicmania.item.material.tool.MythicManiaToolMaterials;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
