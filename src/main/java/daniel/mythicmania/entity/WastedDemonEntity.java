@@ -199,7 +199,14 @@ public class WastedDemonEntity extends HostileEntity {
 
         public void start() {
             BlockPos blockPos = null;
-            Iterable<BlockPos> iterable = BlockPos.iterate(MathHelper.floor(this.mob.getX() - 2.0), MathHelper.floor(this.mob.getY() - 2.0), MathHelper.floor(this.mob.getZ() - 2.0), MathHelper.floor(this.mob.getX() + 2.0), this.mob.getBlockY(), MathHelper.floor(this.mob.getZ() + 2.0));
+            int startX = MathHelper.floor(this.mob.getX() - 2.0);
+            int startY = MathHelper.floor(this.mob.getY() - 2.0);
+            int startZ = MathHelper.floor(this.mob.getZ() - 2.0);
+            int endX = MathHelper.floor(this.mob.getX() + 2.0);
+            int endY = this.mob.getBlockY();
+            int endZ = MathHelper.floor(this.mob.getZ() + 2.0);
+
+            Iterable<BlockPos> iterable = BlockPos.iterate(startX, startY, startZ, endX, endY, endZ);
 
             // TODO: Review this for loop to see if it's ok
             for (BlockPos blockPos2 : iterable) {

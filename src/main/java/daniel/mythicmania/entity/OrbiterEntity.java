@@ -9,10 +9,8 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.FireballEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class OrbiterEntity extends HostileEntity {
@@ -98,15 +96,15 @@ public class OrbiterEntity extends HostileEntity {
 
         @Override
         public void tick() {
-            LivingEntity livingEntity = this.orbiter.getTarget();
+            LivingEntity attackTarget = this.orbiter.getTarget();
             ItemStack charge = new ItemStack(MythicManiaItems.ORBITER_PROJECTILE);
             OrbiterProjectileEntity projectile = new OrbiterProjectileEntity(world, this.orbiter);
             projectile.setItem(charge);
             projectile.setVelocity(this.orbiter, this.orbiter.getPitch(), this.orbiter.getYaw(), 0.0F, 0.72F, 0F);
 
-            if (livingEntity != null) {
-                // TODO: This logic is awkward to read. Rewrite
-                if (livingEntity.squaredDistanceTo(this.orbiter) < 81 && this.orbiter.canSee(livingEntity)) {
+            // TODO: Awkward. Rewrite
+            if (attackTarget != null) {
+                if (attackTarget.squaredDistanceTo(this.orbiter) < 81 && this.orbiter.canSee(attackTarget)) {
                     ++this.cooldown;
 
                     if (this.cooldown == 15) {
