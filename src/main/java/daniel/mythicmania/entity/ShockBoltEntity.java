@@ -28,17 +28,17 @@ public class ShockBoltEntity extends ThrownItemEntity {
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
         StatusEffectInstance stunEffect = new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 15, 4, false, false, true);
-        Entity entity = entityHitResult.getEntity();
+        Entity target = entityHitResult.getEntity();
 
         LightningEntity lightningEntity = EntityType.LIGHTNING_BOLT.create(world);
-        BlockPos blockPos = entity.getBlockPos();
+        BlockPos blockPos = target.getBlockPos();
 
         if (lightningEntity != null) {
             lightningEntity.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(blockPos.up()));
-            lightningEntity.setChanneler(entity instanceof ServerPlayerEntity ? (ServerPlayerEntity)entity : null);
+            lightningEntity.setChanneler(target instanceof ServerPlayerEntity ? (ServerPlayerEntity)target : null);
 
             if (!world.isClient) {
-                ((LivingEntity) entity).addStatusEffect(stunEffect);
+                ((LivingEntity) target).addStatusEffect(stunEffect);
                 world.spawnEntity(lightningEntity);
             }
         }
