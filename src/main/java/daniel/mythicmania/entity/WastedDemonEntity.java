@@ -200,11 +200,9 @@ public class WastedDemonEntity extends HostileEntity {
         public void start() {
             BlockPos blockPos = null;
             Iterable<BlockPos> iterable = BlockPos.iterate(MathHelper.floor(this.mob.getX() - 2.0), MathHelper.floor(this.mob.getY() - 2.0), MathHelper.floor(this.mob.getZ() - 2.0), MathHelper.floor(this.mob.getX() + 2.0), this.mob.getBlockY(), MathHelper.floor(this.mob.getZ() + 2.0));
-            Iterator<BlockPos> var3 = iterable.iterator();
 
             // TODO: Replace with enhanced for loop - decompiler artifacts make this unreadable
-            while (var3.hasNext()) {
-                BlockPos blockPos2 = var3.next();
+            for (BlockPos blockPos2 : iterable) {
                 if (!this.mob.world.getFluidState(blockPos2).isIn(FluidTags.WATER)) {
                     blockPos = blockPos2;
                     break;
