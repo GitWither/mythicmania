@@ -206,12 +206,12 @@ public class WastedDemonEntity extends HostileEntity {
             int endY = this.mob.getBlockY();
             int endZ = MathHelper.floor(this.mob.getZ() + 2.0);
 
-            Iterable<BlockPos> iterable = BlockPos.iterate(startX, startY, startZ, endX, endY, endZ);
+            Iterable<BlockPos> blockReplaceList = BlockPos.iterate(startX, startY, startZ, endX, endY, endZ);
 
             // TODO: Review this for loop to see if it's ok
-            for (BlockPos blockPos2 : iterable) {
-                if (!this.mob.world.getFluidState(blockPos2).isIn(FluidTags.WATER)) {
-                    blockPos = blockPos2;
+            for (BlockPos pos : blockReplaceList) {
+                if (!this.mob.world.getFluidState(pos).isIn(FluidTags.WATER)) {
+                    blockPos = pos;
                     break;
                 }
             }
