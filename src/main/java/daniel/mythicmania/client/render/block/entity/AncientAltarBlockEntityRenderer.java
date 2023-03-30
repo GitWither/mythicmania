@@ -20,11 +20,10 @@ public class AncientAltarBlockEntityRenderer implements BlockEntityRenderer<Anci
     @Override
     public void render(AncientAltarBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         // TODO: Look into preventing NPE
-        double offset = Math.sin((entity.getWorld().getTime() + tickDelta) / 8.0) / 4.0;
+        double offset = Math.sin((entity.getWorld().getTime() + tickDelta) / 10.0) / 7.0;
 
-        // TODO: Something weird is happening here
         matrices.translate(0.5, 1.5 + offset, 0.5);
-        matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees((entity.getWorld().getTime() + tickDelta) * 4));
+        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees((entity.getWorld().getTime() + tickDelta) * 2));
 
         int lightAbove = WorldRenderer.getLightmapCoordinates(entity.getWorld(), entity.getPos().up());
         MinecraftClient.getInstance().getItemRenderer().renderItem(entity.getOrb(), ModelTransformationMode.GROUND, lightAbove, OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, entity.getWorld(), 0);

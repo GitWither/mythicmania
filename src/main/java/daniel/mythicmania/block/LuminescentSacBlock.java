@@ -28,12 +28,12 @@ public class LuminescentSacBlock extends Block {
         // TODO: Refactor this
         VoxelShape voxelShape = this.getOutlineShape(state, world, pos, ShapeContext.absent());
         Vec3d vec3d = voxelShape.getBoundingBox().getCenter();
-        double d = (double)pos.getX() + vec3d.x;
-        double e = (double)pos.getZ() + vec3d.z;
+        double xPos = (double)pos.getX() + vec3d.x;
+        double zPos = (double)pos.getZ() + vec3d.z;
 
         for(int i = 0; i < 3; ++i) {
             if (random.nextBoolean()) {
-                world.addParticle(MythicManiaParticles.SAC_PARTICLE, d + random.nextDouble() / 2.0, (double)pos.getY() + (random.nextDouble()), e + random.nextDouble() / 5.0, 0.0, 0.0, 0.0);
+                world.addParticle(MythicManiaParticles.SAC_PARTICLE, xPos + random.nextDouble() / 2.0, (double)pos.getY() + (random.nextDouble()), zPos + random.nextDouble() / 5.0, 0.0, 0.0, 0.0);
             }
         }
     }

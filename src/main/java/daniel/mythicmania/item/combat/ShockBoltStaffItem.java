@@ -23,13 +23,13 @@ public class ShockBoltStaffItem extends SwordItem {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         final ItemStack shockBoltItem = new ItemStack(MythicManiaItems.SHOCK_BOLT);
 
-        // Do specifically if the user is in survival mode.
         if (!user.getAbilities().creativeMode) {
             int slotWithShockBolt = user.getInventory().getSlotWithStack(shockBoltItem);
             if (slotWithShockBolt < 0) return TypedActionResult.pass(user.getStackInHand(hand));
 
             user.getInventory().getStack(slotWithShockBolt).decrement(1);
             user.getStackInHand(hand).damage(1, user, (p) -> p.sendToolBreakStatus(user.getActiveHand()));
+            user.getItemCooldownManager().set(this, 8);
         }
 
         // Store projectiles in an array and then iterate through each one (saves repetitive code).
@@ -46,10 +46,7 @@ public class ShockBoltStaffItem extends SwordItem {
             world.spawnEntity(projectile);
         }
 
-        // TODO: Repeat of condition?
-        if (!user.getAbilities().creativeMode) user.getItemCooldownManager().set(this, 8);
         world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.SHOCK_BOLT_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 2.5F);
-
 
         // TODO: Are we sure about client/server safety?
         return super.use(world, user, hand);

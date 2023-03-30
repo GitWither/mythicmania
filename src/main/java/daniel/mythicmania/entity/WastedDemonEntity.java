@@ -199,14 +199,19 @@ public class WastedDemonEntity extends HostileEntity {
 
         public void start() {
             BlockPos blockPos = null;
-            Iterable<BlockPos> iterable = BlockPos.iterate(MathHelper.floor(this.mob.getX() - 2.0), MathHelper.floor(this.mob.getY() - 2.0), MathHelper.floor(this.mob.getZ() - 2.0), MathHelper.floor(this.mob.getX() + 2.0), this.mob.getBlockY(), MathHelper.floor(this.mob.getZ() + 2.0));
-            Iterator<BlockPos> var3 = iterable.iterator();
+            int startX = MathHelper.floor(this.mob.getX() - 2.0);
+            int startY = MathHelper.floor(this.mob.getY() - 2.0);
+            int startZ = MathHelper.floor(this.mob.getZ() - 2.0);
+            int endX = MathHelper.floor(this.mob.getX() + 2.0);
+            int endY = this.mob.getBlockY();
+            int endZ = MathHelper.floor(this.mob.getZ() + 2.0);
 
-            // TODO: Replace with enhanced for loop - decompiler artifacts make this unreadable
-            while (var3.hasNext()) {
-                BlockPos blockPos2 = var3.next();
-                if (!this.mob.world.getFluidState(blockPos2).isIn(FluidTags.WATER)) {
-                    blockPos = blockPos2;
+            Iterable<BlockPos> blockReplaceList = BlockPos.iterate(startX, startY, startZ, endX, endY, endZ);
+
+            // TODO: Review this for loop to see if it's ok
+            for (BlockPos pos : blockReplaceList) {
+                if (!this.mob.world.getFluidState(pos).isIn(FluidTags.WATER)) {
+                    blockPos = pos;
                     break;
                 }
             }
