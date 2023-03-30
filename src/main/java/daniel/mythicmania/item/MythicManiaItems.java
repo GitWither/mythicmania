@@ -408,7 +408,10 @@ public final class MythicManiaItems {
         registerItemTab();
         registerCombatTab();
         registerToolTab();
+        addItemsToTabs();
+    }
 
+    public static void addItemsToTabs() {
         ItemGroupEvents.modifyEntriesEvent(MythicMania.MYTHICMANIA_FOOD_ITEM_GROUP).register(entries -> {
             entries.add(POISONOUS_BERRY);
             entries.add(HEALING_BERRY);
