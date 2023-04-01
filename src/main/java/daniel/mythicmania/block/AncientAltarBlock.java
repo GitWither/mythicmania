@@ -2,6 +2,7 @@ package daniel.mythicmania.block;
 
 import daniel.mythicmania.block.entity.AncientAltarBlockEntity;
 import daniel.mythicmania.item.MythicManiaItems;
+import daniel.mythicmania.world.gen.MythicManiaWorlds;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -9,6 +10,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -41,6 +43,7 @@ public class AncientAltarBlock extends HorizontalFacingBlock implements BlockEnt
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
+        // TODO: Crash when breaking the block because of this
         return this.getDefaultState().with(FACING, ctx.getPlayerLookDirection());
     }
 
@@ -60,10 +63,27 @@ public class AncientAltarBlock extends HorizontalFacingBlock implements BlockEnt
                 }
             }
 
+            // TODO: Prevent an NPE
+            // TODO: Something is messed up with the dimension generation when player is teleported to it - could be chunks not loading
+            if (world instanceof ServerWorld && player.canUsePortals()) checkForOrbDimensions(stack, player, world);
             return ActionResult.success(world.isClient);
         }
 
         return super.onUse(state, world, pos, player, hand, hit);
+    }
+
+    public static void checkForOrbDimensions(ItemStack stack, PlayerEntity player, World world) {
+        ServerWorld serverWorld;
+
+        if (stack.getItem() == MythicManiaItems.CHARGED_RUINED_ORB) {
+            serverWorld = ((ServerWorld)world).getServer().getWorld(MythicManiaWorlds.RUINED);
+            player.moveToWorld(serverWorld);
+        }
+
+        else if (stack.getItem() == MythicManiaItems.CHARGED_NUCLEAR_ORB) {
+            serverWorld = ((ServerWorld)world).getServer().getWorld(World.END); // temporarily set to End
+            player.moveToWorld(serverWorld);
+        }
     }
 
     @Nullable
