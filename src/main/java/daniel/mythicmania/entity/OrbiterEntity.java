@@ -102,18 +102,18 @@ public class OrbiterEntity extends HostileEntity {
             projectile.setItem(charge);
             projectile.setVelocity(this.orbiter, this.orbiter.getPitch(), this.orbiter.getYaw(), 0.0F, 0.72F, 0F);
 
-            // TODO: Awkward. Rewrite
-            if (attackTarget != null) {
-                if (attackTarget.squaredDistanceTo(this.orbiter) < 81 && this.orbiter.canSee(attackTarget)) {
-                    ++this.cooldown;
+            if (attackTarget == null) return;
 
-                    if (this.cooldown == 15) {
-                        world.spawnEntity(projectile);
-                        this.cooldown = 0;
-                    }
-                } else if (this.cooldown > 0) {
-                    --this.cooldown;
+            // TODO: Awkward. Rewrite
+            if (attackTarget.squaredDistanceTo(this.orbiter) < 81 && this.orbiter.canSee(attackTarget)) {
+                ++this.cooldown;
+
+                if (this.cooldown == 15) {
+                    world.spawnEntity(projectile);
+                    this.cooldown = 0;
                 }
+            } else if (this.cooldown > 0) {
+                --this.cooldown;
             }
         }
     }
