@@ -5,11 +5,8 @@ import daniel.mythicmania.block.entity.MythicManiaBlockEntities;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.particle.MythicManiaParticles;
 import net.fabricmc.api.ClientModInitializer;
-import net.minecraft.client.render.model.SpriteAtlasManager;
-import net.minecraft.client.texture.SpriteAtlasTexture;
-import net.minecraft.client.texture.SpriteLoader;
-import net.minecraft.screen.PlayerScreenHandler;
-import net.minecraft.util.Identifier;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.minecraft.client.render.RenderLayer;
 
 public class MythicManiaClient implements ClientModInitializer {
     @Override
@@ -18,5 +15,7 @@ public class MythicManiaClient implements ClientModInitializer {
         MythicManiaBlockEntities.registerBlockEntityRendering();
         MythicManiaEntityTypes.registerEntityRendering();
         MythicManiaParticles.registerParticleFactories();
+
+        BlockRenderLayerMap.INSTANCE.putBlock(MythicManiaBlocks.ANCIENT_ALTAR, RenderLayer.getCutout());
     }
 }
