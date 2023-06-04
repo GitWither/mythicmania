@@ -397,7 +397,7 @@ public final class MythicManiaItems {
 
         ORBITER_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "orbiter_spawn_egg"),
                 new SpawnEggItem(
-                        MythicManiaEntityTypes.ORBITER_ENTITY, 0x494343, 0xdd693d,
+                        MythicManiaEntityTypes.ORBITER_ENTITY, 0x5E5856, 0xb05338,
                         new Item.Settings()
                 )
         );
