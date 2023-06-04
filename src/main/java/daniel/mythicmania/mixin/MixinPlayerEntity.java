@@ -9,6 +9,8 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -50,6 +52,21 @@ public abstract class MixinPlayerEntity extends LivingEntity {
             bootSlotItem.isOf(MythicManiaItems.NUCLEAR_BOOTS)
         ) {
             this.addStatusEffect(regeneration);
+
+            if (this.hasStatusEffect(StatusEffects.POISON)) {
+                this.removeStatusEffect(StatusEffects.POISON);
+
+                if (world.isClient) {
+                    World world = this.getWorld();
+                    BlockPos pos = this.getBlockPos();
+                    final double xPos = pos.getX() + random.nextDouble();
+                    final double yPos = pos.getY() + 0.6;
+                    final double zPos = pos.getZ() + random.nextDouble();
+
+                    world.addParticle(ParticleTypes.HEART, xPos, yPos, zPos, 0.0, -1, 0.0);
+                    world.addParticle(ParticleTypes.HEART, xPos, yPos, zPos, 0.0, -1, 0.0);
+                }
+            }
         }
 
         if (
