@@ -24,7 +24,7 @@ public class DemonGuardianEntityModel extends PlayerEntityModel<DemonGuardianEnt
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
         ModelPartData modelPartData = modelData.getRoot();
-        ModelPartData head = modelPartData.addChild("head", ModelPartBuilder.create().uv(25, 12).cuboid(-3.5F, -7.0F, -4.0F, 7.0F, 7.0F, 7.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 5.0F, -2.0F));
+        ModelPartData head = modelPartData.addChild("head", ModelPartBuilder.create().uv(25, 12).cuboid(-3.5F, -8.0F, -4.0F, 7.0F, 7.0F, 7.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 5.0F, -2.0F));
 
         ModelPartData hat = modelPartData.addChild("hat", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 5.0F, -2.0F));
 
@@ -34,9 +34,9 @@ public class DemonGuardianEntityModel extends PlayerEntityModel<DemonGuardianEnt
 
         ModelPartData cube_r1 = body_remains.addChild("cube_r1", ModelPartBuilder.create().uv(26, 32).cuboid(-3.0F, -1.5F, -1.0F, 6.0F, 8.0F, 6.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 0.0F, 0.0F, 0.48F, 0.0F, 0.0F));
 
-        ModelPartData right_arm = modelPartData.addChild("right_arm", ModelPartBuilder.create(), ModelTransform.pivot(-4.0F, 7.0F, -1.0F));
+        ModelPartData right_arm = modelPartData.addChild("right_arm", ModelPartBuilder.create(), ModelTransform.pivot(-4.0F, 8.0F, 0.0F));
 
-        ModelPartData cube_r2 = right_arm.addChild("cube_r2", ModelPartBuilder.create().uv(48, 0).mirrored().cuboid(0.0F, -7.0F, 1.0F, 4.0F, 10.0F, 4.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.of(-4.0F, 3.25F, -3.5F, 0.0F, 0.0F, 0.1309F));
+        ModelPartData cube_r2 = right_arm.addChild("cube_r2", ModelPartBuilder.create().uv(48, 0).mirrored().cuboid(0.0F, -7.0F, 1.0F, 4.0F, 10.0F, 4.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.of(-4.0F, 3.25F, -4.5F, 0.0F, 0.0F, 0.1309F));
 
         ModelPartData left_leg = modelPartData.addChild("left_leg", ModelPartBuilder.create(), ModelTransform.pivot(-2.0F, 18.0F, 0.0F));
 
@@ -44,9 +44,9 @@ public class DemonGuardianEntityModel extends PlayerEntityModel<DemonGuardianEnt
 
         ModelPartData ear = modelPartData.addChild("ear", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
-        ModelPartData right_sleeve = modelPartData.addChild("right_sleeve", ModelPartBuilder.create(), ModelTransform.pivot(-4.0F, 7.0F, -1.0F));
+        ModelPartData right_sleeve = modelPartData.addChild("right_sleeve", ModelPartBuilder.create(), ModelTransform.pivot(-4.0F, 8.0F, 0.0F));
 
-        ModelPartData arm_r_inflated_r1 = right_sleeve.addChild("arm_r_inflated_r1", ModelPartBuilder.create().uv(16, 46).mirrored().cuboid(0.0F, -7.0F, 1.0F, 4.0F, 10.0F, 4.0F, new Dilation(0.2F)).mirrored(false), ModelTransform.of(-4.0F, 3.25F, -3.5F, 0.0F, 0.0F, 0.1309F));
+        ModelPartData arm_r_inflated_r1 = right_sleeve.addChild("arm_r_inflated_r1", ModelPartBuilder.create().uv(16, 46).mirrored().cuboid(0.0F, -7.0F, 1.0F, 4.0F, 10.0F, 4.0F, new Dilation(0.2F)).mirrored(false), ModelTransform.of(-4.0F, 3.25F, -4.5F, 0.0F, 0.0F, 0.1309F));
 
         ModelPartData jacket = modelPartData.addChild("jacket", ModelPartBuilder.create().uv(1, 1).cuboid(-4.0F, -1.0F, -5.0F, 8.0F, 11.0F, 7.0F, new Dilation(0.2F)), ModelTransform.pivot(0.0F, 6.0F, 0.0F));
 
@@ -56,13 +56,13 @@ public class DemonGuardianEntityModel extends PlayerEntityModel<DemonGuardianEnt
 
         ModelPartData cloak = modelPartData.addChild("cloak", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
-        ModelPartData left_arm = modelPartData.addChild("left_arm", ModelPartBuilder.create(), ModelTransform.pivot(4.0F, 7.0F, -1.0F));
+        ModelPartData left_arm = modelPartData.addChild("left_arm", ModelPartBuilder.create(), ModelTransform.pivot(4.0F, 8.0F, 0.0F));
 
-        ModelPartData cube_r3 = left_arm.addChild("cube_r3", ModelPartBuilder.create().uv(48, 0).cuboid(-4.0F, -7.0F, 1.0F, 4.0F, 10.0F, 4.0F, new Dilation(0.0F)), ModelTransform.of(4.0F, 3.25F, -3.5F, 0.0F, 0.0F, -0.1309F));
+        ModelPartData cube_r3 = left_arm.addChild("cube_r3", ModelPartBuilder.create().uv(48, 0).cuboid(-4.0F, -7.0F, 1.0F, 4.0F, 10.0F, 4.0F, new Dilation(0.0F)), ModelTransform.of(4.0F, 3.25F, -4.5F, 0.0F, 0.0F, -0.1309F));
 
-        ModelPartData left_sleeve = modelPartData.addChild("left_sleeve", ModelPartBuilder.create(), ModelTransform.pivot(4.0F, 7.0F, -1.0F));
+        ModelPartData left_sleeve = modelPartData.addChild("left_sleeve", ModelPartBuilder.create(), ModelTransform.pivot(4.0F, 8.0F, 0.0F));
 
-        ModelPartData arm_l_inflated_r1 = left_sleeve.addChild("arm_l_inflated_r1", ModelPartBuilder.create().uv(16, 46).cuboid(-4.0F, -7.0F, 1.0F, 4.0F, 10.0F, 4.0F, new Dilation(0.2F)), ModelTransform.of(4.0F, 3.25F, -3.5F, 0.0F, 0.0F, -0.1309F));
+        ModelPartData arm_l_inflated_r1 = left_sleeve.addChild("arm_l_inflated_r1", ModelPartBuilder.create().uv(16, 46).cuboid(-4.0F, -7.0F, 1.0F, 4.0F, 10.0F, 4.0F, new Dilation(0.2F)), ModelTransform.of(4.0F, 3.25F, -4.5F, 0.0F, 0.0F, -0.1309F));
         return TexturedModelData.of(modelData, 64, 64);
     }
 
