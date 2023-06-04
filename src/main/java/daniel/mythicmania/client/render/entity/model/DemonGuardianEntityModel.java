@@ -17,6 +17,7 @@ public class DemonGuardianEntityModel extends PlayerEntityModel<DemonGuardianEnt
         ModelPartData modelPartData = modelData.getRoot();
 
         // Model Data
+        // TODO: Remodel
         ModelPartData head = modelPartData.addChild("head", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -2.25F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 4.25F, 0.0F));
         ModelPartData hat = modelPartData.addChild("hat", ModelPartBuilder.create().uv(1, 95).cuboid(-4.0F, -2.75F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.5F)), ModelTransform.pivot(0.0F, 5.0F, 0.0F));
         ModelPartData body = modelPartData.addChild("body", ModelPartBuilder.create().uv(0, 16).cuboid(-4.0F, 6.0F, -3.0F, 8.0F, 9.0F, 6.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 3.25F, 0.0F));
