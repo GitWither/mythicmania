@@ -3,7 +3,7 @@ package daniel.mythicmania;
 import daniel.mythicmania.client.sound.MythicManiaSoundEvents;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.item.*;
-import daniel.mythicmania.item.loot_table.MythicManiaLootTableModifier;
+import daniel.mythicmania.world.gen.MythicManiaLootTableModifier;
 import daniel.mythicmania.world.gen.MythicManiaFeatures;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;

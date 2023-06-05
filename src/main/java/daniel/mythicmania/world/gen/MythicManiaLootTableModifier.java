@@ -1,4 +1,4 @@
-package daniel.mythicmania.item.loot_table;
+package daniel.mythicmania.world.gen;
 
 import daniel.mythicmania.item.MythicManiaItems;
 import net.fabricmc.fabric.api.loot.v2.FabricLootTableBuilder;
