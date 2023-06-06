@@ -32,9 +32,9 @@ public class AncientAltarBlock extends HorizontalFacingBlock implements BlockEnt
     }
 
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        final double xPos = (double)pos.getX() + random.nextDouble();
-        final double yPos = (double)pos.getY() + 0.8;
-        final double zPos = (double)pos.getZ() + random.nextDouble();
+        double xPos = (double)pos.getX() + random.nextDouble();
+        double yPos = (double)pos.getY() + 0.8;
+        double zPos = (double)pos.getZ() + random.nextDouble();
         world.addParticle(ParticleTypes.ENCHANT, xPos, yPos, zPos, 0.0, 1.0, 0.0);
     }
 

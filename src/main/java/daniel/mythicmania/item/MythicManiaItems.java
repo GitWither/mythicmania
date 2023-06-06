@@ -397,7 +397,7 @@ public final class MythicManiaItems {
 
         DEMON_GUARDIAN_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "demon_guardian_spawn_egg"),
                 new SpawnEggItem(
-                        MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, 0x493C3A, 0xE7561B,
+                        MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, 0x2a2a2a, 0x7c7c7c,
                         new Item.Settings()
                 )
         );
