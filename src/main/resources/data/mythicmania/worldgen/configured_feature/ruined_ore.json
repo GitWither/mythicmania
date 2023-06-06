@@ -6,7 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "mythicmania:pulsating_blackstone"
+          "Name": "mythicmania:ruined_ore"
         },
         "target": {
           "block": "minecraft:deepslate",
