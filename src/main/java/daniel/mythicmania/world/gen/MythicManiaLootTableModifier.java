@@ -20,7 +20,8 @@ public class MythicManiaLootTableModifier {
 			initLootTableModifier("chests/village/village_weaponsmith", MythicManiaItems.WASTED_ESSENCE, 0.6f, id, tableBuilder);
 			initLootTableModifier("chests/village/village_toolsmith", MythicManiaItems.WASTED_ESSENCE, 0.6f, id, tableBuilder);
 
-			initLootTableModifier("chests/ancient_city", MythicManiaItems.EMPTY_ORB, 1f, id, tableBuilder);
+			initLootTableModifier("chests/ancient_city", MythicManiaItems.CHARGED_RUINED_ORB, 0.5f, id, tableBuilder);
+			initLootTableModifier("chests/ancient_city", MythicManiaItems.CHARGED_NUCLEAR_ORB, 0.5f, id, tableBuilder);
 		});
 	}
 
