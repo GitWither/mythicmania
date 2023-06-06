@@ -26,7 +26,7 @@ public class RuinedOreBlock extends ExperienceDroppingBlock {
 		double yPos = (double)pos.getY() + 0.8;
 		double zPos = (double)pos.getZ() + random.nextDouble();
 
-		world.addParticle(ParticleTypes.ENCHANT, xPos, yPos, zPos, random.nextInt(), 1.0, random.nextInt(1));
+		world.addParticle(ParticleTypes.FLAME, xPos, yPos, zPos, random.nextInt(2) / 3, 0.1f, random.nextInt(2) / 3);
 		super.onSteppedOn(world, pos, state, entity);
 	}
 }
