@@ -390,14 +390,14 @@ public final class MythicManiaItems {
 
         DEMON_GUARDIAN_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "demon_guardian_spawn_egg"),
                 new SpawnEggItem(
-                        MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, 0x2a2a2a, 0x7c7c7c,
+                        MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, 0x493C3A, 0xE7561B,
                         new Item.Settings()
                 )
         );
 
         ORBITER_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "orbiter_spawn_egg"),
                 new SpawnEggItem(
-                        MythicManiaEntityTypes.ORBITER_ENTITY, 0x5E5856, 0xb05338,
+                        MythicManiaEntityTypes.ORBITER_ENTITY, 0x494343, 0xdd693d,
                         new Item.Settings()
                 )
         );
