@@ -41,11 +41,9 @@ public class DemonGuardianEntity extends HostileEntity {
     protected void initEquipment(Random random, LocalDifficulty localDifficulty) {
         boolean offhand = world.random.nextInt(3) == 0;
 
-        if (offhand) {
-            this.equipStack(EquipmentSlot.OFFHAND, new ItemStack(Items.SHIELD));
-        } else  {
-            this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SWORD));
-        }
+        if (offhand) this.equipStack(EquipmentSlot.OFFHAND, new ItemStack(Items.SHIELD));
+        else this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SWORD));
+        this.equipStack(EquipmentSlot.HEAD, new ItemStack(Items.IRON_HELMET));
 
         super.initEquipment(random, localDifficulty);
     }
