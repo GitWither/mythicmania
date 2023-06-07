@@ -22,6 +22,7 @@ public final class MythicManiaItems {
     public static Item RINTH;
     public static Item TOXIC_ORE;
     public static Item RUINED_ORE;
+    public static Item BLACKSTONE_RUINED_ORE;
     public static Item ANCIENT_ALTAR;
     public static Item LUMINESCENT_SAC;
     public static Item ORBITER_PROJECTILE;
@@ -342,9 +343,15 @@ public final class MythicManiaItems {
         );
 
         RUINED_ORE = Registry.register(
-            Registries.ITEM,
-            new Identifier(MythicMania.MOD_ID, "ruined_ore"),
-            new BlockItem(MythicManiaBlocks.RUINED_ORE, new Item.Settings())
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruined_ore"),
+                new BlockItem(MythicManiaBlocks.RUINED_ORE, new Item.Settings())
+        );
+
+        BLACKSTONE_RUINED_ORE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "blackstone_ruined_ore"),
+                new BlockItem(MythicManiaBlocks.BLACKSTONE_RUINED_ORE, new Item.Settings())
         );
 
         PULSATING_BLACKSTONE = Registry.register(
@@ -482,6 +489,7 @@ public final class MythicManiaItems {
             entries.add(ANCIENT_ALTAR);
             entries.add(TOXIC_ORE);
             entries.add(RUINED_ORE);
+            entries.add(BLACKSTONE_RUINED_ORE);
             entries.add(PULSATING_BLACKSTONE);
             entries.add(LUMINESCENT_SAC);
         });
