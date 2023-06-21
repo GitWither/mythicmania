@@ -14,7 +14,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.thrown.EggEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
@@ -28,8 +27,6 @@ import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Iterator;
 
 public class WastedDemonEntity extends HostileEntity {
     public double prevCapeX;
@@ -151,14 +148,21 @@ public class WastedDemonEntity extends HostileEntity {
         this.updateCapeAngles();
     }
 
-//    @Override
-//    protected void updatePostDeath() {
-//        super.updatePostDeath();
-//        int rand = world.random.nextInt(1);
-//        for (int x = 0; x < rand + 2; x++) {
-//            world.spawnEntity(new WastrelGliderEntity(MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY, world));
-//        }
-//    }
+    @Override
+    public void kill() {
+        super.kill();
+
+        // TODO: Repetitive code
+        if (!world.isClient) {
+            WastrelGliderEntity wastrelGlider = MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY.create(world);
+            WastrelGliderEntity wastrelGlider2 = MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY.create(world);
+            if (wastrelGlider == null || wastrelGlider2 == null) return;
+            wastrelGlider.refreshPositionAndAngles(this.getX(), this.getY(), this.getZ(), this.getYaw(), 0.0F);
+            wastrelGlider2.refreshPositionAndAngles(this.getX(), this.getY(), this.getZ(), this.getYaw(), 0.0F);
+            world.spawnEntity(wastrelGlider);
+            world.spawnEntity(wastrelGlider2);
+        }
+    }
 
     private void updateCapeAngles() {
         this.prevCapeX = this.capeX;
