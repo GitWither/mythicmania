@@ -8,11 +8,11 @@ import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ShootCoreGoal extends Goal {
+public class OrbiterShootCoreGoal extends Goal {
 	private final OrbiterEntity orbiter;
 	public int cooldown;
 
-	public ShootCoreGoal(OrbiterEntity orbiter) {
+	public OrbiterShootCoreGoal(OrbiterEntity orbiter) {
 		this.orbiter = orbiter;
 	}
 

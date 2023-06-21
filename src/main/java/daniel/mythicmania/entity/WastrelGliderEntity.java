@@ -16,6 +16,7 @@ import org.jetbrains.annotations.Nullable;
 public class WastrelGliderEntity extends AbstractFlyingEntity {
 	protected WastrelGliderEntity(EntityType<? extends AbstractFlyingEntity> entityType, World world) {
 		super(entityType, world);
+		this.experiencePoints = 30;
 	}
 
 	@Override

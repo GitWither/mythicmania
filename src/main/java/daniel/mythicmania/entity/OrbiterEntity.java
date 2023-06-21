@@ -1,7 +1,6 @@
 package daniel.mythicmania.entity;
 
-import daniel.mythicmania.entity.goals.ShootCoreGoal;
-import daniel.mythicmania.item.MythicManiaItems;
+import daniel.mythicmania.entity.goals.OrbiterShootCoreGoal;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -10,16 +9,13 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.world.World;
 
 public class OrbiterEntity extends HostileEntity {
-    short xp = 210;
-
     protected OrbiterEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
-        this.experiencePoints = xp;
+        this.experiencePoints = 210;
     }
 
     @Override
@@ -29,7 +25,7 @@ public class OrbiterEntity extends HostileEntity {
         this.goalSelector.add(1, new LookAroundGoal(this));
         this.goalSelector.add(2, new AttackGoal(this));
         this.goalSelector.add(3, new SwimGoal(this));
-        this.goalSelector.add(0, new ShootCoreGoal(this));
+        this.goalSelector.add(0, new OrbiterShootCoreGoal(this));
         this.goalSelector.add(4, new WanderAroundGoal(this, 1, 2, true));
 
         this.targetSelector.add(0, new RevengeGoal(this));
