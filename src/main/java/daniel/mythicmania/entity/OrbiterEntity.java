@@ -1,5 +1,6 @@
 package daniel.mythicmania.entity;
 
+import daniel.mythicmania.entity.goals.ShootCoreGoal;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -73,48 +74,5 @@ public class OrbiterEntity extends HostileEntity {
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.23f)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2f)
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 8f);
-    }
-
-    // TODO: Move into own class
-    class ShootCoreGoal extends Goal {
-        private final OrbiterEntity orbiter;
-        public int cooldown;
-
-        public ShootCoreGoal(OrbiterEntity orbiter) {
-            this.orbiter = orbiter;
-        }
-
-        @Override
-        public boolean canStart() {
-            return this.orbiter.getTarget() != null;
-        }
-
-        @Override
-        public void start() {
-            this.cooldown = 0;
-        }
-
-        @Override
-        public void tick() {
-            LivingEntity attackTarget = this.orbiter.getTarget();
-            ItemStack charge = new ItemStack(MythicManiaItems.ORBITER_PROJECTILE);
-            OrbiterProjectileEntity projectile = new OrbiterProjectileEntity(world, this.orbiter);
-            projectile.setItem(charge);
-            projectile.setVelocity(this.orbiter, this.orbiter.getPitch(), this.orbiter.getYaw(), 0.0F, 0.72F, 0F);
-
-            if (attackTarget == null) return;
-
-            // TODO: Awkward. Rewrite
-            if (attackTarget.squaredDistanceTo(this.orbiter) < 81 && this.orbiter.canSee(attackTarget)) {
-                ++this.cooldown;
-
-                if (this.cooldown == 15) {
-                    world.spawnEntity(projectile);
-                    this.cooldown = 0;
-                }
-            } else if (this.cooldown > 0) {
-                --this.cooldown;
-            }
-        }
     }
 }
