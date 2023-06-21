@@ -9,6 +9,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.PhantomEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -41,5 +42,14 @@ public class WastrelGliderEntity extends AbstractFlyingEntity {
 	@Override
 	public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
 		return null;
+	}
+
+	// TODO: Look into another method to use for this.
+	@Override
+	public void tickMovement() {
+		super.tickMovement();
+		if (this.isTouchingWaterOrRain()) {
+			this.world.addParticle(ParticleTypes.SMOKE, this.getParticleX(0.5), this.getRandomBodyY(), this.getParticleZ(0.5), 0.04, 0.04, 0.04);
+		}
 	}
 }

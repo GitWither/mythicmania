@@ -151,14 +151,14 @@ public class WastedDemonEntity extends HostileEntity {
         this.updateCapeAngles();
     }
 
-    @Override
-    protected void updatePostDeath() {
-        super.updatePostDeath();
-        int rand = world.random.nextInt(1);
-        for (int x = 0; x < rand + 2; x++) {
-            world.spawnEntity(new WastrelGliderEntity(MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY, world));
-        }
-    }
+//    @Override
+//    protected void updatePostDeath() {
+//        super.updatePostDeath();
+//        int rand = world.random.nextInt(1);
+//        for (int x = 0; x < rand + 2; x++) {
+//            world.spawnEntity(new WastrelGliderEntity(MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY, world));
+//        }
+//    }
 
     private void updateCapeAngles() {
         this.prevCapeX = this.capeX;
