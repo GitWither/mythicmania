@@ -152,15 +152,13 @@ public class WastedDemonEntity extends HostileEntity {
     public void kill() {
         super.kill();
 
-        // TODO: Repetitive code
         if (!world.isClient) {
-            WastrelGliderEntity wastrelGlider = MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY.create(world);
-            WastrelGliderEntity wastrelGlider2 = MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY.create(world);
-            if (wastrelGlider == null || wastrelGlider2 == null) return;
-            wastrelGlider.refreshPositionAndAngles(this.getX(), this.getY(), this.getZ(), this.getYaw(), 0.0F);
-            wastrelGlider2.refreshPositionAndAngles(this.getX(), this.getY(), this.getZ(), this.getYaw(), 0.0F);
-            world.spawnEntity(wastrelGlider);
-            world.spawnEntity(wastrelGlider2);
+            for (int i = 0; i < 4; i++) {
+                WastrelGliderEntity wastrelGlider = MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY.create(world);
+                if (wastrelGlider == null) return;
+                wastrelGlider.refreshPositionAndAngles(this.getX(), this.getY(), this.getZ(), this.getYaw(), 0.0F);
+                world.spawnEntity(wastrelGlider);
+            }
         }
     }
 

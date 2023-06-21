@@ -41,6 +41,7 @@ public final class MythicManiaItems {
     public static Item WASTED_ESSENCE;
     public static Item IRRADIATED_CRYSTAL;
     public static Item WATER_PARCEL;
+    public static Item GLIDER_WING;
 
     // Spawn eggs
     public static Item MAGICAL_GRUB_SPAWN_EGG;
@@ -162,6 +163,12 @@ public final class MythicManiaItems {
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "water_parcel"),
                 new WaterParcelItem(new Item.Settings().maxCount(32))
+        );
+
+        GLIDER_WING = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "glider_wing"),
+                new Item(new Item.Settings())
         );
 
         WASTED_STAFF_CHARGE = Registry.register(
@@ -437,6 +444,7 @@ public final class MythicManiaItems {
             entries.add(WASTED_ESSENCE);
             entries.add(IRRADIATED_CRYSTAL);
             entries.add(WATER_PARCEL);
+            entries.add(GLIDER_WING);
             entries.add(WASTED_STAFF_CHARGE);
             entries.add(SHOCK_BOLT);
 
