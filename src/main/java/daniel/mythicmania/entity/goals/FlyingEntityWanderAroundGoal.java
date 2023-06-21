@@ -13,10 +13,14 @@ import java.util.EnumSet;
 
 public class FlyingEntityWanderAroundGoal extends Goal {
 	AbstractFlyingEntity beetle;
+	int verticalTarget;
+	int horizontalTarget;
 
-	public FlyingEntityWanderAroundGoal(PassiveEntity beetle) {
+	public FlyingEntityWanderAroundGoal(PassiveEntity beetle, int verticalTarget, int horizontalTarget) {
 		this.setControls(EnumSet.of(Goal.Control.MOVE));
 		this.beetle = (AbstractFlyingEntity) beetle;
+		this.verticalTarget = verticalTarget;
+		this.horizontalTarget = horizontalTarget;
 	}
 
 	@Override
@@ -42,6 +46,6 @@ public class FlyingEntityWanderAroundGoal extends Goal {
 	@Nullable
 	private Vec3d getRandomLocation() {
 		Vec3d direction = beetle.getRotationVec(0.0f);
-		return NoPenaltySolidTargeting.find(beetle, 8, 8, -2, direction.x, direction.z, 1.5707963705062866);
+		return NoPenaltySolidTargeting.find(beetle, horizontalTarget, verticalTarget, -2, direction.x, direction.z, 1.5707963705062866);
 	}
 }

@@ -24,7 +24,7 @@ public class WastrelGliderEntity extends AbstractFlyingEntity {
 		this.goalSelector.add(1, new FlyGoal(this, 2));
 		this.goalSelector.add(2, new FleeEntityGoal<>(this, PhantomEntity.class, 6, 4,8));
 		this.goalSelector.add(2, new FleeEntityGoal<>(this, PlayerEntity.class, 6, 4,8));
-		this.goalSelector.add(0, new FlyingEntityWanderAroundGoal(this));
+		this.goalSelector.add(0, new FlyingEntityWanderAroundGoal(this, 10, 5));
 	}
 
 	public static DefaultAttributeContainer.Builder createWastrelGliderAttributes() {
