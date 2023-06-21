@@ -1,18 +1,16 @@
 package daniel.mythicmania.client.sound;
 
-import daniel.mythicmania.entity.AbstractBeetleEntity;
-import net.minecraft.client.MinecraftClient;
+import daniel.mythicmania.entity.AbstractFlyingEntity;
 import net.minecraft.client.sound.MovingSoundInstance;
 import net.minecraft.client.sound.SoundInstance;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.random.Random;
 
 public class BeetleSoundInstance extends MovingSoundInstance {
-    private final AbstractBeetleEntity beetle;
+    private final AbstractFlyingEntity beetle;
 
-    public BeetleSoundInstance(AbstractBeetleEntity beetleEntity, SoundEvent sound, SoundCategory category) {
+    public BeetleSoundInstance(AbstractFlyingEntity beetleEntity, SoundEvent sound, SoundCategory category) {
         super(sound, category, SoundInstance.createRandom());
         this.beetle = beetleEntity;
         this.x = (float)beetleEntity.getX();

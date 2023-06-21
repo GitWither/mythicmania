@@ -1,7 +1,7 @@
 package daniel.mythicmania.mixin;
 
 import daniel.mythicmania.client.sound.BeetleSoundInstance;
-import daniel.mythicmania.entity.AbstractBeetleEntity;
+import daniel.mythicmania.entity.AbstractFlyingEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.entity.Entity;
@@ -20,7 +20,7 @@ public class MixinClientPlayNetworkHandler {
 
     @Inject(method = "playSpawnSound", at = @At("TAIL"))
     private void mythicmania$injectBeetleLoopSound(Entity entity, CallbackInfo ci) {
-        if (entity instanceof AbstractBeetleEntity beetle) {
+        if (entity instanceof AbstractFlyingEntity beetle) {
             this.client.getSoundManager().playNextTick(new BeetleSoundInstance(beetle, SoundEvents.ENTITY_BEE_LOOP, SoundCategory.NEUTRAL));
         }
     }
