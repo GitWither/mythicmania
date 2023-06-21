@@ -8,11 +8,13 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.boss.BossBar.Color;
 import net.minecraft.entity.boss.BossBar.Style;
 import net.minecraft.entity.boss.ServerBossBar;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.thrown.EggEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
@@ -147,6 +149,15 @@ public class WastedDemonEntity extends HostileEntity {
     public void tick() {
         super.tick();
         this.updateCapeAngles();
+    }
+
+    @Override
+    protected void updatePostDeath() {
+        super.updatePostDeath();
+        int rand = world.random.nextInt(1);
+        for (int x = 0; x < rand + 2; x++) {
+            world.spawnEntity(new WastrelGliderEntity(MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY, world));
+        }
     }
 
     private void updateCapeAngles() {

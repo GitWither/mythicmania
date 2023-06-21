@@ -49,6 +49,7 @@ public final class MythicManiaItems {
     public static Item WASTED_DEMON_SPAWN_EGG;
     public static Item DEMON_GUARDIAN_SPAWN_EGG;
     public static Item ORBITER_SPAWN_EGG;
+    public static Item WASTREL_GLIDER_SPAWN_EGG;
 
     // Combat items
     public static Item NUCLEAR_DAGGER;
@@ -361,45 +362,52 @@ public final class MythicManiaItems {
 
     public static void registerSpawnEggs() {
         MAGICAL_GRUB_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "magical_grub_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, 0x7ff8eb, 0x7EBADA,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, 0x7ff8eb, 0x7EBADA,
+                new Item.Settings()
+            )
         );
 
         POISONOUS_GRUB_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "poisonous_grub_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, 0x48906D, 0x99FF9E,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, 0x48906D, 0x99FF9E,
+                new Item.Settings()
+            )
         );
 
         ZAPPING_BEETLE_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "zapping_beetle_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, 0x3991d0, 0xF0D538,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, 0x3991d0, 0xF0D538,
+                new Item.Settings()
+            )
         );
 
         WASTED_DEMON_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "wasted_demon_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.WASTED_DEMON_ENTITY, 0x2a2a2a, 0x951010,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.WASTED_DEMON_ENTITY, 0x2a2a2a, 0x951010,
+                new Item.Settings()
+            )
         );
 
         DEMON_GUARDIAN_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "demon_guardian_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, 0x493C3A, 0xE7561B,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, 0x493C3A, 0xE7561B,
+                new Item.Settings()
+            )
         );
 
         ORBITER_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "orbiter_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.ORBITER_ENTITY, 0x494343, 0xdd693d,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.ORBITER_ENTITY, 0x494343, 0xdd693d,
+                new Item.Settings()
+            )
+        );
+
+        WASTREL_GLIDER_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "wastrel_glider_spawn_egg"),
+            new SpawnEggItem(
+                MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY, 0xa92b2b, 0x343337,
+                new Item.Settings()
+            )
         );
     }
 
@@ -439,6 +447,7 @@ public final class MythicManiaItems {
             entries.add(WASTED_DEMON_SPAWN_EGG);
             entries.add(DEMON_GUARDIAN_SPAWN_EGG);
             entries.add(ORBITER_SPAWN_EGG);
+            entries.add(WASTREL_GLIDER_SPAWN_EGG);
         });
 
         ItemGroupEvents.modifyEntriesEvent(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).register(entries -> {
