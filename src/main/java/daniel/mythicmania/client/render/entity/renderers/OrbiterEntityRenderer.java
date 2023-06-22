@@ -1,13 +1,10 @@
 package daniel.mythicmania.client.render.entity.renderers;
 
 import daniel.mythicmania.MythicMania;
-import daniel.mythicmania.client.render.entity.feature.EntityCapeFeatureRenderer;
 import daniel.mythicmania.client.render.entity.feature.OrbiterCoreRenderer;
 import daniel.mythicmania.client.render.entity.model.OrbiterEntityModel;
-import daniel.mythicmania.client.render.entity.model.WastedDemonEntityModel;
-import daniel.mythicmania.client.render.entity.feature.DemonEyesRenderer;
 import daniel.mythicmania.entity.*;
-import net.minecraft.client.render.entity.BipedEntityRenderer;
+import daniel.mythicmania.entity.mob.OrbiterEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;

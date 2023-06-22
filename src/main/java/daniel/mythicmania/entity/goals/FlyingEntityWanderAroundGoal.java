@@ -1,6 +1,6 @@
 package daniel.mythicmania.entity.goals;
 
-import daniel.mythicmania.entity.AbstractFlyingEntity;
+import daniel.mythicmania.entity.abstract_entity.AbstractFlyingEntity;
 import net.minecraft.entity.ai.NoPenaltySolidTargeting;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.passive.PassiveEntity;
