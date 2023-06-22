@@ -50,6 +50,7 @@ public final class MythicManiaItems {
     public static Item WASTED_DEMON_SPAWN_EGG;
     public static Item DEMON_GUARDIAN_SPAWN_EGG;
     public static Item ORBITER_SPAWN_EGG;
+    public static Item TOXIC_ORBITER_SPAWN_EGG;
     public static Item WASTREL_GLIDER_SPAWN_EGG;
 
     // Combat items
@@ -410,6 +411,13 @@ public final class MythicManiaItems {
             )
         );
 
+        TOXIC_ORBITER_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "toxic_orbiter_spawn_egg"),
+            new SpawnEggItem(
+                MythicManiaEntityTypes.TOXIC_ORBITER_ENTITY, 0x598f2f, 0x35323e,
+                new Item.Settings()
+            )
+        );
+
         WASTREL_GLIDER_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "wastrel_glider_spawn_egg"),
             new SpawnEggItem(
                 MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY, 0xa92b2b, 0x343337,
@@ -455,6 +463,7 @@ public final class MythicManiaItems {
             entries.add(WASTED_DEMON_SPAWN_EGG);
             entries.add(DEMON_GUARDIAN_SPAWN_EGG);
             entries.add(ORBITER_SPAWN_EGG);
+            entries.add(TOXIC_ORBITER_SPAWN_EGG);
             entries.add(WASTREL_GLIDER_SPAWN_EGG);
         });
 

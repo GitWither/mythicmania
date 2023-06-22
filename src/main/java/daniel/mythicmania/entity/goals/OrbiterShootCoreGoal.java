@@ -1,5 +1,6 @@
 package daniel.mythicmania.entity.goals;
 
+import daniel.mythicmania.entity.abstract_entity.AbstractOrbiterEntity;
 import daniel.mythicmania.entity.mob.OrbiterEntity;
 import daniel.mythicmania.entity.projectile.OrbiterProjectileEntity;
 import net.minecraft.entity.LivingEntity;
@@ -8,12 +9,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class OrbiterShootCoreGoal extends Goal {
-	private final OrbiterEntity orbiter;
+	private final AbstractOrbiterEntity orbiter;
 	public int cooldown;
 	private final ItemStack core;
 	private final OrbiterProjectileEntity projectile;
 
-	public OrbiterShootCoreGoal(OrbiterEntity orbiter, ItemStack core, OrbiterProjectileEntity projectile) {
+	public OrbiterShootCoreGoal(AbstractOrbiterEntity orbiter, ItemStack core, OrbiterProjectileEntity projectile) {
 		this.orbiter = orbiter;
 		this.core = core;
 		this.projectile = projectile;

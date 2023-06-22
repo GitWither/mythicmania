@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class ZappingBeetleEntity extends AbstractFlyingEntity {
-    protected ZappingBeetleEntity(EntityType<? extends AbstractFlyingEntity> entityType, World world) {
+    public ZappingBeetleEntity(EntityType<? extends AbstractFlyingEntity> entityType, World world) {
         super(entityType, world);
         this.experiencePoints = 75;
     }

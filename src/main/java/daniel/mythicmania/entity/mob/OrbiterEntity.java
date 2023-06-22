@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class OrbiterEntity extends AbstractOrbiterEntity {
-	protected OrbiterEntity(EntityType<? extends HostileEntity> entityType, World world) {
+	public OrbiterEntity(EntityType<? extends HostileEntity> entityType, World world) {
 		super(entityType, world);
 	}
 

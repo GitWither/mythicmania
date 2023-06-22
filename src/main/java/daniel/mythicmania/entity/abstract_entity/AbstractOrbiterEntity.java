@@ -46,8 +46,8 @@ public class AbstractOrbiterEntity extends HostileEntity {
 
     public void tickMovement() {
         // TODO: Don't do this in movement
-        for(int i = 0; i < 2; ++i) {
-            this.world.addParticle(getParticle(), this.getParticleX(1), this.getRandomBodyY(), this.getParticleZ(0.2), 0.0, 0.2, 0.0);
+        if (this.age % 10 == 0) {
+            this.world.addParticle(getParticle(), this.getParticleX(1), this.getRandomBodyY(), this.getParticleZ(0.2), 0.0, 0.05, 0.0);
         }
 
         super.tickMovement();

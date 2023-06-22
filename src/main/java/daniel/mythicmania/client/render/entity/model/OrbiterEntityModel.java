@@ -6,6 +6,7 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 public class OrbiterEntityModel<T extends Entity> extends EntityModel<OrbiterEntity> {
     private final ModelPart root;
@@ -41,12 +42,12 @@ public class OrbiterEntityModel<T extends Entity> extends EntityModel<OrbiterEnt
     public void setAngles(OrbiterEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
         segment1.yaw = animationProgress * 0.4f;
         segment2.yaw = -(animationProgress * 0.4f);
+        main.pivotY = MathHelper.sin(animationProgress * 0.1f) * 4;
     }
 
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
         root.render(matrices, vertices, light, overlay, red, green, blue, alpha);
-        matrices.translate(0, 13, 0);
         matrices.push();
         matrices.pop();
     }
