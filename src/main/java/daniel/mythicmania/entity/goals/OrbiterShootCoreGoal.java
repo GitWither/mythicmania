@@ -1,7 +1,7 @@
 package daniel.mythicmania.entity.goals;
 
-import daniel.mythicmania.entity.OrbiterEntity;
-import daniel.mythicmania.entity.OrbiterProjectileEntity;
+import daniel.mythicmania.entity.mob.OrbiterEntity;
+import daniel.mythicmania.entity.projectile.OrbiterProjectileEntity;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.Goal;

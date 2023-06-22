@@ -3,7 +3,7 @@ package daniel.mythicmania.client.render.entity.renderers;
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.client.render.entity.model.WastrelGliderEntityModel;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
-import daniel.mythicmania.entity.WastrelGliderEntity;
+import daniel.mythicmania.entity.mob.WastrelGliderEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;

@@ -1,6 +1,6 @@
 package daniel.mythicmania.client.sound;
 
-import daniel.mythicmania.entity.AbstractFlyingEntity;
+import daniel.mythicmania.entity.abstract_entity.AbstractFlyingEntity;
 import net.minecraft.client.sound.MovingSoundInstance;
 import net.minecraft.client.sound.SoundInstance;
 import net.minecraft.sound.SoundCategory;

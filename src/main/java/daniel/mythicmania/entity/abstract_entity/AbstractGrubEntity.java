@@ -1,4 +1,4 @@
-package daniel.mythicmania.entity;
+package daniel.mythicmania.entity.abstract_entity;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;

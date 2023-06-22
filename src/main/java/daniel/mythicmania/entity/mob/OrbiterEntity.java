@@ -1,4 +1,4 @@
-package daniel.mythicmania.entity;
+package daniel.mythicmania.entity.mob;
 
 import daniel.mythicmania.entity.goals.OrbiterShootCoreGoal;
 import net.minecraft.entity.Entity;

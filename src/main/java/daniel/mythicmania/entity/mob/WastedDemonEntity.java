@@ -1,5 +1,6 @@
-package daniel.mythicmania.entity;
+package daniel.mythicmania.entity.mob;
 
+import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.entity.goals.MoveOutOfWaterGoal;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.*;

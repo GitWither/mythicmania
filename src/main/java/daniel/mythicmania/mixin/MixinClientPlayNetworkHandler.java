@@ -1,7 +1,7 @@
 package daniel.mythicmania.mixin;
 
 import daniel.mythicmania.client.sound.BeetleSoundInstance;
-import daniel.mythicmania.entity.AbstractFlyingEntity;
+import daniel.mythicmania.entity.abstract_entity.AbstractFlyingEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.entity.Entity;

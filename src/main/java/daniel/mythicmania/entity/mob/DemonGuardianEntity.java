@@ -1,4 +1,4 @@
-package daniel.mythicmania.entity;
+package daniel.mythicmania.entity.mob;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

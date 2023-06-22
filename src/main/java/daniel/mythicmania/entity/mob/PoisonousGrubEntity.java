@@ -1,5 +1,6 @@
-package daniel.mythicmania.entity;
+package daniel.mythicmania.entity.mob;
 
+import daniel.mythicmania.entity.abstract_entity.AbstractGrubEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;

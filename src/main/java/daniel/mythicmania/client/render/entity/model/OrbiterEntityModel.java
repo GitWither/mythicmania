@@ -1,12 +1,11 @@
 package daniel.mythicmania.client.render.entity.model;
 
-import daniel.mythicmania.entity.OrbiterEntity;
+import daniel.mythicmania.entity.mob.OrbiterEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.math.MathHelper;
 
 public class OrbiterEntityModel<T extends Entity> extends EntityModel<OrbiterEntity> {
     private final ModelPart root;

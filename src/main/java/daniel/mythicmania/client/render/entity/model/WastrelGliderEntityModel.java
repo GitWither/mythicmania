@@ -1,6 +1,6 @@
 package daniel.mythicmania.client.render.entity.model;
 
-import daniel.mythicmania.entity.WastrelGliderEntity;
+import daniel.mythicmania.entity.mob.WastrelGliderEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
