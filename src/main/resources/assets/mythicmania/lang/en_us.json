@@ -13,6 +13,8 @@
   "item.mythicmania.wasted_essence": "Wasted Essence",
   "item.mythicmania.charged_nuclear_orb": "Charged Nuclear Orb",
   "item.mythicmania.charged_ruined_orb": "Charged Ruined Orb",
+  "item.mythicmania.orbiter_core": "Orbiter Core",
+  "item.mythicmania.toxic_orbiter_core": "Toxic Orbiter Core",
   "item.mythicmania.poison_spike": "Poison Spike",
   "item.mythicmania.grub_essence": "Grub Essence",
   "item.mythicmania.toxic_pebble": "Toxic Pebble",
@@ -69,6 +71,8 @@
   "entity.mythicmania.demon_guardian": "Demon Guardian",
   "entity.mythicmania.water_parcel": "Water Parcel",
   "entity.mythicmania.orbiter": "Orbiter",
+  "entity.mythicmania.wastrel_glider": "Wastrel Glider",
+  "entity.mythicmania.toxic_orbiter": "Toxic Orbiter",
   "entity.mythicmania.wasted_staff_charge": "Wasted Staff Charge",
 
   "subtitles.mythicmania.wasted_staff_fire": "Fired Wasted Staff",

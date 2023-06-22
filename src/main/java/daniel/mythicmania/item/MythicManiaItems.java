@@ -35,6 +35,8 @@ public final class MythicManiaItems {
     public static Item EMPTY_ORB;
     public static Item CHARGED_NUCLEAR_ORB;
     public static Item CHARGED_RUINED_ORB;
+    public static Item ORBITER_CORE;
+    public static Item TOXIC_ORBITER_CORE;
     public static Item POISON_SPIKE;
     public static Item GRUB_ESSENCE;
     public static Item TOXIC_PEBBLE;
@@ -128,6 +130,18 @@ public final class MythicManiaItems {
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "charged_ruined_orb"),
                 new Item(new Item.Settings().rarity(Rarity.UNCOMMON))
+        );
+
+        ORBITER_CORE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "orbiter_core"),
+                new Item(new Item.Settings())
+        );
+
+        TOXIC_ORBITER_CORE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "toxic_orbiter_core"),
+                new Item(new Item.Settings())
         );
 
         POISON_SPIKE = Registry.register(
@@ -446,6 +460,8 @@ public final class MythicManiaItems {
             entries.add(EMPTY_ORB);
             entries.add(CHARGED_NUCLEAR_ORB);
             entries.add(CHARGED_RUINED_ORB);
+            entries.add(ORBITER_CORE);
+            entries.add(TOXIC_ORBITER_CORE);
             entries.add(POISON_SPIKE);
             entries.add(GRUB_ESSENCE);
             entries.add(TOXIC_PEBBLE);
