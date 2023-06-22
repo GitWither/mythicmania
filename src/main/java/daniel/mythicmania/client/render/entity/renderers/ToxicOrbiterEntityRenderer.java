@@ -8,6 +8,7 @@ import daniel.mythicmania.entity.mob.OrbiterEntity;
 import daniel.mythicmania.entity.mob.ToxicOrbiterEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
 
@@ -19,5 +20,10 @@ public class ToxicOrbiterEntityRenderer extends MobEntityRenderer<ToxicOrbiterEn
 	@Override
 	public Identifier getTexture(ToxicOrbiterEntity entity) {
 		return new Identifier(MythicMania.MOD_ID, "textures/entity/orbiter/orbiter_toxic.png");
+	}
+
+	@Override
+	protected void scale(ToxicOrbiterEntity entity, MatrixStack matrices, float amount) {
+		matrices.scale(1.2f, 1.2f, 1.2f);
 	}
 }
