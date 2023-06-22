@@ -1,6 +1,8 @@
 package daniel.mythicmania.client.render.entity.renderers;
 
 import daniel.mythicmania.MythicMania;
+import daniel.mythicmania.client.render.entity.feature.OrbiterCoreRenderer;
+import daniel.mythicmania.client.render.entity.feature.ToxicOrbiterCoreRenderer;
 import daniel.mythicmania.client.render.entity.model.OrbiterEntityModel;
 import daniel.mythicmania.client.render.entity.model.ToxicOrbiterEntityModel;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
@@ -15,6 +17,7 @@ import net.minecraft.util.Identifier;
 public class ToxicOrbiterEntityRenderer extends MobEntityRenderer<ToxicOrbiterEntity, ToxicOrbiterEntityModel<Entity>> {
 	public ToxicOrbiterEntityRenderer(EntityRendererFactory.Context context) {
 		super(context, new ToxicOrbiterEntityModel<>(context.getPart(MythicManiaEntityTypes.TOXIC_ORBITER_LAYER)), 0.5f);
+		this.addFeature(new ToxicOrbiterCoreRenderer<>(this));
 	}
 
 	@Override
