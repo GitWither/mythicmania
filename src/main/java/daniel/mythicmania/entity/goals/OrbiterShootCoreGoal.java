@@ -2,7 +2,6 @@ package daniel.mythicmania.entity.goals;
 
 import daniel.mythicmania.entity.mob.OrbiterEntity;
 import daniel.mythicmania.entity.projectile.OrbiterProjectileEntity;
-import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.item.ItemStack;
@@ -11,9 +10,13 @@ import net.minecraft.world.World;
 public class OrbiterShootCoreGoal extends Goal {
 	private final OrbiterEntity orbiter;
 	public int cooldown;
+	private final ItemStack core;
+	private final OrbiterProjectileEntity projectile;
 
-	public OrbiterShootCoreGoal(OrbiterEntity orbiter) {
+	public OrbiterShootCoreGoal(OrbiterEntity orbiter, ItemStack core, OrbiterProjectileEntity projectile) {
 		this.orbiter = orbiter;
+		this.core = core;
+		this.projectile = projectile;
 	}
 
 	@Override
@@ -31,9 +34,7 @@ public class OrbiterShootCoreGoal extends Goal {
 		World world = orbiter.getWorld();
 		LivingEntity attackTarget = this.orbiter.getTarget();
 
-		ItemStack charge = new ItemStack(MythicManiaItems.ORBITER_PROJECTILE);
-		OrbiterProjectileEntity projectile = new OrbiterProjectileEntity(world, this.orbiter);
-		projectile.setItem(charge);
+		projectile.setItem(core);
 		projectile.setVelocity(this.orbiter, this.orbiter.getPitch(), this.orbiter.getYaw(), 0.0F, 0.72F, 0F);
 
 		if (attackTarget == null) return;
