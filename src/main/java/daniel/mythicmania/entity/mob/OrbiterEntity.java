@@ -19,7 +19,7 @@ public class OrbiterEntity extends AbstractOrbiterEntity {
 	@Override
 	protected void initGoals() {
 		super.initGoals();
-		this.goalSelector.add(0, new OrbiterShootCoreGoal(this, new ItemStack(MythicManiaItems.ORBITER_PROJECTILE), new OrbiterProjectileEntity(world, this)));
+		this.goalSelector.add(0, new OrbiterShootCoreGoal(this));
 	}
 
 	@Override

@@ -8,11 +8,12 @@ import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class OrbiterShootCoreGoal extends Goal {
+// TODO: Duplicate of OrbiterShootCoreGoal. Look into reusing that goal and solving error of identical UUID
+public class ToxicOrbiterShootCoreGoal extends Goal {
 	private final PathAwareEntity orbiter;
 	public int cooldown;
 
-	public OrbiterShootCoreGoal(PathAwareEntity orbiter) {
+	public ToxicOrbiterShootCoreGoal(PathAwareEntity orbiter) {
 		this.orbiter = orbiter;
 	}
 
@@ -30,7 +31,7 @@ public class OrbiterShootCoreGoal extends Goal {
 	public void tick() {
 		World world = orbiter.getWorld();
 		LivingEntity attackTarget = this.orbiter.getTarget();
-		ItemStack charge = new ItemStack(MythicManiaItems.ORBITER_PROJECTILE);
+		ItemStack charge = new ItemStack(MythicManiaItems.CHARGED_NUCLEAR_ORB);
 		OrbiterProjectileEntity projectile = new OrbiterProjectileEntity(world, this.orbiter);
 		projectile.setItem(charge);
 		projectile.setVelocity(this.orbiter, this.orbiter.getPitch(), this.orbiter.getYaw(), 0.0F, 0.72F, 0F);
@@ -50,3 +51,4 @@ public class OrbiterShootCoreGoal extends Goal {
 		}
 	}
 }
+

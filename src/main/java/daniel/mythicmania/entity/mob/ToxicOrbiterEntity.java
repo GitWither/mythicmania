@@ -2,6 +2,7 @@ package daniel.mythicmania.entity.mob;
 
 import daniel.mythicmania.entity.abstract_entity.AbstractOrbiterEntity;
 import daniel.mythicmania.entity.goals.OrbiterShootCoreGoal;
+import daniel.mythicmania.entity.goals.ToxicOrbiterShootCoreGoal;
 import daniel.mythicmania.entity.projectile.OrbiterProjectileEntity;
 import daniel.mythicmania.item.MythicManiaItems;
 import daniel.mythicmania.particle.MythicManiaParticles;
@@ -19,7 +20,7 @@ public class ToxicOrbiterEntity extends AbstractOrbiterEntity {
 	@Override
 	protected void initGoals() {
 		super.initGoals();
-		this.goalSelector.add(0, new OrbiterShootCoreGoal(this, new ItemStack(MythicManiaItems.ORBITER_PROJECTILE), new OrbiterProjectileEntity(world, this)));
+		this.goalSelector.add(0, new ToxicOrbiterShootCoreGoal(this));
 	}
 
 	@Override
