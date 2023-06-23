@@ -1,7 +1,7 @@
 package daniel.mythicmania.entity.mob;
 
 import daniel.mythicmania.entity.abstract_entity.AbstractFlyingEntity;
-import daniel.mythicmania.entity.goals.FlyingEntityWanderAroundGoal;
+import daniel.mythicmania.entity.goals.FlyAroundGoal;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.FleeEntityGoal;
 import net.minecraft.entity.ai.goal.FlyGoal;
@@ -26,7 +26,7 @@ public class WastrelGliderEntity extends AbstractFlyingEntity {
 		this.goalSelector.add(1, new FlyGoal(this, 2));
 		this.goalSelector.add(2, new FleeEntityGoal<>(this, PhantomEntity.class, 6, 8, 8));
 		this.goalSelector.add(2, new FleeEntityGoal<>(this, PlayerEntity.class, 6, 8, 8));
-		this.goalSelector.add(0, new FlyingEntityWanderAroundGoal(this, 10, 5));
+		this.goalSelector.add(0, new FlyAroundGoal(this, this.getHealth() != 1 ? 20 : 10, 5));
 	}
 
 	public static DefaultAttributeContainer.Builder createWastrelGliderAttributes() {

@@ -1,24 +1,20 @@
 package daniel.mythicmania.entity.abstract_entity;
 
-import daniel.mythicmania.entity.goals.OrbiterShootCoreGoal;
-import daniel.mythicmania.entity.projectile.OrbiterProjectileEntity;
-import daniel.mythicmania.item.MythicManiaItems;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleEffect;
-import net.minecraft.particle.ParticleType;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
-public class AbstractOrbiterEntity extends HostileEntity {
-    protected AbstractOrbiterEntity(EntityType<? extends HostileEntity> entityType, World world) {
+public class AbstractOrbiterEntity extends AbstractFlyingEntity {
+    protected AbstractOrbiterEntity(EntityType<? extends AbstractFlyingEntity> entityType, World world) {
         super(entityType, world);
         this.experiencePoints = 210;
     }
@@ -44,6 +40,12 @@ public class AbstractOrbiterEntity extends HostileEntity {
         super.mobTick();
     }
 
+    @Nullable
+    @Override
+    public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
+        return null;
+    }
+
     public void tickMovement() {
         // TODO: Don't do this in movement
         if (this.age % 10 == 0) {
@@ -67,6 +69,7 @@ public class AbstractOrbiterEntity extends HostileEntity {
                 .createHostileAttributes()
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.23f)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2f)
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 8f);
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 8f)
+			    .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.3D);
     }
 }

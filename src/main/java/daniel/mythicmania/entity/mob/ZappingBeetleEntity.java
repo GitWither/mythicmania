@@ -1,7 +1,7 @@
 package daniel.mythicmania.entity.mob;
 
 import daniel.mythicmania.entity.abstract_entity.AbstractFlyingEntity;
-import daniel.mythicmania.entity.goals.FlyingEntityWanderAroundGoal;
+import daniel.mythicmania.entity.goals.FlyAroundGoal;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -28,7 +28,7 @@ public class ZappingBeetleEntity extends AbstractFlyingEntity {
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new MeleeAttackGoal(this, 1f, false));
-        this.goalSelector.add(2, new FlyingEntityWanderAroundGoal(this, 8, 5));
+        this.goalSelector.add(2, new FlyAroundGoal(this, 8, 5));
         this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
     }
 

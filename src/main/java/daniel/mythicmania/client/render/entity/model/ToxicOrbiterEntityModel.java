@@ -27,7 +27,7 @@ public class ToxicOrbiterEntityModel<T extends Entity> extends EntityModel<Toxic
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
-		ModelPartData toxic_orbiter = modelPartData.addChild("toxic_orbiter", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
+		ModelPartData toxic_orbiter = modelPartData.addChild("toxic_orbiter", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 16.0F, 0.0F));
 
 		ModelPartData core = toxic_orbiter.addChild("core", ModelPartBuilder.create().uv(0, 0).cuboid(-3.0F, -3.0F, -3.0F, 6.0F, 6.0F, 6.0F, new Dilation(0.1F))
 			.uv(0, 12).cuboid(-3.0F, -3.0F, -3.0F, 6.0F, 6.0F, 6.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -14.0F, 0.0F));
@@ -45,7 +45,6 @@ public class ToxicOrbiterEntityModel<T extends Entity> extends EntityModel<Toxic
 	public void setAngles(ToxicOrbiterEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 		primaryFragments.yaw = animationProgress * 0.4f;
 		secondaryFragments.yaw = -(animationProgress * 0.4f);
-		main.pivotY = MathHelper.sin(animationProgress * 0.1f) * 4;
 	}
 
 	@Override

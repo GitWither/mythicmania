@@ -1,6 +1,7 @@
 package daniel.mythicmania.entity.goals;
 
 import daniel.mythicmania.entity.abstract_entity.AbstractFlyingEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.NoPenaltySolidTargeting;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.passive.PassiveEntity;
@@ -11,14 +12,14 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
 
-public class FlyingEntityWanderAroundGoal extends Goal {
+public class FlyAroundGoal extends Goal {
 	AbstractFlyingEntity beetle;
 	int verticalTarget;
 	int horizontalTarget;
 
-	public FlyingEntityWanderAroundGoal(PassiveEntity beetle, int verticalTarget, int horizontalTarget) {
+	public FlyAroundGoal(LivingEntity entity, int verticalTarget, int horizontalTarget) {
 		this.setControls(EnumSet.of(Goal.Control.MOVE));
-		this.beetle = (AbstractFlyingEntity) beetle;
+		this.beetle = (AbstractFlyingEntity) entity;
 		this.verticalTarget = verticalTarget;
 		this.horizontalTarget = horizontalTarget;
 	}

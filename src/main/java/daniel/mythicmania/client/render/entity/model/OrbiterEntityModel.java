@@ -42,13 +42,12 @@ public class OrbiterEntityModel<T extends Entity> extends EntityModel<OrbiterEnt
     public void setAngles(OrbiterEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
         segment1.yaw = animationProgress * 0.4f;
         segment2.yaw = -(animationProgress * 0.4f);
-        main.pivotY = MathHelper.sin(animationProgress * 0.1f) * 4;
     }
 
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
-        root.render(matrices, vertices, light, overlay, red, green, blue, alpha);
         matrices.push();
+        root.render(matrices, vertices, light, overlay, red, green, blue, alpha);
         matrices.pop();
     }
 }

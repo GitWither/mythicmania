@@ -3,6 +3,7 @@ package daniel.mythicmania.entity;
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.client.render.entity.renderers.*;
 import daniel.mythicmania.client.render.entity.model.*;
+import daniel.mythicmania.entity.abstract_entity.AbstractOrbiterEntity;
 import daniel.mythicmania.entity.mob.*;
 import daniel.mythicmania.entity.projectile.OrbiterProjectileEntity;
 import daniel.mythicmania.entity.projectile.ShockBoltEntity;
@@ -122,7 +123,7 @@ public final class MythicManiaEntityTypes {
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.WASTED_DEMON_ENTITY, WastedDemonEntity.createWastedDemonAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, DemonGuardianEntity.createDemonGuardianAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.ORBITER_ENTITY, OrbiterEntity.createOrbiterAttributes());
-        FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.TOXIC_ORBITER_ENTITY, OrbiterEntity.createOrbiterAttributes());
+        FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.TOXIC_ORBITER_ENTITY, AbstractOrbiterEntity.createOrbiterAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY, WastrelGliderEntity.createWastrelGliderAttributes());
     }
 
