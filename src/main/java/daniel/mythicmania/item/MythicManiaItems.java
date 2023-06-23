@@ -24,6 +24,7 @@ public final class MythicManiaItems {
     public static Item ANCIENT_ALTAR;
     public static Item LUMINESCENT_SAC;
     public static Item ORBITER_PROJECTILE;
+    public static Item TOXIC_ORBITER_PROJECTILE;
 
     // Food Tab Items
     public static Item POISONOUS_BERRY;
@@ -379,6 +380,12 @@ public final class MythicManiaItems {
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "orbiter_projectile"),
                 new BlockItem(MythicManiaBlocks.ORBITER_PROJECTILE, new Item.Settings())
+        );
+
+        TOXIC_ORBITER_PROJECTILE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "toxic_orbiter_projectile"),
+                new BlockItem(MythicManiaBlocks.TOXIC_ORBITER_PROJECTILE, new Item.Settings())
         );
     }
 

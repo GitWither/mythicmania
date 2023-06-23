@@ -5,10 +5,7 @@ import daniel.mythicmania.client.render.entity.renderers.*;
 import daniel.mythicmania.client.render.entity.model.*;
 import daniel.mythicmania.entity.abstract_entity.AbstractOrbiterEntity;
 import daniel.mythicmania.entity.mob.*;
-import daniel.mythicmania.entity.projectile.OrbiterProjectileEntity;
-import daniel.mythicmania.entity.projectile.ShockBoltEntity;
-import daniel.mythicmania.entity.projectile.WastedStaffChargeEntity;
-import daniel.mythicmania.entity.projectile.WaterParcelEntity;
+import daniel.mythicmania.entity.projectile.*;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -60,9 +57,9 @@ public final class MythicManiaEntityTypes {
 
     public static final EntityModelLayer WASTREL_GLIDER_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "wastrel_glider"), "root");
     public static final EntityType<WastrelGliderEntity> WASTREL_GLIDER_ENTITY = Registry.register(
-        Registries.ENTITY_TYPE,
-        new Identifier(MythicMania.MOD_ID, "wastrel_glider"),
-        FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, WastrelGliderEntity::new).fireImmune().dimensions(EntityDimensions.fixed(0.3f, 0.3f)).build()
+            Registries.ENTITY_TYPE,
+            new Identifier(MythicMania.MOD_ID, "wastrel_glider"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, WastrelGliderEntity::new).fireImmune().dimensions(EntityDimensions.fixed(0.3f, 0.3f)).build()
     );
 
     public static final EntityType<WaterParcelEntity> WATER_PARCEL_ENTITY = Registry.register(
@@ -99,6 +96,15 @@ public final class MythicManiaEntityTypes {
                     .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
                     .trackRangeBlocks(30).trackedUpdateRate(30)
                     .build()
+    );
+
+    public static final EntityType<ToxicOrbiterProjectileEntity> TOXIC_ORBITER_PROJECTILE_ENTITY = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(MythicMania.MOD_ID, "toxic_orbiter_projectile"),
+            FabricEntityTypeBuilder.<ToxicOrbiterProjectileEntity>create(SpawnGroup.MISC, ToxicOrbiterProjectileEntity::new)
+                .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
+                .trackRangeBlocks(30).trackedUpdateRate(30)
+                .build()
     );
                     
                  
@@ -138,6 +144,7 @@ public final class MythicManiaEntityTypes {
         EntityRendererRegistry.register(MythicManiaEntityTypes.WASTED_STAFF_CHARGE_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.SHOCK_BOLT_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.ORBITER_PROJECTILE_ENTITY, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(MythicManiaEntityTypes.TOXIC_ORBITER_PROJECTILE_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.ORBITER_ENTITY, OrbiterEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.TOXIC_ORBITER_ENTITY, ToxicOrbiterEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY, WastrelGliderEntityRenderer::new);
