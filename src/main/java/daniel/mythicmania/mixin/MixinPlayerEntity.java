@@ -38,13 +38,13 @@ public abstract class MixinPlayerEntity extends LivingEntity {
         final StatusEffectInstance fireResistance = new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 40, 0, false, false, true);
         final StatusEffectInstance regeneration = new StatusEffectInstance(StatusEffects.REGENERATION, 40, 0, false, false, true);
 
-        // Gives player speed and fire resistance if demon vest is worn.
+        // Handle player when wearing demon vest
         if (chestSlotItem.isOf(MythicManiaItems.DEMON_VEST)) {
             this.addStatusEffect(speed);
             this.addStatusEffect(fireResistance);
         }
 
-        // Gives player regeneration if full intoxicated set is worn.
+        // Handle player when wearing nuclear set
         if (
             headSlotItem.isOf(MythicManiaItems.NUCLEAR_HELMET) &&
             chestSlotItem.isOf(MythicManiaItems.NUCLEAR_CHESTPLATE) &&
@@ -69,6 +69,7 @@ public abstract class MixinPlayerEntity extends LivingEntity {
             }
         }
 
+        // Handle player when wearing ruinous set
         if (
             headSlotItem.isOf(MythicManiaItems.RUINOUS_HELMET) ||
             chestSlotItem.isOf(MythicManiaItems.RUINOUS_CHESTPLATE) ||
