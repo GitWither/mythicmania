@@ -3,7 +3,7 @@ package daniel.mythicmania.client.render.entity.renderers;
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.client.render.entity.model.PoisonousGrubEntityModel;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
-import daniel.mythicmania.entity.PoisonousGrubEntity;
+import daniel.mythicmania.entity.mob.PoisonousGrubEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;

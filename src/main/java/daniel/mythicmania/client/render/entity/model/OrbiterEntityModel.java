@@ -1,6 +1,6 @@
 package daniel.mythicmania.client.render.entity.model;
 
-import daniel.mythicmania.entity.OrbiterEntity;
+import daniel.mythicmania.entity.mob.OrbiterEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
@@ -46,9 +46,8 @@ public class OrbiterEntityModel<T extends Entity> extends EntityModel<OrbiterEnt
 
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
-        root.render(matrices, vertices, light, overlay, red, green, blue, alpha);
-        matrices.translate(0, 13, 0);
         matrices.push();
+        root.render(matrices, vertices, light, overlay, red, green, blue, alpha);
         matrices.pop();
     }
 }

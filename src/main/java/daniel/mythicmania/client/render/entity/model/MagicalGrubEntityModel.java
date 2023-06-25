@@ -1,6 +1,6 @@
 package daniel.mythicmania.client.render.entity.model;
 
-import daniel.mythicmania.entity.MagicalGrubEntity;
+import daniel.mythicmania.entity.mob.MagicalGrubEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;

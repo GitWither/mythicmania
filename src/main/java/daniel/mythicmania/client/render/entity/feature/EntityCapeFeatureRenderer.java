@@ -1,7 +1,7 @@
 package daniel.mythicmania.client.render.entity.feature;
 
 import daniel.mythicmania.client.render.entity.model.WastedDemonEntityModel;
-import daniel.mythicmania.entity.WastedDemonEntity;
+import daniel.mythicmania.entity.mob.WastedDemonEntity;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
@@ -13,7 +13,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RotationAxis;
-import org.joml.Vector3f;
 
 public class EntityCapeFeatureRenderer extends FeatureRenderer<WastedDemonEntity, WastedDemonEntityModel<Entity>> {
     private final Identifier capeTexture;

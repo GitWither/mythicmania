@@ -5,6 +5,7 @@ import daniel.mythicmania.client.render.entity.feature.EntityCapeFeatureRenderer
 import daniel.mythicmania.client.render.entity.model.WastedDemonEntityModel;
 import daniel.mythicmania.client.render.entity.feature.DemonEyesRenderer;
 import daniel.mythicmania.entity.*;
+import daniel.mythicmania.entity.mob.WastedDemonEntity;
 import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;

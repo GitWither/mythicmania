@@ -1,15 +1,13 @@
 package daniel.mythicmania.item.combat;
 
 import daniel.mythicmania.client.sound.MythicManiaSoundEvents;
-import daniel.mythicmania.entity.ShockBoltEntity;
+import daniel.mythicmania.entity.projectile.ShockBoltEntity;
 import daniel.mythicmania.item.MythicManiaItems;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;

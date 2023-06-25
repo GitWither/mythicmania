@@ -1,7 +1,7 @@
 package daniel.mythicmania.item.combat;
 
 import daniel.mythicmania.client.sound.MythicManiaSoundEvents;
-import daniel.mythicmania.entity.WastedStaffChargeEntity;
+import daniel.mythicmania.entity.projectile.WastedStaffChargeEntity;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;

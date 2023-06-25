@@ -1,4 +1,4 @@
-package daniel.mythicmania.entity;
+package daniel.mythicmania.entity.abstract_entity;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -20,5 +20,4 @@ public abstract class AbstractGrubEntity extends PathAwareEntity {
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.23D)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3.0D);
     }
-
 }

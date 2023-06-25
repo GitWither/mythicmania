@@ -1,6 +1,6 @@
 package daniel.mythicmania.item;
 
-import daniel.mythicmania.entity.WaterParcelEntity;
+import daniel.mythicmania.entity.projectile.WaterParcelEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

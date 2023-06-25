@@ -1,5 +1,7 @@
-package daniel.mythicmania.entity;
+package daniel.mythicmania.entity.mob;
 
+import daniel.mythicmania.entity.abstract_entity.AbstractFlyingEntity;
+import daniel.mythicmania.entity.goals.FlyAroundGoal;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -16,8 +18,8 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class ZappingBeetleEntity extends AbstractBeetleEntity {
-    protected ZappingBeetleEntity(EntityType<? extends AbstractBeetleEntity> entityType, World world) {
+public class ZappingBeetleEntity extends AbstractFlyingEntity {
+    public ZappingBeetleEntity(EntityType<? extends AbstractFlyingEntity> entityType, World world) {
         super(entityType, world);
         this.experiencePoints = 75;
     }
@@ -26,7 +28,7 @@ public class ZappingBeetleEntity extends AbstractBeetleEntity {
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new MeleeAttackGoal(this, 1f, false));
-        this.goalSelector.add(2, new BeetleWanderAroundGoal());
+        this.goalSelector.add(2, new FlyAroundGoal(this, 8, 5));
         this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
     }
 
@@ -41,10 +43,10 @@ public class ZappingBeetleEntity extends AbstractBeetleEntity {
     }
 
     public static DefaultAttributeContainer.Builder createZappingBeetleAttributes() {
-        return AbstractBeetleEntity
-                .createBeetleAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 8)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.61D);
+        return AbstractFlyingEntity
+            .createBeetleAttributes()
+            .add(EntityAttributes.GENERIC_MAX_HEALTH, 8)
+            .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.61D);
     }
 
     @Nullable

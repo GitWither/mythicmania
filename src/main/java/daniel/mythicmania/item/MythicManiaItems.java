@@ -24,6 +24,7 @@ public final class MythicManiaItems {
     public static Item ANCIENT_ALTAR;
     public static Item LUMINESCENT_SAC;
     public static Item ORBITER_PROJECTILE;
+    public static Item TOXIC_ORBITER_PROJECTILE;
 
     // Food Tab Items
     public static Item POISONOUS_BERRY;
@@ -35,12 +36,15 @@ public final class MythicManiaItems {
     public static Item EMPTY_ORB;
     public static Item CHARGED_NUCLEAR_ORB;
     public static Item CHARGED_RUINED_ORB;
+    public static Item ORBITER_CORE;
+    public static Item TOXIC_ORBITER_CORE;
     public static Item POISON_SPIKE;
     public static Item GRUB_ESSENCE;
     public static Item TOXIC_PEBBLE;
     public static Item WASTED_ESSENCE;
     public static Item IRRADIATED_CRYSTAL;
     public static Item WATER_PARCEL;
+    public static Item GLIDER_WING;
 
     // Spawn eggs
     public static Item MAGICAL_GRUB_SPAWN_EGG;
@@ -49,6 +53,8 @@ public final class MythicManiaItems {
     public static Item WASTED_DEMON_SPAWN_EGG;
     public static Item DEMON_GUARDIAN_SPAWN_EGG;
     public static Item ORBITER_SPAWN_EGG;
+    public static Item TOXIC_ORBITER_SPAWN_EGG;
+    public static Item WASTREL_GLIDER_SPAWN_EGG;
 
     // Combat items
     public static Item NUCLEAR_DAGGER;
@@ -127,6 +133,18 @@ public final class MythicManiaItems {
                 new Item(new Item.Settings().rarity(Rarity.UNCOMMON))
         );
 
+        ORBITER_CORE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "orbiter_core"),
+                new Item(new Item.Settings())
+        );
+
+        TOXIC_ORBITER_CORE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "toxic_orbiter_core"),
+                new Item(new Item.Settings())
+        );
+
         POISON_SPIKE = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "poison_spike"),
@@ -161,6 +179,12 @@ public final class MythicManiaItems {
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "water_parcel"),
                 new WaterParcelItem(new Item.Settings().maxCount(32))
+        );
+
+        GLIDER_WING = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "glider_wing"),
+                new Item(new Item.Settings())
         );
 
         WASTED_STAFF_CHARGE = Registry.register(
@@ -357,49 +381,69 @@ public final class MythicManiaItems {
                 new Identifier(MythicMania.MOD_ID, "orbiter_projectile"),
                 new BlockItem(MythicManiaBlocks.ORBITER_PROJECTILE, new Item.Settings())
         );
+
+        TOXIC_ORBITER_PROJECTILE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "toxic_orbiter_projectile"),
+                new BlockItem(MythicManiaBlocks.TOXIC_ORBITER_PROJECTILE, new Item.Settings())
+        );
     }
 
     public static void registerSpawnEggs() {
         MAGICAL_GRUB_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "magical_grub_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, 0x7ff8eb, 0x7EBADA,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, 0x7ff8eb, 0x7EBADA,
+                new Item.Settings()
+            )
         );
 
         POISONOUS_GRUB_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "poisonous_grub_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, 0x48906D, 0x99FF9E,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, 0x48906D, 0x99FF9E,
+                new Item.Settings()
+            )
         );
 
         ZAPPING_BEETLE_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "zapping_beetle_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, 0x3991d0, 0xF0D538,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, 0x3991d0, 0xF0D538,
+                new Item.Settings()
+            )
         );
 
         WASTED_DEMON_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "wasted_demon_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.WASTED_DEMON_ENTITY, 0x2a2a2a, 0x951010,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.WASTED_DEMON_ENTITY, 0x2a2a2a, 0x951010,
+                new Item.Settings()
+            )
         );
 
         DEMON_GUARDIAN_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "demon_guardian_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, 0x493C3A, 0xE7561B,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, 0x493C3A, 0xE7561B,
+                new Item.Settings()
+            )
         );
 
         ORBITER_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "orbiter_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.ORBITER_ENTITY, 0x494343, 0xdd693d,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.ORBITER_ENTITY, 0x494343, 0xdd693d,
+                new Item.Settings()
+            )
+        );
+
+        TOXIC_ORBITER_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "toxic_orbiter_spawn_egg"),
+            new SpawnEggItem(
+                MythicManiaEntityTypes.TOXIC_ORBITER_ENTITY, 0x598f2f, 0x35323e,
+                new Item.Settings()
+            )
+        );
+
+        WASTREL_GLIDER_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "wastrel_glider_spawn_egg"),
+            new SpawnEggItem(
+                MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY, 0xa92b2b, 0x343337,
+                new Item.Settings()
+            )
         );
     }
 
@@ -423,12 +467,15 @@ public final class MythicManiaItems {
             entries.add(EMPTY_ORB);
             entries.add(CHARGED_NUCLEAR_ORB);
             entries.add(CHARGED_RUINED_ORB);
+            entries.add(ORBITER_CORE);
+            entries.add(TOXIC_ORBITER_CORE);
             entries.add(POISON_SPIKE);
             entries.add(GRUB_ESSENCE);
             entries.add(TOXIC_PEBBLE);
             entries.add(WASTED_ESSENCE);
             entries.add(IRRADIATED_CRYSTAL);
             entries.add(WATER_PARCEL);
+            entries.add(GLIDER_WING);
             entries.add(WASTED_STAFF_CHARGE);
             entries.add(SHOCK_BOLT);
 
@@ -439,6 +486,8 @@ public final class MythicManiaItems {
             entries.add(WASTED_DEMON_SPAWN_EGG);
             entries.add(DEMON_GUARDIAN_SPAWN_EGG);
             entries.add(ORBITER_SPAWN_EGG);
+            entries.add(TOXIC_ORBITER_SPAWN_EGG);
+            entries.add(WASTREL_GLIDER_SPAWN_EGG);
         });
 
         ItemGroupEvents.modifyEntriesEvent(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).register(entries -> {

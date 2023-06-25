@@ -3,7 +3,7 @@ package daniel.mythicmania.client.render.entity.renderers;
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.client.render.entity.model.ZappingBeetleEntityModel;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
-import daniel.mythicmania.entity.ZappingBeetleEntity;
+import daniel.mythicmania.entity.mob.ZappingBeetleEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;

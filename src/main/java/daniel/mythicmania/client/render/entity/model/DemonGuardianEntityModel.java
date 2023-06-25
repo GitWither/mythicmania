@@ -1,13 +1,11 @@
 package daniel.mythicmania.client.render.entity.model;
 
-import daniel.mythicmania.entity.DemonGuardianEntity;
-import daniel.mythicmania.entity.PoisonousGrubEntity;
+import daniel.mythicmania.entity.mob.DemonGuardianEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.CrossbowPosing;
 import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.math.MathHelper;
 
 public class DemonGuardianEntityModel extends PlayerEntityModel<DemonGuardianEntity> {
     private final ModelPart root;

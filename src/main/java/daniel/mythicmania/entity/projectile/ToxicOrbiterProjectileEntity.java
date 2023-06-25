@@ -1,21 +1,24 @@
-package daniel.mythicmania.entity;
+package daniel.mythicmania.entity.projectile;
 
+import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
 
-public class OrbiterProjectileEntity extends ThrownItemEntity {
-    public OrbiterProjectileEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
+public class ToxicOrbiterProjectileEntity extends ThrownItemEntity {
+    public ToxicOrbiterProjectileEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public OrbiterProjectileEntity(World world, LivingEntity owner) {
-        super(MythicManiaEntityTypes.ORBITER_PROJECTILE_ENTITY, owner, world);
+    public ToxicOrbiterProjectileEntity(World world, LivingEntity owner) {
+        super(MythicManiaEntityTypes.TOXIC_ORBITER_PROJECTILE_ENTITY, owner, world);
     }
 
     @Override
@@ -23,13 +26,14 @@ public class OrbiterProjectileEntity extends ThrownItemEntity {
         // TODO: This is a bit weird
         Entity entity = entityHitResult.getEntity();
         entity.damage(this.getDamageSources().magic(), 2);
-        entity.setOnFireFor(2);
+        ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20 * 3, 0));
+
         super.onEntityHit(entityHitResult);
     }
 
     @Override
     protected Item getDefaultItem() {
-        return MythicManiaItems.ORBITER_PROJECTILE;
+        return MythicManiaItems.TOXIC_ORBITER_PROJECTILE;
     }
 
     @Override

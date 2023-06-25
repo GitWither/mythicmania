@@ -1,5 +1,6 @@
-package daniel.mythicmania.entity;
+package daniel.mythicmania.entity.projectile;
 
+import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

@@ -1,5 +1,7 @@
-package daniel.mythicmania.entity;
+package daniel.mythicmania.entity.mob;
 
+import daniel.mythicmania.entity.MythicManiaEntityTypes;
+import daniel.mythicmania.entity.goals.MoveOutOfWaterGoal;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
@@ -16,18 +18,13 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Iterator;
 
 public class WastedDemonEntity extends HostileEntity {
     public double prevCapeX;
@@ -46,13 +43,13 @@ public class WastedDemonEntity extends HostileEntity {
 
     @Override
     protected void initGoals() {
-        // TODO: Weird priorities
+        // TODO: Fix priorities
         this.goalSelector.add(1, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
         this.goalSelector.add(2, new LookAroundGoal(this));
         this.goalSelector.add(3, new AttackGoal(this));
         this.goalSelector.add(4, new WanderAroundGoal(this, 1, 2, false));
         this.goalSelector.add(4, new SwimGoal(this));
-        this.goalSelector.add(0, new MoveOutOfWater(this));
+        this.goalSelector.add(0, new MoveOutOfWaterGoal(this));
 
         this.initActiveTargetGoals();
     }
@@ -149,6 +146,20 @@ public class WastedDemonEntity extends HostileEntity {
         this.updateCapeAngles();
     }
 
+    @Override
+    public void kill() {
+        super.kill();
+
+        if (!world.isClient) {
+            for (int i = 0; i < 4; i++) {
+                WastrelGliderEntity wastrelGlider = MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY.create(world);
+                if (wastrelGlider == null) return;
+                wastrelGlider.refreshPositionAndAngles(this.getX(), this.getY(), this.getZ(), this.getYaw(), 0.0F);
+                world.spawnEntity(wastrelGlider);
+            }
+        }
+    }
+
     private void updateCapeAngles() {
         this.prevCapeX = this.capeX;
         this.prevCapeY = this.capeY;
@@ -183,42 +194,5 @@ public class WastedDemonEntity extends HostileEntity {
         this.capeX += deltaX * 0.25;
         this.capeZ += deltaZ * 0.25;
         this.capeY += deltaY * 0.25;
-    }
-
-    // TODO: Move into own class
-    public static class MoveOutOfWater extends Goal {
-        private final WastedDemonEntity mob;
-
-        public MoveOutOfWater(WastedDemonEntity mob) {
-            this.mob = mob;
-        }
-
-        public boolean canStart() {
-            return this.mob.isOnGround() && this.mob.world.getFluidState(this.mob.getBlockPos()).isIn(FluidTags.WATER);
-        }
-
-        public void start() {
-            BlockPos blockPos = null;
-            int startX = MathHelper.floor(this.mob.getX() - 2.0);
-            int startY = MathHelper.floor(this.mob.getY() - 2.0);
-            int startZ = MathHelper.floor(this.mob.getZ() - 2.0);
-            int endX = MathHelper.floor(this.mob.getX() + 2.0);
-            int endY = this.mob.getBlockY();
-            int endZ = MathHelper.floor(this.mob.getZ() + 2.0);
-
-            Iterable<BlockPos> blockReplaceList = BlockPos.iterate(startX, startY, startZ, endX, endY, endZ);
-
-            // TODO: Review this for loop to see if it's ok
-            for (BlockPos pos : blockReplaceList) {
-                if (!this.mob.world.getFluidState(pos).isIn(FluidTags.WATER)) {
-                    blockPos = pos;
-                    break;
-                }
-            }
-
-            if (blockPos != null) {
-                this.mob.getMoveControl().moveTo(blockPos.getX(), blockPos.getY(), blockPos.getZ(), 1.4);
-            }
-        }
     }
 }
