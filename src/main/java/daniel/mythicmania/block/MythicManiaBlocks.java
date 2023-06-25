@@ -43,6 +43,18 @@ public final class MythicManiaBlocks {
             new ToxicOreBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f))
     );
 
+    public static final Block RUINED_ORE = Registry.register(
+            Registries.BLOCK,
+            new Identifier(MythicMania.MOD_ID, "ruined_ore"),
+            new RuinedOreBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.5f, 3.5f))
+    );
+
+    public static final Block BLACKSTONE_RUINED_ORE = Registry.register(
+            Registries.BLOCK,
+            new Identifier(MythicMania.MOD_ID, "blackstone_ruined_ore"),
+            new RuinedOreBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.5f, 3.5f))
+    );
+
     public static final Block LUMINESCENT_SAC = Registry.register(
             Registries.BLOCK,
             new Identifier(MythicMania.MOD_ID, "luminescent_sac"),
