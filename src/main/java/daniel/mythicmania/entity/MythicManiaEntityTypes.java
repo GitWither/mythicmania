@@ -62,6 +62,20 @@ public final class MythicManiaEntityTypes {
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, WastrelGliderEntity::new).fireImmune().dimensions(EntityDimensions.fixed(0.3f, 0.3f)).build()
     );
 
+    public static final EntityModelLayer ORBITER_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "orbiter"), "root");
+    public static final EntityType<OrbiterEntity> ORBITER_ENTITY = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(MythicMania.MOD_ID, "orbiter"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, OrbiterEntity::new).fireImmune().dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
+    );
+
+    public static final EntityModelLayer TOXIC_ORBITER_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "toxic_orbiter"), "root");
+    public static final EntityType<ToxicOrbiterEntity> TOXIC_ORBITER_ENTITY = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(MythicMania.MOD_ID, "toxic_orbiter"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, ToxicOrbiterEntity::new).dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
+    );
+
     public static final EntityType<WaterParcelEntity> WATER_PARCEL_ENTITY = Registry.register(
             Registries.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "water_parcel"),
@@ -106,20 +120,23 @@ public final class MythicManiaEntityTypes {
                 .trackRangeBlocks(30).trackedUpdateRate(30)
                 .build()
     );
-                    
-                 
-    public static final EntityModelLayer ORBITER_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "orbiter"), "root");
-    public static final EntityType<OrbiterEntity> ORBITER_ENTITY = Registry.register(
+
+    public static final EntityType<UnstableToxicThrowableEntity> UNSTABLE_TOXIC_THROWABLE_ENTITY = Registry.register(
             Registries.ENTITY_TYPE,
-            new Identifier(MythicMania.MOD_ID, "orbiter"),
-            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, OrbiterEntity::new).fireImmune().dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
+            new Identifier(MythicMania.MOD_ID, "unstable_toxic_throwable_entity"),
+            FabricEntityTypeBuilder.<UnstableToxicThrowableEntity>create(SpawnGroup.MISC, UnstableToxicThrowableEntity::new)
+                .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
+                .trackRangeBlocks(30).trackedUpdateRate(30)
+                .build()
     );
 
-    public static final EntityModelLayer TOXIC_ORBITER_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "toxic_orbiter"), "root");
-    public static final EntityType<ToxicOrbiterEntity> TOXIC_ORBITER_ENTITY = Registry.register(
-        Registries.ENTITY_TYPE,
-        new Identifier(MythicMania.MOD_ID, "toxic_orbiter"),
-        FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, ToxicOrbiterEntity::new).dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
+    public static final EntityType<UnstableRuinousThrowableEntity> UNSTABLE_RUINOUS_THROWABLE_ENTITY = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(MythicMania.MOD_ID, "unstable_ruinous_throwable_entity"),
+            FabricEntityTypeBuilder.<UnstableRuinousThrowableEntity>create(SpawnGroup.MISC, UnstableRuinousThrowableEntity::new)
+                .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
+                .trackRangeBlocks(30).trackedUpdateRate(30)
+                .build()
     );
 
     public static void registerEntityAttributes() {
@@ -143,6 +160,8 @@ public final class MythicManiaEntityTypes {
         EntityRendererRegistry.register(MythicManiaEntityTypes.WATER_PARCEL_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.WASTED_STAFF_CHARGE_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.SHOCK_BOLT_ENTITY, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(MythicManiaEntityTypes.UNSTABLE_RUINOUS_THROWABLE_ENTITY, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(MythicManiaEntityTypes.UNSTABLE_TOXIC_THROWABLE_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.ORBITER_PROJECTILE_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.TOXIC_ORBITER_PROJECTILE_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.ORBITER_ENTITY, OrbiterEntityRenderer::new);

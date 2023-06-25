@@ -3,6 +3,7 @@ package daniel.mythicmania.item;
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.block.MythicManiaBlocks;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
+import daniel.mythicmania.entity.projectile.UnstableRuinousThrowableEntity;
 import daniel.mythicmania.item.combat.*;
 import daniel.mythicmania.item.material.armor.DemonVestMaterial;
 import daniel.mythicmania.item.material.armor.NuclearArmorMaterial;
@@ -40,6 +41,8 @@ public final class MythicManiaItems {
     public static Item CHARGED_RUINED_ORB;
     public static Item ORBITER_CORE;
     public static Item TOXIC_ORBITER_CORE;
+    public static Item UNSTABLE_TOXIC_THROWABLE;
+    public static Item UNSTABLE_RUINOUS_THROWABLE;
     public static Item POISON_SPIKE;
     public static Item GRUB_ESSENCE;
     public static Item TOXIC_PEBBLE;
@@ -145,6 +148,18 @@ public final class MythicManiaItems {
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "toxic_orbiter_core"),
                 new Item(new Item.Settings())
+        );
+
+        UNSTABLE_RUINOUS_THROWABLE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "unstable_ruinous_throwable"),
+                new UnstableRuinousThrowableItem(new Item.Settings().maxCount(16))
+        );
+
+        UNSTABLE_TOXIC_THROWABLE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "unstable_toxic_throwable"),
+                new UnstableToxicThrowableItem(new Item.Settings().maxCount(16))
         );
 
         POISON_SPIKE = Registry.register(
@@ -483,6 +498,8 @@ public final class MythicManiaItems {
             entries.add(CHARGED_RUINED_ORB);
             entries.add(ORBITER_CORE);
             entries.add(TOXIC_ORBITER_CORE);
+            entries.add(UNSTABLE_RUINOUS_THROWABLE);
+            entries.add(UNSTABLE_TOXIC_THROWABLE);
             entries.add(POISON_SPIKE);
             entries.add(GRUB_ESSENCE);
             entries.add(TOXIC_PEBBLE);
