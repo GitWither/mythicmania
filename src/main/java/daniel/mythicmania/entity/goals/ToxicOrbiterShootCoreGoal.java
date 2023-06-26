@@ -37,19 +37,18 @@ public class ToxicOrbiterShootCoreGoal extends Goal {
 		projectile.setItem(charge);
 		projectile.setVelocity(this.orbiter, this.orbiter.getPitch(), this.orbiter.getYaw(), 0.0F, 0.72F, 0F);
 
-		if (attackTarget == null) return;
+		// TODO: Is this logic okay?
+		if (attackTarget == null || !canAttack(attackTarget)) return;
+		++this.cooldown;
 
-		// TODO: Awkward. Rewrite
-		if (attackTarget.squaredDistanceTo(this.orbiter) < 81 && this.orbiter.canSee(attackTarget)) {
-			++this.cooldown;
-
-			if (this.cooldown == 15) {
-				world.spawnEntity(projectile);
-				this.cooldown = 0;
-			}
-		} else if (this.cooldown > 0) {
-			--this.cooldown;
+		if (this.cooldown == 15) {
+			world.spawnEntity(projectile);
+			this.cooldown = 0;
 		}
+	}
+
+	private boolean canAttack(LivingEntity target) {
+		return target.squaredDistanceTo(this.orbiter) < 81 && this.orbiter.canSee(target);
 	}
 }
 
