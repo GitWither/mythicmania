@@ -8,6 +8,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class OrbiterProjectileEntity extends ThrownItemEntity {
@@ -31,6 +32,11 @@ public class OrbiterProjectileEntity extends ThrownItemEntity {
     @Override
     protected Item getDefaultItem() {
         return MythicManiaItems.ORBITER_PROJECTILE;
+    }
+
+    @Override
+    protected void onCollision(HitResult hitResult) {
+        this.kill();
     }
 
     @Override

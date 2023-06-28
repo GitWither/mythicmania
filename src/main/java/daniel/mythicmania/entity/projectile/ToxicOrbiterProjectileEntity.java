@@ -10,6 +10,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class ToxicOrbiterProjectileEntity extends ThrownItemEntity {
@@ -29,6 +30,11 @@ public class ToxicOrbiterProjectileEntity extends ThrownItemEntity {
         ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20 * 3, 0));
 
         super.onEntityHit(entityHitResult);
+    }
+
+    @Override
+    protected void onCollision(HitResult hitResult) {
+        this.kill();
     }
 
     @Override

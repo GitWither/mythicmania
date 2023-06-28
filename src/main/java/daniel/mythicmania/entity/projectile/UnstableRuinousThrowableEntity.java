@@ -1,11 +1,9 @@
 package daniel.mythicmania.entity.projectile;
 
-import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.entity.abstract_entity.AbstractUnstableThrowableEntity;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
