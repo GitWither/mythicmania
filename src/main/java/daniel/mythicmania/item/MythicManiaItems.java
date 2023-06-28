@@ -3,7 +3,6 @@ package daniel.mythicmania.item;
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.block.MythicManiaBlocks;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
-import daniel.mythicmania.entity.projectile.UnstableRuinousThrowableEntity;
 import daniel.mythicmania.item.combat.*;
 import daniel.mythicmania.item.material.armor.DemonVestMaterial;
 import daniel.mythicmania.item.material.armor.NuclearArmorMaterial;
@@ -49,6 +48,7 @@ public final class MythicManiaItems {
     public static Item WASTED_ESSENCE;
     public static Item IRRADIATED_CRYSTAL;
     public static Item WATER_PARCEL;
+    public static Item CHARGE;
     public static Item GLIDER_WING;
 
     // Spawn eggs
@@ -76,6 +76,7 @@ public final class MythicManiaItems {
     public static Item RUINOUS_SWORD;
     public static Item WASTED_STAFF;
     public static Item DEMON_VEST;
+    public static Item SHOCK_STAFF;
     public static Item SHOCK_BOLT_STAFF;
 
     // Tool items
@@ -198,6 +199,12 @@ public final class MythicManiaItems {
                 new WaterParcelItem(new Item.Settings().maxCount(32))
         );
 
+        CHARGE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "charge"),
+                new Item(new Item.Settings())
+        );
+
         GLIDER_WING = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "glider_wing"),
@@ -305,10 +312,16 @@ public final class MythicManiaItems {
                 new WastedStaffItem(MythicManiaToolMaterials.WASTED_STAFF,2,0.8f, new Item.Settings().maxCount(1))
         );
 
+        SHOCK_STAFF = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "shock_staff"),
+                new ShockStaffItem(MythicManiaToolMaterials.SHOCK_BOLT_STAFF,1,0.8f, new Item.Settings().maxCount(1), 10, 1, false)
+        );
+
         SHOCK_BOLT_STAFF = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "shock_bolt_staff"),
-                new ShockBoltStaffItem(MythicManiaToolMaterials.SHOCK_BOLT_STAFF,1,0.8f, new Item.Settings().maxCount(1))
+                new ShockStaffItem(MythicManiaToolMaterials.SHOCK_BOLT_STAFF,1,0.8f, new Item.Settings().maxCount(1), 20, 3, true)
         );
     }
 
@@ -505,8 +518,9 @@ public final class MythicManiaItems {
             entries.add(TOXIC_PEBBLE);
             entries.add(WASTED_ESSENCE);
             entries.add(IRRADIATED_CRYSTAL);
-            entries.add(WATER_PARCEL);
             entries.add(GLIDER_WING);
+            entries.add(WATER_PARCEL);
+            entries.add(CHARGE);
             entries.add(WASTED_STAFF_CHARGE);
             entries.add(SHOCK_BOLT);
 
@@ -536,6 +550,7 @@ public final class MythicManiaItems {
             entries.add(RUINOUS_BOOTS);
             entries.add(DEMON_VEST);
             entries.add(WASTED_STAFF);
+            entries.add(SHOCK_STAFF);
             entries.add(SHOCK_BOLT_STAFF);
         });
 

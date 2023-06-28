@@ -94,10 +94,10 @@ public final class MythicManiaEntityTypes {
                     .build()
     );
 
-    public static final EntityType<ShockBoltEntity> SHOCK_BOLT_ENTITY = Registry.register(
+    public static final EntityType<ShockProjectileEntity> SHOCK_BOLT_ENTITY = Registry.register(
             Registries.ENTITY_TYPE,
             new Identifier(MythicMania.MOD_ID, "shock_bolt"),
-            FabricEntityTypeBuilder.<ShockBoltEntity>create(SpawnGroup.MISC, ShockBoltEntity::new)
+            FabricEntityTypeBuilder.<ShockProjectileEntity>create(SpawnGroup.MISC, ShockProjectileEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
                     .trackRangeBlocks(30).trackedUpdateRate(30)
                     .build()

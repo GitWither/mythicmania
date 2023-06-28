@@ -17,13 +17,16 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class ShockBoltEntity extends ThrownItemEntity {
-    public ShockBoltEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
+public class ShockProjectileEntity extends ThrownItemEntity {
+    private boolean isShockBoltEntity;
+
+    public ShockProjectileEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public ShockBoltEntity(World world, LivingEntity owner) {
+    public ShockProjectileEntity(World world, LivingEntity owner, boolean isShockBoltEntity) {
         super(MythicManiaEntityTypes.SHOCK_BOLT_ENTITY, owner, world);
+        this.isShockBoltEntity = isShockBoltEntity;
     }
 
     @Override
@@ -31,18 +34,19 @@ public class ShockBoltEntity extends ThrownItemEntity {
         StatusEffectInstance stunEffect = new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 15, 4, false, false, true);
         Entity target = entityHitResult.getEntity();
 
-        LightningEntity lightningEntity = EntityType.LIGHTNING_BOLT.create(world);
-        BlockPos blockPos = target.getBlockPos();
+        if (isShockBoltEntity) {
+            LightningEntity lightningEntity = EntityType.LIGHTNING_BOLT.create(world);
+            BlockPos blockPos = target.getBlockPos();
 
-        if (lightningEntity == null) return;
+            if (lightningEntity == null) return;
 
-        lightningEntity.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(blockPos.up()));
-        lightningEntity.setChanneler(target instanceof ServerPlayerEntity ? (ServerPlayerEntity)target : null);
+            lightningEntity.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(blockPos.up()));
+            lightningEntity.setChanneler(target instanceof ServerPlayerEntity ? (ServerPlayerEntity)target : null);
 
-        if (!world.isClient) {
-            ((LivingEntity) target).addStatusEffect(stunEffect);
-            world.spawnEntity(lightningEntity);
+            if (!world.isClient) world.spawnEntity(lightningEntity);
         }
+
+        if (!world.isClient) ((LivingEntity) target).addStatusEffect(stunEffect);
 
         this.kill();
         super.onEntityHit(entityHitResult);
