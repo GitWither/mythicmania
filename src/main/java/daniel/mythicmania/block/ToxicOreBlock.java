@@ -17,14 +17,13 @@ public class ToxicOreBlock extends ExperienceDroppingBlock {
         super(settings, UniformIntProvider.create(2, 3));
     }
 
-    // TODO: Find a way to add a status effect to the player when stepping on block
-//    @Override
-//    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-//        if (!entity.bypassesSteppingEffects()) {
-//            StatusEffectInstance steppedPoison = new StatusEffectInstance(StatusEffects.POISON, 20 * 2, 0);
-//            ((LivingEntity) entity).addStatusEffect(steppedPoison);
-//        }
-//
-//        super.onSteppedOn(world, pos, state, entity);
-//    }
+    @Override
+    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
+        if (entity instanceof LivingEntity && !entity.bypassesSteppingEffects()) {
+            StatusEffectInstance steppedPoison = new StatusEffectInstance(StatusEffects.POISON, 20 * 2, 0);
+            ((LivingEntity) entity).addStatusEffect(steppedPoison);
+        }
+
+        super.onSteppedOn(world, pos, state, entity);
+    }
 }
