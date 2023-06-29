@@ -49,7 +49,7 @@ public class AbstractOrbiterEntity extends AbstractFlyingEntity {
     public void tickMovement() {
         // TODO: Don't do this in movement
         if (this.age % 10 == 0) {
-            this.world.addParticle(getParticle(), this.getParticleX(1), this.getRandomBodyY(), this.getParticleZ(0.2), 0.0, 0.05, 0.0);
+            this.getWorld().addParticle(getParticle(), this.getParticleX(1), this.getRandomBodyY(), this.getParticleZ(0.2), 0.0, 0.05, 0.0);
         }
 
         super.tickMovement();

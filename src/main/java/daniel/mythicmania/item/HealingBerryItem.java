@@ -22,14 +22,13 @@ public class HealingBerryItem extends Item {
             serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
         }
 
-        if (user instanceof PlayerEntity && !((PlayerEntity)user).getAbilities().creativeMode) {
-            stack.decrement(1);
-        }
-
-        if (!world.isClient) {
-            user.removeStatusEffect(StatusEffects.POISON);
-        }
+        if (canDecrementStack(user)) stack.decrement(1);
+        if (!world.isClient) user.removeStatusEffect(StatusEffects.POISON);
 
         return stack;
+    }
+
+    public boolean canDecrementStack(LivingEntity user) {
+        return user instanceof PlayerEntity && !((PlayerEntity)user).getAbilities().creativeMode;
     }
 }

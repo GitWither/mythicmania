@@ -1,4 +1,4 @@
-package daniel.mythicmania.item;
+package daniel.mythicmania.item.projectile;
 
 import daniel.mythicmania.entity.abstract_entity.AbstractUnstableThrowableEntity;
 import net.minecraft.entity.player.PlayerEntity;

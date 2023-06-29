@@ -34,18 +34,21 @@ public class WastedStaffItem extends SwordItem {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient) {
-            // TODO: Formatting
-            world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.WASTED_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 1F);
+            ItemStack itemStack = new ItemStack(MythicManiaItems.WASTED_STAFF_CHARGE);
+            WastedStaffChargeEntity projectile = new WastedStaffChargeEntity(world, user);
 
             if (!user.getAbilities().creativeMode) user.getItemCooldownManager().set(this, 6);
 
-            ItemStack itemStack = new ItemStack(MythicManiaItems.WASTED_STAFF_CHARGE);
-            WastedStaffChargeEntity projectile = new WastedStaffChargeEntity(world, user);
-            projectile.setItem(itemStack);
-            projectile.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 0.6F, 0F);
-            world.spawnEntity(projectile);
+            handleAndShootProjectile(projectile, itemStack, user, world);
+            world.playSound(null, user.getX(), user.getY(), user.getZ(), MythicManiaSoundEvents.WASTED_STAFF_FIRE, SoundCategory.NEUTRAL, 0.7F, 1F);
         }
 
         return super.use(world, user, hand);
+    }
+
+    public void handleAndShootProjectile(WastedStaffChargeEntity projectile, ItemStack itemStack, PlayerEntity user, World world) {
+        projectile.setItem(itemStack);
+        projectile.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 0.6F, 0F);
+        world.spawnEntity(projectile);
     }
 }

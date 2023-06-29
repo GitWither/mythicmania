@@ -6,7 +6,6 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.MathHelper;
-import org.joml.Vector3f;
 
 public class WastrelGliderEntityModel extends EntityModel<WastrelGliderEntity> {
 	private final ModelPart root;
@@ -43,6 +42,7 @@ public class WastrelGliderEntityModel extends EntityModel<WastrelGliderEntity> {
 		ModelPartData wing_r = root.addChild("wing_r", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
 		ModelPartData cube_r4 = wing_r.addChild("cube_r4", ModelPartBuilder.create().uv(0, 8).cuboid(-6.0F, 0.0F, -4.0F, 6.0F, 0.0F, 8.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.6981F));
+
 		return TexturedModelData.of(modelData, 32, 32);
 	}
 

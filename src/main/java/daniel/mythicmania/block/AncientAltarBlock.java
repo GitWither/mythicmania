@@ -23,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class AncientAltarBlock extends HorizontalFacingBlock implements BlockEntityProvider {
     public AncientAltarBlock() {
-        super(FabricBlockSettings.of(Material.STONE, MapColor.GRAY).nonOpaque().requiresTool().strength(3.0f, 3.0f).sounds(BlockSoundGroup.LODESTONE));
+        super(FabricBlockSettings.copyOf(Blocks.STONE).nonOpaque().requiresTool().strength(3.0f, 3.0f).sounds(BlockSoundGroup.LODESTONE));
     }
 
     @Override
@@ -41,14 +41,14 @@ public class AncientAltarBlock extends HorizontalFacingBlock implements BlockEnt
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getPlayerLookDirection());
+        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing());
     }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack stack = player.getStackInHand(hand);
 
-        if (stack.getItem() == MythicManiaItems.CHARGED_NUCLEAR_ORB || stack.getItem() == MythicManiaItems.CHARGED_RUINED_ORB) {
+        if (isEnteringValidOrb(stack)) {
             if (!world.isClient) {
                 BlockEntity blockEntity = world.getBlockEntity(pos);
 
@@ -64,6 +64,10 @@ public class AncientAltarBlock extends HorizontalFacingBlock implements BlockEnt
         }
 
         return super.onUse(state, world, pos, player, hand, hit);
+    }
+
+    public boolean isEnteringValidOrb(ItemStack stack) {
+        return stack.getItem() == MythicManiaItems.CHARGED_NUCLEAR_ORB || stack.getItem() == MythicManiaItems.CHARGED_RUINED_ORB;
     }
 
     @Nullable

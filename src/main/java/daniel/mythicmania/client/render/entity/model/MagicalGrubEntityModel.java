@@ -9,7 +9,6 @@ import net.minecraft.util.math.MathHelper;
 
 public class MagicalGrubEntityModel extends EntityModel<MagicalGrubEntity> {
     private final ModelPart root;
-
     private final ModelPart segment1;
     private final ModelPart segment2;
     private final ModelPart segment3;

@@ -17,7 +17,7 @@ public class OrbiterEntity extends AbstractOrbiterEntity {
 	@Override
 	protected void initGoals() {
 		super.initGoals();
-		this.goalSelector.add(0, new OrbiterShootCoreGoal(this));
+		this.goalSelector.add(0, new OrbiterShootCoreGoal(this, false));
 		this.goalSelector.add(1, new FlyAroundGoal(this, 20, 12));
 		this.targetSelector.add(0, new ActiveTargetGoal<>(this, ToxicOrbiterEntity.class, true));
 	}

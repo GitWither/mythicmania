@@ -1,6 +1,5 @@
 package daniel.mythicmania.block;
 
-import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -35,7 +34,7 @@ public class HarvesterBlock extends PlantBlock implements Fertilizable {
     }
 
     public HarvesterBlock() {
-        super(FabricBlockSettings.of(Material.PLANT, MapColor.GREEN).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES));
+        super(FabricBlockSettings.copyOf(Blocks.FLOWERING_AZALEA).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES));
     }
 
     @Override

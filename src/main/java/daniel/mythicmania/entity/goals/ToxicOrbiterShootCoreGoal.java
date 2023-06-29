@@ -1,6 +1,5 @@
 package daniel.mythicmania.entity.goals;
 
-import daniel.mythicmania.entity.projectile.OrbiterProjectileEntity;
 import daniel.mythicmania.entity.projectile.ToxicOrbiterProjectileEntity;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.LivingEntity;

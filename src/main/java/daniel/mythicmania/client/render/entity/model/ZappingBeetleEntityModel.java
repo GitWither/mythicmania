@@ -56,6 +56,7 @@ public class ZappingBeetleEntityModel extends EntityModel<ZappingBeetleEntity> {
         ModelPartData antenna2 = bone.addChild("antenna2", ModelPartBuilder.create(), ModelTransform.pivot(2.625F, -3.75F, -3.675F));
 
         ModelPartData cube_r8 = antenna2.addChild("cube_r8", ModelPartBuilder.create().uv(0, 10).cuboid(0.025F, 0.0F, -6.325F, 1.0F, 0.0F, 7.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, -0.25F, 0.0F, 0.0F, -0.1745F, -0.1309F));
+
         return TexturedModelData.of(modelData, 32, 32);
     }
 

@@ -1,6 +1,5 @@
 package daniel.mythicmania.item.material.armor;
 
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;

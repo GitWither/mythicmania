@@ -4,7 +4,6 @@ import daniel.mythicmania.entity.abstract_entity.AbstractFlyingEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.NoPenaltySolidTargeting;
 import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;

@@ -14,7 +14,7 @@ public class MoveOutOfWaterGoal extends Goal {
 	}
 
 	public boolean canStart() {
-		return this.mob.isOnGround() && this.mob.world.getFluidState(this.mob.getBlockPos()).isIn(FluidTags.WATER);
+		return this.mob.isOnGround() && this.mob.getWorld().getFluidState(this.mob.getBlockPos()).isIn(FluidTags.WATER);
 	}
 
 	public void start() {
@@ -30,7 +30,7 @@ public class MoveOutOfWaterGoal extends Goal {
 
 		// TODO: Review this for loop to see if it's ok
 		for (BlockPos pos : blockReplaceList) {
-			if (!this.mob.world.getFluidState(pos).isIn(FluidTags.WATER)) {
+			if (!this.mob.getWorld().getFluidState(pos).isIn(FluidTags.WATER)) {
 				blockPos = pos;
 				break;
 			}

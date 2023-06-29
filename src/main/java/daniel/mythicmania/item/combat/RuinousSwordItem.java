@@ -1,6 +1,5 @@
 package daniel.mythicmania.item.combat;
 
-import daniel.mythicmania.particle.MythicManiaParticles;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;

@@ -78,8 +78,6 @@ public class DemonGuardianEntityModel extends PlayerEntityModel<DemonGuardianEnt
     @Override
     public void setAngles(DemonGuardianEntity livingEntity, float f, float g, float h, float i, float j) {
         super.setAngles(livingEntity, f, g, h, i, j);
-
-//        bodyRemains.pitch = MathHelper.cos(handSwingProgress * 0.2f) * 0.2f;
     }
 
     @Override

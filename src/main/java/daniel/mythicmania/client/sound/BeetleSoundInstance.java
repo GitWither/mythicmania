@@ -12,10 +12,11 @@ public class BeetleSoundInstance extends MovingSoundInstance {
 
     public BeetleSoundInstance(AbstractFlyingEntity beetleEntity, SoundEvent sound, SoundCategory category) {
         super(sound, category, SoundInstance.createRandom());
+
         this.beetle = beetleEntity;
-        this.x = (float)beetleEntity.getX();
-        this.y = (float)beetleEntity.getY();
-        this.z = (float)beetleEntity.getZ();
+        this.x = (float) beetleEntity.getX();
+        this.y = (float) beetleEntity.getY();
+        this.z = (float) beetleEntity.getZ();
         this.repeat = true;
         this.repeatDelay = 0;
         this.volume = 0.0f;
@@ -27,6 +28,7 @@ public class BeetleSoundInstance extends MovingSoundInstance {
             this.setDone();
             return;
         }
+
         this.x = (float)this.beetle.getX();
         this.y = (float)this.beetle.getY();
         this.z = (float)this.beetle.getZ();
@@ -59,5 +61,4 @@ public class BeetleSoundInstance extends MovingSoundInstance {
     public boolean canPlay() {
         return !this.beetle.isSilent();
     }
-
 }

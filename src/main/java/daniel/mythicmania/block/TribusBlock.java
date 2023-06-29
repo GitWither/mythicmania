@@ -3,7 +3,6 @@ package daniel.mythicmania.block;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -12,7 +11,6 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -30,7 +28,7 @@ public class TribusBlock extends PlantBlock implements Fertilizable {
     private static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 15, 17, 15);
 
     public TribusBlock() {
-        super(FabricBlockSettings.of(Material.PLANT, MapColor.GREEN).noCollision().nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES));
+        super(FabricBlockSettings.copyOf(Blocks.SWEET_BERRY_BUSH).noCollision().nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES));
     }
 
     @Override

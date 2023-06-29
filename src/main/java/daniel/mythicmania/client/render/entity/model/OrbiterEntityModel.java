@@ -6,7 +6,6 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.math.MathHelper;
 
 public class OrbiterEntityModel<T extends Entity> extends EntityModel<OrbiterEntity> {
     private final ModelPart root;
@@ -35,6 +34,7 @@ public class OrbiterEntityModel<T extends Entity> extends EntityModel<OrbiterEnt
         ModelPartData segment1 = orbiter.addChild("segment1", ModelPartBuilder.create().uv(24, 10).cuboid(-2.36F, -3.54F, -2.36F, 4.0F, 7.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -3.54F, 0.0F));
 
         ModelPartData segment2 = orbiter.addChild("segment2", ModelPartBuilder.create().uv(21, 0).cuboid(-1.18F, -1.18F, -1.18F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 3.54F, 0.0F));
+
         return TexturedModelData.of(modelData, 64, 64);
     }
 

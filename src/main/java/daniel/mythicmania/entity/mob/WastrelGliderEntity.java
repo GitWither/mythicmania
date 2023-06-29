@@ -50,7 +50,7 @@ public class WastrelGliderEntity extends AbstractFlyingEntity {
 	public void tickMovement() {
 		super.tickMovement();
 		if (this.isTouchingWaterOrRain()) {
-			this.world.addParticle(ParticleTypes.SMOKE, this.getParticleX(0.5), this.getRandomBodyY(), this.getParticleZ(0.5), 0.04, 0.04, 0.04);
+			this.getWorld().addParticle(ParticleTypes.SMOKE, this.getParticleX(0.5), this.getRandomBodyY(), this.getParticleZ(0.5), 0.04, 0.04, 0.04);
 		}
 	}
 }

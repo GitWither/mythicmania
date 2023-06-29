@@ -37,7 +37,6 @@ public class EntityCapeFeatureRenderer extends FeatureRenderer<WastedDemonEntity
         double unitCircleX = -MathHelper.cos(deltaYaw * ((float)Math.PI / 180));
 
         float capeTilt = (float)capeDeltaY * 10.0f;
-
         capeTilt = MathHelper.clamp(capeTilt, -6.0f, 32.0f);
 
         float capeX = (float)(capeDeltaX * unitCircleY + capeDeltaZ * unitCircleX) * 100.0f;
@@ -46,10 +45,8 @@ public class EntityCapeFeatureRenderer extends FeatureRenderer<WastedDemonEntity
         float capeZ = (float)(capeDeltaX * unitCircleX - capeDeltaZ * unitCircleY) * 100.0f;
         capeZ = MathHelper.clamp(capeZ, -20.0f, 20.0f);
 
-        if (capeX < 0.0f) {
-            capeX = 0.0f;
-        }
-        //float t = MathHelper.lerp(tickDelta, wastedDemon.prevStrideDistance, abstractClientPlayerEntity.strideDistance);
+        if (capeX < 0.0f) capeX = 0.0f;
+
         capeTilt += MathHelper.sin(MathHelper.lerp(tickDelta, wastedDemon.prevHorizontalSpeed, wastedDemon.horizontalSpeed) * 6.0f) * 32.0f * 0.9f;
 
         matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(6.0f + capeX / 2.0f + capeTilt));

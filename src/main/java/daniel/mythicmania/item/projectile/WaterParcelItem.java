@@ -1,4 +1,4 @@
-package daniel.mythicmania.item;
+package daniel.mythicmania.item.projectile;
 
 import daniel.mythicmania.entity.projectile.WaterParcelEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,8 +12,6 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
 public class WaterParcelItem extends Item {
-    short cooldown = 3;
-
     public WaterParcelItem(Settings settings) {
         super(settings);
     }
@@ -24,7 +22,7 @@ public class WaterParcelItem extends Item {
         if (!world.isClient) {
             world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 1F);
 
-            user.getItemCooldownManager().set(this, cooldown);
+            user.getItemCooldownManager().set(this, 3);
 
             // Spawns the projectile
             WaterParcelEntity projectile = new WaterParcelEntity(world, user);

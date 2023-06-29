@@ -33,13 +33,9 @@ public class PoisonousGrubEntity extends AbstractGrubEntity {
 
     @Override
     public boolean tryAttack(Entity target) {
-        // FIXME: Rewrite
-        if (super.tryAttack(target) && target instanceof LivingEntity) {
-            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 5 * 20, 0), this);
-            return true;
-        }
-
-        return false;
+        boolean canAttack = super.tryAttack(target) && target instanceof LivingEntity;
+        if (canAttack) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 5 * 20, 0), this);
+        return canAttack;
     }
 
     public static DefaultAttributeContainer.Builder createPoisonousGrubAttributes() {

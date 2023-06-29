@@ -1,6 +1,5 @@
 package daniel.mythicmania.mixin;
 
-import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -56,7 +55,7 @@ public abstract class MixinPlayerEntity extends LivingEntity {
             if (this.hasStatusEffect(StatusEffects.POISON)) {
                 this.removeStatusEffect(StatusEffects.POISON);
 
-                if (world.isClient) {
+                if (this.getWorld().isClient) {
                     World world = this.getWorld();
                     BlockPos pos = this.getBlockPos();
                     final double xPos = pos.getX() + random.nextDouble();

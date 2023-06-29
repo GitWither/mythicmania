@@ -11,9 +11,11 @@ import net.minecraft.world.World;
 public class OrbiterShootCoreGoal extends Goal {
 	private final PathAwareEntity orbiter;
 	public int cooldown;
+	public final boolean isToxicGoal;
 
-	public OrbiterShootCoreGoal(PathAwareEntity orbiter) {
+	public OrbiterShootCoreGoal(PathAwareEntity orbiter, boolean isToxicGoal) {
 		this.orbiter = orbiter;
+		this.isToxicGoal = isToxicGoal;
 	}
 
 	@Override
@@ -30,8 +32,9 @@ public class OrbiterShootCoreGoal extends Goal {
 	public void tick() {
 		World world = orbiter.getWorld();
 		LivingEntity attackTarget = this.orbiter.getTarget();
-		ItemStack charge = new ItemStack(MythicManiaItems.ORBITER_PROJECTILE);
-		OrbiterProjectileEntity projectile = new OrbiterProjectileEntity(world, this.orbiter);
+		ItemStack charge = new ItemStack(isToxicGoal ? MythicManiaItems.TOXIC_ORBITER_PROJECTILE : MythicManiaItems.ORBITER_PROJECTILE);
+
+		OrbiterProjectileEntity projectile = new OrbiterProjectileEntity(world, this.orbiter); // come back to
 		projectile.setItem(charge);
 		projectile.setVelocity(this.orbiter, this.orbiter.getPitch(), this.orbiter.getYaw(), 0.0F, 0.72F, 0F);
 

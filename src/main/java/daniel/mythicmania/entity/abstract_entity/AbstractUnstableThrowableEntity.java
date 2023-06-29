@@ -1,6 +1,5 @@
 package daniel.mythicmania.entity.abstract_entity;
 
-import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;

@@ -4,12 +4,8 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
@@ -26,7 +22,7 @@ public class RuinedOreBlock extends ExperienceDroppingBlock {
 		double yPos = (double)pos.getY() + 0.8;
 		double zPos = (double)pos.getZ() + random.nextDouble();
 
-		world.addParticle(ParticleTypes.FLAME, xPos, yPos, zPos, random.nextInt(2) / 3, 0.1f, random.nextInt(2) / 3);
+		world.addParticle(ParticleTypes.FLAME, xPos, yPos, zPos, (float) random.nextInt(2) / 3, 0.1f, (float) random.nextInt(2) / 3);
 		super.onSteppedOn(world, pos, state, entity);
 	}
 }

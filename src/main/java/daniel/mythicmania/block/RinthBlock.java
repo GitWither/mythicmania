@@ -16,13 +16,12 @@ import org.jetbrains.annotations.Nullable;
 
 public class RinthBlock extends Block {
     public static final BooleanProperty HANGING = Properties.HANGING;
+    private static final VoxelShape SHAPE = Block.createCuboidShape(1, 0, 1, 15, 4, 15);
 
     public RinthBlock() {
-        super(FabricBlockSettings.of(Material.PLANT, MapColor.GREEN).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES));
+        super(FabricBlockSettings.copyOf(Blocks.FLOWERING_AZALEA).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES));
         this.setDefaultState(this.getStateManager().getDefaultState().with(HANGING, false));
     }
-
-    private static VoxelShape SHAPE = Block.createCuboidShape(1, 0, 1, 15, 4, 15);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

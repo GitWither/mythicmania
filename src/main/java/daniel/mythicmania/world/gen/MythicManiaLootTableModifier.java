@@ -16,13 +16,13 @@ import net.minecraft.util.Identifier;
 public class MythicManiaLootTableModifier {
 	public static void registerLootTableModifiers() {
 		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-			appendItemToLootTable(LootTables.VILLAGE_DESERT_HOUSE_CHEST, MythicManiaItems.WASTED_ESSENCE, 0.4f, id, tableBuilder);
-			appendItemToLootTable(LootTables.ABANDONED_MINESHAFT_CHEST, MythicManiaItems.WASTED_ESSENCE, 0.4f, id, tableBuilder);
-			appendItemToLootTable(LootTables.VILLAGE_WEAPONSMITH_CHEST, MythicManiaItems.WASTED_ESSENCE, 0.6f, id, tableBuilder);
-			appendItemToLootTable(LootTables.VILLAGE_TOOLSMITH_CHEST, MythicManiaItems.WASTED_ESSENCE, 0.6f, id, tableBuilder);
-
-			appendItemToLootTable(LootTables.ANCIENT_CITY_CHEST, MythicManiaItems.CHARGED_RUINED_ORB, 0.5f, id, tableBuilder);
-			appendItemToLootTable(LootTables.ANCIENT_CITY_CHEST, MythicManiaItems.CHARGED_NUCLEAR_ORB, 0.5f, id, tableBuilder);
+//			appendItemToLootTable(LootTables.VILLAGE_DESERT_HOUSE_CHEST, MythicManiaItems.WASTED_ESSENCE, 0.4f, id, tableBuilder);
+//			appendItemToLootTable(LootTables.ABANDONED_MINESHAFT_CHEST, MythicManiaItems.WASTED_ESSENCE, 0.4f, id, tableBuilder);
+//			appendItemToLootTable(LootTables.VILLAGE_WEAPONSMITH_CHEST, MythicManiaItems.WASTED_ESSENCE, 0.6f, id, tableBuilder);
+//			appendItemToLootTable(LootTables.VILLAGE_TOOLSMITH_CHEST, MythicManiaItems.WASTED_ESSENCE, 0.6f, id, tableBuilder);
+//
+//			appendItemToLootTable(LootTables.ANCIENT_CITY_CHEST, MythicManiaItems.CHARGED_RUINED_ORB, 0.5f, id, tableBuilder);
+//			appendItemToLootTable(LootTables.ANCIENT_CITY_CHEST, MythicManiaItems.CHARGED_NUCLEAR_ORB, 0.5f, id, tableBuilder);
 		});
 	}
 

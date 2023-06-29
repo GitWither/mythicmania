@@ -1,12 +1,9 @@
 package daniel.mythicmania.client.render.entity.renderers;
 
 import daniel.mythicmania.MythicMania;
-import daniel.mythicmania.client.render.entity.feature.OrbiterCoreRenderer;
 import daniel.mythicmania.client.render.entity.feature.ToxicOrbiterCoreRenderer;
-import daniel.mythicmania.client.render.entity.model.OrbiterEntityModel;
 import daniel.mythicmania.client.render.entity.model.ToxicOrbiterEntityModel;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
-import daniel.mythicmania.entity.mob.OrbiterEntity;
 import daniel.mythicmania.entity.mob.ToxicOrbiterEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;

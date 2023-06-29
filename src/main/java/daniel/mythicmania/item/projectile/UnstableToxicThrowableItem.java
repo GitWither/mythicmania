@@ -1,7 +1,8 @@
-package daniel.mythicmania.item;
+package daniel.mythicmania.item.projectile;
 
 import daniel.mythicmania.entity.abstract_entity.AbstractUnstableThrowableEntity;
 import daniel.mythicmania.entity.projectile.UnstableToxicThrowableEntity;
+import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
