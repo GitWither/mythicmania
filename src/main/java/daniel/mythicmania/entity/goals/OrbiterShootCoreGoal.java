@@ -1,10 +1,12 @@
 package daniel.mythicmania.entity.goals;
 
 import daniel.mythicmania.entity.projectile.OrbiterProjectileEntity;
+import daniel.mythicmania.entity.projectile.ToxicOrbiterProjectileEntity;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -34,7 +36,9 @@ public class OrbiterShootCoreGoal extends Goal {
 		LivingEntity attackTarget = this.orbiter.getTarget();
 		ItemStack charge = new ItemStack(isToxicGoal ? MythicManiaItems.TOXIC_ORBITER_PROJECTILE : MythicManiaItems.ORBITER_PROJECTILE);
 
-		OrbiterProjectileEntity projectile = new OrbiterProjectileEntity(world, this.orbiter); // come back to
+		ThrownItemEntity projectile = isToxicGoal
+				? new ToxicOrbiterProjectileEntity(world, this.orbiter)
+				: new OrbiterProjectileEntity(world, this.orbiter);
 		projectile.setItem(charge);
 		projectile.setVelocity(this.orbiter, this.orbiter.getPitch(), this.orbiter.getYaw(), 0.0F, 0.72F, 0F);
 
