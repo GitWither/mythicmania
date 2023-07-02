@@ -10,22 +10,21 @@ import net.minecraft.util.math.MathHelper;
 public class PoisonousGrubEntityModel extends EntityModel<PoisonousGrubEntity> {
     private final ModelPart root;
     private final ModelPart body;
-    private final ModelPart segment1;
-    private final ModelPart segment2;
-    private final ModelPart segment3;
-    private final ModelPart segment4;
-    private final ModelPart segment5;
+    private final ModelPart bodySegment1;
+    private final ModelPart bodySegment2;
+    private final ModelPart tail;
+    private final ModelPart bodySegment3;
+    private final ModelPart head;
 
     public PoisonousGrubEntityModel(ModelPart part) {
         root = part;
         body = root.getChild("grub_poison");
 
-        // TODO: Rename vars to be more descriptive
-        segment1 = body.getChild("bodyseg2");
-        segment2 = segment1.getChild("bodyseg3");
-        segment3 = segment2.getChild("tail");
-        segment4 = body.getChild("bodyseg1");
-        segment5 = segment4.getChild("head");
+        bodySegment1 = body.getChild("bodyseg2");
+        bodySegment2 = bodySegment1.getChild("bodyseg3");
+        tail = bodySegment2.getChild("tail");
+        bodySegment3 = body.getChild("bodyseg1");
+        head = bodySegment3.getChild("head");
     }
 
     public static TexturedModelData getTexturedModelData() {
@@ -56,11 +55,11 @@ public class PoisonousGrubEntityModel extends EntityModel<PoisonousGrubEntity> {
 
     @Override
     public void setAngles(PoisonousGrubEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-        segment1.yaw = MathHelper.cos(animationProgress * 0.8f) * 0.1f;
-        segment2.yaw = MathHelper.sin(animationProgress * 0.8f) * 0.04f;
-        segment3.yaw = MathHelper.cos(animationProgress * 0.9f) * 0.03f;
-        segment4.yaw = MathHelper.sin(animationProgress * 0.8f) * 0.04f;
-        segment5.yaw = MathHelper.cos(animationProgress * 0.8f) * 0.08f;
+        bodySegment1.yaw = MathHelper.cos(animationProgress * 0.8f) * 0.1f;
+        bodySegment2.yaw = MathHelper.sin(animationProgress * 0.8f) * 0.04f;
+        tail.yaw = MathHelper.cos(animationProgress * 0.9f) * 0.03f;
+        bodySegment3.yaw = MathHelper.sin(animationProgress * 0.8f) * 0.04f;
+        head.yaw = MathHelper.cos(animationProgress * 0.8f) * 0.08f;
     }
 
     @Override

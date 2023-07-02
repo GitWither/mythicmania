@@ -9,17 +9,16 @@ import net.minecraft.util.math.MathHelper;
 
 public class MagicalGrubEntityModel extends EntityModel<MagicalGrubEntity> {
     private final ModelPart root;
-    private final ModelPart segment1;
-    private final ModelPart segment2;
-    private final ModelPart segment3;
+    private final ModelPart bodySegment1;
+    private final ModelPart bodySegment2;
+    private final ModelPart bodySegment3;
 
     public MagicalGrubEntityModel(ModelPart part) {
         root = part;
 
-        // TODO: Rename vars
-        segment1 = root.getChild("grub").getChild("bone");
-        segment2 = root.getChild("grub").getChild("bone2");
-        segment3 = root.getChild("grub").getChild("bone3");
+        bodySegment1 = root.getChild("grub").getChild("bone");
+        bodySegment2 = root.getChild("grub").getChild("bone2");
+        bodySegment3 = root.getChild("grub").getChild("bone3");
     }
 
     public static TexturedModelData getTexturedModelData() {
@@ -38,9 +37,9 @@ public class MagicalGrubEntityModel extends EntityModel<MagicalGrubEntity> {
 
     @Override
     public void setAngles(MagicalGrubEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-        segment1.yaw = MathHelper.cos(animationProgress * 0.8f) * 0.1f;
-        segment2.yaw = MathHelper.sin(animationProgress * 0.8f) * 0.04f;
-        segment3.yaw = MathHelper.sin(animationProgress * 0.8f) * 0.04f;
+        bodySegment1.yaw = MathHelper.cos(animationProgress * 0.8f) * 0.1f;
+        bodySegment2.yaw = MathHelper.sin(animationProgress * 0.8f) * 0.04f;
+        bodySegment3.yaw = MathHelper.sin(animationProgress * 0.8f) * 0.04f;
     }
 
     @Override

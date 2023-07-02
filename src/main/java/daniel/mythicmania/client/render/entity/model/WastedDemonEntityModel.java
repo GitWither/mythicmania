@@ -52,6 +52,7 @@ public class WastedDemonEntityModel<T extends Entity> extends PlayerEntityModel<
             CrossbowPosing.meleeAttack(this.rightArm, this.leftArm, entity, this.handSwingProgress, animationProgress);
             return;
         }
+
         super.animateArms(entity, animationProgress);
     }
 

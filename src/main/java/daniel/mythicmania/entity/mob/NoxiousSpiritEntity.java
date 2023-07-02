@@ -1,5 +1,6 @@
 package daniel.mythicmania.entity.mob;
 
+import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.particle.MythicManiaParticles;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -81,5 +82,19 @@ public class NoxiousSpiritEntity extends HostileEntity {
     public void onStoppedTrackingBy(ServerPlayerEntity player) {
         super.onStoppedTrackingBy(player);
         this.bossBar.removePlayer(player);
+    }
+
+    @Override
+    public void kill() {
+        super.kill();
+
+        if (!getWorld().isClient) {
+            for (int i = 0; i < 3; i++) {
+                ToxicOrbiterEntity toxicOrbiter = MythicManiaEntityTypes.TOXIC_ORBITER_ENTITY.create(getWorld());
+                if (toxicOrbiter == null) return;
+                toxicOrbiter.refreshPositionAndAngles(this.getX(), this.getY(), this.getZ(), this.getYaw(), 0.0F);
+                getWorld().spawnEntity(toxicOrbiter);
+            }
+        }
     }
 }

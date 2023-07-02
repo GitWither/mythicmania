@@ -10,16 +10,16 @@ import net.minecraft.entity.Entity;
 public class OrbiterEntityModel<T extends Entity> extends EntityModel<OrbiterEntity> {
     private final ModelPart root;
     private final ModelPart main;
-    private final ModelPart segment1; // TODO: Rename to be more descriptive
-    private final ModelPart segment2;
+    private final ModelPart bodySegment1;
+    private final ModelPart bodySegment2;
     private final ModelPart head;
 
     public OrbiterEntityModel(ModelPart part) {
         root = part;
         main = root.getChild("orbiter");
         head = main.getChild("head");
-        segment1 = main.getChild("segment1");
-        segment2 = main.getChild("segment2");
+        bodySegment1 = main.getChild("segment1");
+        bodySegment2 = main.getChild("segment2");
     }
 
     // Defines the geometry
@@ -40,8 +40,8 @@ public class OrbiterEntityModel<T extends Entity> extends EntityModel<OrbiterEnt
 
     @Override
     public void setAngles(OrbiterEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-        segment1.yaw = animationProgress * 0.4f;
-        segment2.yaw = -(animationProgress * 0.4f);
+        bodySegment1.yaw = animationProgress * 0.4f;
+        bodySegment2.yaw = -(animationProgress * 0.4f);
     }
 
     @Override
