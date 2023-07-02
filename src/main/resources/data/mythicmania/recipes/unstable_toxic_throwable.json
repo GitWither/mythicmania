@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "mythicmania:toxic_orbiter_core"
+  },
+  "result": "mythicmania:unstable_toxic_throwable",
+  "experience": 0.25,
+  "cookingtime": 100
+}

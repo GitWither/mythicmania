@@ -7,7 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class UnstableToxicThrowableItem extends UnstableThrowableItem{
+public class UnstableToxicThrowableItem extends UnstableThrowableItem {
 	public UnstableToxicThrowableItem(Settings settings) {
 		super(settings);
 	}

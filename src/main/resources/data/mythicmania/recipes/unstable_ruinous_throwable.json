@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "mythicmania:orbiter_core"
+  },
+  "result": "mythicmania:unstable_ruinous_throwable",
+  "experience": 0.25,
+  "cookingtime": 100
+}
