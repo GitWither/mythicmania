@@ -48,6 +48,13 @@ public final class MythicManiaEntityTypes {
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, WastedDemonEntity::new).fireImmune().dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
     );
 
+    public static final EntityModelLayer NOXIOUS_SPIRIT_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "noxious_spirit"), "root");
+    public static final EntityType<NoxiousSpiritEntity> NOXIOUS_SPIRIT_ENTITY = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(MythicMania.MOD_ID, "noxious_spirit"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, NoxiousSpiritEntity::new).dimensions(EntityDimensions.fixed(2, 2)).build()
+    );
+
     public static final EntityModelLayer DEMON_GUARDIAN_LAYER = new EntityModelLayer(new Identifier(MythicMania.MOD_ID, "demon_guardian"), "root");
     public static final EntityType<DemonGuardianEntity> DEMON_GUARDIAN_ENTITY = Registry.register(
             Registries.ENTITY_TYPE,
@@ -144,6 +151,7 @@ public final class MythicManiaEntityTypes {
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, PoisonousGrubEntity.createPoisonousGrubAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, ZappingBeetleEntity.createZappingBeetleAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.WASTED_DEMON_ENTITY, WastedDemonEntity.createWastedDemonAttributes());
+        FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.NOXIOUS_SPIRIT_ENTITY, NoxiousSpiritEntity.createNoxiousSpiritAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, DemonGuardianEntity.createDemonGuardianAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.ORBITER_ENTITY, OrbiterEntity.createOrbiterAttributes());
         FabricDefaultAttributeRegistry.register(MythicManiaEntityTypes.TOXIC_ORBITER_ENTITY, AbstractOrbiterEntity.createOrbiterAttributes());
@@ -156,6 +164,7 @@ public final class MythicManiaEntityTypes {
         EntityRendererRegistry.register(MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, PoisonousGrubEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, ZappingBeetleEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.WASTED_DEMON_ENTITY, WastedDemonEntityRenderer::new);
+        EntityRendererRegistry.register(MythicManiaEntityTypes.NOXIOUS_SPIRIT_ENTITY, NoxiousSpiritEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, DemonGuardianEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.WATER_PARCEL_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(MythicManiaEntityTypes.WASTED_STAFF_CHARGE_ENTITY, FlyingItemEntityRenderer::new);
@@ -173,6 +182,7 @@ public final class MythicManiaEntityTypes {
         EntityModelLayerRegistry.registerModelLayer(POISONOUS_GRUB_LAYER, PoisonousGrubEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ZAPPING_BEETLE_LAYER, ZappingBeetleEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(WASTED_DEMON_LAYER, WastedDemonEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(NOXIOUS_SPIRIT_LAYER, NoxiousSpiritEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(DEMON_GUARDIAN_LAYER, DemonGuardianEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ORBITER_LAYER, OrbiterEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(TOXIC_ORBITER_LAYER, ToxicOrbiterEntityModel::getTexturedModelData);

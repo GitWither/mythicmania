@@ -123,11 +123,9 @@ public class WastedDemonEntity extends HostileEntity {
 
     @Override
     public boolean tryAttack(Entity target) {
-        if (super.tryAttack(target) && target instanceof LivingEntity livingEntity) {
-            return livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 5 * 20, 3), this);
-        }
-
-        return false;
+        boolean canAttack = super.tryAttack(target) && target instanceof LivingEntity;
+        if (canAttack) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 5 * 20, 0), this);
+        return canAttack;
     }
 
     public static DefaultAttributeContainer.Builder createWastedDemonAttributes() {

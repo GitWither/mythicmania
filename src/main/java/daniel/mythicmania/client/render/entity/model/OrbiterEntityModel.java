@@ -10,7 +10,7 @@ import net.minecraft.entity.Entity;
 public class OrbiterEntityModel<T extends Entity> extends EntityModel<OrbiterEntity> {
     private final ModelPart root;
     private final ModelPart main;
-    private final ModelPart segment1;
+    private final ModelPart segment1; // TODO: Rename to be more descriptive
     private final ModelPart segment2;
     private final ModelPart head;
 

@@ -15,6 +15,8 @@ public class MagicalGrubEntityModel extends EntityModel<MagicalGrubEntity> {
 
     public MagicalGrubEntityModel(ModelPart part) {
         root = part;
+
+        // TODO: Rename vars
         segment1 = root.getChild("grub").getChild("bone");
         segment2 = root.getChild("grub").getChild("bone2");
         segment3 = root.getChild("grub").getChild("bone3");
@@ -30,6 +32,7 @@ public class MagicalGrubEntityModel extends EntityModel<MagicalGrubEntity> {
         ModelPartData bone2 = grub.addChild("bone2", ModelPartBuilder.create().uv(0, 8).cuboid(-1.5442F, -1.6776F, -5.0632F, 2.0F, 2.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -0.015F, 0.0F));
 
         ModelPartData bone3 = grub.addChild("bone3", ModelPartBuilder.create().uv(8, 8).cuboid(-1.5972F, -1.6776F, 3.1632F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -0.015F, 0.0F));
+
         return TexturedModelData.of(modelData, 16, 16);
     }
 

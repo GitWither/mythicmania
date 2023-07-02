@@ -49,6 +49,7 @@ public class MythicManiaItemGroups {
                                         entries.add(MythicManiaItems.POISONOUS_GRUB_SPAWN_EGG);
                                         entries.add(MythicManiaItems.ZAPPING_BEETLE_SPAWN_EGG);
                                         entries.add(MythicManiaItems.WASTED_DEMON_SPAWN_EGG);
+                                        entries.add(MythicManiaItems.NOXIOUS_SPIRIT_SPAWN_EGG);
                                         entries.add(MythicManiaItems.DEMON_GUARDIAN_SPAWN_EGG);
                                         entries.add(MythicManiaItems.ORBITER_SPAWN_EGG);
                                         entries.add(MythicManiaItems.TOXIC_ORBITER_SPAWN_EGG);

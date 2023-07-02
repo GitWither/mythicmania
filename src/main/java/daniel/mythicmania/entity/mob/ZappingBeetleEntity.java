@@ -34,12 +34,9 @@ public class ZappingBeetleEntity extends AbstractFlyingEntity {
 
     @Override
     public boolean tryAttack(Entity target) {
-        final StatusEffectInstance stun = new StatusEffectInstance(StatusEffects.SLOWNESS, 6*20, 4, false, false, true);
-        if (target instanceof LivingEntity entity) {
-            entity.addStatusEffect(stun);
-        }
-        
-        return true;
+        boolean canAttack = super.tryAttack(target) && target instanceof LivingEntity;
+        if (canAttack) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 5 * 20, 0), this);
+        return canAttack;
     }
 
     public static DefaultAttributeContainer.Builder createZappingBeetleAttributes() {

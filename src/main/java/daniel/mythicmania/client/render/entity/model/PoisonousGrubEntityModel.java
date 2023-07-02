@@ -19,6 +19,8 @@ public class PoisonousGrubEntityModel extends EntityModel<PoisonousGrubEntity> {
     public PoisonousGrubEntityModel(ModelPart part) {
         root = part;
         body = root.getChild("grub_poison");
+
+        // TODO: Rename vars to be more descriptive
         segment1 = body.getChild("bodyseg2");
         segment2 = segment1.getChild("bodyseg3");
         segment3 = segment2.getChild("tail");

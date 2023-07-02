@@ -9,7 +9,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class UnstableThrowableItem extends Item {
+public abstract class UnstableThrowableItem extends Item {
 	public UnstableThrowableItem(Settings settings) {
 		super(settings);
 	}

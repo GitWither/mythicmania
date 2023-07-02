@@ -7,6 +7,8 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -57,13 +59,12 @@ public class DemonGuardianEntity extends HostileEntity {
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
 
+    // TODO: Check concerns about stack overflow
     @Override
-    public boolean tryAttack(Entity entity) {
-        if (super.tryAttack(entity) && entity instanceof LivingEntity livingEntity) {
-            return tryAttack(entity); // TODO: This is gonna cause a stack overflow...
-        }
-
-        return false;
+    public boolean tryAttack(Entity target) {
+        boolean canAttack = super.tryAttack(target) && target instanceof LivingEntity;
+        if (canAttack) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 5 * 20, 0), this);
+        return canAttack;
     }
 
     public static DefaultAttributeContainer.Builder createDemonGuardianAttributes() {

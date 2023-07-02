@@ -13,7 +13,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class AbstractOrbiterEntity extends AbstractFlyingEntity {
+public abstract class AbstractOrbiterEntity extends AbstractFlyingEntity {
     protected AbstractOrbiterEntity(EntityType<? extends AbstractFlyingEntity> entityType, World world) {
         super(entityType, world);
         this.experiencePoints = 210;

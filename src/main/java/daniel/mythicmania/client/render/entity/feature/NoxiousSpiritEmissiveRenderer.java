@@ -9,12 +9,11 @@ import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
 
-// TODO: get rid of redundant emissive texture classes
 @Environment(EnvType.CLIENT)
-public class DemonEyesRenderer<T extends Entity, M extends EntityModel<T>> extends EyesFeatureRenderer<T, M> {
-    private static final RenderLayer EYES = RenderLayer.getEyes(new Identifier("mythicmania:textures/entity/wasted_demon/demon_eyes.png"));
+public class NoxiousSpiritEmissiveRenderer<T extends Entity, M extends EntityModel<T>> extends EyesFeatureRenderer<T, M> {
+    private static final RenderLayer EYES = RenderLayer.getEyes(new Identifier("mythicmania:textures/entity/noxious_spirit/noxious_spirit_e.png"));
 
-    public DemonEyesRenderer(FeatureRendererContext<T, M> featureRendererContext) {
+    public NoxiousSpiritEmissiveRenderer(FeatureRendererContext<T, M> featureRendererContext) {
         super(featureRendererContext);
     }
 

@@ -7,6 +7,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.ActiveTargetGoal;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.world.World;
 
 public class OrbiterEntity extends AbstractOrbiterEntity {
@@ -24,11 +26,13 @@ public class OrbiterEntity extends AbstractOrbiterEntity {
 
 	@Override
 	public boolean tryAttack(Entity target) {
-		if (super.tryAttack(target) && target instanceof LivingEntity livingEntity) {
-			livingEntity.setOnFireFor(3);
-			return true;
+		boolean canAttack = super.tryAttack(target) && target instanceof LivingEntity;
+
+		if (canAttack) {
+			((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 5 * 20, 0), this);
+			target.setOnFireFor(3);
 		}
 
-		return false;
+		return canAttack;
 	}
 }

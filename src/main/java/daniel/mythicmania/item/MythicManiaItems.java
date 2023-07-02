@@ -9,7 +9,6 @@ import daniel.mythicmania.item.material.armor.NuclearArmorMaterial;
 import daniel.mythicmania.item.material.armor.RuinousArmorMaterial;
 import daniel.mythicmania.item.material.tool.MythicManiaToolMaterials;
 import daniel.mythicmania.item.projectile.*;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -61,6 +60,7 @@ public final class MythicManiaItems {
     public static Item WASTED_DEMON_SPAWN_EGG;
     public static Item DEMON_GUARDIAN_SPAWN_EGG;
     public static Item ORBITER_SPAWN_EGG;
+    public static Item NOXIOUS_SPIRIT_SPAWN_EGG;
     public static Item TOXIC_ORBITER_SPAWN_EGG;
     public static Item WASTREL_GLIDER_SPAWN_EGG;
 
@@ -458,6 +458,14 @@ public final class MythicManiaItems {
                 new Item.Settings()
             )
         );
+
+        NOXIOUS_SPIRIT_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "noxious_spirit_spawn_egg"),
+            new SpawnEggItem(
+                    MythicManiaEntityTypes.NOXIOUS_SPIRIT_ENTITY, 0x35323e, 0x598f2f,
+                    new Item.Settings()
+            )
+        );
+
 
         DEMON_GUARDIAN_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "demon_guardian_spawn_egg"),
             new SpawnEggItem(
