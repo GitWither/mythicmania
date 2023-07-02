@@ -2,8 +2,8 @@ package daniel.mythicmania.client.render.entity.renderers;
 
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.client.render.entity.feature.EntityCapeFeatureRenderer;
+import daniel.mythicmania.client.render.entity.feature.MythicManiaEmissiveFeatureRenderer;
 import daniel.mythicmania.client.render.entity.model.WastedDemonEntityModel;
-import daniel.mythicmania.client.render.entity.feature.DemonEyesRenderer;
 import daniel.mythicmania.entity.*;
 import daniel.mythicmania.entity.mob.WastedDemonEntity;
 import net.minecraft.client.render.entity.BipedEntityRenderer;
@@ -13,10 +13,12 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
 
 public class WastedDemonEntityRenderer extends BipedEntityRenderer<WastedDemonEntity, WastedDemonEntityModel<Entity>> {
+    private static final Identifier EMISSIVE_TEXTURE = new Identifier("mythicmania:textures/entity/wasted_demon/demon_eyes.png");
+
     public WastedDemonEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new WastedDemonEntityModel<Entity>(context.getPart(MythicManiaEntityTypes.WASTED_DEMON_LAYER)), 0.5f);
         this.addFeature(new EntityCapeFeatureRenderer(this, this.getCapeTexture()));
-        this.addFeature(new DemonEyesRenderer<>(this));
+        this.addFeature(new MythicManiaEmissiveFeatureRenderer<>(this, EMISSIVE_TEXTURE));
     }
 
     @Override

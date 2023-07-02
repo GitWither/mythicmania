@@ -10,14 +10,15 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
-public class OrbiterCoreRenderer<T extends Entity, M extends EntityModel<T>> extends EyesFeatureRenderer<T, M> {
-    private static final RenderLayer EYES = RenderLayer.getEyes(new Identifier("mythicmania:textures/entity/orbiter/orbiter_e.png"));
+public class MythicManiaEmissiveFeatureRenderer<T extends Entity, M extends EntityModel<T>> extends EyesFeatureRenderer<T, M> {
+    private final Identifier emissiveTexture;
 
-    public OrbiterCoreRenderer(FeatureRendererContext<T, M> featureRendererContext) {
+    public MythicManiaEmissiveFeatureRenderer(FeatureRendererContext<T, M> featureRendererContext, Identifier emissiveTexture) {
         super(featureRendererContext);
+        this.emissiveTexture = emissiveTexture;
     }
 
     public RenderLayer getEyesTexture() {
-        return EYES;
+        return RenderLayer.getEyes(emissiveTexture);
     }
 }
