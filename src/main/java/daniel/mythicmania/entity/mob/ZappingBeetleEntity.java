@@ -29,7 +29,7 @@ public class ZappingBeetleEntity extends AbstractFlyingEntity {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new MeleeAttackGoal(this, 1f, false));
         this.goalSelector.add(2, new FlyAroundGoal(this, 8, 5));
-        this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
+        this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
     }
 
     @Override

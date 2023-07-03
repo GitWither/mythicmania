@@ -16,11 +16,10 @@ public class ToxicOrbiterEntity extends AbstractOrbiterEntity {
 
 	@Override
 	protected void initGoals() {
-		// TODO: Fix up priorities
-		this.goalSelector.add(1, new LookAtEntityGoal(this, PlayerEntity.class, 6));
-		this.goalSelector.add(2, new LookAroundGoal(this));
-		this.goalSelector.add(3, new AttackGoal(this));
-		this.goalSelector.add(4, new SwimGoal(this));
+		this.goalSelector.add(2, new LookAtEntityGoal(this, PlayerEntity.class, 6));
+		this.goalSelector.add(3, new LookAroundGoal(this));
+		this.goalSelector.add(0, new AttackGoal(this));
+		this.goalSelector.add(0, new SwimGoal(this));
 		this.goalSelector.add(1, new WanderAroundGoal(this, 1, 2, true));
 		this.goalSelector.add(0, new OrbiterShootCoreGoal(this, true));
 

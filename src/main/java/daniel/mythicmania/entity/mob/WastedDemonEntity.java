@@ -43,20 +43,20 @@ public class WastedDemonEntity extends HostileEntity {
 
     @Override
     protected void initGoals() {
-        // TODO: Fix priorities
-        this.goalSelector.add(1, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
+        this.goalSelector.add(4, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
         this.goalSelector.add(2, new LookAroundGoal(this));
-        this.goalSelector.add(3, new AttackGoal(this));
-        this.goalSelector.add(4, new WanderAroundGoal(this, 1, 2, false));
-        this.goalSelector.add(4, new SwimGoal(this));
+        this.goalSelector.add(1, new AttackGoal(this));
+        this.goalSelector.add(3, new WanderAroundGoal(this, 1, 2, false));
+        this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(0, new MoveOutOfWaterGoal(this));
+        this.goalSelector.add(0, new AvoidSunlightGoal(this));
 
         this.initActiveTargetGoals();
     }
 
     protected void initActiveTargetGoals() {
         this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
-        this.targetSelector.add(3, new ActiveTargetGoal<>(this, MobEntity.class, 5, false, false, (entity) -> entity != null && !(entity instanceof WastedDemonEntity) && !(entity instanceof DemonGuardianEntity)));
+        this.targetSelector.add(0, new ActiveTargetGoal<>(this, MobEntity.class, 5, false, false, (entity) -> entity != null && !(entity instanceof WastedDemonEntity) && !(entity instanceof DemonGuardianEntity)));
     }
 
     @Override

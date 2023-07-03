@@ -21,14 +21,13 @@ public class PoisonousGrubEntity extends AbstractGrubEntity {
 
     @Override
     protected void initGoals() {
-        // TODO: Weird priorities
-        this.goalSelector.add(1, new SwimGoal(this));
-        this.goalSelector.add(3, new PounceAtTargetGoal(this, 0.4f));
-        this.goalSelector.add(4, new AttackGoal(this));
-        this.goalSelector.add(5, new WanderAroundFarGoal(this, 0.8));
-        this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
-        this.goalSelector.add(6, new LookAroundGoal(this));
-        this.targetSelector.add(1, new RevengeGoal(this));
+        this.goalSelector.add(0, new SwimGoal(this));
+        this.goalSelector.add(1, new PounceAtTargetGoal(this, 0.4f));
+        this.goalSelector.add(0, new AttackGoal(this));
+        this.goalSelector.add(2, new WanderAroundFarGoal(this, 0.8));
+        this.goalSelector.add(3, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
+        this.goalSelector.add(4, new LookAroundGoal(this));
+        this.targetSelector.add(0, new RevengeGoal(this));
     }
 
     @Override
