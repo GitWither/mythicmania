@@ -33,7 +33,7 @@ public class SummonMinionGoal extends Goal {
             for (int i = 0; i < numberOfMinions + world.random.nextInt(3); i++) {
                 Entity minionEntity = minion.create(world);
                 if (minionEntity == null) return;
-                minionEntity.refreshPositionAndAngles(mob.getX(), mob.getY(), mob.getZ(), mob.getYaw(), 0.0F);
+                minionEntity.refreshPositionAndAngles(mob.getX() + world.random.nextInt(3), mob.getY(), mob.getZ() + world.random.nextInt(3), mob.getYaw(), 0.0F);
                 world.spawnEntity(minionEntity);
             }
 

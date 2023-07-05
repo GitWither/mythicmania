@@ -12,14 +12,16 @@ import net.minecraft.entity.boss.BossBar.Style;
 import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.mob.*;
+import net.minecraft.entity.mob.AbstractSkeletonEntity;
+import net.minecraft.entity.mob.FlyingEntity;
+import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.mob.VexEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
@@ -154,7 +156,9 @@ public class WastedDemonEntity extends HostileEntity {
 
     @Override
     public boolean tryAttack(Entity target) {
-        return super.tryAttack(target) && target instanceof LivingEntity;
+        boolean canAttack = super.tryAttack(target) && target instanceof LivingEntity;
+        if (canAttack && this.random.nextInt(5) == 0) target.setOnFireFor(3);
+        return canAttack;
     }
 
     public static DefaultAttributeContainer.Builder createWastedDemonAttributes() {
