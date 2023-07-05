@@ -18,6 +18,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class LuminescentSacBlock extends Block {
     private static final VoxelShape SHAPE = Block.createCuboidShape(0, 11, 0, 16, 16, 16);
+
     public LuminescentSacBlock() {
         super(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK).nonOpaque().sounds(BlockSoundGroup.SLIME).strength(0.5f, 0.5f).luminance((state) -> 10));
     }

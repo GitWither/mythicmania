@@ -62,9 +62,7 @@ public class DemonGuardianEntity extends HostileEntity {
     // TODO: Check concerns about stack overflow
     @Override
     public boolean tryAttack(Entity target) {
-        boolean canAttack = super.tryAttack(target) && target instanceof LivingEntity;
-        if (canAttack) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 5 * 20, 0), this);
-        return canAttack;
+        return super.tryAttack(target) && target instanceof LivingEntity;
     }
 
     public static DefaultAttributeContainer.Builder createDemonGuardianAttributes() {

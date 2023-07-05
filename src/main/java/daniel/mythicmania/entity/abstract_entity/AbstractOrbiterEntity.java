@@ -68,7 +68,7 @@ public abstract class AbstractOrbiterEntity extends AbstractFlyingEntity {
         return HostileEntity
                 .createHostileAttributes()
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.23f)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2f)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3f)
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 8f)
 			    .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.3D);
     }

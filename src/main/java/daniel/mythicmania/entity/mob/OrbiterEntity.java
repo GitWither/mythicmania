@@ -27,12 +27,7 @@ public class OrbiterEntity extends AbstractOrbiterEntity {
 	@Override
 	public boolean tryAttack(Entity target) {
 		boolean canAttack = super.tryAttack(target) && target instanceof LivingEntity;
-
-		if (canAttack) {
-			((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 5 * 20, 0), this);
-			target.setOnFireFor(3);
-		}
-
+		if (canAttack) target.setOnFireFor(3);
 		return canAttack;
 	}
 }

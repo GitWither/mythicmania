@@ -29,6 +29,11 @@ public class NoxiousSpiritEntity extends HostileEntity {
         // TODO: Add AI
     }
 
+    @Override
+    protected boolean isDisallowedInPeaceful() {
+        return false;
+    }
+
     public static DefaultAttributeContainer.Builder createNoxiousSpiritAttributes() {
         return HostileEntity
                 .createHostileAttributes()

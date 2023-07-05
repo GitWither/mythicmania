@@ -44,13 +44,12 @@ public abstract class AbstractFlyingEntity extends AnimalEntity {
         return false;
     }
 
-    public static DefaultAttributeContainer.Builder createBeetleAttributes() {
+    public static DefaultAttributeContainer.Builder createFlyingAttributes() {
         return HostileEntity
                 .createHostileAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 8)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 50.0D)
                 .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.6f)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2);
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f);
     }
 }

@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
-public class AbstractUnstableThrowableEntity extends ThrownItemEntity {
+public abstract class AbstractUnstableThrowableEntity extends ThrownItemEntity {
 	public static float GRAVITY = 0.07f;
 
 	public AbstractUnstableThrowableEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {

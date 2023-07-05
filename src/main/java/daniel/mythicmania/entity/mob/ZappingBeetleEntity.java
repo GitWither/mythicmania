@@ -35,15 +35,16 @@ public class ZappingBeetleEntity extends AbstractFlyingEntity {
     @Override
     public boolean tryAttack(Entity target) {
         boolean canAttack = super.tryAttack(target) && target instanceof LivingEntity;
-        if (canAttack) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 5 * 20, 0), this);
-        return canAttack;
+        if (canAttack) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 3, 20*6));
+        return super.tryAttack(target) && target instanceof LivingEntity;
     }
 
     public static DefaultAttributeContainer.Builder createZappingBeetleAttributes() {
         return AbstractFlyingEntity
-            .createBeetleAttributes()
+            .createFlyingAttributes()
             .add(EntityAttributes.GENERIC_MAX_HEALTH, 8)
-            .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.61D);
+            .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.61D)
+            .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 1);
     }
 
     @Nullable

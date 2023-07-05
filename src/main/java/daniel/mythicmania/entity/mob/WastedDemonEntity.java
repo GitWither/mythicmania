@@ -1,7 +1,7 @@
 package daniel.mythicmania.entity.mob;
 
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
-import daniel.mythicmania.entity.goals.MoveOutOfWaterGoal;
+import daniel.mythicmania.entity.goals.*;
 import daniel.mythicmania.item.MythicManiaItems;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
@@ -12,14 +12,14 @@ import net.minecraft.entity.boss.BossBar.Style;
 import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.mob.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
@@ -45,18 +45,37 @@ public class WastedDemonEntity extends HostileEntity {
     protected void initGoals() {
         this.goalSelector.add(4, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
         this.goalSelector.add(2, new LookAroundGoal(this));
-        this.goalSelector.add(1, new AttackGoal(this));
         this.goalSelector.add(3, new WanderAroundGoal(this, 1, 2, false));
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(0, new MoveOutOfWaterGoal(this));
-        this.goalSelector.add(0, new AvoidSunlightGoal(this));
+        this.goalSelector.add(2, new AvoidSunlightGoal(this));
+
+        // Attack goals
+        this.goalSelector.add(this.getHealth() / 2 < this.getMaxHealth() ? 0 : 2, new DemonStaffAttackGoal(this));
+        this.goalSelector.add(0, new MeleeAttackGoal(this, 1, false));
+        this.goalSelector.add(1, new TeleportBehindPlayerGoal(this));
+        this.goalSelector.add(2, new StrikeAttackerWithLightningGoal(this));
+        this.goalSelector.add(this.getHealth() / 1.5f < getMaxHealth() ? 3 : 7, new SummonMinionGoal(this, EntityType.SKELETON, 2));
+        this.goalSelector.add(this.getHealth() / 1.5f < getMaxHealth() ? 3 : 6, new SummonMinionGoal(this, EntityType.VEX, 1));
 
         this.initActiveTargetGoals();
     }
 
     protected void initActiveTargetGoals() {
         this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
-        this.targetSelector.add(0, new ActiveTargetGoal<>(this, MobEntity.class, 5, false, false, (entity) -> entity != null && !(entity instanceof WastedDemonEntity) && !(entity instanceof DemonGuardianEntity)));
+        this.targetSelector.add(1, new ActiveTargetGoal<>(this, LivingEntity.class, 5, false, false, (entity) ->
+            entity != null &&
+            !(entity instanceof WastedDemonEntity) &&
+            !(entity instanceof DemonGuardianEntity) &&
+            !(entity instanceof AbstractSkeletonEntity) &&
+            !(entity instanceof VexEntity) && 
+            !(entity instanceof FlyingEntity)
+        ));
+    }
+
+    @Override
+    protected boolean isDisallowedInPeaceful() {
+        return false;
     }
 
     @Override
@@ -73,6 +92,18 @@ public class WastedDemonEntity extends HostileEntity {
         this.handDropChances[EquipmentSlot.MAINHAND.getEntitySlotId()] = 0.0F; // TODO: Looks weird..
 
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
+    }
+
+    /*
+    TODO:
+     Fix method
+     Use method in lightning and staff goal properly
+     Make demon use more of lightning and staff goal when far away and melee when close
+    */
+    public boolean isCloseTo(LivingEntity target, int distance) {
+        return Math.abs(this.getPos().x - target.getPos().x) < distance ||
+                Math.abs(this.getPos().y - target.getPos().y) < distance ||
+                Math.abs(this.getPos().z - target.getPos().z) < distance;
     }
 
     public boolean hurtByWater() {
@@ -123,9 +154,7 @@ public class WastedDemonEntity extends HostileEntity {
 
     @Override
     public boolean tryAttack(Entity target) {
-        boolean canAttack = super.tryAttack(target) && target instanceof LivingEntity;
-        if (canAttack) ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 5 * 20, 0), this);
-        return canAttack;
+        return super.tryAttack(target) && target instanceof LivingEntity;
     }
 
     public static DefaultAttributeContainer.Builder createWastedDemonAttributes() {
@@ -133,7 +162,7 @@ public class WastedDemonEntity extends HostileEntity {
                 .createHostileAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 200)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 35.0D)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.35D)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.28D)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 7.0D)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 2.0D);
     }
