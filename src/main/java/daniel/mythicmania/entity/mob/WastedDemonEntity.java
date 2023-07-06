@@ -114,6 +114,7 @@ public class WastedDemonEntity extends HostileEntity {
 
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
+
         if (this.hasCustomName()) {
             this.bossBar.setName(this.getDisplayName());
         }
@@ -125,13 +126,10 @@ public class WastedDemonEntity extends HostileEntity {
     }
 
     protected void mobTick() {
-        if (this.age % 100 == 0) {
-            this.heal(4.0F);
-        }
+        if (this.age % 100 == 0) this.heal(4.0F);
 
-        if (this.getHealth() < 31) {
+        if (this.getHealth() < 31)
             this.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 20 * 120, 2, false, false, false));
-        }
 
         super.mobTick();
         this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
@@ -141,6 +139,7 @@ public class WastedDemonEntity extends HostileEntity {
         for (int i = 0; i < 2; ++i) {
             this.getWorld().addParticle(ParticleTypes.SMOKE, this.getParticleX(0.2), this.getRandomBodyY(), this.getParticleZ(0.5), 0.0, 0.0, 0.0);
         }
+
         super.tickMovement();
     }
 
@@ -202,25 +201,13 @@ public class WastedDemonEntity extends HostileEntity {
 
         final double threshold = 10.0;
 
-        if (deltaX > threshold) {
-            this.prevCapeX = this.capeX = this.getX();
-        }
-        if (deltaZ > threshold) {
-            this.prevCapeZ = this.capeZ = this.getZ();
-        }
-        if (deltaY > threshold) {
-            this.prevCapeY = this.capeY = this.getY();
-        }
+        if (deltaX > threshold) this.prevCapeX = this.capeX = this.getX();
+        if (deltaZ > threshold) this.prevCapeZ = this.capeZ = this.getZ();
+        if (deltaY > threshold) this.prevCapeY = this.capeY = this.getY();
 
-        if (deltaX < -threshold) {
-            this.prevCapeX = this.capeX = this.getX();
-        }
-        if (deltaZ < -threshold) {
-            this.prevCapeZ = this.capeZ = this.getZ();
-        }
-        if (deltaY < -threshold) {
-            this.prevCapeY = this.capeY = this.getY();
-        }
+        if (deltaX < -threshold) this.prevCapeX = this.capeX = this.getX();
+        if (deltaZ < -threshold) this.prevCapeZ = this.capeZ = this.getZ();
+        if (deltaY < -threshold) this.prevCapeY = this.capeY = this.getY();
 
         this.capeX += deltaX * 0.25;
         this.capeZ += deltaZ * 0.25;
