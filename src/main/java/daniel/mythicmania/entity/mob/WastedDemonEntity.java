@@ -57,8 +57,8 @@ public class WastedDemonEntity extends HostileEntity {
         this.goalSelector.add(0, new MeleeAttackGoal(this, 1, false));
         this.goalSelector.add(1, new TeleportBehindPlayerGoal(this));
         this.goalSelector.add(2, new StrikeAttackerWithLightningGoal(this));
-        this.goalSelector.add(this.getHealth() / 1.5f < getMaxHealth() ? 3 : 7, new SummonMinionGoal(this, EntityType.SKELETON, 2));
-        this.goalSelector.add(this.getHealth() / 1.5f < getMaxHealth() ? 3 : 6, new SummonMinionGoal(this, EntityType.VEX, 1));
+        this.goalSelector.add(this.getHealth() / 1.5f < getMaxHealth() ? 4 : 7, new SummonMinionGoal(this, EntityType.SKELETON, 2));
+        this.goalSelector.add(this.getHealth() / 1.5f < getMaxHealth() ? 4 : 6, new SummonMinionGoal(this, MythicManiaEntityTypes.ORBITER_ENTITY, 1));
 
         this.initActiveTargetGoals();
     }
