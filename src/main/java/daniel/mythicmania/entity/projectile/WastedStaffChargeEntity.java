@@ -32,7 +32,7 @@ public class WastedStaffChargeEntity extends ThrownItemEntity {
 
     @Override
     public void tick() {
-        final boolean isIdle = (this.getVelocity().x == 0 || this.getVelocity().y == 0 || this.getVelocity().y == 0) && this.age > 5;
+        final boolean isIdle = (this.getVelocity().x == 0 || this.getVelocity().y == 0 || this.getVelocity().z == 0) && this.age > 5;
         if (isIdle) this.kill();
         super.tick();
     }
