@@ -5,9 +5,11 @@ import daniel.mythicmania.client.render.entity.feature.MythicManiaEmissiveFeatur
 import daniel.mythicmania.client.render.entity.model.PoisonousGrubEntityModel;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.entity.mob.PoisonousGrubEntity;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;
+import org.jetbrains.annotations.Nullable;
 
 public class PoisonousGrubEntityRenderer extends MobEntityRenderer<PoisonousGrubEntity, PoisonousGrubEntityModel> {
     private static final Identifier TEXTURE = new Identifier(MythicMania.MOD_ID, "textures/entity/grubs/poisonous.png");
@@ -21,5 +23,11 @@ public class PoisonousGrubEntityRenderer extends MobEntityRenderer<PoisonousGrub
     @Override
     public Identifier getTexture(PoisonousGrubEntity entity) {
         return TEXTURE;
+    }
+
+    @Nullable
+    @Override
+    protected RenderLayer getRenderLayer(PoisonousGrubEntity entity, boolean showBody, boolean translucent, boolean showOutline) {
+        return super.getRenderLayer(entity, showBody, true, showOutline);
     }
 }
