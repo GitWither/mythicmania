@@ -10,7 +10,8 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 
 public class RuinousSwordItem extends SwordItem {
-    StatusEffectInstance regeneration = new StatusEffectInstance(StatusEffects.REGENERATION, 20*3, 0);
+    protected static final StatusEffectInstance REGENERATION = new StatusEffectInstance(StatusEffects.REGENERATION, 20*3, 0);
+
     public RuinousSwordItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
@@ -21,9 +22,17 @@ public class RuinousSwordItem extends SwordItem {
 
         world.spawnParticles(ParticleTypes.FLAME, target.getX(), target.getY() + target.getEyeHeight(target.getPose()), target.getZ(), 5, 0.5, 0.2, 0.5, 0.02);
 
-        attacker.addStatusEffect(regeneration);
-        target.setOnFireFor(4);
+        attacker.addStatusEffect(getRegenerationEffect());
+        target.setOnFireFor(getFireTime());
 
         return super.postHit(stack, target, attacker);
+    }
+
+    public int getFireTime() {
+        return 4;
+    }
+
+    public StatusEffectInstance getRegenerationEffect() {
+        return REGENERATION;
     }
 }

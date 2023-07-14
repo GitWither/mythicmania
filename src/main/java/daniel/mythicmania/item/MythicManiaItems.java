@@ -79,6 +79,7 @@ public final class MythicManiaItems {
     public static Item RUINOUS_LEGGINGS;
     public static Item RUINOUS_BOOTS;
     public static Item RUINOUS_SWORD;
+    public static Item RUINOUS_DOUBLESWORD;
     public static Item WASTED_STAFF;
     public static Item DEMON_VEST;
     public static Item SHOCK_STAFF;
@@ -263,6 +264,12 @@ public final class MythicManiaItems {
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "ruinous_sword"),
                 new RuinousSwordItem(MythicManiaToolMaterials.RUINOUS, 8, 1.2f, new Item.Settings())
+        );
+
+        RUINOUS_DOUBLESWORD = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruinous_doublesword"),
+                new RuinousDoubleswordItem(MythicManiaToolMaterials.RUINOUS, 9, 1.2f, new Item.Settings())
         );
 
         NUCLEAR_HELMET = Registry.register(

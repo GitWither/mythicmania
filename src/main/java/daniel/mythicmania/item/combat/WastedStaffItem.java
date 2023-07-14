@@ -46,7 +46,7 @@ public class WastedStaffItem extends SwordItem {
         return super.use(world, user, hand);
     }
 
-    public void handleAndShootProjectile(WastedStaffChargeEntity projectile, ItemStack itemStack, PlayerEntity user, World world) {
+    public static void handleAndShootProjectile(WastedStaffChargeEntity projectile, ItemStack itemStack, PlayerEntity user, World world) {
         projectile.setItem(itemStack);
         projectile.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 0.6F, 0F);
         world.spawnEntity(projectile);

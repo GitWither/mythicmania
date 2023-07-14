@@ -64,13 +64,14 @@ public class MythicManiaItemGroups {
 
                         FabricItemGroup.builder()
                                 .displayName(Text.translatable("itemGroup.mythicmania.combat"))
-                                .icon(() -> new ItemStack(MythicManiaItems.RUINOUS_SWORD))
+                                .icon(() -> new ItemStack(MythicManiaItems.RUINOUS_DOUBLESWORD))
 
                                 .entries((displayContext, entries) -> {
                                         entries.add(MythicManiaItems.NUCLEAR_DAGGER);
                                         entries.add(MythicManiaItems.NUCLEAR_BLADE);
                                         entries.add(MythicManiaItems.NUCLEAR_SWORD);
                                         entries.add(MythicManiaItems.RUINOUS_SWORD);
+                                        entries.add(MythicManiaItems.RUINOUS_DOUBLESWORD);
                                         entries.add(MythicManiaItems.NUCLEAR_HELMET);
                                         entries.add(MythicManiaItems.NUCLEAR_CHESTPLATE);
                                         entries.add(MythicManiaItems.NUCLEAR_LEGGINGS);
