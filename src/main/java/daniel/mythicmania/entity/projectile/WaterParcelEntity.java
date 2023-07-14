@@ -2,6 +2,7 @@ package daniel.mythicmania.entity.projectile;
 
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import daniel.mythicmania.item.MythicManiaItems;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -22,8 +23,7 @@ public class WaterParcelEntity extends ThrownItemEntity {
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
         if (!this.getWorld().isClient) {
-            // TODO: Check the number for flags
-            this.getWorld().setBlockState(getBlockPos(), Blocks.WATER.getDefaultState(), 11);
+            this.getWorld().setBlockState(getBlockPos(), Blocks.WATER.getDefaultState(), Block.NOTIFY_LISTENERS);
             this.kill();
         }
     }

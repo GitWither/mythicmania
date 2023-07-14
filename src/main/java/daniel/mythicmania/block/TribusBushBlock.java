@@ -11,6 +11,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -23,12 +24,13 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.event.GameEvent;
 
-public class TribusBlock extends PlantBlock implements Fertilizable {
-
+public class TribusBushBlock extends PlantBlock implements Fertilizable {
     private static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 15, 17, 15);
+    public static final IntProperty AGE = Properties.AGE_4;
 
-    public TribusBlock() {
+    public TribusBushBlock() {
         super(FabricBlockSettings.copyOf(Blocks.SWEET_BERRY_BUSH).noCollision().nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES));
+        this.setDefaultState(this.stateManager.getDefaultState().with(AGE, 1));
     }
 
     @Override
@@ -43,27 +45,25 @@ public class TribusBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public boolean hasRandomTicks(BlockState state) {
-        return !hasBerries(state);
+        return !isFullyGrown(state);
     }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        // TODO: Look into better logic here
-        boolean hasBerries = hasBerries(state);
-
-        if (!hasBerries && player.getStackInHand(hand).isOf(Items.BONE_MEAL)) {
+        // TODO: Look into better logic here (for Harvester and Rinth too)
+        if (!isFullyGrown(state) && player.getStackInHand(hand).isOf(Items.BONE_MEAL)) {
             return ActionResult.PASS;
         }
 
-        if (hasBerries) {
-            int berryCount = 2 + world.random.nextInt(3);
+        if (isFullyGrown(state)) {
+            int berryCount = 2 + world.random.nextInt(2);
             SweetBerryBushBlock.dropStack(world, pos, new ItemStack(MythicManiaItems.TRIBUS_FRUIT, berryCount));
 
-            BlockState noBerriesState = state.with(Properties.BERRIES, false);
+            BlockState noBerriesState = state.with(AGE, 3);
             world.setBlockState(pos, noBerriesState, Block.NOTIFY_LISTENERS);
 
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, noBerriesState));
-            world.playSound(null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0f, 0.4f + world.random.nextFloat() * 0.4f);
+            world.playSound(null, pos, SoundEvents.BLOCK_CHERRY_LEAVES_BREAK, SoundCategory.BLOCKS, 1.0f, 0.4f + world.random.nextFloat() * 0.4f);
 
             return ActionResult.success(world.isClient);
         }
@@ -73,21 +73,21 @@ public class TribusBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
-        return !hasBerries(state);
+        return !isFullyGrown(state);
     }
 
     @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-        return true;
+        return !isFullyGrown(state);
     }
 
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        world.setBlockState(pos, state.with(Properties.BERRIES, true), Block.NOTIFY_LISTENERS);
+        world.setBlockState(pos, state.with(AGE, state.get(AGE) + 1), Block.NOTIFY_LISTENERS);
     }
 
-    private boolean hasBerries(BlockState state) {
-        return  state.get(Properties.BERRIES);
+    private boolean isFullyGrown(BlockState state) {
+        return state.get(AGE) == 4;
     }
 
     @Override
@@ -97,8 +97,8 @@ public class TribusBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (!hasBerries(state) && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
-            BlockState stateWithBerries = state.with(Properties.BERRIES, true);
+        if (!isFullyGrown(state) && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
+            BlockState stateWithBerries = state.with(AGE, 4);
 
             world.setBlockState(pos, stateWithBerries, Block.NOTIFY_LISTENERS);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(stateWithBerries));
@@ -107,6 +107,6 @@ public class TribusBlock extends PlantBlock implements Fertilizable {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(Properties.BERRIES);
+        builder.add(AGE);
     }
 }

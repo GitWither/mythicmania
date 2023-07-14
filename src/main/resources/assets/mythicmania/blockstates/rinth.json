@@ -1,6 +1,18 @@
 {
   "variants": {
-    "hanging=false": {"model": "mythicmania:block/rinth"},
-    "hanging=true": {"model": "mythicmania:block/rinth", "x":  180}
+    "hanging=false,age=1": {"model": "mythicmania:block/rinth_1"},
+    "hanging=true,age=1": {"model": "mythicmania:block/rinth_1", "x":  180},
+
+    "hanging=false,age=2": {"model": "mythicmania:block/rinth_2"},
+    "hanging=true,age=2": {"model": "mythicmania:block/rinth_2", "x":  180},
+
+    "hanging=false,age=3": {"model": "mythicmania:block/rinth_3"},
+    "hanging=true,age=3": {"model": "mythicmania:block/rinth_3", "x":  180},
+
+    "hanging=false,age=4": {"model": "mythicmania:block/rinth_4"},
+    "hanging=true,age=4": {"model": "mythicmania:block/rinth_4", "x":  180},
+
+    "hanging=false,age=5": {"model": "mythicmania:block/rinth_5"},
+    "hanging=true,age=5": {"model": "mythicmania:block/rinth_5", "x":  180}
   }
 }

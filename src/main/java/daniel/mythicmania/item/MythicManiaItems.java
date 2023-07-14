@@ -29,6 +29,7 @@ public final class MythicManiaItems {
     public static Item TOXIC_ORBITER_PROJECTILE;
 
     // Food Tab Items
+    public static Item RINTH_BERRY;
     public static Item POISONOUS_BERRY;
     public static Item HEALING_BERRY;
     public static Item TRIBUS_FRUIT;
@@ -46,6 +47,7 @@ public final class MythicManiaItems {
     public static Item POISON_SPIKE;
     public static Item SHOCK_BOLT;
     public static Item GRUB_ESSENCE;
+    public static Item RINTH_SEED;
     public static Item TOXIC_PEBBLE;
     public static Item WASTED_ESSENCE;
     public static Item IRRADIATED_CRYSTAL;
@@ -93,6 +95,12 @@ public final class MythicManiaItems {
     public static Item RUINOUS_HOE;
 
     public static void registerFoodTab() {
+        RINTH_BERRY = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "rinth_berry"),
+                new Item(new Item.Settings().food(MythicManiaFoodComponents.RINTH_BERRY))
+        );
+
         POISONOUS_BERRY = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "poisonous_berry"),
@@ -172,6 +180,12 @@ public final class MythicManiaItems {
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "grub_essence"),
                 new Item(new Item.Settings())
+        );
+
+        RINTH_SEED = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "rinth_seed"),
+                new AliasedBlockItem(MythicManiaBlocks.RINTH_BLOCK, new Item.Settings())
         );
 
         TOXIC_PEBBLE = Registry.register(

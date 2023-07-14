@@ -35,6 +35,7 @@ public class MythicManiaItemGroups {
                                         entries.add(MythicManiaItems.UNSTABLE_TOXIC_THROWABLE);
                                         entries.add(MythicManiaItems.POISON_SPIKE);
                                         entries.add(MythicManiaItems.GRUB_ESSENCE);
+                                        entries.add(MythicManiaItems.RINTH_SEED);
                                         entries.add(MythicManiaItems.TOXIC_PEBBLE);
                                         entries.add(MythicManiaItems.WASTED_ESSENCE);
                                         entries.add(MythicManiaItems.IRRADIATED_CRYSTAL);
@@ -114,6 +115,7 @@ public class MythicManiaItemGroups {
                                 .icon(() -> new ItemStack(MythicManiaItems.TRIBUS_FRUIT))
 
                                 .entries((displayContext, entries) -> {
+                                        entries.add(MythicManiaItems.RINTH_BERRY);
                                         entries.add(MythicManiaItems.POISONOUS_BERRY);
                                         entries.add(MythicManiaItems.HEALING_BERRY);
                                         entries.add(MythicManiaItems.TRIBUS_FRUIT);
@@ -130,7 +132,6 @@ public class MythicManiaItemGroups {
                                 .icon(() -> new ItemStack(MythicManiaItems.PULSATING_BLACKSTONE))
 
                                 .entries((displayContext, entries) -> {
-                                        entries.add(MythicManiaItems.RINTH);
                                         entries.add(MythicManiaItems.ANCIENT_ALTAR);
                                         entries.add(MythicManiaItems.TOXIC_ORE);
                                         entries.add(MythicManiaItems.RUINED_ORE);

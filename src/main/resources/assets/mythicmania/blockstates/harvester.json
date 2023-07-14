@@ -1,6 +1,9 @@
 {
   "variants": {
-    "berries=true": {"model": "mythicmania:block/harvester_berry"},
-    "berries=false": {"model": "mythicmania:block/harvester_empty"}
+    "age=1": {"model": "mythicmania:block/harvester_1"},
+    "age=2": {"model": "mythicmania:block/harvester_2"},
+    "age=3": {"model": "mythicmania:block/harvester_3"},
+    "age=4": {"model": "mythicmania:block/harvester_4"},
+    "age=5": {"model": "mythicmania:block/harvester_5"}
   }
 }

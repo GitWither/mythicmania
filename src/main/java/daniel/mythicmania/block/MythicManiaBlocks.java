@@ -15,19 +15,19 @@ public final class MythicManiaBlocks {
     public static final Block RINTH_BLOCK = Registry.register(
             Registries.BLOCK,
             new Identifier(MythicMania.MOD_ID, "rinth"),
-            new RinthBlock()
+            new RinthPlantBlock()
     );
 
     public static final Block HARVESTER_BLOCK = Registry.register(
             Registries.BLOCK,
             new Identifier(MythicMania.MOD_ID, "harvester"),
-            new HarvesterBlock()
+            new HarvesterPlantBlock()
     );
 
     public static final Block TRIBUS_BLOCK = Registry.register(
             Registries.BLOCK,
             new Identifier(MythicMania.MOD_ID, "tribus"),
-            new TribusBlock()
+            new TribusBushBlock()
     );
 
     public static final Block ANCIENT_ALTAR = Registry.register(
