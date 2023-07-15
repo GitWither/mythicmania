@@ -10,6 +10,7 @@ import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.mob.AbstractSkeletonEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.SkeletonEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -36,7 +37,7 @@ public class SummonMinionGoal extends Goal {
     public void tick() {
         cooldown++;
         World world = mob.getWorld();
-        if (!canSpawnMinions(world)) return;
+        if (!canSpawnMinions(world, mob.getAttacker())) return;
 
         for (int i = 0; i < numberOfMinions + world.random.nextInt(3); i++) {
             Entity minionEntity = minion.create(world);
@@ -49,7 +50,8 @@ public class SummonMinionGoal extends Goal {
 
             // Handle gear equipping
             if (minionEntity instanceof AbstractSkeletonEntity) {
-                if (chestRand == 0) minionEntity.equipStack(EquipmentSlot.CHEST, new ItemStack(MythicManiaItems.RUINOUS_CHESTPLATE));
+                if (chestRand == 0)
+                    minionEntity.equipStack(EquipmentSlot.CHEST, new ItemStack(MythicManiaItems.RUINOUS_CHESTPLATE));
 
                 switch(swordRand) {
                     case 0, 1, 2 -> equipMainHandWith(minionEntity, Items.STONE_SWORD);
@@ -72,7 +74,7 @@ public class SummonMinionGoal extends Goal {
         entity.equipStack(EquipmentSlot.MAINHAND, new ItemStack(item));
     }
 
-    public boolean canSpawnMinions(World world) {
-        return !world.isClient && cooldown % 40 == 0 && world.random.nextInt(8) == 0;
+    public boolean canSpawnMinions(World world, LivingEntity attacker) {
+        return !world.isClient && cooldown % 40 == 0 && world.random.nextInt(8) == 0 && attacker instanceof PlayerEntity;
     }
 }
