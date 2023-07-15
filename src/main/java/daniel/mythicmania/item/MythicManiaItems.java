@@ -203,8 +203,8 @@ public final class MythicManiaItems {
 
         IRRADIATED_CRYSTAL = Registry.register(
                 Registries.ITEM,
-                new Identifier(MythicMania.MOD_ID, "irradiated_crystal"),
-                new Item(new Item.Settings())
+                new Identifier(MythicMania.MOD_ID, "irradiated_crystal_item"),
+                new AliasedBlockItem(MythicManiaBlocks.IRRADIATED_CRYSTAL, new Item.Settings())
         );
 
         WATER_PARCEL = Registry.register(

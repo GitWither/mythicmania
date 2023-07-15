@@ -22,7 +22,7 @@
   "item.mythicmania.grub_essence": "Grub Essence",
   "item.mythicmania.rinth_seed": "Rinth Seed",
   "item.mythicmania.toxic_pebble": "Toxic Pebble",
-  "item.mythicmania.irradiated_crystal": "Irradiated Crystal",
+  "item.mythicmania.irradiated_crystal_item": "Irradiated Crystal",
   "item.mythicmania.water_parcel": "Water Parcel",
   "item.mythicmania.nuclear_sword": "Nuclear Sword",
   "item.mythicmania.nuclear_blade": "Nuclear Blade",
@@ -72,6 +72,7 @@
   "block.mythicmania.blackstone_ruined_ore": "Blackstone Ruined Ore",
   "block.mythicmania.pulsating_blackstone": "Pulsating Blackstone",
   "block.mythicmania.luminescent_sac": "Luminescent Sac",
+  "block.mythicmania.irradiated_crystal": "Irradiated Crystal",
   "block.mythicmania.orbiter_projectile": "Orbiter Core",
   "block.mythicmania.toxic_orbiter_projectile": "Toxic Orbiter Core",
 

@@ -24,7 +24,7 @@ public class LuminescentSacBlock extends Block {
     }
 
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        // TODO: Refactor this
+        // TODO: Refactor this (for irradiated crystal as well)
         VoxelShape voxelShape = this.getOutlineShape(state, world, pos, ShapeContext.absent());
         Vec3d vec3d = voxelShape.getBoundingBox().getCenter();
         double xPos = (double)pos.getX() + vec3d.x;

@@ -66,6 +66,12 @@ public final class MythicManiaBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).requiresTool().luminance((state) -> 5).strength(2, 6).sounds(BlockSoundGroup.GILDED_BLACKSTONE))
     );
 
+    public static final Block IRRADIATED_CRYSTAL = Registry.register(
+            Registries.BLOCK,
+            new Identifier(MythicMania.MOD_ID, "irradiated_crystal"),
+            new IrradiatedCrystalBlock(FabricBlockSettings.copyOf(Blocks.LARGE_AMETHYST_BUD).nonOpaque().luminance((state) -> 5).strength(2, 2).sounds(BlockSoundGroup.LARGE_AMETHYST_BUD))
+    );
+
     public static final Block ORBITER_PROJECTILE = Registry.register(
             Registries.BLOCK,
             new Identifier(MythicMania.MOD_ID, "orbiter_projectile"),
@@ -85,5 +91,6 @@ public final class MythicManiaBlocks {
         BlockRenderLayerMap.INSTANCE.putBlock(LUMINESCENT_SAC, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ORBITER_PROJECTILE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TOXIC_ORBITER_PROJECTILE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(IRRADIATED_CRYSTAL, RenderLayer.getCutout());
     }
 }

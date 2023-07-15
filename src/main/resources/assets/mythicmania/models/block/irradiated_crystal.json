@@ -1,0 +1,35 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"1": "mythicmania:block/irradiated_crystal",
+		"particle": "mythicmania:block/irradiated_crystal"
+	},
+	"elements": [
+		{
+			"from": [7.60355, 0, -0.45711],
+			"to": [7.60355, 12, 15.54289],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8.35355, 1, 7.29289]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 12], "texture": "#1"},
+				"east": {"uv": [0, 0, 16, 12], "texture": "#1"},
+				"south": {"uv": [0, 0, 0, 12], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 12], "texture": "#1"},
+				"up": {"uv": [0, 16, 0, 0], "texture": "#1"},
+				"down": {"uv": [0, 0, 0, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [7.64645, 0, -1.06066],
+			"to": [7.64645, 12, 14.93934],
+			"rotation": {"angle": 45, "axis": "y", "origin": [7.64645, 6, 6.93934]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 12], "texture": "#1"},
+				"east": {"uv": [0, 0, 16, 12], "texture": "#1"},
+				"south": {"uv": [0, 0, 0, 12], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 12], "texture": "#1"},
+				"up": {"uv": [0, 16, 0, 0], "texture": "#1"},
+				"down": {"uv": [0, 0, 0, 16], "texture": "#1"}
+			}
+		}
+	]
+}
