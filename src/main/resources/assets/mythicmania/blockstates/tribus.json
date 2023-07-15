@@ -1,6 +1,8 @@
 {
   "variants": {
-    "berries=true": {"model": "mythicmania:block/tribus"},
-    "berries=false": {"model": "mythicmania:block/tribus_empty"}
+    "age=1": {"model": "mythicmania:block/tribus_1"},
+    "age=2": {"model": "mythicmania:block/tribus_2"},
+    "age=3": {"model": "mythicmania:block/tribus_empty"},
+    "age=4": {"model": "mythicmania:block/tribus"}
   }
 }

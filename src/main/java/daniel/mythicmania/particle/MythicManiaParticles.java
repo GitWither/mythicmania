@@ -3,8 +3,6 @@ package daniel.mythicmania.particle;
 import daniel.mythicmania.MythicMania;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
-import net.minecraft.client.particle.CampfireSmokeParticle;
-import net.minecraft.client.render.model.SpriteAtlasManager;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;

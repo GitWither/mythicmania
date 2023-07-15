@@ -8,7 +8,7 @@ import daniel.mythicmania.item.material.armor.DemonVestMaterial;
 import daniel.mythicmania.item.material.armor.NuclearArmorMaterial;
 import daniel.mythicmania.item.material.armor.RuinousArmorMaterial;
 import daniel.mythicmania.item.material.tool.MythicManiaToolMaterials;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import daniel.mythicmania.item.projectile.*;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -21,11 +21,15 @@ public final class MythicManiaItems {
     public static Item PULSATING_BLACKSTONE;
     public static Item RINTH;
     public static Item TOXIC_ORE;
+    public static Item RUINED_ORE;
+    public static Item BLACKSTONE_RUINED_ORE;
     public static Item ANCIENT_ALTAR;
     public static Item LUMINESCENT_SAC;
     public static Item ORBITER_PROJECTILE;
+    public static Item TOXIC_ORBITER_PROJECTILE;
 
     // Food Tab Items
+    public static Item RINTH_BERRY;
     public static Item POISONOUS_BERRY;
     public static Item HEALING_BERRY;
     public static Item TRIBUS_FRUIT;
@@ -35,12 +39,21 @@ public final class MythicManiaItems {
     public static Item EMPTY_ORB;
     public static Item CHARGED_NUCLEAR_ORB;
     public static Item CHARGED_RUINED_ORB;
+    public static Item ORBITER_CORE;
+    public static Item TOXIC_ORBITER_CORE;
+    public static Item UNSTABLE_TOXIC_THROWABLE;
+    public static Item UNSTABLE_RUINOUS_THROWABLE;
+    public static Item WASTED_STAFF_CHARGE;
     public static Item POISON_SPIKE;
+    public static Item SHOCK_BOLT;
     public static Item GRUB_ESSENCE;
+    public static Item RINTH_SEED;
     public static Item TOXIC_PEBBLE;
     public static Item WASTED_ESSENCE;
     public static Item IRRADIATED_CRYSTAL;
     public static Item WATER_PARCEL;
+    public static Item CHARGE;
+    public static Item GLIDER_WING;
 
     // Spawn eggs
     public static Item MAGICAL_GRUB_SPAWN_EGG;
@@ -49,6 +62,9 @@ public final class MythicManiaItems {
     public static Item WASTED_DEMON_SPAWN_EGG;
     public static Item DEMON_GUARDIAN_SPAWN_EGG;
     public static Item ORBITER_SPAWN_EGG;
+    public static Item NOXIOUS_SPIRIT_SPAWN_EGG;
+    public static Item TOXIC_ORBITER_SPAWN_EGG;
+    public static Item WASTREL_GLIDER_SPAWN_EGG;
 
     // Combat items
     public static Item NUCLEAR_DAGGER;
@@ -63,8 +79,10 @@ public final class MythicManiaItems {
     public static Item RUINOUS_LEGGINGS;
     public static Item RUINOUS_BOOTS;
     public static Item RUINOUS_SWORD;
+    public static Item RUINOUS_DOUBLESWORD;
     public static Item WASTED_STAFF;
     public static Item DEMON_VEST;
+    public static Item SHOCK_STAFF;
     public static Item SHOCK_BOLT_STAFF;
 
     // Tool items
@@ -77,11 +95,13 @@ public final class MythicManiaItems {
     public static Item RUINOUS_PICKAXE;
     public static Item RUINOUS_HOE;
 
-    // Non-tab items
-    public static Item WASTED_STAFF_CHARGE;
-    public static Item SHOCK_BOLT;
-
     public static void registerFoodTab() {
+        RINTH_BERRY = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "rinth_berry"),
+                new Item(new Item.Settings().food(MythicManiaFoodComponents.RINTH_BERRY))
+        );
+
         POISONOUS_BERRY = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "poisonous_berry"),
@@ -127,6 +147,30 @@ public final class MythicManiaItems {
                 new Item(new Item.Settings().rarity(Rarity.UNCOMMON))
         );
 
+        ORBITER_CORE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "orbiter_core"),
+                new Item(new Item.Settings())
+        );
+
+        TOXIC_ORBITER_CORE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "toxic_orbiter_core"),
+                new Item(new Item.Settings())
+        );
+
+        UNSTABLE_RUINOUS_THROWABLE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "unstable_ruinous_throwable"),
+                new UnstableRuinousThrowableItem(new Item.Settings().maxCount(16))
+        );
+
+        UNSTABLE_TOXIC_THROWABLE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "unstable_toxic_throwable"),
+                new UnstableToxicThrowableItem(new Item.Settings().maxCount(16))
+        );
+
         POISON_SPIKE = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "poison_spike"),
@@ -137,6 +181,12 @@ public final class MythicManiaItems {
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "grub_essence"),
                 new Item(new Item.Settings())
+        );
+
+        RINTH_SEED = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "rinth_seed"),
+                new AliasedBlockItem(MythicManiaBlocks.RINTH_BLOCK, new Item.Settings())
         );
 
         TOXIC_PEBBLE = Registry.register(
@@ -153,14 +203,26 @@ public final class MythicManiaItems {
 
         IRRADIATED_CRYSTAL = Registry.register(
                 Registries.ITEM,
-                new Identifier(MythicMania.MOD_ID, "irradiated_crystal"),
-                new Item(new Item.Settings())
+                new Identifier(MythicMania.MOD_ID, "irradiated_crystal_item"),
+                new AliasedBlockItem(MythicManiaBlocks.IRRADIATED_CRYSTAL, new Item.Settings())
         );
 
         WATER_PARCEL = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "water_parcel"),
                 new WaterParcelItem(new Item.Settings().maxCount(32))
+        );
+
+        CHARGE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "charge"),
+                new Item(new Item.Settings())
+        );
+
+        GLIDER_WING = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "glider_wing"),
+                new Item(new Item.Settings())
         );
 
         WASTED_STAFF_CHARGE = Registry.register(
@@ -189,19 +251,25 @@ public final class MythicManiaItems {
         NUCLEAR_BLADE = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "nuclear_blade"),
-                new NuclearBladeItem(MythicManiaToolMaterials.NUCLEAR, 6, 1.2f, new Item.Settings())
+                new NuclearSwordItem(MythicManiaToolMaterials.NUCLEAR, 6, 1.2f, new Item.Settings(), 6*20, 1, 9*20, 1, 2)
         );
 
         NUCLEAR_SWORD = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "nuclear_sword"),
-                new NuclearSwordItem(MythicManiaToolMaterials.NUCLEAR, 7, 1.2f, new Item.Settings())
+                new NuclearSwordItem(MythicManiaToolMaterials.NUCLEAR, 7, 1.2f, new Item.Settings(), 8*20, 1, 12*20, 2, 4)
         );
 
         RUINOUS_SWORD = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "ruinous_sword"),
                 new RuinousSwordItem(MythicManiaToolMaterials.RUINOUS, 8, 1.2f, new Item.Settings())
+        );
+
+        RUINOUS_DOUBLESWORD = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruinous_doublesword"),
+                new RuinousDoubleswordItem(MythicManiaToolMaterials.RUINOUS, 9, 1.2f, new Item.Settings())
         );
 
         NUCLEAR_HELMET = Registry.register(
@@ -264,10 +332,16 @@ public final class MythicManiaItems {
                 new WastedStaffItem(MythicManiaToolMaterials.WASTED_STAFF,2,0.8f, new Item.Settings().maxCount(1))
         );
 
+        SHOCK_STAFF = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "shock_staff"),
+                new ShockStaffItem(MythicManiaToolMaterials.SHOCK_BOLT_STAFF,1,0.8f, new Item.Settings().maxCount(1), 10, 1, false)
+        );
+
         SHOCK_BOLT_STAFF = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "shock_bolt_staff"),
-                new ShockBoltStaffItem(MythicManiaToolMaterials.SHOCK_BOLT_STAFF,1,0.8f, new Item.Settings().maxCount(1))
+                new ShockStaffItem(MythicManiaToolMaterials.SHOCK_BOLT_STAFF,1,0.8f, new Item.Settings().maxCount(1), 20, 3, true)
         );
     }
 
@@ -340,6 +414,18 @@ public final class MythicManiaItems {
                 new BlockItem(MythicManiaBlocks.TOXIC_ORE, new Item.Settings())
         );
 
+        RUINED_ORE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "ruined_ore"),
+                new BlockItem(MythicManiaBlocks.RUINED_ORE, new Item.Settings())
+        );
+
+        BLACKSTONE_RUINED_ORE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "blackstone_ruined_ore"),
+                new BlockItem(MythicManiaBlocks.BLACKSTONE_RUINED_ORE, new Item.Settings())
+        );
+
         PULSATING_BLACKSTONE = Registry.register(
                 Registries.ITEM,
                 new Identifier(MythicMania.MOD_ID, "pulsating_blackstone"),
@@ -357,49 +443,77 @@ public final class MythicManiaItems {
                 new Identifier(MythicMania.MOD_ID, "orbiter_projectile"),
                 new BlockItem(MythicManiaBlocks.ORBITER_PROJECTILE, new Item.Settings())
         );
+
+        TOXIC_ORBITER_PROJECTILE = Registry.register(
+                Registries.ITEM,
+                new Identifier(MythicMania.MOD_ID, "toxic_orbiter_projectile"),
+                new BlockItem(MythicManiaBlocks.TOXIC_ORBITER_PROJECTILE, new Item.Settings())
+        );
     }
 
     public static void registerSpawnEggs() {
         MAGICAL_GRUB_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "magical_grub_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, 0x7ff8eb, 0x7EBADA,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.MAGICAL_GRUB_ENTITY, 0x7ff8eb, 0x7EBADA,
+                new Item.Settings()
+            )
         );
 
         POISONOUS_GRUB_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "poisonous_grub_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, 0x48906D, 0x99FF9E,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.POISONOUS_GRUB_ENTITY, 0x48906D, 0x99FF9E,
+                new Item.Settings()
+            )
         );
 
         ZAPPING_BEETLE_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "zapping_beetle_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, 0x3991d0, 0xF0D538,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.ZAPPING_BEETLE_ENTITY, 0x3991d0, 0xF0D538,
+                new Item.Settings()
+            )
         );
 
         WASTED_DEMON_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "wasted_demon_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.WASTED_DEMON_ENTITY, 0x2a2a2a, 0x951010,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.WASTED_DEMON_ENTITY, 0x2a2a2a, 0x951010,
+                new Item.Settings()
+            )
         );
 
+        NOXIOUS_SPIRIT_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "noxious_spirit_spawn_egg"),
+            new SpawnEggItem(
+                    MythicManiaEntityTypes.NOXIOUS_SPIRIT_ENTITY, 0x35323e, 0x598f2f,
+                    new Item.Settings()
+            )
+        );
+
+
         DEMON_GUARDIAN_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "demon_guardian_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, 0x493C3A, 0xE7561B,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.DEMON_GUARDIAN_ENTITY, 0x493C3A, 0xE7561B,
+                new Item.Settings()
+            )
         );
 
         ORBITER_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "orbiter_spawn_egg"),
-                new SpawnEggItem(
-                        MythicManiaEntityTypes.ORBITER_ENTITY, 0x494343, 0xdd693d,
-                        new Item.Settings()
-                )
+            new SpawnEggItem(
+                MythicManiaEntityTypes.ORBITER_ENTITY, 0x494343, 0xdd693d,
+                new Item.Settings()
+            )
+        );
+
+        TOXIC_ORBITER_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "toxic_orbiter_spawn_egg"),
+            new SpawnEggItem(
+                MythicManiaEntityTypes.TOXIC_ORBITER_ENTITY, 0x598f2f, 0x35323e,
+                new Item.Settings()
+            )
+        );
+
+        WASTREL_GLIDER_SPAWN_EGG = Registry.register(Registries.ITEM, new Identifier(MythicMania.MOD_ID, "wastrel_glider_spawn_egg"),
+            new SpawnEggItem(
+                MythicManiaEntityTypes.WASTREL_GLIDER_ENTITY, 0xa92b2b, 0x343337,
+                new Item.Settings()
+            )
         );
     }
 
@@ -408,74 +522,5 @@ public final class MythicManiaItems {
         registerItemTab();
         registerCombatTab();
         registerToolTab();
-        addItemsToTabs();
-    }
-
-    public static void addItemsToTabs() {
-        ItemGroupEvents.modifyEntriesEvent(MythicMania.MYTHICMANIA_FOOD_ITEM_GROUP).register(entries -> {
-            entries.add(POISONOUS_BERRY);
-            entries.add(HEALING_BERRY);
-            entries.add(TRIBUS_FRUIT);
-            entries.add(ENCHANTED_TRIBUS_FRUIT);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(MythicMania.MYTHICMANIA_ITEMS_ITEM_GROUP).register(entries -> {
-            entries.add(EMPTY_ORB);
-            entries.add(CHARGED_NUCLEAR_ORB);
-            entries.add(CHARGED_RUINED_ORB);
-            entries.add(POISON_SPIKE);
-            entries.add(GRUB_ESSENCE);
-            entries.add(TOXIC_PEBBLE);
-            entries.add(WASTED_ESSENCE);
-            entries.add(IRRADIATED_CRYSTAL);
-            entries.add(WATER_PARCEL);
-            entries.add(WASTED_STAFF_CHARGE);
-            entries.add(SHOCK_BOLT);
-
-            // Spawn eggs
-            entries.add(MAGICAL_GRUB_SPAWN_EGG);
-            entries.add(POISONOUS_GRUB_SPAWN_EGG);
-            entries.add(ZAPPING_BEETLE_SPAWN_EGG);
-            entries.add(WASTED_DEMON_SPAWN_EGG);
-            entries.add(DEMON_GUARDIAN_SPAWN_EGG);
-            entries.add(ORBITER_SPAWN_EGG);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(MythicMania.MYTHICMANIA_COMBAT_ITEM_GROUP).register(entries -> {
-            entries.add(NUCLEAR_DAGGER);
-            entries.add(NUCLEAR_BLADE);
-            entries.add(NUCLEAR_SWORD);
-            entries.add(RUINOUS_SWORD);
-            entries.add(NUCLEAR_HELMET);
-            entries.add(NUCLEAR_CHESTPLATE);
-            entries.add(NUCLEAR_LEGGINGS);
-            entries.add(NUCLEAR_BOOTS);
-            entries.add(RUINOUS_HELMET);
-            entries.add(RUINOUS_CHESTPLATE);
-            entries.add(RUINOUS_LEGGINGS);
-            entries.add(RUINOUS_BOOTS);
-            entries.add(DEMON_VEST);
-            entries.add(WASTED_STAFF);
-            entries.add(SHOCK_BOLT_STAFF);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(MythicMania.MYTHICMANIA_TOOLS_ITEM_GROUP).register(entries -> {
-            entries.add(NUCLEAR_PICKAXE);
-            entries.add(NUCLEAR_AXE);
-            entries.add(NUCLEAR_HOE);
-            entries.add(NUCLEAR_SHOVEL);
-            entries.add(RUINOUS_PICKAXE);
-            entries.add(RUINOUS_AXE);
-            entries.add(RUINOUS_HOE);
-            entries.add(RUINOUS_SHOVEL);
-        });
-
-        ItemGroupEvents.modifyEntriesEvent(MythicMania.MYTHICMANIA_BLOCK_ITEM_GROUP).register(entries -> {
-            entries.add(RINTH);
-            entries.add(ANCIENT_ALTAR);
-            entries.add(TOXIC_ORE);
-            entries.add(PULSATING_BLACKSTONE);
-            entries.add(LUMINESCENT_SAC);
-        });
     }
 }

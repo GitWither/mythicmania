@@ -7,20 +7,20 @@ import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
-import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.RotationAxis;
 
+import java.util.Objects;
+
 public class AncientAltarBlockEntityRenderer implements BlockEntityRenderer<AncientAltarBlockEntity> {
     public AncientAltarBlockEntityRenderer(BlockEntityRendererFactory.Context ctx) {
-
     }
 
     @Override
     public void render(AncientAltarBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
-        // TODO: Look into preventing NPE
-        double offset = Math.sin((entity.getWorld().getTime() + tickDelta) / 10.0) / 7.0;
+        // TODO: Look into better way of preventing NPE
+        double offset = Math.sin((Objects.requireNonNull(entity.getWorld()).getTime() + tickDelta) / 10.0) / 7.0;
 
         matrices.translate(0.5, 1.5 + offset, 0.5);
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees((entity.getWorld().getTime() + tickDelta) * 2));

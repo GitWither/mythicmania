@@ -15,7 +15,5 @@ public class MythicManiaClient implements ClientModInitializer {
         MythicManiaBlockEntities.registerBlockEntityRendering();
         MythicManiaEntityTypes.registerEntityRendering();
         MythicManiaParticles.registerParticleFactories();
-
-        BlockRenderLayerMap.INSTANCE.putBlock(MythicManiaBlocks.ANCIENT_ALTAR, RenderLayer.getCutout());
     }
 }

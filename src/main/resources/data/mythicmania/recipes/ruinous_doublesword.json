@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "H#H",
+    "#E#",
+    "H#H"
+  ],
+  "key": {
+    "#": {
+      "item": "mythicmania:wasted_essence"
+    },
+    "E": {
+      "item": "mythicmania:ruinous_sword"
+    },
+    "H": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "mythicmania:ruinous_doublesword",
+    "count": 1
+  }
+}

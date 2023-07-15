@@ -1,13 +1,11 @@
 package daniel.mythicmania.client.render.entity.model;
 
-import daniel.mythicmania.entity.DemonGuardianEntity;
-import daniel.mythicmania.entity.PoisonousGrubEntity;
+import daniel.mythicmania.entity.mob.DemonGuardianEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.CrossbowPosing;
 import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.math.MathHelper;
 
 public class DemonGuardianEntityModel extends PlayerEntityModel<DemonGuardianEntity> {
     private final ModelPart root;
@@ -80,8 +78,6 @@ public class DemonGuardianEntityModel extends PlayerEntityModel<DemonGuardianEnt
     @Override
     public void setAngles(DemonGuardianEntity livingEntity, float f, float g, float h, float i, float j) {
         super.setAngles(livingEntity, f, g, h, i, j);
-
-//        bodyRemains.pitch = MathHelper.cos(handSwingProgress * 0.2f) * 0.2f;
     }
 
     @Override

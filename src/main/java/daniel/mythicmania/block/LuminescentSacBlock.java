@@ -6,10 +6,8 @@ import net.minecraft.block.*;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
@@ -20,12 +18,13 @@ import org.jetbrains.annotations.Nullable;
 
 public class LuminescentSacBlock extends Block {
     private static final VoxelShape SHAPE = Block.createCuboidShape(0, 11, 0, 16, 16, 16);
+
     public LuminescentSacBlock() {
-        super(FabricBlockSettings.of(Material.PLANT, MapColor.BLUE).nonOpaque().sounds(BlockSoundGroup.SLIME).strength(0.5f, 0.5f).luminance((state) -> 10));
+        super(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK).nonOpaque().sounds(BlockSoundGroup.SLIME).strength(0.5f, 0.5f).luminance((state) -> 10));
     }
 
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        // TODO: Refactor this
+        // TODO: Refactor this (for irradiated crystal as well)
         VoxelShape voxelShape = this.getOutlineShape(state, world, pos, ShapeContext.absent());
         Vec3d vec3d = voxelShape.getBoundingBox().getCenter();
         double xPos = (double)pos.getX() + vec3d.x;

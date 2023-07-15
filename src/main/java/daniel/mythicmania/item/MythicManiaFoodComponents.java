@@ -33,4 +33,8 @@ public class MythicManiaFoodComponents {
             .hunger(4)
             .alwaysEdible()
             .build();
+
+    public static final FoodComponent RINTH_BERRY = new FoodComponent.Builder()
+            .hunger(3)
+            .build();
 }

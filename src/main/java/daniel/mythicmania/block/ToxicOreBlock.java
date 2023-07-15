@@ -8,7 +8,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.World;
 
@@ -19,7 +18,7 @@ public class ToxicOreBlock extends ExperienceDroppingBlock {
 
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-        if (!entity.bypassesSteppingEffects()) {
+        if (entity instanceof LivingEntity && !entity.bypassesSteppingEffects()) {
             StatusEffectInstance steppedPoison = new StatusEffectInstance(StatusEffects.POISON, 20 * 2, 0);
             ((LivingEntity) entity).addStatusEffect(steppedPoison);
         }

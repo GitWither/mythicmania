@@ -2,7 +2,7 @@ package daniel.mythicmania.client.render.entity.renderers;
 
 import daniel.mythicmania.MythicMania;
 import daniel.mythicmania.client.render.entity.model.DemonGuardianEntityModel;
-import daniel.mythicmania.entity.DemonGuardianEntity;
+import daniel.mythicmania.entity.mob.DemonGuardianEntity;
 import daniel.mythicmania.entity.MythicManiaEntityTypes;
 import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
