@@ -63,7 +63,7 @@ public class SummonMinionsGoal extends Goal {
             }
 
             world.spawnEntity(minionEntity);
-            ((MobEntity) minionEntity).setTarget(mob.getTarget());
+            if (mob.getTarget() != null) ((MobEntity) minionEntity).setTarget(mob.getTarget());
         }
 
         cooldown = 0;
