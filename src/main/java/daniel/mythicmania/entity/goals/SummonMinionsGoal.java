@@ -1,7 +1,6 @@
 package daniel.mythicmania.entity.goals;
 
 import daniel.mythicmania.item.MythicManiaItems;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -9,20 +8,19 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.mob.AbstractSkeletonEntity;
 import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.entity.mob.SkeletonEntity;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.world.World;
 
-public class SummonMinionGoal extends Goal {
+public class SummonMinionsGoal extends Goal {
     private final HostileEntity mob;
     private final EntityType<? extends LivingEntity> minion;
     private final int numberOfMinions;
     private int cooldown = 0;
 
-    public SummonMinionGoal(HostileEntity mob, EntityType<? extends LivingEntity> minion, int numberOfMinions) {
+    public SummonMinionsGoal(HostileEntity mob, EntityType<? extends LivingEntity> minion, int numberOfMinions) {
         this.mob = mob;
         this.minion = minion;
         this.numberOfMinions = numberOfMinions;
@@ -37,7 +35,7 @@ public class SummonMinionGoal extends Goal {
     public void tick() {
         cooldown++;
         World world = mob.getWorld();
-        if (!canSpawnMinions(world, mob.getAttacker())) return;
+        if (!canSpawnMinions(world)) return;
 
         for (int i = 0; i < numberOfMinions + world.random.nextInt(3); i++) {
             Entity minionEntity = minion.create(world);
@@ -65,6 +63,7 @@ public class SummonMinionGoal extends Goal {
             }
 
             world.spawnEntity(minionEntity);
+            ((MobEntity) minionEntity).setTarget(mob.getTarget());
         }
 
         cooldown = 0;
@@ -74,7 +73,7 @@ public class SummonMinionGoal extends Goal {
         entity.equipStack(EquipmentSlot.MAINHAND, new ItemStack(item));
     }
 
-    public boolean canSpawnMinions(World world, LivingEntity attacker) {
-        return !world.isClient && cooldown % 40 == 0 && world.random.nextInt(8) == 0 && attacker instanceof PlayerEntity;
+    public boolean canSpawnMinions(World world) {
+        return !world.isClient && cooldown % 40 == 0 && world.random.nextInt(8) == 0;
     }
 }
