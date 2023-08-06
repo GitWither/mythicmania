@@ -12,9 +12,9 @@
   },
   "noise": {
     "min_y": 0,
-    "height": 256,
-    "size_horizontal": 2,
-    "size_vertical": 1
+    "height": 128,
+    "size_horizontal": 4,
+    "size_vertical": 2
   },
   "noise_router": {
     "barrier": 0,

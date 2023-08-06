@@ -1,0 +1,24 @@
+{
+  "type": "mythicmania:ruined",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "mythicmania:toxic",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "mythicmania:toxic_hills",
+          "parameters": {
+            "temperature": 1.4,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": -0.1,
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}
