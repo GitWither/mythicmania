@@ -7,7 +7,7 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
-          "biome": "mythicmania:toxic_weird_hills",
+          "biome": "mythicmania:eerie_hills",
           "parameters": {
             "temperature": 1.4,
             "humidity": 0,
